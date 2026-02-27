@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metaforma | AI Heritage Architecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-light: #ffffff;
+            --bg-dark: #030303;
+            --accent: #FF660F;
+
+            /* Fluid Typography & Spacing Scaling */
+            /* Using clamp(min, preferred, max) for seamless transitions */
+            --fluid-h1: clamp(2.5rem, 8vw + 1rem, 8rem);
+            --fluid-h2: clamp(2rem, 5vw + 1rem, 5rem);
+            --fluid-h3: clamp(1.5rem, 3vw + 1rem, 3.5rem);
+            --fluid-p: clamp(0.9rem, 0.5vw + 0.5rem, 1.25rem);
+            --fluid-sm: clamp(0.7rem, 0.3vw + 0.4rem, 0.9rem);
+        }
+
+        @media (max-height: 800px) {
+            :root {
+                --fluid-h1: clamp(2rem, 12vh + 0.5rem, 4.5rem);
+                --fluid-h2: clamp(1.5rem, 8vh + 0.5rem, 3rem);
+                --fluid-h3: clamp(1.2rem, 6vh + 0.5rem, 2rem);
+                --fluid-p: clamp(0.75rem, 3vh + 0.2rem, 0.95rem);
+                --fluid-sm: clamp(0.65rem, 2vh + 0.1rem, 0.8rem);
+            }
+        }
+
+        @media (max-height: 550px) {
+            :root {
+                --fluid-h1: clamp(1.8rem, 15vh, 3.5rem);
+                --fluid-h2: clamp(1.4rem, 10vh, 2.5rem);
+                --fluid-h3: clamp(1.1rem, 8vh, 1.8rem);
+                --fluid-p: clamp(0.7rem, 4vh, 0.85rem);
+            }
+        }
+
+        html {
+            scroll-padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        @media (max-height: 700px) {
+            html {
+                scroll-padding-top: 60px;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            overflow-x: hidden;
+            transition: background-color 1s ease;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-heading {
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        /* Fluid Utility Classes */
+        .text-fluid-h1 {
+            font-size: var(--fluid-h1);
+            line-height: 0.9;
+        }
+
+        .text-fluid-h2 {
+            font-size: var(--fluid-h2);
+            line-height: 1.1;
+        }
+
+        .text-fluid-h3 {
+            font-size: var(--fluid-h3);
+            line-height: 1.2;
+        }
+
+        .text-fluid-p {
+            font-size: var(--fluid-p);
+        }
+
+        .text-fluid-sm {
+            font-size: var(--fluid-sm);
+        }
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .glass-morphism-dark {
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Responsive Container Adjustment */
+        @media (max-height: 700px) {
+            .snap-start {
+                scroll-snap-align: none !important;
+            }
+        }
+
+        /* Hide legacy artifacts causing square glitch */
+        .light-leak,
+        .noise-overlay {
+            display: none !important;
+        }
+
+        /* Structural Text Styling */
+        .architectural-title {
+            letter-spacing: -0.05em;
+            line-height: 0.85;
+        }
+
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #FF660F;
+            border-radius: 10px;
+        }
+
+        /* Print Styles for PDF Export */
+        @media print {
+            @page {
+                size: A4;
+                margin: 2cm;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            .no-print,
+            nav,
+            footer,
+            button,
+            .light-leak,
+            iframe {
+                display: none !important;
+            }
+
+            #root {
+                display: block !important;
+            }
+
+            .print-only {
+                display: block !important;
+            }
+
+            .fixed {
+                position: relative !important;
+                background: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .overflow-y-auto {
+                overflow: visible !important;
+            }
+
+            .shadow-2xl,
+            .shadow-xl,
+            .shadow-lg {
+                box-shadow: none !important;
+            }
+
+            .rounded-\[3\.5rem\],
+            .rounded-\[2\.5rem\],
+            .rounded-full {
+                border-radius: 0 !important;
+            }
+
+            .border-white\/20,
+            .border-white\/10 {
+                border-color: #eee !important;
+            }
+
+            h2,
+            h3,
+            h4 {
+                color: black !important;
+            }
+
+            span.text-\[\#ffffff\] {
+                color: #ffffff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .bg-\[\#ffffff\] {
+                background-color: #ffffff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0"
+  }
+}
+</script>
+
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
