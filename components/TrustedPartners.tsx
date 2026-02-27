@@ -8,7 +8,7 @@ export const TrustedPartners: React.FC<TrustedPartnersProps> = ({ isDark = false
     const partners = [
         {
             name: 'BPT INVEST GMBH',
-            logo: 'https://i.postimg.cc/WpqMQWrR/BPT-INVEST-GMBH.jpg',
+            logo: 'https://i.postimg.cc/zfYycg6r/BPT-INVEST-GMBH-2.jpg',
             link: 'https://www.bptinvest.de/'
         },
         {

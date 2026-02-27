@@ -165,12 +165,12 @@ const VideoMarketingViz: React.FC<{ isInView: boolean }> = ({ isInView }) => {
 
   return (
     <div className="relative group bg-[#111112] backdrop-blur-[12px] border border-white/5 rounded-[1.2rem] md:rounded-[1.5rem] lg:rounded-[2rem] p-6 md:p-8 lg:p-12 flex flex-col justify-between overflow-hidden transition-all hover:bg-[#18181a] col-span-full min-h-[120px] md:min-h-[150px] lg:min-h-[180px]">
-      <div className="relative z-10 flex justify-between items-end gap-2">
+      <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-2">
         <div className="space-y-1">
           <span className="text-[9px] md:text-[8px] uppercase tracking-[0.4em] text-[#FF660F] font-black">Engagement</span>
           <h4 className="text-[12px] md:text-sm lg:text-xl font-heading text-white/95">Immersive Video Strategy</h4>
         </div>
-        <div className="flex flex-col items-end gap-1">
+        <div className="flex flex-col items-start md:items-end gap-1">
           <span className="text-[8px] md:text-[8px] uppercase tracking-[0.4em] text-white/30">Conversion Boost</span>
           <span className="text-4xl md:text-4xl lg:text-6xl font-heading font-medium text-[#FF660F] leading-none tabular-nums block">+{count}%</span>
         </div>
@@ -592,12 +592,19 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false }
         </div>
 
         {/* Sector III: Integrated Growth Strategy */}
-        <div className="relative min-h-screen flex items-center py-24 md:py-40 px-6 md:px-24">
+        <div className="relative min-h-screen flex items-center py-0 md:py-40 px-0 md:px-24">
           <div className="max-w-[1600px] mx-auto w-full space-y-16 md:space-y-40">
-            <div ref={growthRef} className={`relative bg-[#030303] md:rounded-[2rem] lg:rounded-[4rem] px-6 py-8 md:p-10 lg:p-14 text-white transition-all duration-500 overflow-hidden shadow-2xl min-h-[450px] lg:min-h-[75vh] flex items-center ${growthInView ? 'opacity-100' : 'opacity-40'}`}>
-              <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0">
-                <iframe src="https://player.vimeo.com/video/1164815646?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479" className="absolute inset-0 w-full h-full object-cover pointer-events-none" frameBorder="0" allow="autoplay; fullscreen" title="Background Video" />
-                <div className="absolute inset-0 bg-[#030303]/80"></div>
+            <div ref={growthRef} className={`relative bg-[#030303] md:rounded-[2rem] lg:rounded-[4rem] px-6 py-24 md:p-10 lg:p-14 text-white transition-all duration-500 overflow-hidden shadow-2xl min-h-[450px] lg:min-h-[75vh] flex items-center ${growthInView ? 'opacity-100' : 'opacity-40'}`}>
+
+              <div className="absolute inset-0 overflow-hidden z-0">
+                <iframe
+                  src="https://player.vimeo.com/video/1164815646?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479"
+                  className="absolute top-[50%] left-[50%] w-[350vw] h-[350vh] min-w-[350%] min-h-[350%] md:w-[150vw] md:h-[150vh] md:min-w-0 md:min-h-0 max-w-none -translate-x-1/2 -translate-y-1/2 pointer-events-none object-cover"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen"
+                  title="Background Video"
+                />
+                <div className="absolute inset-0 bg-[#030303]/70 md:bg-[#030303]/80 backdrop-blur-[2px] md:backdrop-blur-none"></div>
               </div>
 
               <div className="relative z-10 w-full">
