@@ -92,29 +92,29 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 top-20 bg-[#030303]/80 backdrop-blur-[12px] z-40 lg:hidden transition-all duration-500 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-        <div className="flex flex-col items-center justify-center h-full gap-8 p-6 text-center">
+      <div className={`fixed inset-0 top-[72px] md:top-20 bg-[#030303]/95 backdrop-blur-[12px] z-40 lg:hidden overflow-y-auto transition-all duration-500 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] gap-8 p-6 pb-24 text-center">
           <button
             onClick={() => handleNavClick(AppSection.HOME)}
-            className="text-2xl font-heading text-white tracking-widest uppercase"
+            className="text-xl md:text-2xl font-heading text-white tracking-widest uppercase"
           >
             Home
           </button>
           <button
             onClick={() => handleNavClick(AppSection.SERVICES)}
-            className="text-2xl font-heading text-white tracking-widest uppercase"
+            className="text-xl md:text-2xl font-heading text-white tracking-widest uppercase"
           >
             Services
           </button>
           <button
             onClick={() => handleNavClick(AppSection.PHILOSOPHY)}
-            className="text-2xl font-heading text-white tracking-widest uppercase"
+            className="text-xl md:text-2xl font-heading text-white tracking-widest uppercase"
           >
             Philosophy
           </button>
           <button
             onClick={() => handleNavClick(AppSection.ARCHITECTURE)}
-            className="text-2xl font-heading text-white tracking-widest uppercase"
+            className="text-xl md:text-2xl font-heading text-white tracking-widest uppercase"
           >
             Portfolio
           </button>
