@@ -26,7 +26,7 @@ export const TrustedPartners: React.FC<TrustedPartnersProps> = ({ isDark = false
     return (
         <section className={`py-16 md:py-24 border-t transition-colors duration-1000 ${isDark ? 'bg-[#030303] border-white/5' : 'bg-[#f5f5f7] border-black/5'}`}>
             <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
-                <h4 className={`text-[9px] md:text-[11px] font-bold tracking-[0.4em] uppercase mb-12 md:mb-16 transition-colors ${isDark ? 'text-white/40' : 'text-stone-400'}`}>
+                <h4 className={`text-base md:text-base font-bold tracking-[0.4em] uppercase mb-12 md:mb-16 transition-colors ${isDark ? 'text-white/40' : 'text-stone-400'}`}>
                     Trusted Partners
                 </h4>
 

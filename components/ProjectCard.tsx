@@ -62,7 +62,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, isDa
 
         {/* Hover Overlay */}
         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center z-10">
-          <span className={`px-8 py-3 rounded-full translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-xl text-[10px] tracking-[0.4em] uppercase font-bold bg-[#FF660F] text-white`}>
+          <span className={`px-8 py-3 rounded-full translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-xl text-sm md:text-sm tracking-[0.4em] uppercase font-bold bg-[#FF660F] text-white`}>
             View Gallery
           </span>
         </div>
@@ -83,7 +83,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, isDa
       <div className="p-8 md:p-10">
         <div className="flex flex-wrap gap-2 md:gap-4 mb-4 md:mb-5">
           {project.tags.map(tag => (
-            <span key={tag} className="text-[10px] md:text-[9px] uppercase tracking-[0.3em] font-black text-[#FF660F]/70">
+            <span key={tag} className="text-base md:text-base uppercase tracking-[0.3em] font-black text-[#FF660F]/70">
               {tag}
             </span>
           ))}
@@ -92,7 +92,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, isDa
         <h3 className={`text-2xl md:text-3xl font-heading font-medium mb-3 md:mb-4 group-hover:text-[#FF660F] transition-colors leading-tight md:leading-none tracking-tight ${isDark ? 'text-white' : 'text-black'}`}>
           {project.title}
         </h3>
-        <p className={`text-xs md:text-sm leading-relaxed font-light mb-6 md:mb-8 transition-opacity line-clamp-3 md:line-clamp-2 ${isDark ? 'text-white/40 group-hover:text-white/60' : 'text-stone-600 group-hover:text-stone-800'}`}>
+        <p className={`text-base md:text-base leading-relaxed font-light mb-6 md:mb-8 transition-opacity line-clamp-3 md:line-clamp-2 ${isDark ? 'text-white/40 group-hover:text-white/60' : 'text-stone-600 group-hover:text-stone-800'}`}>
           {project.description}
         </p>
 

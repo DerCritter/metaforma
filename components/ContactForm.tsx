@@ -29,7 +29,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false }) => {
             <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-start">
                 <div className="space-y-8 md:space-y-12">
                     <div className="space-y-4">
-                        <span className="text-[9px] md:text-[11px] uppercase tracking-[0.6em] text-[#FF660F] font-black">GET IN TOUCH</span>
+                        <span className="text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black">GET IN TOUCH</span>
                         <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading leading-tight tracking-tighter">
                             Start Your <br />
                             <span className="italic font-normal text-[#FF660F]">Synthesis.</span>
@@ -47,7 +47,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false }) => {
                                 </div>
                                 <div>
                                     <h4 className="text-sm font-bold uppercase tracking-widest text-[#FF660F]">HQ BERLIN</h4>
-                                    <p className={`text-xs opacity-60`}>Berlin, Germany | Est. 2026</p>
+                                    <p className={`text-base opacity-60`}>Berlin, Germany | Est. 2026</p>
                                 </div>
                             </div>
                         </div>
@@ -58,37 +58,37 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false }) => {
                     <form onSubmit={handleSubmit} className="space-y-8">
                         <div className="space-y-6">
                             <div className="group">
-                                <label className={`text-[10px] uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>Your Name</label>
+                                <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>Your Name</label>
                                 <input
                                     type="text"
                                     required
                                     placeholder="John Doe"
-                                    className={`w-full bg-transparent border-b py-3 text-sm md:text-base focus:outline-none focus:border-[#FF660F] transition-colors placeholder:text-stone-600 font-light ${isDark ? 'border-white/10 text-white' : 'border-stone-300 text-black'}`}
+                                    className={`w-full bg-transparent border-b py-3 text-base md:text-base focus:outline-none focus:border-[#FF660F] transition-colors placeholder:text-stone-600 font-light ${isDark ? 'border-white/10 text-white' : 'border-stone-300 text-black'}`}
                                 />
                             </div>
                             <div className="group">
-                                <label className={`text-[10px] uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>Business Email</label>
+                                <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>Business Email</label>
                                 <input
                                     type="email"
                                     required
                                     placeholder="john@example.com"
-                                    className={`w-full bg-transparent border-b py-3 text-sm md:text-base focus:outline-none focus:border-[#FF660F] transition-colors placeholder:text-stone-600 font-light ${isDark ? 'border-white/10 text-white' : 'border-stone-300 text-black'}`}
+                                    className={`w-full bg-transparent border-b py-3 text-base md:text-base focus:outline-none focus:border-[#FF660F] transition-colors placeholder:text-stone-600 font-light ${isDark ? 'border-white/10 text-white' : 'border-stone-300 text-black'}`}
                                 />
                             </div>
                             <div className="group">
-                                <label className={`text-[10px] uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>Project Vision</label>
+                                <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>Project Vision</label>
                                 <textarea
                                     required
                                     rows={4}
                                     placeholder="Tell us about your architectural asset..."
-                                    className={`w-full bg-transparent border-b py-3 text-sm md:text-base focus:outline-none focus:border-[#FF660F] transition-colors placeholder:text-stone-600 font-light resize-none ${isDark ? 'border-white/10 text-white' : 'border-stone-300 text-black'}`}
+                                    className={`w-full bg-transparent border-b py-3 text-base md:text-base focus:outline-none focus:border-[#FF660F] transition-colors placeholder:text-stone-600 font-light resize-none ${isDark ? 'border-white/10 text-white' : 'border-stone-300 text-black'}`}
                                 ></textarea>
                             </div>
                         </div>
 
                         <button
                             type="submit"
-                            className="w-full py-5 md:py-6 bg-[#FF660F] text-white rounded-full text-[10px] md:text-[11px] font-bold tracking-[0.4em] uppercase hover:bg-black hover:scale-[1.02] transition-all shadow-xl shadow-[#FF660F]/20"
+                            className="w-full py-5 md:py-6 bg-[#FF660F] text-white rounded-full text-sm md:text-sm font-bold tracking-[0.4em] uppercase hover:bg-black hover:scale-[1.02] transition-all shadow-xl shadow-[#FF660F]/20"
                         >
                             Request Inquiry
                         </button>

@@ -53,7 +53,7 @@ export const ServiceHighlights: React.FC<ServiceHighlightsProps> = ({ isDark = f
                                     <h3 className={`text-xl md:text-2xl font-heading font-medium tracking-tight ${isDark ? 'text-white' : 'text-black'} min-w-[300px]`}>
                                         {service.title}
                                     </h3>
-                                    <p className={`text-sm md:text-base font-light leading-relaxed transition-all duration-500 ${isDark ? 'text-white/40 group-hover:text-white/80' : 'text-black/40 group-hover:text-black/80'}`}>
+                                    <p className={`text-base md:text-base font-light leading-relaxed transition-all duration-500 ${isDark ? 'text-white/40 group-hover:text-white/80' : 'text-black/40 group-hover:text-black/80'}`}>
                                         {service.description}
                                     </p>
                                 </div>

@@ -82,7 +82,7 @@ const TacticalModule: React.FC<{
     <div className="relative z-10 scale-90 md:scale-100 lg:scale-125 transition-transform duration-700 group-hover:scale-110">{icon}</div>
     <div className="relative z-10 space-y-4">
       <h4 className={`text-xl md:text-xl lg:text-2xl font-heading tracking-tight transition-colors ${isDark ? 'text-white' : 'text-black'} group-hover:text-[#FF660F]`}>{title}</h4>
-      <p className={`text-[11px] md:text-xs lg:text-base leading-relaxed font-light max-w-[280px] mx-auto transition-colors ${isDark ? 'text-white/50' : 'text-stone-500'}`}>{desc}</p>
+      <p className={`text-base lg:text-base leading-relaxed font-light max-w-[280px] mx-auto transition-colors ${isDark ? 'text-white/50' : 'text-stone-500'}`}>{desc}</p>
     </div>
   </div>
 );
@@ -99,8 +99,8 @@ const WebConversionViz: React.FC<{ isInView: boolean }> = ({ isInView }) => {
   return (
     <div className="relative group bg-[#111112] backdrop-blur-[10px] border border-white/5 rounded-[1.2rem] md:rounded-[1.5rem] lg:rounded-[2rem] p-4 md:p-6 lg:p-10 flex flex-col justify-between overflow-hidden transition-all hover:bg-[#18181a] min-h-[140px] md:min-h-[160px] lg:min-h-[220px]">
       <div className="relative z-10 space-y-1">
-        <span className="text-[9px] md:text-[8px] uppercase tracking-[0.4em] text-white/40 font-black">Performance</span>
-        <h4 className="text-[11px] md:text-xs lg:text-sm font-heading text-white/90">Web Conversion</h4>
+        <span className="text-base md:text-base uppercase tracking-[0.4em] text-white/40 font-black">Performance</span>
+        <h4 className="text-base md:text-base lg:text-base font-heading text-white/90">Web Conversion</h4>
         <span className="text-3xl md:text-3xl lg:text-5xl font-heading font-medium text-[#FF660F] tabular-nums block mt-1">+{count}%</span>
       </div>
       <div className="relative h-10 md:h-16 lg:h-24 flex items-end gap-1 md:gap-1.5 mt-4">
@@ -131,8 +131,8 @@ const SEOVisibilityViz: React.FC<{ isInView: boolean }> = ({ isInView }) => {
   return (
     <div className="relative group bg-[#111112] backdrop-blur-[10px] border border-white/5 rounded-[1.2rem] md:rounded-[1.5rem] lg:rounded-[2rem] p-4 md:p-6 lg:p-10 flex flex-col justify-between overflow-hidden transition-all hover:bg-[#18181a] min-h-[140px] md:min-h-[160px] lg:min-h-[220px]">
       <div className="relative z-10 space-y-1">
-        <span className="text-[9px] md:text-[8px] uppercase tracking-[0.4em] text-white/40 font-black">Visibility</span>
-        <h4 className="text-[11px] md:text-xs lg:text-sm font-heading text-white/90">SEO Authority</h4>
+        <span className="text-base md:text-base uppercase tracking-[0.4em] text-white/40 font-black">Visibility</span>
+        <h4 className="text-base md:text-base lg:text-base font-heading text-white/90">SEO Authority</h4>
         <span className="text-3xl md:text-3xl lg:text-5xl font-heading font-medium text-[#FF660F] tabular-nums block mt-1">+{count}%</span>
       </div>
       <div className="relative h-10 md:h-16 lg:h-24 mt-4 bg-[#030303]/40 rounded-xl overflow-hidden border border-white/[0.03]">
@@ -167,11 +167,11 @@ const VideoMarketingViz: React.FC<{ isInView: boolean }> = ({ isInView }) => {
     <div className="relative group bg-[#111112] backdrop-blur-[12px] border border-white/5 rounded-[1.2rem] md:rounded-[1.5rem] lg:rounded-[2rem] p-6 md:p-8 lg:p-12 flex flex-col justify-between overflow-hidden transition-all hover:bg-[#18181a] col-span-full min-h-[120px] md:min-h-[150px] lg:min-h-[180px]">
       <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-2">
         <div className="space-y-1">
-          <span className="text-[9px] md:text-[8px] uppercase tracking-[0.4em] text-[#FF660F] font-black">Engagement</span>
-          <h4 className="text-[12px] md:text-sm lg:text-xl font-heading text-white/95">Immersive Video Strategy</h4>
+          <span className="text-base md:text-base uppercase tracking-[0.4em] text-[#FF660F] font-black">Engagement</span>
+          <h4 className="text-base md:text-lg lg:text-xl font-heading text-white/95">Immersive Video Strategy</h4>
         </div>
         <div className="flex flex-col items-start md:items-end gap-1">
-          <span className="text-[8px] md:text-[8px] uppercase tracking-[0.4em] text-white/30">Conversion Boost</span>
+          <span className="text-base md:text-base uppercase tracking-[0.4em] text-white/30">Conversion Boost</span>
           <span className="text-4xl md:text-4xl lg:text-6xl font-heading font-medium text-[#FF660F] leading-none tabular-nums block">+{count}%</span>
         </div>
       </div>
@@ -289,7 +289,7 @@ const ArchitectureShowcaseItem: React.FC<{
             />
           ))}
         </div>
-        <span className="text-[7px] md:text-[9px] uppercase tracking-[0.4em] text-[#FF660F] font-black mb-2 block">{subtitle}</span>
+        <span className="text-base md:text-base uppercase tracking-[0.4em] text-[#FF660F] font-black mb-2 block">{subtitle}</span>
         <h4 className="text-xl md:text-2xl font-heading text-white">{title}</h4>
       </div>
     </div>
@@ -392,12 +392,12 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false }
           <div className="max-w-[1600px] mx-auto w-full relative">
             {/* Information box goes above on mobile via DOM order shift */}
             <div className={`${textboxClass(sector1InView)} md:left-0 md:top-[-1rem] lg:left-[-3rem] lg:top-[-3rem]`}>
-              <span className="text-[7px] md:text-[8px] uppercase tracking-[0.4em] text-[#FF660F] font-black mb-1.5 md:mb-3 opacity-70">SECTOR I</span>
-              <h2 className={`text-xl md:text-xl lg:text-3xl xl:text-5xl font-heading mb-3 md:mb-4 leading-[1.1] lg:leading-[0.95] tracking-tight transition-colors ${isDark ? 'text-white' : 'text-black'}`}><span className="font-medium">Heritage</span> <br /> <span className="italic font-light text-[#FF660F]">Adaptive Reuse</span></h2>
-              <p className={`text-[10px] md:text-[10px] lg:text-base leading-relaxed mb-6 md:mb-8 font-medium transition-colors ${isDark ? 'text-white/50' : 'text-black/50'}`}>We specialize in Denkmalschutz (Historic Preservation). Our AI-driven process respects the architectural soul of the past while projecting the luxury potential for tomorrow's investors.</p>
+              <span className="text-sm md:text-base uppercase tracking-[0.4em] text-[#FF660F] font-black mb-1.5 md:mb-3 opacity-70">SECTOR I</span>
+              <h2 className={`text-2xl md:text-xl lg:text-3xl xl:text-5xl font-heading mb-3 md:mb-4 leading-[1.1] lg:leading-[0.95] tracking-tight transition-colors ${isDark ? 'text-white' : 'text-black'}`}><span className="font-medium">Heritage</span> <br /> <span className="italic font-light text-[#FF660F]">Adaptive Reuse</span></h2>
+              <p className={`text-base md:text-base lg:text-base leading-relaxed mb-6 md:mb-8 font-medium transition-colors ${isDark ? 'text-white/50' : 'text-black/50'}`}>We specialize in Denkmalschutz (Historic Preservation). Our AI-driven process respects the architectural soul of the past while projecting the luxury potential for tomorrow's investors.</p>
               <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-8 mt-auto">
-                <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-[8px] md:text-[8px] uppercase tracking-[0.3em] font-black border-b-2 transition-all pb-0.5 ${isDark ? 'text-white/70 border-white/10 hover:border-[#FF660F]' : 'text-black/70 border-black/10 hover:border-[#FF660F]'}`}>VIEW PORTFOLIO</button>
-                <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-6 md:px-6 lg:px-12 py-3 md:py-3 rounded-full text-[9px] lg:text-[11px] font-bold tracking-[0.2em] hover:scale-105 transition-all shadow-xl bg-[#FF660F] text-white shadow-[#FF660F]/20`}>INQUIRY NOW</button>
+                <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-sm md:text-sm uppercase tracking-[0.3em] font-black border-b-2 transition-all pb-0.5 ${isDark ? 'text-white/70 border-white/10 hover:border-[#FF660F]' : 'text-black/70 border-black/10 hover:border-[#FF660F]'}`}>VIEW PORTFOLIO</button>
+                <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-6 md:px-6 lg:px-12 py-3 md:py-3 rounded-full text-sm lg:text-sm font-bold tracking-[0.2em] hover:scale-105 transition-all shadow-xl bg-[#FF660F] text-white shadow-[#FF660F]/20`}>INQUIRY NOW</button>
               </div>
             </div>
             <div ref={sector1Ref} className="w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative group/carousel z-10">
@@ -418,8 +418,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false }
           </div>
           <div className="max-w-[1600px] mx-auto w-full">
             <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-8 md:mb-16 gap-3 md:gap-5 text-center md:text-left">
-              <div className="space-y-1"><span className={`text-[7px] md:text-[9px] uppercase tracking-[0.5em] font-bold block transition-colors ${isDark ? 'text-white/20' : 'text-black/30'}`}>STRATEGY</span><h3 className={`text-xl md:text-2xl lg:text-7xl font-heading font-light tracking-tighter transition-colors ${isDark ? 'text-white' : 'text-black'}`}>Visionary <span className="italic text-[#FF660F]">Transformations</span></h3></div>
-              <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-[7px] md:text-[9px] uppercase tracking-[0.5em] font-bold transition-colors border-b-2 pb-1 ${isDark ? 'text-white/20 border-white/5 hover:text-white hover:border-white' : 'text-black/30 border-black/5 hover:border-black'}`}>OPEN LIBRARY</button>
+              <div className="space-y-1"><span className={`text-base md:text-base uppercase tracking-[0.5em] font-bold block transition-colors ${isDark ? 'text-white/20' : 'text-black/30'}`}>STRATEGY</span><h3 className={`text-xl md:text-2xl lg:text-7xl font-heading font-light tracking-tighter transition-colors ${isDark ? 'text-white' : 'text-black'}`}>Visionary <span className="italic text-[#FF660F]">Transformations</span></h3></div>
+              <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-sm md:text-sm uppercase tracking-[0.5em] font-bold transition-colors border-b-2 pb-1 ${isDark ? 'text-white/20 border-white/5 hover:text-white hover:border-white' : 'text-black/30 border-black/5 hover:border-black'}`}>OPEN LIBRARY</button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 lg:gap-16">
               <ArchitectureShowcaseItem
@@ -491,7 +491,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false }
               <div className="max-w-4xl">
                 <div className="inline-flex items-center gap-4 mb-6 md:mb-10">
                   <div className="w-10 md:w-16 h-px bg-[#FF660F]"></div>
-                  <span className="text-[9px] md:text-[11px] uppercase tracking-[0.6em] text-[#FF660F] font-black">the philosophy</span>
+                  <span className="text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black">the philosophy</span>
                 </div>
                 <h3 className="text-fluid-h1 font-heading leading-[0.85] tracking-tighter text-white lowercase mb-6 md:mb-12">
                   the living <br />
@@ -524,7 +524,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false }
                       </div>
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-[10px] md:text-[12px] font-bold tracking-[0.5em] text-white uppercase group-hover:text-[#FF660F] transition-colors">Start Your Inquiry</span>
+                      <span className="text-base md:text-base font-bold tracking-[0.5em] text-white uppercase group-hover:text-[#FF660F] transition-colors">Start Your Inquiry</span>
                       <div className="w-12 h-px bg-white/20 mt-2 transition-all duration-700 group-hover:w-full group-hover:bg-[#FF660F]"></div>
                     </div>
                   </button>
@@ -539,12 +539,12 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false }
           <div className="max-w-[1600px] mx-auto w-full relative">
             {/* Information box goes left now */}
             <div className={`${textboxClass(sector2InView)} md:left-0 md:top-[-1rem] lg:left-[-3rem] lg:top-[-3rem]`}>
-              <span className="text-[7px] md:text-[8px] uppercase tracking-[0.4em] text-[#FF660F] font-black mb-1.5 md:mb-3 opacity-70">SECTOR II</span>
-              <h2 className={`text-lg md:text-xl lg:text-3xl xl:text-5xl font-heading mb-2 md:mb-3 leading-[1.1] lg:leading-[0.95] tracking-tight transition-colors ${isDark ? 'text-white' : 'text-black'}`}><span className="font-medium">Modern New Builds</span> <br /> <span className="italic font-light text-[#FF660F]">Defining the Skyline</span></h2>
-              <p className={`text-[9px] md:text-[10px] lg:text-base leading-relaxed mb-4 md:mb-6 font-medium transition-colors ${isDark ? 'text-white/50' : 'text-black/50'}`}>From high-end residential complexes to cutting-edge commercial spaces. We provide technical precision and aesthetic perfection to ensure market dominance from the first concept.</p>
+              <span className="text-sm md:text-base uppercase tracking-[0.4em] text-[#FF660F] font-black mb-1.5 md:mb-3 opacity-70">SECTOR II</span>
+              <h2 className={`text-2xl md:text-xl lg:text-3xl xl:text-5xl font-heading mb-2 md:mb-3 leading-[1.1] lg:leading-[0.95] tracking-tight transition-colors ${isDark ? 'text-white' : 'text-black'}`}><span className="font-medium">Modern New Builds</span> <br /> <span className="italic font-light text-[#FF660F]">Defining the Skyline</span></h2>
+              <p className={`text-base md:text-base lg:text-base leading-relaxed mb-4 md:mb-6 font-medium transition-colors ${isDark ? 'text-white/50' : 'text-black/50'}`}>From high-end residential complexes to cutting-edge commercial spaces. We provide technical precision and aesthetic perfection to ensure market dominance from the first concept.</p>
               <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-8 mt-auto">
-                <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-[6px] md:text-[8px] uppercase tracking-[0.3em] font-black border-b-2 pb-0.5 ${isDark ? 'text-white/70 border-white/10 hover:border-[#FF660F]' : 'text-black/70 border-black/10 hover:border-[#FF660F]'}`}>PORTFOLIO</button>
-                <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-6 md:px-6 lg:px-12 py-3 md:py-3 rounded-full text-[9px] lg:text-[11px] font-bold tracking-[0.2em] hover:scale-105 transition-all shadow-xl bg-[#FF660F] text-white shadow-[#FF660F]/20`}>INQUIRY NOW</button>
+                <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-sm md:text-sm uppercase tracking-[0.3em] font-black border-b-2 pb-0.5 ${isDark ? 'text-white/70 border-white/10 hover:border-[#FF660F]' : 'text-black/70 border-black/10 hover:border-[#FF660F]'}`}>PORTFOLIO</button>
+                <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-6 md:px-6 lg:px-12 py-3 md:py-3 rounded-full text-sm lg:text-sm font-bold tracking-[0.2em] hover:scale-105 transition-all shadow-xl bg-[#FF660F] text-white shadow-[#FF660F]/20`}>INQUIRY NOW</button>
               </div>
             </div>
             <div ref={sector2Ref} className={`w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative rounded-[1rem] md:rounded-[2rem] lg:rounded-[3.5rem] overflow-hidden shadow-2xl border border-white/5 transition-all duration-1000 z-10 ${sector2InView ? 'grayscale-0 opacity-100' : 'grayscale opacity-40'}`}>
@@ -567,8 +567,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false }
           </div>
           <div className="max-w-[1600px] mx-auto w-full">
             <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-8 md:mb-16 gap-3 md:gap-5 text-center md:text-left">
-              <div className="space-y-1"><span className={`text-[7px] md:text-[9px] uppercase tracking-[0.5em] font-bold block transition-colors ${isDark ? 'text-white/20' : 'text-black/30'}`}>PORTFOLIO</span><h3 className={`text-xl md:text-2xl lg:text-7xl font-heading font-light tracking-tighter transition-colors ${isDark ? 'text-white' : 'text-black'}`}>Neubau <span className="italic text-[#FF660F]">Synthesis</span></h3></div>
-              <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-[7px] md:text-[9px] uppercase tracking-[0.5em] font-bold transition-colors border-b-2 pb-1 ${isDark ? 'text-white/20 border-white/5 hover:text-white hover:border-white' : 'text-black/30 border-black/5 hover:border-black'}`}>OPEN LIBRARY</button>
+              <div className="space-y-1"><span className={`text-base md:text-base uppercase tracking-[0.5em] font-bold block transition-colors ${isDark ? 'text-white/20' : 'text-black/30'}`}>PORTFOLIO</span><h3 className={`text-xl md:text-2xl lg:text-7xl font-heading font-light tracking-tighter transition-colors ${isDark ? 'text-white' : 'text-black'}`}>Neubau <span className="italic text-[#FF660F]">Synthesis</span></h3></div>
+              <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-sm md:text-sm uppercase tracking-[0.5em] font-bold transition-colors border-b-2 pb-1 ${isDark ? 'text-white/20 border-white/5 hover:text-white hover:border-white' : 'text-black/30 border-black/5 hover:border-black'}`}>OPEN LIBRARY</button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 md:gap-10 lg:gap-16">
               <ArchitectureShowcaseItem
@@ -624,11 +624,11 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false }
                 <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
                   <div className="space-y-4 md:space-y-8 lg:space-y-12 text-center md:text-left">
                     <div>
-                      <span className="text-[9px] md:text-[8px] lg:text-[11px] uppercase tracking-[0.5em] md:tracking-[0.8em] text-[#FF660F] font-black block opacity-80 mb-3 md:mb-6">PILLAR III: GROWTH</span>
+                      <span className="text-base md:text-base lg:text-base uppercase tracking-[0.5em] md:tracking-[0.8em] text-[#FF660F] font-black block opacity-80 mb-3 md:mb-6">PILLAR III: GROWTH</span>
                       <h2 className="text-fluid-h3 font-heading leading-[1] tracking-tighter font-light mb-4 pb-4">Digital Strategy <br /> <span className="italic font-light text-[#FF660F]">for AEC Leaders</span></h2>
                     </div>
                     <p className="text-white/60 text-fluid-p font-light leading-relaxed max-w-md mx-auto md:mx-0">Empowering high-end architectural and heritage projects with data-driven online positioning, increased user trust, and maximized market conversion.</p>
-                    <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-9 md:px-8 lg:px-12 py-3 md:py-4 lg:py-6 border-2 rounded-full text-[10px] md:text-[9px] font-bold tracking-[0.2em] md:tracking-[0.5em] uppercase transition-all shadow-xl border-[#FF660F] text-[#FF660F] hover:bg-[#FF660F] hover:text-white`}>Inquire Strategy</button>
+                    <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-9 md:px-8 lg:px-12 py-3 md:py-4 lg:py-6 border-2 rounded-full text-sm md:text-sm font-bold tracking-[0.2em] md:tracking-[0.5em] uppercase transition-all shadow-xl border-[#FF660F] text-[#FF660F] hover:bg-[#FF660F] hover:text-white`}>Inquire Strategy</button>
                   </div>
                   <div className="grid gap-3 md:gap-6 lg:gap-8">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 lg:gap-8">
@@ -648,7 +648,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false }
         <div id="digital-strategy" ref={tacticalRef} className={`relative min-h-[500px] lg:min-h-screen flex items-center justify-center overflow-hidden mt-12 md:mt-32 border-t border-white/5 ${tacticalInView ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'} transition-all duration-[1500ms]`}>
           {/* Background Image */}
           <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0 bg-[#030303]">
-            <img src="https://i.postimg.cc/TPfPc9MM/Make-the-background-030303-2k-delpmaspu.jpg" alt="Growth Ecosystem" className="absolute inset-0 w-full h-full object-cover md:object-contain object-right translate-x-[35%] md:translate-x-[20%] scale-[2.2] md:scale-100 origin-right md:origin-center" />
+            <img src="https://i.postimg.cc/pL6x3G35/cambia-el-color-202603311520.jpg" alt="Growth Ecosystem" className="absolute inset-0 w-full h-full object-cover md:object-contain translate-x-0 md:translate-x-0 scale-[1.5] md:scale-100 origin-center md:origin-center" />
           </div>
           <div className="absolute inset-0 bg-[#030303]/40"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303] opacity-80"></div>
@@ -658,9 +658,9 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false }
               <div className="max-w-4xl">
                 <div className="inline-flex items-center gap-4 mb-6 md:mb-10">
                   <div className="w-10 md:w-16 h-px bg-[#FF660F]"></div>
-                  <span className="text-[9px] md:text-[11px] uppercase tracking-[0.6em] text-[#FF660F] font-black">Growth Ecosystem</span>
+                  <span className="text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black">Growth Ecosystem</span>
                 </div>
-                <h3 className="text-fluid-h3 font-heading font-light leading-[0.9] tracking-[-0.04em] text-white lowercase mb-6 md:mb-12">
+                <h3 className="text-fluid-h1 font-heading font-light leading-[0.85] tracking-tighter text-white lowercase mb-6 md:mb-12">
                   scale your vision <br />
                   <span className="italic font-light text-[#FF660F]">with digital assets</span>
                 </h3>
@@ -677,15 +677,15 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false }
                 <div className="space-y-12 md:mt-24">
                   <div className="space-y-8">
                     <div className="group">
-                      <h4 className="text-xl md:text-2xl font-heading text-white lowercase tracking-tight group-hover:text-[#FF660F] transition-colors"><span className="text-[#FF660F] font-bold mr-3 tracking-widest text-sm uppercase">PILLAR I</span> conversion web ecosystems</h4>
+                      <h4 className="text-xl md:text-2xl font-heading text-white lowercase tracking-tight group-hover:text-[#FF660F] transition-colors"><span className="text-[#FF660F] font-bold mr-3 tracking-widest text-base uppercase">PILLAR I</span> conversion web ecosystems</h4>
                       <p className="text-base md:text-lg font-light leading-relaxed text-white/50 max-w-xl">Digital stages that increase investor trust and maximize photorealistic conversion.</p>
                     </div>
                     <div className="group pt-4 border-t border-white/5">
-                      <h4 className="text-xl md:text-2xl font-heading text-white lowercase tracking-tight group-hover:text-[#FF660F] transition-colors"><span className="text-[#FF660F] font-bold mr-3 tracking-widest text-sm uppercase">PILLAR II</span> cinematic storytelling</h4>
+                      <h4 className="text-xl md:text-2xl font-heading text-white lowercase tracking-tight group-hover:text-[#FF660F] transition-colors"><span className="text-[#FF660F] font-bold mr-3 tracking-widest text-base uppercase">PILLAR II</span> cinematic storytelling</h4>
                       <p className="text-base md:text-lg font-light leading-relaxed text-white/50 max-w-xl">High-impact video campaigns that increase purchase intent by 97% across AEC sectors.</p>
                     </div>
                     <div className="group pt-4 border-t border-white/5">
-                      <h4 className="text-xl md:text-2xl font-heading text-white lowercase tracking-tight group-hover:text-[#FF660F] transition-colors"><span className="text-[#FF660F] font-bold mr-3 tracking-widest text-sm uppercase">PILLAR III</span> strategic market authority</h4>
+                      <h4 className="text-xl md:text-2xl font-heading text-white lowercase tracking-tight group-hover:text-[#FF660F] transition-colors"><span className="text-[#FF660F] font-bold mr-3 tracking-widest text-base uppercase">PILLAR III</span> strategic market authority</h4>
                       <p className="text-base md:text-lg font-light leading-relaxed text-white/50 max-w-xl">SEO and organic positioning to dominate the AEC sector using heritage search intent.</p>
                     </div>
                   </div>
@@ -700,8 +700,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false }
                       </div>
                     </div>
                     <div>
-                      <span className="text-[10px] md:text-[11px] font-bold tracking-[0.3em] uppercase block text-white group-hover:text-[#FF660F] transition-colors">Inquire Now</span>
-                      <span className="text-[9px] font-light tracking-[0.2em] text-white/40 group-hover:text-white/80 transition-colors">Start strategy</span>
+                      <span className="text-base md:text-base font-bold tracking-[0.3em] uppercase block text-white group-hover:text-[#FF660F] transition-colors">Inquire Now</span>
+                      <span className="text-sm font-light tracking-[0.2em] text-white/40 group-hover:text-white/80 transition-colors">Start strategy</span>
                     </div>
                   </button>
                 </div>

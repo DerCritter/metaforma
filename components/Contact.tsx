@@ -45,7 +45,7 @@ export const Contact: React.FC<ContactProps> = ({ chatHistory, setChatHistory, i
     <section className={`py-12 md:py-20 px-4 md:px-6 max-w-4xl mx-auto h-[calc(100vh-120px)] md:h-[80vh] flex flex-col animate-in slide-in-from-bottom-8 duration-700 transition-colors ${isDark ? 'text-white' : 'text-black'}`}>
       <div className="text-center mb-6 md:mb-12">
         <h2 className="text-2xl md:text-4xl font-heading font-medium mb-2 md:mb-4 italic">Heritage Advisor</h2>
-        <p className={`text-[9px] md:text-sm tracking-widest uppercase transition-colors ${isDark ? 'text-white/40' : 'text-black/40'}`}>Consulting on Space, History & Innovation</p>
+        <p className={`text-base md:text-sm tracking-widest uppercase transition-colors ${isDark ? 'text-white/40' : 'text-black/40'}`}>Consulting on Space, History & Innovation</p>
       </div>
 
       <div className={`flex-grow rounded-[2rem] md:rounded-[2.5rem] flex flex-col overflow-hidden border transition-all duration-700 shadow-xl ${isDark ? 'bg-white/5 border-white/5' : 'bg-white/40 border-black/5'}`}>
@@ -59,7 +59,7 @@ export const Contact: React.FC<ContactProps> = ({ chatHistory, setChatHistory, i
           )}
           {chatHistory.map((msg, idx) => (
             <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-              <div className={`max-w-[85%] md:max-w-[80%] px-5 md:px-8 py-3.5 md:py-5 text-xs md:text-sm leading-relaxed transition-all ${msg.role === 'user'
+              <div className={`max-w-[85%] md:max-w-[80%] px-5 md:px-8 py-3.5 md:py-5 text-base md:text-sm leading-relaxed transition-all ${msg.role === 'user'
                 ? 'bg-[#FF660F] text-white font-semibold rounded-xl md:rounded-2xl rounded-tr-none'
                 : isDark
                   ? 'bg-white/10 text-white/90 border border-white/5 font-light rounded-xl md:rounded-2xl rounded-tl-none shadow-sm'
@@ -83,12 +83,12 @@ export const Contact: React.FC<ContactProps> = ({ chatHistory, setChatHistory, i
             value={chatInput}
             onChange={(e) => setChatInput(e.target.value)}
             placeholder="Ask about monument adaptation..."
-            className={`flex-grow bg-transparent border-b py-3 md:py-4 text-xs md:text-sm focus:outline-none focus:border-white transition-colors placeholder:text-white/40 font-light ${isDark ? 'border-white/10 text-white' : 'border-black/10 text-black'}`}
+            className={`flex-grow bg-transparent border-b py-3 md:py-4 text-base md:text-sm focus:outline-none focus:border-white transition-colors placeholder:text-white/40 font-light ${isDark ? 'border-white/10 text-white' : 'border-black/10 text-black'}`}
           />
           <button
             type="submit"
             disabled={isTyping}
-            className="w-full md:w-auto px-10 h-12 md:h-14 bg-[#FF660F] text-white text-[9px] md:text-[10px] font-bold tracking-[0.3em] uppercase transition-all disabled:opacity-20 rounded-full shadow-lg"
+            className="w-full md:w-auto px-10 h-12 md:h-14 bg-[#FF660F] text-white text-xs md:text-sm font-bold tracking-[0.3em] uppercase transition-all disabled:opacity-20 rounded-full shadow-lg"
           >
             Send
           </button>

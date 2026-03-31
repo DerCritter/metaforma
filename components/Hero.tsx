@@ -60,13 +60,13 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false }) => {
           transforming properties <br />
           <span className={`italic font-light ${isDark ? 'text-[#FF660F]' : 'text-[#FF660F]'}`}>with ai-driven renders</span>
         </h1>
-        <p className={`text-fluid-sm font-medium max-w-lg mx-auto mb-10 md:mb-12 tracking-[0.4em] transition-colors duration-700 ${isDark ? 'text-white/60' : 'text-black/60'}`}>
+        <p className={`text-base md:text-base lg:text-base font-medium tracking-[0.15em] uppercase mb-8 md:mb-12 ${isDark ? 'text-white/40' : 'text-stone-400'}`}>
           Elevate listings. Define spaces.
         </p>
 
         <button
           onClick={onExplore}
-          className={`px-8 md:px-14 py-4 md:py-6 rounded-full text-[10px] md:text-[12px] font-bold tracking-[0.4em] uppercase hover:scale-105 transition-all shadow-2xl ${isDark ? 'bg-[#FF660F] text-white shadow-[#FF660F]/20' : 'bg-[#FF660F] text-white shadow-[#FF660F]/20'}`}
+          className={`px-8 md:px-14 py-4 md:py-6 rounded-full text-sm md:text-sm font-bold tracking-[0.4em] uppercase hover:scale-105 transition-all shadow-2xl ${isDark ? 'bg-[#FF660F] text-white shadow-[#FF660F]/20' : 'bg-[#FF660F] text-white shadow-[#FF660F]/20'}`}
         >
           Start Inquiry
         </button>

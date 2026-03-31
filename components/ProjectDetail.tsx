@@ -24,7 +24,7 @@ const Lightbox: React.FC<{ imageUrl: string; onClose: () => void }> = ({ imageUr
         className="max-w-[95vw] max-h-[85vh] object-contain shadow-[0_0_100px_rgba(0,0,0,0.8)] animate-in zoom-in-95 duration-500"
         onClick={(e) => e.stopPropagation()}
       />
-      <div className="absolute bottom-6 text-white/40 text-[10px] md:text-[10px] uppercase tracking-[0.5em] font-bold">
+      <div className="absolute bottom-6 text-white/40 text-sm md:text-base uppercase tracking-[0.5em] font-bold">
         Tap to close
       </div>
     </div>
@@ -161,27 +161,27 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
                 <div>
                   <div className="flex flex-wrap gap-x-4 mb-8 print:mb-2">
                     {project.tags.map(tag => (
-                      <span key={tag} className="text-[10px] md:text-[10px] uppercase tracking-[0.4em] font-black text-[#FF660F]">{tag}</span>
+                      <span key={tag} className="text-base md:text-sm uppercase tracking-[0.4em] font-black text-[#FF660F]">{tag}</span>
                     ))}
                   </div>
                   <h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-7xl font-heading font-medium text-white mb-8 md:mb-10 leading-[1] md:leading-[0.9] tracking-tighter print:text-black print:text-4xl">
                     {project.title.split(' ')[0]} <br />
                     <span className="italic font-normal text-[#FF660F]">{project.title.split(' ').slice(1).join(' ')}</span>
                   </h2>
-                  <p className="text-white/60 text-sm sm:text-base md:text-xl leading-relaxed font-light print:text-black/80 print:text-sm">
+                  <p className="text-white/60 text-base sm:text-base md:text-xl leading-relaxed font-light print:text-black/80 print:text-base">
                     {project.description}
                   </p>
                 </div>
 
                 <div className="space-y-6 pt-10 border-t border-white/10 print:border-black/10 print:pt-4">
-                  <h4 className="text-[9px] md:text-[11px] uppercase tracking-[0.6em] text-white/30 font-bold print:text-black/30">INSIGHTS</h4>
+                  <h4 className="text-sm md:text-base uppercase tracking-[0.6em] text-white/30 font-bold print:text-black/30">INSIGHTS</h4>
                   <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
                     <div className="flex flex-col gap-1 py-4 border-b border-white/10 print:border-black/5">
-                      <span className="text-[10px] text-white/40 uppercase tracking-[0.2em] print:text-black/40">Type</span>
+                      <span className="text-sm text-white/40 uppercase tracking-[0.2em] print:text-black/40">Type</span>
                       <span className="text-base md:text-lg text-white font-light print:text-black">Heritage Reuse</span>
                     </div>
                     <div className="flex flex-col gap-1 py-4 border-b border-white/10 print:border-black/5">
-                      <span className="text-[10px] text-white/40 uppercase tracking-[0.2em] print:text-black/40">Location</span>
+                      <span className="text-sm text-white/40 uppercase tracking-[0.2em] print:text-black/40">Location</span>
                       <span className="text-base md:text-lg text-white font-light print:text-black">{project.location || 'Germany'}</span>
                     </div>
                   </div>
@@ -191,7 +191,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
               <div className="lg:col-span-7 print:col-span-12 print:mt-12">
                 {project.beforeAfter ? (
                   <div className="space-y-6 md:space-y-10">
-                    <h3 className="text-[9px] md:text-[11px] uppercase tracking-[0.6em] text-[#FF660F] font-black no-print">SYNTHESIS COMPARISON</h3>
+                    <h3 className="text-sm md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black no-print">SYNTHESIS COMPARISON</h3>
 
                     {/* Simplified Comparison for Print */}
                     <div className="hidden print:grid grid-cols-2 gap-4">
@@ -213,8 +213,8 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
                       <div className="absolute inset-y-0 w-[1.5px] bg-[#FF660F] z-10" style={{ left: `${sliderPos}%`, boxShadow: '0 0 15px rgba(255,101,44,0.6)' }}>
                         <div className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-12 bg-white/40 rounded-full blur-[1px]"></div>
                       </div>
-                      <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 px-4 sm:px-6 py-2 bg-[#0a0a0b]/40 backdrop-blur-[12px] rounded-full text-[9px] sm:text-[10px] text-white uppercase tracking-widest border border-white/10 z-20">BEFORE</div>
-                      <div className="absolute bottom-6 sm:bottom-10 right-6 sm:right-10 px-4 sm:px-6 py-2 bg-[#FF660F]/80 backdrop-blur-[12px] rounded-full text-[9px] sm:text-[10px] text-white uppercase tracking-widest border border-white/10 z-20">AFTER</div>
+                      <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 px-4 sm:px-6 py-2 bg-[#0a0a0b]/40 backdrop-blur-[12px] rounded-full text-xs sm:text-xs text-white uppercase tracking-widest border border-white/10 z-20">BEFORE</div>
+                      <div className="absolute bottom-6 sm:bottom-10 right-6 sm:right-10 px-4 sm:px-6 py-2 bg-[#FF660F]/80 backdrop-blur-[12px] rounded-full text-xs sm:text-xs text-white uppercase tracking-widest border border-white/10 z-20">AFTER</div>
                     </div>
                   </div>
                 ) : (
@@ -228,7 +228,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                       <div className="absolute bottom-12 left-12">
-                        <span className="text-[8px] md:text-[10px] uppercase tracking-[0.4em] font-black text-[#FF660F] block mb-2">CINEMATIC SYNTHESIS</span>
+                        <span className="text-base md:text-base uppercase tracking-[0.4em] font-black text-[#FF660F] block mb-2">CINEMATIC SYNTHESIS</span>
                         <h4 className="text-xl md:text-3xl font-heading text-white">{project.title}</h4>
                       </div>
                     </div>
@@ -239,15 +239,15 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
 
             {project.images && project.images.length > 0 && (
               <div className="space-y-8 md:space-y-16 print:break-before-page print:mt-12">
-                <h3 className="text-[9px] md:text-[11px] uppercase tracking-[0.6em] text-[#FF660F] font-black print:text-black">IMMERSIVE VISION</h3>
+                <h3 className="text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black print:text-black">IMMERSIVE VISION</h3>
                 <ProjectSlideshow images={project.images} onImageClick={setLightboxImage} />
               </div>
             )}
 
             <div className="space-y-12 md:space-y-24 print:space-y-12 print:mt-12">
               <div className="border-b border-white/10 pb-8 print:border-black/10">
-                <h3 className="text-[10px] md:text-[11px] uppercase tracking-[0.6em] text-[#FF660F] font-black mb-4">GALLERY</h3>
-                <p className="text-white/50 text-xs md:text-sm max-w-xl font-light tracking-widest leading-relaxed print:text-black/60">
+                <h3 className="text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black mb-4">GALLERY</h3>
+                <p className="text-white/50 text-base md:text-base max-w-xl font-light tracking-widest leading-relaxed print:text-black/60">
                   Perspectives showcasing the digital synthesis of heritage preservation and high-performance adaptation.
                 </p>
               </div>
@@ -275,7 +275,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
               <h4 className="text-3xl md:text-5xl font-heading text-white italic font-light tracking-tight">Return to Portfolio</h4>
               <button
                 onClick={onClose}
-                className="px-10 md:px-20 py-5 md:py-8 bg-[#FF660F] text-white rounded-full text-[10px] md:text-[12px] font-bold tracking-[0.4em] md:tracking-[0.8em] uppercase hover:scale-105 transition-all shadow-2xl shadow-[#FF660F]/20"
+                className="px-10 md:px-20 py-5 md:py-8 bg-[#FF660F] text-white rounded-full text-[11px] md:text-[11px] font-bold tracking-[0.4em] md:tracking-[0.8em] uppercase hover:scale-105 transition-all shadow-2xl shadow-[#FF660F]/20"
               >
                 Close Detail
               </button>

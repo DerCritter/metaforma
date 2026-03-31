@@ -40,8 +40,8 @@ const ProcessStep: React.FC<{ step: typeof steps[0], isDark: boolean }> = ({ ste
         {step.num}
       </span>
       <div className="relative z-10 pt-6">
-        <h3 className={`text-[11px] font-bold tracking-[0.4em] uppercase mb-6 font-heading transition-colors ${isDark ? 'text-white' : 'text-black'}`}>{step.title}</h3>
-        <p className={`font-light text-[14px] leading-relaxed transition-colors ${isDark ? 'text-white/40' : 'text-stone-500'}`}>{step.desc}</p>
+        <h3 className={`text-base md:text-base font-bold tracking-[0.4em] uppercase mb-6 font-heading transition-colors ${isDark ? 'text-white' : 'text-black'}`}>{step.title}</h3>
+        <p className={`font-light text-base leading-relaxed transition-colors ${isDark ? 'text-white/40' : 'text-stone-500'}`}>{step.desc}</p>
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
               <button
                 key={nav.id}
                 onClick={() => handleNavClick(nav.id)}
-                className={`text-[10px] md:text-[11px] tracking-[0.3em] uppercase transition-all
+                className={`text-base md:text-base tracking-[0.3em] uppercase transition-all
                   ${activeSection === nav.id
                     ? (isDark ? 'text-white font-bold underline underline-offset-[12px] decoration-2' : 'text-black font-bold underline underline-offset-[12px] decoration-2')
                     : isDark ? 'text-white/60 hover:text-white' : 'text-black/60 hover:text-black'}`}
@@ -59,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
             ))}
             <button
               onClick={() => handleNavClick(AppSection.CONTACT_FORM)}
-              className={`ml-2 md:ml-4 px-5 md:px-7 py-2 md:py-2.5 rounded-full font-bold text-[9px] md:text-[10px] tracking-[0.2em] uppercase transition-all shadow-lg bg-[#FF660F] text-white shadow-[#FF660F]/20 hover:scale-105`}
+              className={`ml-2 md:ml-4 px-5 md:px-7 py-2.5 rounded-full font-bold text-sm md:text-sm tracking-[0.2em] uppercase transition-all shadow-lg bg-[#FF660F] text-white shadow-[#FF660F]/20 hover:scale-105`}
             >
               Contact Now
             </button>
@@ -79,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
 
           {/* Mobile Menu Trigger */}
           <button
-            className={`lg:hidden p-1.5 md:p-2 ${isDark ? 'text-white' : 'text-black'}`}
+            className={`lg:hidden relative z-50 p-1.5 md:p-2 transition-colors duration-500 ${isMenuOpen ? 'text-white' : isDark ? 'text-white' : 'text-black'}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
@@ -92,7 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 top-[72px] md:top-20 bg-[#030303]/95 backdrop-blur-[12px] z-40 lg:hidden overflow-y-auto transition-all duration-500 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+      <div className={`fixed inset-0 top-0 bg-[#030303]/95 backdrop-blur-[12px] z-40 lg:hidden overflow-y-auto transition-all duration-700 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
         <div className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] gap-8 p-6 pb-24 text-center">
           <button
             onClick={() => handleNavClick(AppSection.HOME)}
@@ -120,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
           </button>
           <button
             onClick={() => handleNavClick(AppSection.CONTACT_FORM)}
-            className={`px-8 py-4 rounded-full font-bold text-[10px] tracking-[0.2em] uppercase mt-4 shadow-lg bg-[#FF660F] text-white shadow-[#FF660F]/20 hover:scale-105`}
+            className={`px-8 py-4 rounded-full font-bold text-sm tracking-[0.2em] uppercase mt-4 shadow-lg bg-[#FF660F] text-white shadow-[#FF660F]/20 hover:scale-105`}
           >
             Contact Now
           </button>

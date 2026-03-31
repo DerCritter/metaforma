@@ -134,7 +134,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ category, onSelectProject,
     <section className={`py-16 md:py-24 lg:py-48 px-6 md:px-10 lg:px-24 max-w-[1700px] mx-auto animate-in fade-in slide-in-from-bottom-12 duration-1000 transition-colors ${isDark ? 'text-white' : 'text-black'}`}>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-24 lg:mb-32 gap-6 md:gap-10">
         <div className="space-y-3 md:space-y-4 lg:space-y-6">
-          <span className={`text-[8px] md:text-[10px] lg:text-[11px] uppercase tracking-[0.5em] md:tracking-[0.8em] font-bold block transition-colors ${isDark ? 'text-white/20' : 'text-black/30'}`}>COLLECTION IV: SYNTHESIS</span>
+          <span className={`text-base md:text-base lg:text-base uppercase tracking-[0.5em] md:tracking-[0.8em] font-bold block transition-colors ${isDark ? 'text-white/20' : 'text-black/30'}`}>PORTFOLIO</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-heading font-light tracking-tighter leading-[1] md:leading-[0.9]">
             Adaptive AI <br />
             <span className={`italic ${isDark ? 'text-white' : 'text-black'}`}>Architecture</span>
@@ -146,14 +146,14 @@ export const Portfolio: React.FC<PortfolioProps> = ({ category, onSelectProject,
           <div className={`p-1 rounded-full border transition-all duration-500 overflow-hidden flex ${isDark ? 'bg-white/5 border-white/10' : 'bg-[#0a0a0b]/5 border-black/5'}`}>
             <button
               onClick={() => setViewMode('cards')}
-              className={`px-5 md:px-7 py-2.5 rounded-full text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-500 flex items-center gap-2 ${viewMode === 'cards' ? ('bg-[#FF660F] text-white shadow-lg') : isDark ? 'text-white/40 hover:text-white' : 'text-black/40 hover:text-black'}`}
+              className={`px-5 md:px-7 py-2.5 rounded-full text-sm md:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-500 flex items-center gap-2 ${viewMode === 'cards' ? ('bg-[#FF660F] text-white shadow-lg') : isDark ? 'text-white/40 hover:text-white' : 'text-black/40 hover:text-black'}`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
               Standard
             </button>
             <button
               onClick={() => setViewMode('cloud')}
-              className={`px-5 md:px-7 py-2.5 rounded-full text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-500 flex items-center gap-2 ${viewMode === 'cloud' ? ('bg-[#FF660F] text-white shadow-lg') : isDark ? 'text-white/40 hover:text-white' : 'text-black/40 hover:text-black'}`}
+              className={`px-5 md:px-7 py-2.5 rounded-full text-sm md:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-500 flex items-center gap-2 ${viewMode === 'cloud' ? ('bg-[#FF660F] text-white shadow-lg') : isDark ? 'text-white/40 hover:text-white' : 'text-black/40 hover:text-black'}`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
               Grid Cloud
@@ -161,7 +161,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ category, onSelectProject,
           </div>
 
           <div className="max-w-xs md:max-w-sm lg:max-w-md md:text-right">
-            <p className={`text-[10px] md:text-xs lg:text-sm font-light leading-relaxed tracking-wide transition-colors ${isDark ? 'text-white/40' : 'text-stone-500'}`}>
+            <p className={`text-base md:text-base lg:text-base font-light leading-relaxed tracking-wide transition-colors ${isDark ? 'text-white/40' : 'text-stone-500'}`}>
               {viewMode === 'cards'
                 ? "A specialized collection focusing on the intersection of heritage preservation and generative photorealism."
                 : "A cinematic cloud of project perspectives. Tap any visual to immerse yourself in the detailed project synthesis."
@@ -196,8 +196,8 @@ export const Portfolio: React.FC<PortfolioProps> = ({ category, onSelectProject,
                 className="w-full h-auto object-cover transition-all duration-700 group-hover:blur-[2px]"
               />
               <div className="absolute inset-0 bg-[#0a0a0b]/60 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 md:p-8 backdrop-blur-[4px]">
-                <span className={`text-[8px] md:text-[10px] uppercase tracking-[0.4em] font-black mb-2 ${isDark ? 'text-white' : 'text-black'}`}>{item.project.tags[0]}</span>
-                <h4 className="text-sm md:text-lg font-heading text-white font-medium leading-none">{item.project.title}</h4>
+                <span className={`text-base md:text-base uppercase tracking-[0.4em] font-black mb-2 ${isDark ? 'text-white' : 'text-black'}`}>{item.project.tags[0]}</span>
+                <h4 className="text-base md:text-lg font-heading text-white font-medium leading-none">{item.project.title}</h4>
               </div>
             </div>
           ))}
