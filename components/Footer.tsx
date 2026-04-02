@@ -36,13 +36,13 @@ export const Footer: React.FC<FooterProps> = ({ setActiveSection, isDark = false
         <div className="space-y-4">
           <h5 className={`text-base md:text-base font-bold tracking-[0.3em] uppercase ${isDark ? 'text-white' : 'text-black'}`}>{t.imprint}</h5>
           <div className={`text-base md:text-base font-light leading-relaxed space-y-2 ${isDark ? 'text-white/40' : 'text-stone-500'}`}>
-            <p><span className="font-bold opacity-100 text-white">Brand / Business Name:</span> Metaforma</p>
-            <p><span className="font-bold opacity-100 text-white">Contact / Business Address:</span><br />
+            <p><span className="font-bold opacity-100 text-white">{t.imp_brand}</span> Metaforma</p>
+            <p><span className="font-bold opacity-100 text-white">{t.imp_contact}</span><br />
               Frank-Zappa-Straße 161<br />
               12681 Berlin, Germany<br />
               3rd floor</p>
-            <p><span className="font-bold opacity-100 text-white">Email:</span> info@metaforma.art</p>
-            <p><span className="font-bold opacity-100 text-white">Steuernummer:</span> 14/237/02651</p>
+            <p><span className="font-bold opacity-100 text-white">{t.imp_email}</span> info@metaforma.art</p>
+            <p><span className="font-bold opacity-100 text-white">{t.imp_tax}</span> 14/237/02651</p>
           </div>
         </div>
       </div>

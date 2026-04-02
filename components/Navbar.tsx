@@ -42,9 +42,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
           <Logo isDark={isDark} className="h-10 md:h-12 lg:h-14 transition-all duration-500" />
         </div>
 
-        <div className="flex items-center gap-3 md:gap-8">
+        <div className="flex items-center gap-3 lg:gap-5 xl:gap-8">
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-8">
             {[
               { id: AppSection.SERVICES, label: t.services },
               { id: AppSection.PHILOSOPHY, label: t.philosophy },
@@ -53,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
               <button
                 key={nav.id}
                 onClick={() => handleNavClick(nav.id)}
-                className={`text-base md:text-base tracking-[0.3em] uppercase transition-all
+                className={`text-xs xl:text-base tracking-[0.15em] xl:tracking-[0.3em] uppercase transition-all
                   ${activeSection === nav.id
                     ? (isDark ? 'text-white font-bold underline underline-offset-[12px] decoration-2' : 'text-black font-bold underline underline-offset-[12px] decoration-2')
                     : isDark ? 'text-white/60 hover:text-white' : 'text-black/60 hover:text-black'}`}
@@ -63,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
             ))}
             <button
               onClick={() => handleNavClick(AppSection.CONTACT_FORM)}
-              className={`ml-2 md:ml-4 px-5 md:px-7 py-2.5 rounded-full font-bold text-sm md:text-sm tracking-[0.2em] uppercase transition-all shadow-lg bg-[#FF660F] text-white shadow-[#FF660F]/20 hover:scale-105`}
+              className={`ml-1 xl:ml-4 px-4 xl:px-7 py-2.5 rounded-full font-bold text-xs xl:text-sm tracking-[0.15em] xl:tracking-[0.2em] uppercase transition-all shadow-lg bg-[#FF660F] text-white shadow-[#FF660F]/20 hover:scale-105`}
             >
               {t.contact}
             </button>

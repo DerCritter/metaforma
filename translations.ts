@@ -85,6 +85,10 @@ export interface LanguageDictionary {
     mission: string;
     pillars: string;
     imprint: string;
+    imp_brand: string;
+    imp_contact: string;
+    imp_email: string;
+    imp_tax: string;
   };
   chat: {
     title: string;
@@ -268,7 +272,11 @@ export const translations: Record<Language, LanguageDictionary> = {
     footer: {
       mission: 'A studio dedicated to the preservation of physical heritage through advanced AI synthesis and digital architectural photorealism.',
       pillars: 'PILLARS',
-      imprint: 'IMPRINT / LEGAL NOTICE'
+      imprint: 'IMPRINT / LEGAL NOTICE',
+      imp_brand: 'Brand / Business Name:',
+      imp_contact: 'Contact / Business Address:',
+      imp_email: 'Email:',
+      imp_tax: 'Tax ID:'
     },
     chat: {
       title: 'Heritage Advisor',
@@ -411,7 +419,7 @@ export const translations: Record<Language, LanguageDictionary> = {
       neubau_showcase_title2: 'Synthese',
       philosophy_label: 'die philosophie',
       philosophy_title1: 'das lebendige',
-      philosophy_title2: 'element',
+      philosophy_title2: 'Element',
       philosophy_p1: 'Unsere Philosophie wurzelt in der emotionalen Resonanz eines Raumes. Wir beherrschen den Dialog zwischen Licht, Textur und kinoreifer Tiefe, um das „lebendige Element“ einzufangen.',
       philosophy_p2: 'Von der Restaurierung historischer Wahrzeichen bis hin zur Entwicklung zeitgenössischer Visionen laden wir Investoren ein, die Zukunft schon heute zu bewohnen. Wir schließen die Lücke zwischen technischen Entwürfen und dem Anspruch an einen gehobenen Lebensstil. Ob Erbe oder Neubau, wir stellen sicher, dass ',
       philosophy_p2_highlight: 'jedes Projekt gelebt wird, bevor es gebaut wird.',
@@ -450,7 +458,11 @@ export const translations: Record<Language, LanguageDictionary> = {
     footer: {
       mission: 'Ein Studio, das sich der Erhaltung des physischen Erbes durch fortschrittliche KI-Synthese und digitalen Architektur-Fotorealismus widmet.',
       pillars: 'PFEILER',
-      imprint: 'IMPRESSUM / RECHTLICHER HINWEIS'
+      imprint: 'IMPRESSUM / RECHTLICHER HINWEIS',
+      imp_brand: 'Marke / Unternehmensname:',
+      imp_contact: 'Kontakt / Geschäftsadresse:',
+      imp_email: 'E-Mail:',
+      imp_tax: 'Steuernummer:'
     },
     chat: {
       title: 'Denkmal-Berater',
