@@ -495,11 +495,13 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
               <div className="max-w-4xl">
                 <div className="inline-flex items-center gap-4 mb-6 md:mb-10">
                   <div className="w-10 md:w-16 h-px bg-[#FF660F]"></div>
-                  <span className="text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black">{t.philosophy_label}</span>
+                  <span className={`text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black`}>
+                    {t.philosophy_label}
+                  </span>
                 </div>
-                <h3 className="text-fluid-h1 font-heading leading-[0.85] tracking-tighter text-white lowercase mb-6 md:mb-12">
+                <h3 className={`text-fluid-h1 font-heading font-light leading-[0.85] tracking-tighter transition-colors ${isDark ? 'text-white' : 'text-black'}`}>
                   {t.philosophy_title1} <br />
-                  <span className="italic font-normal text-[#FF660F]">{t.philosophy_title2}</span>
+                  <span className="italic font-light text-[#FF660F]">{t.philosophy_title2}</span>
                 </h3>
               </div>
 
@@ -666,7 +668,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                   <div className="w-10 md:w-16 h-px bg-[#FF660F]"></div>
                   <span className="text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black">{t.growth_label}</span>
                 </div>
-                <h3 className="text-fluid-h1 font-heading font-light leading-[0.85] tracking-tighter text-white lowercase mb-6 md:mb-12">
+                <h3 className="text-fluid-h1 font-heading font-light leading-[0.85] tracking-tighter text-white mb-6 md:mb-12">
                   {t.growth_title1} <br />
                   <span className="italic font-light text-[#FF660F]">{t.growth_title2}</span>
                 </h3>
@@ -684,15 +686,15 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 <div className="space-y-12 md:mt-24">
                   <div className="space-y-8">
                     <div className="group">
-                      <h4 className="text-xl md:text-2xl font-heading text-white lowercase tracking-tight group-hover:text-[#FF660F] transition-colors"><span className="text-[#FF660F] font-bold mr-3 tracking-widest text-base uppercase">PILLAR I</span> {t.growth_pillar1_title}</h4>
+                      <h4 className="text-xl md:text-2xl font-heading text-white tracking-tight group-hover:text-[#FF660F] transition-colors"><span className="text-[#FF660F] font-bold mr-3 tracking-widest text-base uppercase">PILLAR I</span> {t.growth_pillar1_title}</h4>
                       <p className="text-base md:text-lg font-light leading-relaxed text-white/50 max-w-xl">{t.growth_pillar1_desc}</p>
                     </div>
                     <div className="group pt-4 border-t border-white/5">
-                      <h4 className="text-xl md:text-2xl font-heading text-white lowercase tracking-tight group-hover:text-[#FF660F] transition-colors"><span className="text-[#FF660F] font-bold mr-3 tracking-widest text-base uppercase">PILLAR II</span> {t.growth_pillar2_title}</h4>
+                      <h4 className="text-xl md:text-2xl font-heading text-white tracking-tight group-hover:text-[#FF660F] transition-colors"><span className="text-[#FF660F] font-bold mr-3 tracking-widest text-base uppercase">PILLAR II</span> {t.growth_pillar2_title}</h4>
                       <p className="text-base md:text-lg font-light leading-relaxed text-white/50 max-w-xl">{t.growth_pillar2_desc}</p>
                     </div>
                     <div className="group pt-4 border-t border-white/5">
-                      <h4 className="text-xl md:text-2xl font-heading text-white lowercase tracking-tight group-hover:text-[#FF660F] transition-colors"><span className="text-[#FF660F] font-bold mr-3 tracking-widest text-base uppercase">PILLAR III</span> {t.growth_pillar3_title}</h4>
+                      <h4 className="text-xl md:text-2xl font-heading text-white tracking-tight group-hover:text-[#FF660F] transition-colors"><span className="text-[#FF660F] font-bold mr-3 tracking-widest text-base uppercase">PILLAR III</span> {t.growth_pillar3_title}</h4>
                       <p className="text-base md:text-lg font-light leading-relaxed text-white/50 max-w-xl">{t.growth_pillar3_desc}</p>
                     </div>
                   </div>
