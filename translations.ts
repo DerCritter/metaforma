@@ -383,9 +383,9 @@ export const translations: Record<Language, LanguageDictionary> = {
       contact: 'Jetzt Kontaktieren'
     },
     hero: {
-      title_part1: 'Immobilien transformieren',
+      title_part1: 'Immobilien Transformieren',
       title_part2: 'mit KI-gestützten Renderings',
-      subtitle: 'Exzellente Präsentation. Räume definieren.',
+      subtitle: 'Exzellente Präsentation. Räume Definieren.',
       cta: 'Anfrage Starten'
     },
     services: {
@@ -399,10 +399,10 @@ export const translations: Record<Language, LanguageDictionary> = {
       sector2_desc: 'Von High-End-Wohnkomplexen bis hin zu modernsten Gewerbeflächen. Wir bieten technische Präzision und ästhetische Perfektion, um die Marktführerschaft vom ersten Entwurf an sicherzustellen.',
       pillar3_label: 'PFEILER III: WACHSTUM',
       pillar3_title1: 'Digitale Strategie',
-      pillar3_title2: 'für AEC-Führer',
+      pillar3_title2: 'für AEC-Experten',
       pillar3_desc: 'Stärkung von High-End-Architektur- und Kulturerbeprojekten durch datengestützte Online-Positionierung, erhöhtes Nutzervertrauen und maximale Marktkonvertierung.',
       growth_label: 'Wachstums-Ökosystem',
-      growth_title1: 'Vision skalieren',
+      growth_title1: 'Vision Skalieren',
       growth_title2: 'mit digitalen Assets',
       growth_desc: 'Wir bieten den technischen Rahmen, um Ihre Kulturerbeprojekte auf jeder Plattform mit maximalem Engagement zu präsentieren.',
       growth_pillar1_title: 'Konvertierungs-Web-Ökosysteme',
@@ -521,7 +521,7 @@ export const translations: Record<Language, LanguageDictionary> = {
       label_get_in_touch: 'KONTAKT AUFNEHMEN',
       title_start: 'Starten Sie Ihre',
       title_highlight: 'Synthese.',
-      description: 'Ansässig in Berlin, Deutschland. Wir unterstützen visionäre Immobilienführer weltweit mit KI-nativer Architektur und Denkmal-Transformation.',
+      description: 'Ansässig in Berlin, Deutschland. Wir unterstützen visionäre Immobilienexperten weltweit mit KI-nativer Architektur und Denkmal-Transformation.',
       hq_label: 'HAUPTSITZ BERLIN',
       hq_desc: 'Berlin, Deutschland | Gegr. 2026',
       field_name: 'Ihr Name',
