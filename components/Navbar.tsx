@@ -114,25 +114,25 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 top-0 bg-[#030303]/95 backdrop-blur-[12px] z-40 lg:hidden overflow-y-auto transition-all duration-700 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
-        <div className="flex flex-col items-center justify-center min-h-screen gap-8 p-6 pb-24 text-center">
+      <div className={`fixed inset-0 w-full h-screen bg-[#030303] z-[100] lg:hidden overflow-hidden transition-all duration-700 ease-in-out ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'}`}>
+        <div className="flex flex-col items-center justify-center h-full gap-8 p-6 text-center">
           {[
             { id: AppSection.HOME, label: t.home },
             { id: AppSection.SERVICES, label: t.services },
             { id: AppSection.PHILOSOPHY, label: t.philosophy },
             { id: AppSection.ARCHITECTURE, label: t.portfolio },
-          ].map((nav) => (
+          ].map((nav, idx) => (
             <button
               key={nav.id}
               onClick={() => handleNavClick(nav.id)}
-              className="text-2xl md:text-3xl font-heading text-white tracking-widest uppercase hover:text-[#FF660F] transition-colors"
+              className={`text-3xl font-heading text-white tracking-widest uppercase hover:text-[#FF660F] transition-all duration-500 delay-[${idx * 100}ms] ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
             >
               {nav.label}
             </button>
           ))}
           <button
             onClick={() => handleNavClick(AppSection.CONTACT_FORM)}
-            className={`px-10 py-5 rounded-full font-bold text-sm tracking-[0.2em] uppercase mt-6 shadow-lg bg-[#FF660F] text-white shadow-[#FF660F]/20 hover:scale-105`}
+            className={`px-12 py-6 rounded-full font-bold text-sm tracking-[0.3em] uppercase mt-10 shadow-2xl bg-[#FF660F] text-white shadow-[#FF660F]/40 hover:scale-110 transition-all duration-700 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
           >
             {t.contact}
           </button>
