@@ -42,9 +42,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
           <Logo isDark={isDark} className="h-10 md:h-12 lg:h-14 transition-all duration-500" />
         </div>
 
-        <div className="flex items-center gap-3 lg:gap-5 xl:gap-8">
+        <div className="flex items-center gap-3 xl:gap-8">
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-4 xl:gap-8">
+          <div className="hidden xl:flex items-center gap-4 xl:gap-8">
             {[
               { id: AppSection.SERVICES, label: t.services },
               { id: AppSection.PHILOSOPHY, label: t.philosophy },
@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
 
             {/* Mobile Menu Trigger */}
             <button
-              className={`lg:hidden relative z-50 p-1.5 md:p-2 transition-colors duration-500 ${isMenuOpen ? 'text-white' : isDark ? 'text-white' : 'text-black'}`}
+              className={`xl:hidden relative z-50 p-1.5 md:p-2 transition-colors duration-500 ${isMenuOpen ? 'text-white' : isDark ? 'text-white' : 'text-black'}`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
@@ -114,7 +114,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 top-0 bg-[#030303]/95 backdrop-blur-[12px] z-40 lg:hidden overflow-y-auto transition-all duration-700 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
+      <div className={`fixed inset-0 top-0 bg-[#030303]/95 backdrop-blur-[12px] z-40 xl:hidden overflow-y-auto transition-all duration-700 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
         <div className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] gap-8 p-6 pb-24 text-center">
           {[
             { id: AppSection.HOME, label: t.home },
