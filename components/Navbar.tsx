@@ -42,9 +42,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
           <Logo isDark={isDark} className="h-10 md:h-12 lg:h-14 transition-all duration-500" />
         </div>
 
-        <div className="flex items-center gap-3 xl:gap-5 2xl:gap-8">
+        <div className="flex items-center gap-3 lg:gap-5 xl:gap-8">
           {/* Desktop Nav */}
-          <div className="hidden xl:flex items-center gap-4 xl:gap-5 2xl:gap-8">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-8">
             {[
               { id: AppSection.SERVICES, label: t.services },
               { id: AppSection.PHILOSOPHY, label: t.philosophy },
@@ -53,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
               <button
                 key={nav.id}
                 onClick={() => handleNavClick(nav.id)}
-                className={`text-xs xl:text-xs 2xl:text-sm tracking-widest 2xl:tracking-[0.2em] uppercase transition-all
+                className={`text-[10px] xl:text-xs 2xl:text-sm tracking-widest xl:tracking-[0.2em] uppercase transition-all
                   ${activeSection === nav.id
                     ? (isDark ? 'text-white font-bold underline underline-offset-[12px] decoration-2' : 'text-black font-bold underline underline-offset-[12px] decoration-2')
                     : isDark ? 'text-white/60 hover:text-white' : 'text-black/60 hover:text-black'}`}
@@ -63,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
             ))}
             <button
               onClick={() => handleNavClick(AppSection.CONTACT_FORM)}
-              className={`ml-1 xl:ml-3 2xl:ml-4 px-4 xl:px-5 2xl:px-7 py-2.5 rounded-full font-bold text-xs xl:text-xs 2xl:text-sm tracking-widest 2xl:tracking-[0.2em] uppercase transition-all shadow-lg bg-[#FF660F] text-white shadow-[#FF660F]/20 hover:scale-105`}
+              className={`ml-1 xl:ml-4 px-4 xl:px-7 py-2.5 rounded-full font-bold text-[10px] xl:text-xs 2xl:text-sm tracking-widest xl:tracking-[0.2em] uppercase transition-all shadow-lg bg-[#FF660F] text-white shadow-[#FF660F]/20 hover:scale-105`}
             >
               {t.contact}
             </button>
@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
 
             {/* Mobile Menu Trigger */}
             <button
-              className={`xl:hidden relative z-50 p-1.5 md:p-2 transition-colors duration-500 ${isMenuOpen ? 'text-white' : isDark ? 'text-white' : 'text-black'}`}
+              className={`lg:hidden relative z-50 p-1.5 md:p-2 transition-colors duration-500 ${isMenuOpen ? 'text-white' : isDark ? 'text-white' : 'text-black'}`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
@@ -114,8 +114,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 top-0 bg-[#030303]/95 backdrop-blur-[12px] z-40 xl:hidden overflow-y-auto transition-all duration-700 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
-        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] gap-8 p-6 pb-24 text-center">
+      <div className={`fixed inset-0 top-0 bg-[#030303]/95 backdrop-blur-[12px] z-40 lg:hidden overflow-y-auto transition-all duration-700 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
+        <div className="flex flex-col items-center justify-center min-h-screen gap-8 p-6 pb-24 text-center">
           {[
             { id: AppSection.HOME, label: t.home },
             { id: AppSection.SERVICES, label: t.services },
@@ -125,14 +125,14 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
             <button
               key={nav.id}
               onClick={() => handleNavClick(nav.id)}
-              className="text-xl md:text-2xl font-heading text-white tracking-widest uppercase"
+              className="text-2xl md:text-3xl font-heading text-white tracking-widest uppercase hover:text-[#FF660F] transition-colors"
             >
               {nav.label}
             </button>
           ))}
           <button
             onClick={() => handleNavClick(AppSection.CONTACT_FORM)}
-            className={`px-8 py-4 rounded-full font-bold text-sm tracking-[0.2em] uppercase mt-4 shadow-lg bg-[#FF660F] text-white shadow-[#FF660F]/20 hover:scale-105`}
+            className={`px-10 py-5 rounded-full font-bold text-sm tracking-[0.2em] uppercase mt-6 shadow-lg bg-[#FF660F] text-white shadow-[#FF660F]/20 hover:scale-105`}
           >
             {t.contact}
           </button>
