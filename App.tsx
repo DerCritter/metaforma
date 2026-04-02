@@ -19,7 +19,12 @@ const App: React.FC = () => {
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
   // Starting the website in dark mode as requested
   const [isDark, setIsDark] = useState(true);
-  const [language, setLanguage] = useState<Language>('en');
+  
+  // Detect language from browser
+  const [language, setLanguage] = useState<Language>(() => {
+    const browserLang = typeof window !== 'undefined' ? (window.navigator as any).language || (window.navigator as any).userLanguage : 'en';
+    return browserLang.toLowerCase().startsWith('de') ? 'de' : 'en';
+  });
 
   const handleSelectProject = (projectId: string) => {
     const project = getArchitectureProjects(language).find(p => p.id === projectId);
