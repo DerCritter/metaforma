@@ -1,13 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+import { Language, translations } from '../translations';
+
 interface HeroProps {
   onExplore: () => void;
   isDark?: boolean;
+  language: Language;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false }) => {
+export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language }) => {
   const [isInView, setIsInView] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
+  const t = translations[language].hero;
 
   const [activeVideo, setActiveVideo] = useState(0);
   const videos = [
@@ -57,18 +61,18 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false }) => {
 
       <div className="relative z-10 max-w-6xl px-4 flex flex-col items-center">
         <h1 className={`text-fluid-h3 font-heading font-light leading-[0.9] tracking-[-0.04em] lowercase mb-6 md:mb-8 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
-          transforming properties <br />
-          <span className={`italic font-light ${isDark ? 'text-[#FF660F]' : 'text-[#FF660F]'}`}>with ai-driven renders</span>
+          {t.title_part1} <br />
+          <span className={`italic font-light ${isDark ? 'text-[#FF660F]' : 'text-[#FF660F]'}`}>{t.title_part2}</span>
         </h1>
         <p className={`text-base md:text-base lg:text-base font-medium tracking-[0.15em] uppercase mb-8 md:mb-12 ${isDark ? 'text-white/40' : 'text-stone-400'}`}>
-          Elevate listings. Define spaces.
+          {t.subtitle}
         </p>
 
         <button
           onClick={onExplore}
           className={`px-8 md:px-14 py-4 md:py-6 rounded-full text-sm md:text-sm font-bold tracking-[0.4em] uppercase hover:scale-105 transition-all shadow-2xl ${isDark ? 'bg-[#FF660F] text-white shadow-[#FF660F]/20' : 'bg-[#FF660F] text-white shadow-[#FF660F]/20'}`}
         >
-          Start Inquiry
+          {t.cta}
         </button>
       </div>
 

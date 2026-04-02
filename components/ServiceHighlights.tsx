@@ -1,35 +1,38 @@
 import React from 'react';
 import { AppSection } from '../types';
+import { Language, translations } from '../translations';
 
 interface ServiceHighlightsProps {
     isDark?: boolean;
     onNavigate: (section: AppSection | string) => void;
+    language: Language;
 }
 
-export const ServiceHighlights: React.FC<ServiceHighlightsProps> = ({ isDark = false, onNavigate }) => {
+export const ServiceHighlights: React.FC<ServiceHighlightsProps> = ({ isDark = false, onNavigate, language }) => {
+    const t = translations[language].service_highlights;
     const services = [
         {
             id: '01',
-            title: 'AI Editorial Renders',
-            description: 'High-impact, AI-powered imagery for architectural publications and luxury catalogs.',
+            title: t.s1_title,
+            description: t.s1_desc,
             action: () => onNavigate(AppSection.ARCHITECTURE)
         },
         {
             id: '02',
-            title: 'Renovations & Heritage',
-            description: 'High-end visual transformation for refurbishments and historic landmarks via AI.',
+            title: t.s2_title,
+            description: t.s2_desc,
             action: () => onNavigate(AppSection.ARCHITECTURE)
         },
         {
             id: '03',
-            title: 'New Developments (Neubau)',
-            description: 'Hyper-realistic AI visualizations for ground-up architectural projects.',
+            title: t.s3_title,
+            description: t.s3_desc,
             action: () => onNavigate(AppSection.ARCHITECTURE)
         },
         {
             id: '04',
-            title: 'Strategic Sales Assets',
-            description: 'AI-generated visual content designed to accelerate real estate investment.',
+            title: t.s4_title,
+            description: t.s4_desc,
             action: () => onNavigate('digital-strategy')
         }
     ];

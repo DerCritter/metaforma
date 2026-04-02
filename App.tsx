@@ -3,7 +3,7 @@ import { AppSection, ChatMessage, Project } from './types';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
-import { Portfolio, ARCHITECTURE_PROJECTS } from './components/Portfolio';
+import { Portfolio, getArchitectureProjects } from './components/Portfolio';
 import { ServiceHighlights } from './components/ServiceHighlights';
 import { Process } from './components/Process';
 import { Contact } from './components/Contact';
@@ -11,6 +11,7 @@ import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
 import { ProjectDetail } from './components/ProjectDetail';
 import { TrustedPartners } from './components/TrustedPartners';
+import { Language } from './translations';
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<AppSection>(AppSection.HOME);
@@ -18,9 +19,10 @@ const App: React.FC = () => {
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
   // Starting the website in dark mode as requested
   const [isDark, setIsDark] = useState(true);
+  const [language, setLanguage] = useState<Language>('en');
 
   const handleSelectProject = (projectId: string) => {
-    const project = ARCHITECTURE_PROJECTS.find(p => p.id === projectId);
+    const project = getArchitectureProjects(language).find(p => p.id === projectId);
     if (project) {
       setSelectedProject(project);
     }
@@ -78,6 +80,8 @@ const App: React.FC = () => {
         setActiveSection={(section) => handleNavigate(section)}
         isDark={isDark}
         setIsDark={setIsDark}
+        language={language}
+        setLanguage={setLanguage}
       />
 
       <main className="flex-grow">
@@ -86,11 +90,13 @@ const App: React.FC = () => {
             <Hero
               onExplore={() => handleNavigate(AppSection.CONTACT_FORM)}
               isDark={isDark}
+              language={language}
             />
-            <ServiceHighlights isDark={isDark} onNavigate={handleNavigate} />
+            <ServiceHighlights isDark={isDark} onNavigate={handleNavigate} language={language} />
             <Services
               onNavigate={handleNavigate}
               isDark={isDark}
+              language={language}
             />
 
           </div>
@@ -101,11 +107,12 @@ const App: React.FC = () => {
             category="architecture"
             onSelectProject={setSelectedProject}
             isDark={isDark}
+            language={language}
           />
         )}
 
         {(activeSection === AppSection.CONTACT_FORM || activeSection === AppSection.AI_CONSULTANT) && (
-          <ContactForm isDark={isDark} />
+          <ContactForm isDark={isDark} language={language} />
         )}
       </main>
 
@@ -113,14 +120,16 @@ const App: React.FC = () => {
         <ProjectDetail
           project={selectedProject}
           onClose={() => setSelectedProject(null)}
+          language={language}
         />
       )}
 
-      <TrustedPartners isDark={isDark} />
+      <TrustedPartners isDark={isDark} language={language} />
 
       <Footer
         setActiveSection={(section) => handleNavigate(section)}
         isDark={isDark}
+        language={language}
       />
     </div>
   );

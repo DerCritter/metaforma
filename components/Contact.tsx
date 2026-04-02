@@ -1,17 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChatMessage } from '../types';
 import { getGeminiResponse } from '../services/geminiService';
+import { Language, translations } from '../translations';
 
 interface ContactProps {
   chatHistory: ChatMessage[];
   setChatHistory: React.Dispatch<React.SetStateAction<ChatMessage[]>>;
   isDark?: boolean;
+  language: Language;
 }
 
-export const Contact: React.FC<ContactProps> = ({ chatHistory, setChatHistory, isDark = false }) => {
+export const Contact: React.FC<ContactProps> = ({ chatHistory, setChatHistory, isDark = false, language }) => {
   const [chatInput, setChatInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
+  const t = translations[language].ai_assistant;
 
   const scrollToBottom = () => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -44,8 +47,8 @@ export const Contact: React.FC<ContactProps> = ({ chatHistory, setChatHistory, i
   return (
     <section className={`py-12 md:py-20 px-4 md:px-6 max-w-4xl mx-auto h-[calc(100vh-120px)] md:h-[80vh] flex flex-col animate-in slide-in-from-bottom-8 duration-700 transition-colors ${isDark ? 'text-white' : 'text-black'}`}>
       <div className="text-center mb-6 md:mb-12">
-        <h2 className="text-2xl md:text-4xl font-heading font-medium mb-2 md:mb-4 italic">Heritage Advisor</h2>
-        <p className={`text-base md:text-sm tracking-widest uppercase transition-colors ${isDark ? 'text-white/40' : 'text-black/40'}`}>Consulting on Space, History & Innovation</p>
+        <h2 className="text-2xl md:text-4xl font-heading font-medium mb-2 md:mb-4 italic">{t.title}</h2>
+        <p className={`text-base md:text-sm tracking-widest uppercase transition-colors ${isDark ? 'text-white/40' : 'text-black/40'}`}>{t.subtitle}</p>
       </div>
 
       <div className={`flex-grow rounded-[2rem] md:rounded-[2.5rem] flex flex-col overflow-hidden border transition-all duration-700 shadow-xl ${isDark ? 'bg-white/5 border-white/5' : 'bg-white/40 border-black/5'}`}>
@@ -53,7 +56,7 @@ export const Contact: React.FC<ContactProps> = ({ chatHistory, setChatHistory, i
           {chatHistory.length === 0 && (
             <div className="h-full flex flex-col items-center justify-center text-stone-400 space-y-6">
               <div className="w-16 h-px bg-white/30"></div>
-              <p className={`text-center max-w-xs font-serif italic text-lg md:text-xl transition-colors ${isDark ? 'text-white/60' : 'text-black/60'}`}>How may I assist your heritage synthesis today?</p>
+              <p className={`text-center max-w-xs font-serif italic text-lg md:text-xl transition-colors ${isDark ? 'text-white/60' : 'text-black/60'}`}>{t.welcome}</p>
               <div className="w-16 h-px bg-white/30"></div>
             </div>
           )}
@@ -71,7 +74,7 @@ export const Contact: React.FC<ContactProps> = ({ chatHistory, setChatHistory, i
           ))}
           {isTyping && (
             <div className="flex justify-start">
-              <div className="text-white animate-pulse text-[10px] italic tracking-widest uppercase font-bold">Synthesizing...</div>
+              <div className="text-[#FF660F] animate-pulse text-[10px] italic tracking-widest uppercase font-bold">{t.typing}</div>
             </div>
           )}
           <div ref={chatEndRef} />
@@ -82,7 +85,7 @@ export const Contact: React.FC<ContactProps> = ({ chatHistory, setChatHistory, i
             type="text"
             value={chatInput}
             onChange={(e) => setChatInput(e.target.value)}
-            placeholder="Ask about monument adaptation..."
+            placeholder={t.placeholder}
             className={`flex-grow bg-transparent border-b py-3 md:py-4 text-base md:text-sm focus:outline-none focus:border-white transition-colors placeholder:text-white/40 font-light ${isDark ? 'border-white/10 text-white' : 'border-black/10 text-black'}`}
           />
           <button
@@ -90,7 +93,7 @@ export const Contact: React.FC<ContactProps> = ({ chatHistory, setChatHistory, i
             disabled={isTyping}
             className="w-full md:w-auto px-10 h-12 md:h-14 bg-[#FF660F] text-white text-xs md:text-sm font-bold tracking-[0.3em] uppercase transition-all disabled:opacity-20 rounded-full shadow-lg"
           >
-            Send
+            {t.btn_send}
           </button>
         </form>
       </div>

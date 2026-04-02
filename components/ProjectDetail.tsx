@@ -1,12 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Project } from '../types';
+import { Language, translations } from '../translations';
 
 interface ProjectDetailProps {
   project: Project;
   onClose: () => void;
+  language: Language;
 }
 
-const Lightbox: React.FC<{ imageUrl: string; onClose: () => void }> = ({ imageUrl, onClose }) => {
+const Lightbox: React.FC<{ imageUrl: string; onClose: () => void; language: Language }> = ({ imageUrl, onClose, language }) => {
+  const t = translations[language].ui;
   return (
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0a0a0b]/40 animate-in fade-in duration-500 backdrop-blur-[32px] no-print"
@@ -25,7 +28,7 @@ const Lightbox: React.FC<{ imageUrl: string; onClose: () => void }> = ({ imageUr
         onClick={(e) => e.stopPropagation()}
       />
       <div className="absolute bottom-6 text-white/40 text-sm md:text-base uppercase tracking-[0.5em] font-bold">
-        Tap to close
+        {t.tap_to_close}
       </div>
     </div>
   );
@@ -74,9 +77,10 @@ const ProjectSlideshow: React.FC<{ images: string[]; onImageClick: (url: string)
   );
 };
 
-export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
+export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, language }) => {
   const [sliderPos, setSliderPos] = useState(50);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+  const t = translations[language].ui;
   const targetPos = useRef(50);
   const containerRef = useRef<HTMLDivElement>(null);
   const isHovering = useRef<boolean>(false);
@@ -142,7 +146,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
             className="p-4 md:p-4 text-white/80 hover:text-[#FF660F] transition-all bg-[#0a0a0b]/60 rounded-full border border-white/10 flex items-center gap-2 group shadow-xl"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            <span className="text-[11px] font-bold tracking-widest hidden md:block">EXPORT PDF</span>
+            <span className="text-[11px] font-bold tracking-widest hidden md:block">{t.export_pdf}</span>
           </button>
 
           <button
@@ -174,14 +178,14 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
                 </div>
 
                 <div className="space-y-6 pt-10 border-t border-white/10 print:border-black/10 print:pt-4">
-                  <h4 className="text-sm md:text-base uppercase tracking-[0.6em] text-white/30 font-bold print:text-black/30">INSIGHTS</h4>
+                  <h4 className="text-sm md:text-base uppercase tracking-[0.6em] text-white/30 font-bold print:text-black/30">{t.insights}</h4>
                   <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
                     <div className="flex flex-col gap-1 py-4 border-b border-white/10 print:border-black/5">
-                      <span className="text-sm text-white/40 uppercase tracking-[0.2em] print:text-black/40">Type</span>
-                      <span className="text-base md:text-lg text-white font-light print:text-black">Heritage Reuse</span>
+                      <span className="text-sm text-white/40 uppercase tracking-[0.2em] print:text-black/40">{t.type}</span>
+                      <span className="text-base md:text-lg text-white font-light print:text-black">{t.heritage_reuse}</span>
                     </div>
                     <div className="flex flex-col gap-1 py-4 border-b border-white/10 print:border-black/5">
-                      <span className="text-sm text-white/40 uppercase tracking-[0.2em] print:text-black/40">Location</span>
+                      <span className="text-sm text-white/40 uppercase tracking-[0.2em] print:text-black/40">{t.location}</span>
                       <span className="text-base md:text-lg text-white font-light print:text-black">{project.location || 'Germany'}</span>
                     </div>
                   </div>
@@ -191,17 +195,17 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
               <div className="lg:col-span-7 print:col-span-12 print:mt-12">
                 {project.beforeAfter ? (
                   <div className="space-y-6 md:space-y-10">
-                    <h3 className="text-sm md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black no-print">SYNTHESIS COMPARISON</h3>
+                    <h3 className="text-sm md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black no-print">{t.synthesis_comparison}</h3>
 
                     {/* Simplified Comparison for Print */}
                     <div className="hidden print:grid grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <img src={project.beforeAfter.before} className="w-full aspect-video object-cover" alt="Historical" />
-                        <p className="text-[8px] uppercase tracking-widest text-center">Before (Historical)</p>
+                        <p className="text-[8px] uppercase tracking-widest text-center">{t.before}</p>
                       </div>
                       <div className="space-y-2">
                         <img src={project.beforeAfter.after} className="w-full aspect-video object-cover border border-[#FF660F]/50" alt="Synthesis" />
-                        <p className="text-[8px] uppercase tracking-widest text-center text-[#FF660F]">After (Synthesis)</p>
+                        <p className="text-[8px] uppercase tracking-widest text-center text-[#FF660F]">{t.after}</p>
                       </div>
                     </div>
 
@@ -213,13 +217,13 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
                       <div className="absolute inset-y-0 w-[1.5px] bg-[#FF660F] z-10" style={{ left: `${sliderPos}%`, boxShadow: '0 0 15px rgba(255,101,44,0.6)' }}>
                         <div className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-12 bg-white/40 rounded-full blur-[1px]"></div>
                       </div>
-                      <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 px-4 sm:px-6 py-2 bg-[#0a0a0b]/40 backdrop-blur-[12px] rounded-full text-xs sm:text-xs text-white uppercase tracking-widest border border-white/10 z-20">BEFORE</div>
-                      <div className="absolute bottom-6 sm:bottom-10 right-6 sm:right-10 px-4 sm:px-6 py-2 bg-[#FF660F]/80 backdrop-blur-[12px] rounded-full text-xs sm:text-xs text-white uppercase tracking-widest border border-white/10 z-20">AFTER</div>
+                      <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 px-4 sm:px-6 py-2 bg-[#0a0a0b]/40 backdrop-blur-[12px] rounded-full text-xs sm:text-xs text-white uppercase tracking-widest border border-white/10 z-20">{t.before}</div>
+                      <div className="absolute bottom-6 sm:bottom-10 right-6 sm:right-10 px-4 sm:px-6 py-2 bg-[#FF660F]/80 backdrop-blur-[12px] rounded-full text-xs sm:text-xs text-white uppercase tracking-widest border border-white/10 z-20">{t.after}</div>
                     </div>
                   </div>
                 ) : (
                   <div className="space-y-6 md:space-y-10 animate-in fade-in slide-in-from-right-12 duration-1000">
-                    <h3 className="text-[9px] md:text-[11px] uppercase tracking-[0.6em] text-[#FF660F] font-black">IMMERSIVE PERSPECTIVE</h3>
+                    <h3 className="text-[9px] md:text-[11px] uppercase tracking-[0.6em] text-[#FF660F] font-black">{t.immersive_perspective}</h3>
                     <div className="relative group overflow-hidden rounded-[2.5rem] md:rounded-[4rem] border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.5)]">
                       <img
                         src={project.images[1] || project.imageUrl}
@@ -228,7 +232,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                       <div className="absolute bottom-12 left-12">
-                        <span className="text-base md:text-base uppercase tracking-[0.4em] font-black text-[#FF660F] block mb-2">CINEMATIC SYNTHESIS</span>
+                        <span className="text-base md:text-base uppercase tracking-[0.4em] font-black text-[#FF660F] block mb-2">{t.cinematic_synthesis}</span>
                         <h4 className="text-xl md:text-3xl font-heading text-white">{project.title}</h4>
                       </div>
                     </div>
@@ -239,16 +243,16 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
 
             {project.images && project.images.length > 0 && (
               <div className="space-y-8 md:space-y-16 print:break-before-page print:mt-12">
-                <h3 className="text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black print:text-black">IMMERSIVE VISION</h3>
+                <h3 className="text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black print:text-black">{t.immersive_vision}</h3>
                 <ProjectSlideshow images={project.images} onImageClick={setLightboxImage} />
               </div>
             )}
 
             <div className="space-y-12 md:space-y-24 print:space-y-12 print:mt-12">
               <div className="border-b border-white/10 pb-8 print:border-black/10">
-                <h3 className="text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black mb-4">GALLERY</h3>
+                <h3 className="text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black mb-4">{t.gallery}</h3>
                 <p className="text-white/50 text-base md:text-base max-w-xl font-light tracking-widest leading-relaxed print:text-black/60">
-                  Perspectives showcasing the digital synthesis of heritage preservation and high-performance adaptation.
+                  {t.gallery_desc}
                 </p>
               </div>
 
@@ -272,12 +276,12 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
 
             <div className="pt-12 md:pt-24 pb-12 flex flex-col items-center text-center space-y-8 md:space-y-12 no-print">
               <div className="w-px h-16 md:h-32 bg-gradient-to-b from-[#FF660F] to-transparent"></div>
-              <h4 className="text-3xl md:text-5xl font-heading text-white italic font-light tracking-tight">Return to Portfolio</h4>
+              <h4 className="text-3xl md:text-5xl font-heading text-white italic font-light tracking-tight">{t.return_to_portfolio}</h4>
               <button
                 onClick={onClose}
                 className="px-10 md:px-20 py-5 md:py-8 bg-[#FF660F] text-white rounded-full text-[11px] md:text-[11px] font-bold tracking-[0.4em] md:tracking-[0.8em] uppercase hover:scale-105 transition-all shadow-2xl shadow-[#FF660F]/20"
               >
-                Close Detail
+                {t.close_detail}
               </button>
             </div>
           </div>
@@ -285,7 +289,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
       </div>
 
       {lightboxImage && (
-        <Lightbox imageUrl={lightboxImage} onClose={() => setLightboxImage(null)} />
+        <Lightbox imageUrl={lightboxImage} onClose={() => setLightboxImage(null)} language={language} />
       )}
     </>
   );

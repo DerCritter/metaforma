@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { Language, translations } from '../translations';
 
 interface ContactFormProps {
     isDark?: boolean;
+    language: Language;
 }
 
-export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false }) => {
+export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, language }) => {
     const [submitted, setSubmitted] = useState(false);
+    const t = translations[language].contact;
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -18,8 +21,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false }) => {
                 <div className="w-20 h-20 bg-[#FF660F] rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-white"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 </div>
-                <h2 className="text-4xl font-heading mb-4">Inquiry Received.</h2>
-                <p className={`text-lg font-light ${isDark ? 'text-white/60' : 'text-stone-500'}`}>Our synthesis team will reach out to you within 24 hours.</p>
+                <h2 className="text-4xl font-heading mb-4">{t.success_title}</h2>
+                <p className={`text-lg font-light ${isDark ? 'text-white/60' : 'text-stone-500'}`}>{t.success_desc}</p>
             </div>
         );
     }
@@ -29,16 +32,16 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false }) => {
             <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-start">
                 <div className="space-y-8 md:space-y-12">
                     <div className="space-y-4">
-                        <span className="text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black">GET IN TOUCH</span>
+                        <span className="text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black">{t.label}</span>
                         <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading leading-tight tracking-tighter">
-                            Start Your <br />
-                            <span className="italic font-normal text-[#FF660F]">Synthesis.</span>
+                            {t.title1} <br />
+                            <span className="italic font-normal text-[#FF660F]">{t.title2}</span>
                         </h2>
                     </div>
 
                     <div className="space-y-6">
                         <p className={`text-base md:text-xl font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-stone-500'}`}>
-                            Based in Berlin, Germany. Serving visionary real estate leaders globally with AI-native architecture and heritage transformation.
+                            {t.description}
                         </p>
                         <div className={`p-8 rounded-[2rem] border backdrop-blur-[12px] ${isDark ? 'bg-white/5 border-white/10' : 'bg-[#0a0a0b]/5 border-black/5'}`}>
                             <div className="flex items-center gap-4 mb-4">
@@ -46,8 +49,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false }) => {
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                                 </div>
                                 <div>
-                                    <h4 className="text-sm font-bold uppercase tracking-widest text-[#FF660F]">HQ BERLIN</h4>
-                                    <p className={`text-base opacity-60`}>Berlin, Germany | Est. 2026</p>
+                                    <h4 className="text-sm font-bold uppercase tracking-widest text-[#FF660F]">{t.hq}</h4>
+                                    <p className={`text-base opacity-60`}>{t.location}</p>
                                 </div>
                             </div>
                         </div>
@@ -58,29 +61,29 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false }) => {
                     <form onSubmit={handleSubmit} className="space-y-8">
                         <div className="space-y-6">
                             <div className="group">
-                                <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>Your Name</label>
+                                <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>{t.form_name}</label>
                                 <input
                                     type="text"
                                     required
-                                    placeholder="John Doe"
+                                    placeholder={t.placeholder_name}
                                     className={`w-full bg-transparent border-b py-3 text-base md:text-base focus:outline-none focus:border-[#FF660F] transition-colors placeholder:text-stone-600 font-light ${isDark ? 'border-white/10 text-white' : 'border-stone-300 text-black'}`}
                                 />
                             </div>
                             <div className="group">
-                                <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>Business Email</label>
+                                <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>{t.form_email}</label>
                                 <input
                                     type="email"
                                     required
-                                    placeholder="john@example.com"
+                                    placeholder={t.placeholder_email}
                                     className={`w-full bg-transparent border-b py-3 text-base md:text-base focus:outline-none focus:border-[#FF660F] transition-colors placeholder:text-stone-600 font-light ${isDark ? 'border-white/10 text-white' : 'border-stone-300 text-black'}`}
                                 />
                             </div>
                             <div className="group">
-                                <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>Project Vision</label>
+                                <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>{t.form_vision}</label>
                                 <textarea
                                     required
                                     rows={4}
-                                    placeholder="Tell us about your architectural asset..."
+                                    placeholder={t.placeholder_vision}
                                     className={`w-full bg-transparent border-b py-3 text-base md:text-base focus:outline-none focus:border-[#FF660F] transition-colors placeholder:text-stone-600 font-light resize-none ${isDark ? 'border-white/10 text-white' : 'border-stone-300 text-black'}`}
                                 ></textarea>
                             </div>
@@ -90,7 +93,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false }) => {
                             type="submit"
                             className="w-full py-5 md:py-6 bg-[#FF660F] text-white rounded-full text-sm md:text-sm font-bold tracking-[0.4em] uppercase hover:bg-black hover:scale-[1.02] transition-all shadow-xl shadow-[#FF660F]/20"
                         >
-                            Request Inquiry
+                            {t.submit_btn}
                         </button>
                     </form>
                 </div>
