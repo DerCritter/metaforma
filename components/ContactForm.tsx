@@ -42,8 +42,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                 <div className="w-20 h-20 bg-[#FF660F] rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-white"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 </div>
-                <h2 className="text-4xl font-heading mb-4">{t.success_title}</h2>
-                <p className={`text-lg font-light ${isDark ? 'text-white/60' : 'text-stone-500'}`}>{t.success_desc}</p>
+                <h2 className="text-4xl font-heading mb-4">{t.submitted_title}</h2>
+                <p className={`text-lg font-light ${isDark ? 'text-white/60' : 'text-stone-500'}`}>{t.submitted_subtitle}</p>
             </div>
         );
     }
@@ -53,10 +53,10 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
             <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-start">
                 <div className="space-y-8 md:space-y-12">
                     <div className="space-y-4">
-                        <span className="text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black">{t.label}</span>
+                        <span className="text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black">{t.label_get_in_touch}</span>
                         <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading leading-tight tracking-tighter">
-                            {t.title1} <br />
-                            <span className="italic font-normal text-[#FF660F]">{t.title2}</span>
+                            {t.title_start} <br />
+                            <span className="italic font-normal text-[#FF660F]">{t.title_highlight}</span>
                         </h2>
                     </div>
 
@@ -87,7 +87,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                     <form onSubmit={handleSubmit} className="space-y-8">
                         <div className="space-y-6">
                             <div className="group">
-                                <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>{t.form_name}</label>
+                                <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>{t.field_name}</label>
                                 <input
                                     type="text"
                                     name="name"
@@ -97,7 +97,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                                 />
                             </div>
                             <div className="group">
-                                <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>{t.form_email}</label>
+                                <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>{t.field_email}</label>
                                 <input
                                     type="email"
                                     name="email"
@@ -107,7 +107,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                                 />
                             </div>
                             <div className="group">
-                                <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>{t.form_vision}</label>
+                                <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>{t.field_vision}</label>
                                 <textarea
                                     name="message"
                                     required
