@@ -15,8 +15,8 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
 
   const [activeVideo, setActiveVideo] = useState(0);
   const videos = [
-    "https://player.vimeo.com/video/1165443658?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479",
-    "https://player.vimeo.com/video/1164815646?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479"
+    "https://player.vimeo.com/video/1179651662?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479",
+    "https://player.vimeo.com/video/1179891679?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479"
   ];
 
   useEffect(() => {
