@@ -39,22 +39,38 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                         </h2>
                     </div>
 
-                    <div className="space-y-6">
-                        <p className={`text-base md:text-xl font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-stone-500'}`}>
-                            {t.description}
-                        </p>
-                        <div className={`p-8 rounded-[2rem] border backdrop-blur-[12px] ${isDark ? 'bg-white/5 border-white/10' : 'bg-[#0a0a0b]/5 border-black/5'}`}>
-                            <div className="flex items-center gap-4 mb-4">
-                                <div className="w-10 h-10 rounded-full bg-[#FF660F]/20 flex items-center justify-center text-[#FF660F]">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <div className="space-y-6">
+                            <p className={`text-base md:text-xl font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-stone-500'}`}>
+                                {t.description}
+                            </p>
+                            <div className="flex flex-col gap-4">
+                                <div className={`p-6 rounded-[1.5rem] border backdrop-blur-[12px] ${isDark ? 'bg-white/5 border-white/10' : 'bg-[#0a0a0b]/5 border-black/5'}`}>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-10 h-10 rounded-full bg-[#FF660F]/20 flex items-center justify-center text-[#FF660F]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-sm font-bold uppercase tracking-widest text-[#FF660F]">{t.hq}</h4>
+                                            <p className={`text-base opacity-60`}>{t.location}</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h4 className="text-sm font-bold uppercase tracking-widest text-[#FF660F]">{t.hq}</h4>
-                                    <p className={`text-base opacity-60`}>{t.location}</p>
-                                </div>
+                                <a 
+                                    href={`mai${'lto'}:daniel.boubet@metaforma-ai.com`}
+                                    className={`p-6 rounded-[1.5rem] border backdrop-blur-[12px] transition-all hover:border-[#FF660F] group ${isDark ? 'bg-white/5 border-white/10' : 'bg-[#0a0a0b]/5 border-black/5'}`}
+                                >
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-10 h-10 rounded-full bg-[#FF660F]/20 flex items-center justify-center text-[#FF660F] group-hover:bg-[#FF660F] group-hover:text-white transition-all">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-sm font-bold uppercase tracking-widest text-[#FF660F]">Direct Email</h4>
+                                            <p className={`text-base opacity-60`}>daniel.boubet@metaforma-ai.com</p>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                    </div>
                 </div>
 
                 <div className={`p-8 md:p-12 rounded-[2.5rem] md:rounded-[3.5rem] border backdrop-blur-[12px] shadow-2xl ${isDark ? 'bg-white/5 border-white/10 shadow-black/50' : 'bg-white/60 border-black/5 shadow-black/5'}`}>

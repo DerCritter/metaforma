@@ -11,7 +11,19 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Space+Grotesk:wght@300..700&display=swap"
         rel="stylesheet">
-    <style>
+        <link rel="icon" type="image/jpeg" href="https://i.postimg.cc/NGT9FYQM/favicon-metaforma1.jpg">
+        <style>
+        /* Font Fallbacks & Local Assets for PDF Generation */
+        @font-face {
+            font-family: 'Space Grotesk Local';
+            src: local('Space Grotesk'), local('SpaceGrotesk-Regular');
+        }
+        @font-face {
+            font-family: 'Playfair Display Local';
+            src: local('Playfair Display'), local('PlayfairDisplay-Italic');
+            font-style: italic;
+        }
+
         :root {
             --bg-light: #ffffff;
             --bg-dark: #030303;
@@ -145,79 +157,110 @@
             border-radius: 10px;
         }
 
-        /* Print Styles for PDF Export */
+        /* Print Styles for PDF Portfolio Export */
         @media print {
             @page {
-                size: A4;
-                margin: 2cm;
+                size: A4 portrait;
+                margin: 0; /* Full bleed capability */
+            }
+
+            html, body {
+                width: 210mm;
+                height: 297mm;
+                overflow: visible !important;
+                background: white !important;
+                color: #030303 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
 
             body {
-                background: white !important;
-                color: black !important;
+                font-family: 'Inter', system-ui, sans-serif !important;
+            }
+
+            .font-heading {
+                font-family: 'Space Grotesk', 'Space Grotesk Local', sans-serif !important;
+                color: #030303 !important;
+            }
+
+            .font-serif {
+                font-family: 'Playfair Display', 'Playfair Display Local', serif !important;
             }
 
             .no-print,
             nav,
-            footer,
+            .fixed.top-0, /* Navbar */
+            .fixed.bottom-0, /* Chat */
             button,
+            iframe,
             .light-leak,
-            iframe {
+            .noise-overlay {
                 display: none !important;
             }
 
             #root {
                 display: block !important;
+                background: white !important;
             }
 
-            .print-only {
+            /* Content Flow for Portfolio */
+            section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                position: relative !important;
+                display: block !important;
+                background: white !important;
+                color: black !important;
+                min-height: auto !important;
+                padding: 2cm !important;
+            }
+
+            /* Adjust Hero for PDF */
+            .architectural-title {
+                color: #030303 !important;
+                font-size: 48pt !important;
+                line-height: 1 !important;
+                margin-bottom: 24pt !important;
+            }
+
+            /* Ensure portfolio images are high quality and visible */
+            img {
+                max-width: 100% !important;
+                page-break-inside: avoid;
+                filter: none !important;
+                -webkit-filter: none !important;
+            }
+
+            .grid {
                 display: block !important;
             }
 
-            .fixed {
-                position: relative !important;
-                background: white !important;
-                padding: 0 !important;
-                margin: 0 !important;
+            .grid > div {
+                margin-bottom: 2cm !important;
+                page-break-inside: avoid;
             }
 
-            .overflow-y-auto {
-                overflow: visible !important;
+            /* Layout Polish */
+            .border-white\/5, .border-white\/10, .border-black\/5 {
+                border-color: #f0f0f0 !important;
             }
 
-            .shadow-2xl,
-            .shadow-xl,
-            .shadow-lg {
+            .text-white { color: #030303 !important; }
+            .text-white\/40, .text-white\/50, .text-white\/60, .text-stone-500 { color: #666 !important; }
+            .text-\[\#FF660F\] { color: #FF660F !important; }
+            
+            .shadow-2xl, .shadow-xl, .shadow-lg, .shadow-md {
                 box-shadow: none !important;
+                border: 1px solid #eee !important;
             }
 
-            .rounded-\[3\.5rem\],
-            .rounded-\[2\.5rem\],
-            .rounded-full {
-                border-radius: 0 !important;
-            }
-
-            .border-white\/20,
-            .border-white\/10 {
-                border-color: #eee !important;
-            }
-
-            h2,
-            h3,
-            h4 {
-                color: black !important;
-            }
-
-            span.text-\[\#ffffff\] {
-                color: #ffffff !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .bg-\[\#ffffff\] {
-                background-color: #ffffff !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
+            /* Reset container widths */
+            .max-w-7xl, .max-w-4xl, .max-w-\[1600px\] {
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
             }
         }
     </style>
