@@ -13,24 +13,18 @@ export const ServiceHighlights: React.FC<ServiceHighlightsProps> = ({ isDark = f
     const services = [
         {
             id: '01',
-            title: t.s1_title,
-            description: t.s1_desc,
-            action: () => onNavigate(AppSection.ARCHITECTURE)
-        },
-        {
-            id: '02',
             title: t.s2_title,
             description: t.s2_desc,
             action: () => onNavigate(AppSection.ARCHITECTURE)
         },
         {
-            id: '03',
+            id: '02',
             title: t.s3_title,
             description: t.s3_desc,
             action: () => onNavigate(AppSection.ARCHITECTURE)
         },
         {
-            id: '04',
+            id: '03',
             title: t.s4_title,
             description: t.s4_desc,
             action: () => onNavigate('digital-strategy')
