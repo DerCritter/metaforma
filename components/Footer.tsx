@@ -25,8 +25,9 @@ export const Footer: React.FC<FooterProps> = ({ setActiveSection, isDark = false
         <div>
           <h5 className={`text-base md:text-base font-bold mb-6 tracking-[0.3em] uppercase transition-colors ${isDark ? 'text-white' : 'text-black'}`}>{t.pillars}</h5>
           <ul className="space-y-4 md:space-y-3">
-            <li><button onClick={() => setActiveSection(AppSection.ARCHITECTURE)} className={`text-sm md:text-sm hover:text-[#FF660F] transition-colors font-light tracking-widest uppercase ${isDark ? 'text-white/50' : 'text-stone-400'}`}>ADAPTIVE AI REUSE</button></li>
-            <li><button onClick={() => setActiveSection(AppSection.CONTACT_FORM)} className={`text-sm md:text-sm hover:text-[#FF660F] transition-colors font-light tracking-widest uppercase ${isDark ? 'text-white/50' : 'text-stone-400'}`}>HERITAGE ADVISOR</button></li>
+            <li><button onClick={() => setActiveSection(AppSection.ARCHITECTURE)} className={`text-sm md:text-sm hover:text-[#FF660F] transition-colors font-light tracking-widest uppercase text-left ${isDark ? 'text-white/50' : 'text-stone-400'}`}>{translations[language].service_highlights.s2_title}</button></li>
+            <li><button onClick={() => setActiveSection(AppSection.ARCHITECTURE)} className={`text-sm md:text-sm hover:text-[#FF660F] transition-colors font-light tracking-widest uppercase text-left ${isDark ? 'text-white/50' : 'text-stone-400'}`}>{translations[language].service_highlights.s3_title}</button></li>
+            <li><button onClick={() => setActiveSection('digital-strategy' as any)} className={`text-sm md:text-sm hover:text-[#FF660F] transition-colors font-light tracking-widest uppercase text-left ${isDark ? 'text-white/50' : 'text-stone-400'}`}>{translations[language].service_highlights.s4_title}</button></li>
           </ul>
         </div>
 
