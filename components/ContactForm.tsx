@@ -43,20 +43,22 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                             <p className={`text-base md:text-xl font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-stone-500'}`}>
                                 {t.description}
                             </p>
+                            <div className="flex flex-col gap-4">
                                 <a 
                                     href={`mai${'lto'}:daniel.boubet@metaforma-ai.com`}
-                                    className={`p-6 rounded-[1.5rem] border backdrop-blur-[12px] transition-all hover:border-[#FF660F] group ${isDark ? 'bg-white/5 border-white/10' : 'bg-[#0a0a0b]/5 border-black/5'}`}
+                                    className={`w-full p-6 md:p-8 rounded-[1.5rem] border backdrop-blur-[12px] transition-all hover:border-[#FF660F] group ${isDark ? 'bg-white/5 border-white/10' : 'bg-[#0a0a0b]/5 border-black/5'}`}
                                 >
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-10 h-10 rounded-full bg-[#FF660F]/20 flex items-center justify-center text-[#FF660F] group-hover:bg-[#FF660F] group-hover:text-white transition-all">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    <div className="flex items-center gap-5">
+                                        <div className="w-12 h-12 rounded-full bg-[#FF660F]/20 flex items-center justify-center text-[#FF660F] group-hover:bg-[#FF660F] group-hover:text-white transition-all shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                         </div>
                                         <div>
-                                            <h4 className="text-sm font-bold uppercase tracking-widest text-[#FF660F]">Direct Email</h4>
-                                            <p className={`text-base opacity-60 text-white`}>daniel.boubet@metaforma-ai.com</p>
+                                            <h4 className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-[#FF660F] mb-1">Direct Email</h4>
+                                            <p className={`text-base md:text-lg font-light ${isDark ? 'text-white/80' : 'text-black/80'}`}>daniel.boubet@metaforma-ai.com</p>
                                         </div>
                                     </div>
                                 </a>
+                            </div>
                         </div>
                 </div>
 
