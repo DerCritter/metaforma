@@ -43,18 +43,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                             <p className={`text-base md:text-xl font-light leading-relaxed ${isDark ? 'text-white/40' : 'text-stone-500'}`}>
                                 {t.description}
                             </p>
-                            <div className="flex flex-col gap-4">
-                                <div className={`p-6 rounded-[1.5rem] border backdrop-blur-[12px] ${isDark ? 'bg-white/5 border-white/10' : 'bg-[#0a0a0b]/5 border-black/5'}`}>
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-10 h-10 rounded-full bg-[#FF660F]/20 flex items-center justify-center text-[#FF660F]">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                                        </div>
-                                        <div>
-                                            <h4 className="text-sm font-bold uppercase tracking-widest text-[#FF660F]">{t.hq}</h4>
-                                            <p className={`text-base opacity-60`}>{t.location}</p>
-                                        </div>
-                                    </div>
-                                </div>
                                 <a 
                                     href={`mai${'lto'}:daniel.boubet@metaforma-ai.com`}
                                     className={`p-6 rounded-[1.5rem] border backdrop-blur-[12px] transition-all hover:border-[#FF660F] group ${isDark ? 'bg-white/5 border-white/10' : 'bg-[#0a0a0b]/5 border-black/5'}`}
@@ -65,11 +53,10 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                                         </div>
                                         <div>
                                             <h4 className="text-sm font-bold uppercase tracking-widest text-[#FF660F]">Direct Email</h4>
-                                            <p className={`text-base opacity-60`}>daniel.boubet@metaforma-ai.com</p>
+                                            <p className={`text-base opacity-60 text-white`}>daniel.boubet@metaforma-ai.com</p>
                                         </div>
                                     </div>
                                 </a>
-                            </div>
                         </div>
                 </div>
 
@@ -107,9 +94,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
 
                         <button
                             type="submit"
-                            className="w-full py-5 md:py-6 bg-[#FF660F] text-white rounded-full text-sm md:text-sm font-bold tracking-[0.4em] uppercase hover:bg-black hover:scale-[1.02] transition-all shadow-xl shadow-[#FF660F]/20"
+                            className="w-full py-5 md:py-6 bg-[#FF660F] text-white rounded-full text-sm md:text-sm font-bold tracking-[0.4em] uppercase hover:bg-black hover:scale-[1.02] transition-all shadow-xl shadow-[#FF660F]/20 flex items-center justify-center"
                         >
-                            {t.submit_btn}
+                            {t.btn_submit}
                         </button>
                     </form>
                 </div>

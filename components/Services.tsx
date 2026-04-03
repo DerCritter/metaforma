@@ -173,7 +173,7 @@ const VideoMarketingViz: React.FC<{ isInView: boolean, label: string, title: str
           <h4 className="text-base md:text-lg lg:text-xl font-heading text-white/95">{title}</h4>
         </div>
         <div className="flex flex-col items-start md:items-end gap-1">
-          <span className="text-base md:text-base uppercase tracking-[0.4em] text-white/30">{label_conversion}</span>
+          <span className="text-base md:text-base uppercase tracking-[0.4em] text-white/30 font-bold">{label_conversion}</span>
           <span className="text-4xl md:text-4xl lg:text-6xl font-heading font-medium text-[#FF660F] leading-none tabular-nums block">+{count}%</span>
         </div>
       </div>
