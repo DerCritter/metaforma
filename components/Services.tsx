@@ -325,7 +325,6 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
 
   const sector1Sets = [
     { before: "https://i.postimg.cc/sXCwQJ2k/outside_10_old.jpg", after: "https://i.postimg.cc/qB8WLNVN/outside_10.jpg" },
-    { before: "https://i.postimg.cc/zXVnJzRy/1-outdoor.jpg", after: "https://i.postimg.cc/kXBxnJtV/2-outdoor.jpg" },
     { before: "https://i.postimg.cc/JhX2HZ6S/indoor_4_old.jpg", after: "https://i.postimg.cc/hGm5QTZS/indoor_5.jpg" }
   ];
 
