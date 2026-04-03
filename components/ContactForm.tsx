@@ -8,7 +8,7 @@ interface ContactFormProps {
 
 export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, language }) => {
     const [submitted, setSubmitted] = useState(false);
-    const t = translations[language].contact;
+    const t = translations[language].contact_form;
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
