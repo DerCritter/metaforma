@@ -7,12 +7,33 @@ interface ContactFormProps {
 }
 
 export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, language }) => {
+    const [status, setStatus] = useState<'idle' | 'submitting' | 'error'>('idle');
     const [submitted, setSubmitted] = useState(false);
     const t = translations[language].contact_form;
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setSubmitted(true);
+        setStatus('submitting');
+        
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch("https://formspree.io/f/mqaejebg", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                setSubmitted(true);
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            setStatus('error');
+        }
     };
 
     if (submitted) {
@@ -69,6 +90,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                                 <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>{t.form_name}</label>
                                 <input
                                     type="text"
+                                    name="name"
                                     required
                                     placeholder={t.placeholder_name}
                                     className={`w-full bg-transparent border-b py-3 text-base md:text-base focus:outline-none focus:border-[#FF660F] transition-colors placeholder:text-stone-600 font-light ${isDark ? 'border-white/10 text-white' : 'border-stone-300 text-black'}`}
@@ -78,6 +100,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                                 <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>{t.form_email}</label>
                                 <input
                                     type="email"
+                                    name="email"
                                     required
                                     placeholder={t.placeholder_email}
                                     className={`w-full bg-transparent border-b py-3 text-base md:text-base focus:outline-none focus:border-[#FF660F] transition-colors placeholder:text-stone-600 font-light ${isDark ? 'border-white/10 text-white' : 'border-stone-300 text-black'}`}
@@ -86,6 +109,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                             <div className="group">
                                 <label className={`text-base md:text-base uppercase tracking-[0.3em] font-bold mb-2 block transition-colors group-focus-within:text-[#FF660F] ${isDark ? 'text-white/30' : 'text-black/30'}`}>{t.form_vision}</label>
                                 <textarea
+                                    name="message"
                                     required
                                     rows={4}
                                     placeholder={t.placeholder_vision}
@@ -96,9 +120,10 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
 
                         <button
                             type="submit"
-                            className="w-full py-5 md:py-6 bg-[#FF660F] text-white rounded-full text-sm md:text-sm font-bold tracking-[0.4em] uppercase hover:bg-black hover:scale-[1.02] transition-all shadow-xl shadow-[#FF660F]/20 flex items-center justify-center"
+                            disabled={status === 'submitting'}
+                            className={`w-full py-5 md:py-6 bg-[#FF660F] text-white rounded-full text-sm md:text-sm font-bold tracking-[0.4em] uppercase hover:bg-black hover:scale-[1.02] transition-all shadow-xl shadow-[#FF660F]/20 flex items-center justify-center ${status === 'submitting' ? 'opacity-70 cursor-not-allowed' : ''}`}
                         >
-                            {t.btn_submit}
+                            {status === 'submitting' ? 'SENDING...' : t.btn_submit}
                         </button>
                     </form>
                 </div>
