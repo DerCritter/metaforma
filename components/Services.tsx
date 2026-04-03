@@ -653,7 +653,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           </div>
         </div>
 
-        <div id="digital-strategy" ref={tacticalRef} className={`relative min-h-[500px] lg:min-h-screen flex items-center justify-center overflow-hidden mt-12 md:mt-32 border-t border-white/5 ${tacticalInView ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'} transition-all duration-[1500ms]`}>
+        <div id="digital-strategy" ref={tacticalRef} className={`relative min-h-[140vh] lg:min-h-screen flex items-center justify-center overflow-hidden mt-12 md:mt-32 border-t border-white/5 ${tacticalInView ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'} transition-all duration-[1500ms]`}>
           {/* Background Image */}
           <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0 bg-[#030303]">
             <img src="https://i.postimg.cc/pL6x3G35/cambia-el-color-202603311520.jpg" alt="Growth Ecosystem" className="absolute inset-0 w-full h-full object-cover md:object-contain translate-x-0 md:translate-x-0 scale-[1.5] md:scale-100 origin-center md:origin-center" />
@@ -661,7 +661,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           <div className="absolute inset-0 bg-[#030303]/40"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303] opacity-80"></div>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-20 pb-32">
+          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-20 pb-48">
             <div className="space-y-12 md:space-y-32">
               <div className="max-w-4xl">
                 <div className="inline-flex items-center gap-4 mb-6 md:mb-10">
@@ -701,7 +701,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
 
                   <button
                     onClick={() => onNavigate(AppSection.CONTACT_FORM)}
-                    className="group flex items-center gap-8 mt-12"
+                    className="group flex items-center gap-8 mt-12 ml-4"
                   >
                     <div className="relative">
                       <div className="w-16 h-16 md:w-24 md:h-24 border border-white/20 rounded-full flex items-center justify-center transition-all duration-700 group-hover:border-[#FF660F] group-hover:scale-110">
