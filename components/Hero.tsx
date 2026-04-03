@@ -29,7 +29,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
         }
         return next;
       });
-    }, 10000); // Cycles every 10 seconds instantly
+    }, 13000); // Both videos are exactly 13 seconds long
     return () => clearInterval(interval);
   }, []);
 
