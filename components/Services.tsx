@@ -89,7 +89,7 @@ const TacticalModule: React.FC<{
   </div>
 );
 
-const WebConversionViz: React.FC<{ isInView: boolean }> = ({ isInView }) => {
+const WebConversionViz: React.FC<{ isInView: boolean, label: string, title: string }> = ({ isInView, label, title }) => {
   const count = useCountUp(400, 2000, isInView);
   const [time, setTime] = useState(0);
 
@@ -101,8 +101,8 @@ const WebConversionViz: React.FC<{ isInView: boolean }> = ({ isInView }) => {
   return (
     <div className="relative group bg-[#111112] backdrop-blur-[10px] border border-white/5 rounded-[1.2rem] md:rounded-[1.5rem] lg:rounded-[2rem] p-4 md:p-6 lg:p-10 flex flex-col justify-between overflow-hidden transition-all hover:bg-[#18181a] min-h-[140px] md:min-h-[160px] lg:min-h-[220px]">
       <div className="relative z-10 space-y-1">
-        <span className="text-base md:text-base uppercase tracking-[0.4em] text-white/40 font-black">Performance</span>
-        <h4 className="text-base md:text-base lg:text-base font-heading text-white/90">Web Conversion</h4>
+        <span className="text-base md:text-base uppercase tracking-[0.4em] text-white/40 font-black">{label}</span>
+        <h4 className="text-base md:text-base lg:text-base font-heading text-white/90">{title}</h4>
         <span className="text-3xl md:text-3xl lg:text-5xl font-heading font-medium text-[#FF660F] tabular-nums block mt-1">+{count}%</span>
       </div>
       <div className="relative h-10 md:h-16 lg:h-24 flex items-end gap-1 md:gap-1.5 mt-4">
@@ -127,14 +127,14 @@ const WebConversionViz: React.FC<{ isInView: boolean }> = ({ isInView }) => {
   );
 };
 
-const SEOVisibilityViz: React.FC<{ isInView: boolean }> = ({ isInView }) => {
+const SEOVisibilityViz: React.FC<{ isInView: boolean, label: string, title: string }> = ({ isInView, label, title }) => {
   const count = useCountUp(157, 2000, isInView);
 
   return (
     <div className="relative group bg-[#111112] backdrop-blur-[10px] border border-white/5 rounded-[1.2rem] md:rounded-[1.5rem] lg:rounded-[2rem] p-4 md:p-6 lg:p-10 flex flex-col justify-between overflow-hidden transition-all hover:bg-[#18181a] min-h-[140px] md:min-h-[160px] lg:min-h-[220px]">
       <div className="relative z-10 space-y-1">
-        <span className="text-base md:text-base uppercase tracking-[0.4em] text-white/40 font-black">Visibility</span>
-        <h4 className="text-base md:text-base lg:text-base font-heading text-white/90">SEO Authority</h4>
+        <span className="text-base md:text-base uppercase tracking-[0.4em] text-white/40 font-black">{label}</span>
+        <h4 className="text-base md:text-base lg:text-base font-heading text-white/90">{title}</h4>
         <span className="text-3xl md:text-3xl lg:text-5xl font-heading font-medium text-[#FF660F] tabular-nums block mt-1">+{count}%</span>
       </div>
       <div className="relative h-10 md:h-16 lg:h-24 mt-4 bg-[#030303]/40 rounded-xl overflow-hidden border border-white/[0.03]">
@@ -156,7 +156,7 @@ const SEOVisibilityViz: React.FC<{ isInView: boolean }> = ({ isInView }) => {
   );
 };
 
-const VideoMarketingViz: React.FC<{ isInView: boolean }> = ({ isInView }) => {
+const VideoMarketingViz: React.FC<{ isInView: boolean, label: string, title: string, label_conversion: string }> = ({ isInView, label, title, label_conversion }) => {
   const count = useCountUp(97, 2000, isInView);
   const [time, setTime] = useState(0);
 
@@ -169,11 +169,11 @@ const VideoMarketingViz: React.FC<{ isInView: boolean }> = ({ isInView }) => {
     <div className="relative group bg-[#111112] backdrop-blur-[12px] border border-white/5 rounded-[1.2rem] md:rounded-[1.5rem] lg:rounded-[2rem] p-6 md:p-8 lg:p-12 flex flex-col justify-between overflow-hidden transition-all hover:bg-[#18181a] col-span-full min-h-[120px] md:min-h-[150px] lg:min-h-[180px]">
       <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-2">
         <div className="space-y-1">
-          <span className="text-base md:text-base uppercase tracking-[0.4em] text-[#FF660F] font-black">Engagement</span>
-          <h4 className="text-base md:text-lg lg:text-xl font-heading text-white/95">Immersive Video Strategy</h4>
+          <span className="text-base md:text-base uppercase tracking-[0.4em] text-[#FF660F] font-black">{label}</span>
+          <h4 className="text-base md:text-lg lg:text-xl font-heading text-white/95">{title}</h4>
         </div>
         <div className="flex flex-col items-start md:items-end gap-1">
-          <span className="text-base md:text-base uppercase tracking-[0.4em] text-white/30">Conversion Boost</span>
+          <span className="text-base md:text-base uppercase tracking-[0.4em] text-white/30">{label_conversion}</span>
           <span className="text-4xl md:text-4xl lg:text-6xl font-heading font-medium text-[#FF660F] leading-none tabular-nums block">+{count}%</span>
         </div>
       </div>
@@ -640,11 +640,11 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                   </div>
                   <div className="grid gap-3 md:gap-6 lg:gap-8">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 lg:gap-8">
-                      <WebConversionViz isInView={growthInView} />
-                      <SEOVisibilityViz isInView={growthInView} />
+                      <WebConversionViz isInView={growthInView} label={t.label_performance} title={t.title_web_conversion} />
+                      <SEOVisibilityViz isInView={growthInView} label={t.label_visibility} title={t.title_seo_authority} />
                     </div>
                     <div className="col-span-full">
-                      <VideoMarketingViz isInView={growthInView} />
+                      <VideoMarketingViz isInView={growthInView} label={t.label_engagement} title={t.title_video_strategy} label_conversion={t.label_conversion_boost} />
                     </div>
                   </div>
                 </div>
