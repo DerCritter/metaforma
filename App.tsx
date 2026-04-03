@@ -70,7 +70,7 @@ const App: React.FC = () => {
     // Check if we are not on the home page (where sections reside)
     const isHomePage = location.pathname === '/' || location.pathname === '/de' || location.pathname === '/de/';
 
-    if (!isHomePage && (section === AppSection.HOME || section === AppSection.SERVICES || section === AppSection.PHILOSOPHY || isCustomScrollId)) {
+    if (!isHomePage && (section === AppSection.HOME || section === AppSection.SERVICES || section === AppSection.PHILOSOPHY || section === AppSection.ARCHITECTURE || isCustomScrollId)) {
         // We aren't on Home, so we must route there first, passing the section as a hash fragment roughly
         navigate(isDe ? `/de` : `/`);
         // Note: Actual scrolling to fragment needs an effect tracking location changes, or we use a small timeout

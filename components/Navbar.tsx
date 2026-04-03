@@ -114,7 +114,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
             <button
               key={nav.id}
               onClick={() => handleNavClick(nav.id)}
-              className={`text-3xl font-heading text-white tracking-widest uppercase hover:text-[#FF660F] transition-all duration-500 delay-[${idx * 100}ms] ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+              style={{ transitionDelay: `${idx * 100}ms` }}
+              className={`text-3xl font-heading text-white tracking-widest uppercase hover:text-[#FF660F] transition-all duration-500 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
             >
               {nav.label}
             </button>
