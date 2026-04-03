@@ -22,7 +22,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveVideo(prev => (prev + 1) % videos.length);
-    }, 15000); // Increased time to 15s for better stability
+    }, 10000); // 10s interval
     return () => clearInterval(interval);
   }, [videos.length]);
 
@@ -45,7 +45,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
           {videos.map((vid, idx) => (
             <div
               key={idx}
-              className={`absolute inset-0 transition-opacity duration-300 ease-in-out ${idx === activeVideo ? 'opacity-100' : 'opacity-0'}`}
+              className={`absolute inset-0 transition-opacity duration-300 ease-in-out pointer-events-none ${idx === activeVideo ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
             >
               <iframe
                 src={vid}
