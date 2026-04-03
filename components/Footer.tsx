@@ -42,7 +42,6 @@ export const Footer: React.FC<FooterProps> = ({ setActiveSection, isDark = false
               Frank-Zappa-Straße 161<br />
               12681 Berlin, Germany<br />
               3rd floor</p>
-            <p><span className="font-bold opacity-100 text-white">{t.imp_email}</span> info@metaforma.art</p>
             <p><span className="font-bold opacity-100 text-white">{t.imp_tax}</span> 14/237/02651</p>
           </div>
         </div>
