@@ -29,7 +29,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
         }
         return next;
       });
-    }, 13000); // Both videos are exactly 13 seconds long
+    }, 12800); // 12.8s interval to cut right before Vimeo auto-loops natively
     return () => clearInterval(interval);
   }, []);
 
