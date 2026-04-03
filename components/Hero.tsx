@@ -13,18 +13,25 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
   const heroRef = useRef<HTMLElement>(null);
   const t = translations[language].hero;
 
+  const iframe0Ref = useRef<HTMLIFrameElement>(null);
+  const iframe1Ref = useRef<HTMLIFrameElement>(null);
   const [activeVideo, setActiveVideo] = useState(0);
-  const videos = [
-    "https://player.vimeo.com/video/1179651662?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479",
-    "https://player.vimeo.com/video/1179891679?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479"
-  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveVideo(prev => (prev + 1) % videos.length);
-    }, 10000); // 10s interval
+      setActiveVideo(prev => {
+        const next = prev === 0 ? 1 : 0;
+        // Raw Vimeo iframe message to immediately rewind the upcoming video to 0:00
+        const nextIframe = next === 0 ? iframe0Ref.current : iframe1Ref.current;
+        if (nextIframe && nextIframe.contentWindow) {
+           nextIframe.contentWindow.postMessage('{"method":"setCurrentTime","value":0}', '*');
+           nextIframe.contentWindow.postMessage('{"method":"play"}', '*');
+        }
+        return next;
+      });
+    }, 10000); // Cycles every 10 seconds instantly
     return () => clearInterval(interval);
-  }, [videos.length]);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -40,21 +47,26 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
       ref={heroRef}
       className={`relative min-h-[600px] lg:min-h-screen py-24 md:py-32 flex flex-col items-center justify-center text-center px-6 overflow-hidden transition-all duration-1000 ${isDark ? 'bg-[#030303]' : 'bg-white'} ${isInView ? 'opacity-100' : 'opacity-40'}`}
     >
-      <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${isDark ? 'opacity-[0.65]' : 'opacity-40'}`}>
+      <div className={`absolute inset-0 z-0 ${isDark ? 'opacity-[0.65]' : 'opacity-40'} bg-black`}>
         <div className="absolute inset-0 contrast-125">
-          {videos.map((vid, idx) => (
-            <div
-              key={idx}
-              className={`absolute inset-0 transition-none pointer-events-none ${idx === activeVideo ? 'opacity-100' : 'opacity-0'}`}
-            >
+            <div className={`absolute inset-0 transition-none pointer-events-none ${activeVideo === 0 ? 'opacity-100' : 'opacity-0'}`}>
               <iframe
-                src={vid}
+                ref={iframe0Ref}
+                src="https://player.vimeo.com/video/1179651662?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479"
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] object-cover pointer-events-none"
                 frameBorder="0"
                 allow="autoplay; fullscreen"
               ></iframe>
             </div>
-          ))}
+            <div className={`absolute inset-0 transition-none pointer-events-none ${activeVideo === 1 ? 'opacity-100' : 'opacity-0'}`}>
+              <iframe
+                ref={iframe1Ref}
+                src="https://player.vimeo.com/video/1179891679?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] object-cover pointer-events-none"
+                frameBorder="0"
+                allow="autoplay; fullscreen"
+              ></iframe>
+            </div>
         </div>
         <div className={`absolute inset-0 ${isDark ? 'bg-[#030303]/60' : 'bg-white/10'} backdrop-blur-[1px]`}></div>
       </div>
