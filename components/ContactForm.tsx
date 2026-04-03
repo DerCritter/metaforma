@@ -28,7 +28,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
     }
 
     return (
-        <section className={`py-12 md:py-24 px-6 max-w-5xl mx-auto animate-in slide-in-from-bottom-12 duration-1000 ${isDark ? 'text-white' : 'text-black'}`}>
+        <section className={`pt-32 pb-12 md:pb-24 px-6 max-w-5xl mx-auto animate-in slide-in-from-bottom-12 duration-1000 ${isDark ? 'text-white' : 'text-black'}`}>
             <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-start">
                 <div className="space-y-8 md:space-y-12">
                     <div className="space-y-4">
