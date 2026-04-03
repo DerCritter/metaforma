@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { AppSection } from '../types';
 import { Logo } from './Navbar';
 import { Language, translations } from '../translations';
@@ -36,6 +37,16 @@ export const Footer: React.FC<FooterProps> = ({ setActiveSection, isDark = false
       <div className="max-w-7xl mx-auto mt-24 pt-12 border-t border-white/5 grid grid-cols-1 md:grid-cols-2 gap-12">
         <div className="space-y-4">
           <h5 className={`text-base md:text-base font-bold tracking-[0.3em] uppercase ${isDark ? 'text-white' : 'text-black'}`}>{t.imprint}</h5>
+          
+          <div className="flex flex-wrap gap-4 mb-8">
+             <Link to={language === 'de' ? '/de/impressum' : '/impressum'} className={`px-5 py-2 text-xs md:text-sm tracking-widest uppercase transition-colors border rounded-full ${isDark ? 'text-white/70 border-white/20 hover:border-[#FF660F] hover:text-[#FF660F]' : 'text-black/70 border-black/20 hover:border-[#FF660F] hover:text-[#FF660F]'}`}>
+                 {language === 'de' ? 'Impressum' : 'Imprint'}
+             </Link>
+             <Link to={language === 'de' ? '/de/datenschutz' : '/privacy'} className={`px-5 py-2 text-xs md:text-sm tracking-widest uppercase transition-colors border rounded-full ${isDark ? 'text-white/70 border-white/20 hover:border-[#FF660F] hover:text-[#FF660F]' : 'text-black/70 border-black/20 hover:border-[#FF660F] hover:text-[#FF660F]'}`}>
+                 {language === 'de' ? 'Datenschutzerklärung' : 'Privacy Policy'}
+             </Link>
+          </div>
+
           <div className={`text-base md:text-base font-light leading-relaxed space-y-2 ${isDark ? 'text-white/40' : 'text-stone-500'}`}>
             <p><span className="font-bold opacity-100 text-white">{t.imp_brand}</span> Metaforma</p>
             <p><span className="font-bold opacity-100 text-white">{t.imp_contact}</span><br />

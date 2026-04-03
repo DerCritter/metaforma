@@ -184,6 +184,11 @@ export interface LanguageDictionary {
     view_mode_cloud_desc: string;
     view_standard: string;
     view_grid_cloud: string;
+  };
+  seo: {
+    title: string;
+    description: string;
+    keywords: string;
   }
 }
 
@@ -372,6 +377,11 @@ export const translations: Record<Language, LanguageDictionary> = {
       view_mode_cloud_desc: 'A cinematic cloud of project perspectives. Tap any visual to immerse yourself in the detailed project synthesis.',
       view_standard: 'Standard',
       view_grid_cloud: 'Grid Cloud'
+    },
+    seo: {
+      title: 'Metaforma | AI-Driven AEC Architecture & Heritage Renders',
+      description: 'Luxury architectural visualizations and heritage adaptive reuse renders powered by advanced AI synthesis. Based in Berlin, serving global AEC leaders.',
+      keywords: 'AI architecture, heritage renders, adaptive reuse, AEC visualization, real estate rendering, monument preservation'
     }
   },
   de: {
@@ -558,6 +568,11 @@ export const translations: Record<Language, LanguageDictionary> = {
       view_mode_cloud_desc: 'Eine kinoreife Cloud von Projektperspektiven. Tippen Sie auf ein beliebiges Bild, um in die detaillierte Projektsynthese einzutauchen.',
       view_standard: 'Standard',
       view_grid_cloud: 'Raster-Cloud'
+    },
+    seo: {
+      title: 'Metaforma | KI-gestützte AEC-Architektur & Denkmal-Renderings',
+      description: 'Hochwertige Architekturvisualisierungen und Denkmal-Umnutzung durch modernste KI-Synthese. Ihr Partner für Denkmalschutz und AEC in Berlin.',
+      keywords: 'KI Architektur, Denkmalpflege Renderings, Adaptive Wiedernutzung, AEC Visualisierung, Immobilien-Rendering, Denkmalschutz Berlin'
     }
   }
 };

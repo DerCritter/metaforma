@@ -69,7 +69,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                             </p>
                             <div className="flex flex-col gap-4">
                                 <a 
-                                    href={`mai${'lto'}:info@metaforma-ai.com`}
+                                    href={`mai${'lto:'}info${'@'}metaforma-ai.com`}
                                     className={`w-full p-6 md:p-8 rounded-[1.5rem] border backdrop-blur-[12px] transition-all hover:border-[#FF660F] group ${isDark ? 'bg-white/5 border-white/10' : 'bg-[#0a0a0b]/5 border-black/5'}`}
                                 >
                                     <div className="flex items-center gap-5">
@@ -78,7 +78,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                                         </div>
                                         <div>
                                             <h4 className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-[#FF660F] mb-1">Direct Email</h4>
-                                            <p className={`text-base md:text-lg font-light ${isDark ? 'text-white/80' : 'text-black/80'}`}>info@metaforma-ai.com</p>
+                                            <p className={`text-base md:text-lg font-light ${isDark ? 'text-white/80' : 'text-black/80'}`}>info<span className="hidden">anti-spam</span>@<span className="hidden">ignore</span>metaforma-ai.com</p>
                                         </div>
                                     </div>
                                 </a>
