@@ -13,18 +13,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
   const heroRef = useRef<HTMLElement>(null);
   const t = translations[language].hero;
 
-  const [activeVideo, setActiveVideo] = useState(0);
-  const videos = [
-    "https://player.vimeo.com/video/1179651662?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479",
-    "https://player.vimeo.com/video/1179891679?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479"
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveVideo(prev => (prev + 1) % videos.length);
-    }, 10000);
-    return () => clearInterval(interval);
-  }, []);
+  const videoUrl = "https://player.vimeo.com/video/1179651662?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,19 +31,14 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
     >
       <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${isDark ? 'opacity-[0.65]' : 'opacity-40'}`}>
         <div className="absolute inset-0 contrast-125">
-          {videos.map((vid, idx) => (
-            <div
-              key={idx}
-              className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${idx === activeVideo ? 'opacity-100' : 'opacity-0'}`}
-            >
-              <iframe
-                src={vid}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] object-cover pointer-events-none"
-                frameBorder="0"
-                allow="autoplay; fullscreen"
-              ></iframe>
-            </div>
-          ))}
+          <div className="absolute inset-0">
+            <iframe
+              src={videoUrl}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] object-cover pointer-events-none"
+              frameBorder="0"
+              allow="autoplay; fullscreen"
+            ></iframe>
+          </div>
         </div>
         <div className={`absolute inset-0 ${isDark ? 'bg-[#030303]/60' : 'bg-white/10'} backdrop-blur-[1px]`}></div>
       </div>
