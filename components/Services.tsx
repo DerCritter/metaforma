@@ -591,7 +591,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
             <div className={`w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative rounded-[1rem] md:rounded-[2rem] lg:rounded-[3.5rem] overflow-hidden shadow-2xl border border-white/5 transition-all duration-1000 z-10 bg-stone-900 ${sector2Seen ? 'grayscale-0 opacity-100' : 'md:grayscale md:opacity-40 grayscale-0 opacity-100'}`}>
               <iframe
                 src="https://player.vimeo.com/video/1165443658?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-                className="absolute inset-0 w-full h-full scale-[1.35]"
+                className="absolute top-1/2 left-1/2 w-[350%] h-[350%] sm:w-[200%] sm:h-[200%] xl:w-[150%] xl:h-[150%] -translate-x-1/2 -translate-y-1/2"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 title="Modern New Build Reel"
@@ -638,7 +638,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           <div className="absolute inset-0 w-full h-full md:hidden overflow-hidden z-0 bg-stone-900">
             <iframe
               src="https://player.vimeo.com/video/1164815646?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-              className="absolute top-1/2 left-1/2 w-[200vw] h-[200vh] -translate-x-1/2 -translate-y-1/2 object-cover"
+              className="absolute top-1/2 left-1/2 w-[400%] h-[400%] sm:w-[250%] sm:h-[250%] -translate-x-1/2 -translate-y-1/2"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
               title="Mobile Background Video"
@@ -653,7 +653,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
               <div className="absolute inset-0 overflow-hidden z-0 hidden md:block bg-stone-900">
                 <iframe
                   src="https://player.vimeo.com/video/1164815646?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-                  className="absolute inset-0 w-full h-full object-cover md:min-w-[100vw] md:min-h-[56.25vw] md:top-1/2 md:-translate-y-1/2"
+                  className="absolute top-1/2 left-1/2 w-[200%] h-[200%] xl:w-[120%] xl:h-[120%] -translate-x-1/2 -translate-y-1/2 md:pointer-events-none"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture"
                   title="Desktop Background Video"
