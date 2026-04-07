@@ -379,9 +379,9 @@ export const translations: Record<Language, LanguageDictionary> = {
       view_grid_cloud: 'Grid Cloud'
     },
     seo: {
-      title: 'Metaforma | High-End AI Renders for Adaptive Reuse & New Construction',
+      title: 'Metaforma | High-End Architectural AI Renders: Adaptive Reuse & New Construction',
       description: 'Luxury architectural visualizations and heritage adaptive reuse renders powered by advanced AI synthesis. Transforming heritage assets into modern luxury environments.',
-      keywords: 'AI architecture visualization, adaptive reuse renders, new construction renders, heritage transformation, premium architectural rendering'
+      keywords: 'Architectural AI Renders, adaptive reuse visualization, high-end architecture rendering, heritage transformation, premium building visuals'
     }
   },
   de: {
@@ -570,9 +570,9 @@ export const translations: Record<Language, LanguageDictionary> = {
       view_grid_cloud: 'Raster-Cloud'
     },
     seo: {
-      title: 'Metaforma | High-End KI-Renderings für Denkmal-Umnutzung & Neubau',
+      title: 'Metaforma | High-End KI-Architektur-Renderings: Denkmal-Umnutzung & Neubau',
       description: 'Hochwertige KI-Architekturvisualisierung und Denkmal-Umnutzung. Wir verwandeln historisches Erbe und Industriebau in moderne Luxusimmobilien.',
-      keywords: 'Architekturvisualisierung KI, Denkmal-Umnutzung Renderings, High-End Renderings, Immobilien-Visualisierung Berlin, adaptive Wiedernutzung'
+      keywords: 'Architektur-Renderings KI, Denkmal-Umnutzung, High-End Architekturvisualisierung, Immobilien-Visualisierung Berlin, adaptive Wiedernutzung'
     }
   }
 };
