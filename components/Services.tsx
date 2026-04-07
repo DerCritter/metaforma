@@ -224,7 +224,7 @@ const ComparisonSlider: React.FC<{
   return (
     <div
       ref={containerRef}
-      className={`relative w-full h-full overflow-hidden cursor-ew-resize select-none rounded-[1rem] md:rounded-[2rem] lg:rounded-[3.5rem] shadow-2xl border ${isDark ? 'border-white/5' : 'border-black/5'} transition-all duration-1000 ${isInView ? 'grayscale-0' : 'grayscale'}`}
+      className={`relative w-full h-full overflow-hidden cursor-ew-resize select-none rounded-[1rem] md:rounded-[2rem] lg:rounded-[3.5rem] shadow-2xl border ${isDark ? 'border-white/5 bg-stone-900' : 'border-black/5 bg-stone-100'} transition-all duration-1000 ${isInView ? 'grayscale-0' : 'grayscale'}`}
       onMouseMove={handleMove}
       onTouchMove={handleMove}
       onMouseEnter={onInteractionStart}
@@ -267,13 +267,14 @@ const ArchitectureShowcaseItem: React.FC<{
   return (
     <div
       onClick={onClick}
-      className={`group relative aspect-[4/5] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden cursor-pointer transition-all duration-1000 ${isInView ? 'translate-y-0 opacity-100 shadow-2xl scale-100' : 'translate-y-12 opacity-0 scale-95'}`}
+      className={`group relative aspect-[4/5] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden cursor-pointer transition-all duration-1000 bg-stone-900 ${isInView ? 'opacity-100 shadow-2xl scale-100' : 'opacity-40 scale-95'}`}
     >
       {images.map((img, idx) => (
         <img
           key={img}
           src={img}
           alt={`${title} perspective ${idx}`}
+          loading={idx === 0 ? "eager" : "lazy"}
           className={`absolute inset-0 w-full h-full object-cover transition-all duration-[3000ms] ease-in-out group-hover:scale-110 ${idx === imgIdx ? 'opacity-100' : 'opacity-0 scale-110'}`}
         />
       ))}
@@ -334,7 +335,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
 
   useEffect(() => {
     const options = { 
-      threshold: 0.05,
+      threshold: 0,
       rootMargin: '0px 0px -10% 0px'
     };
     const observer = new IntersectionObserver((entries) => {
@@ -424,7 +425,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
       <div className="relative z-10">
 
         {/* Sector I: Heritage Adaptive Reuse */}
-        <div className="relative min-h-[70vh] md:min-h-screen flex items-center py-16 md:py-40 px-6 md:px-24">
+        <div ref={sector1Ref} className="relative min-h-[70vh] md:min-h-screen flex items-center py-16 md:py-40 px-6 md:px-24">
           <div className="max-w-[1600px] mx-auto w-full relative">
             {/* Information box goes above on mobile via DOM order shift */}
             <div className={`${textboxClass(sector1Seen)} md:left-0 md:top-[-1rem] lg:left-[-3rem] lg:top-[-3rem]`}>
@@ -436,7 +437,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-6 md:px-6 lg:px-12 py-3 md:py-3 rounded-full text-sm lg:text-sm font-bold tracking-[0.2em] hover:scale-105 transition-all shadow-xl bg-[#FF660F] text-white shadow-[#FF660F]/20`}>{t.cta_inquiry}</button>
               </div>
             </div>
-            <div ref={sector1Ref} className="w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative group/carousel z-10">
+            <div className="w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative group/carousel z-10">
               {sector1Sets.map((set, idx) => (
                 <div key={idx} className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === sector1SetIdx ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
                   <ComparisonSlider before={set.before} after={set.after} isInView={sector1Seen} position={sliderPos} isDark={isDark} onPositionChange={(pos) => targetSliderPos.current = pos} onInteractionStart={() => isHovering.current = true} onInteractionEnd={() => isHovering.current = false} />
@@ -575,7 +576,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
         </div>
 
         {/* Sector II: Neubau Digital Synthesis */}
-        <div className="relative min-h-[70vh] md:min-h-screen flex items-center py-16 md:py-40 px-6 md:px-24">
+        <div ref={sector2Ref} id="sector-ii-section" className="relative min-h-[70vh] md:min-h-screen flex items-center py-16 md:py-40 px-6 md:px-24">
           <div className="max-w-[1600px] mx-auto w-full relative">
             {/* Information box goes left now */}
             <div className={`${textboxClass(sector2Seen)} md:left-0 md:top-[-1rem] lg:left-[-3rem] lg:top-[-3rem]`}>
@@ -587,9 +588,9 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-6 md:px-6 lg:px-12 py-3 md:py-3 rounded-full text-sm lg:text-sm font-bold tracking-[0.2em] hover:scale-105 transition-all shadow-xl bg-[#FF660F] text-white shadow-[#FF660F]/20`}>{t.cta_inquiry}</button>
               </div>
             </div>
-            <div ref={sector2Ref} className={`w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative rounded-[1rem] md:rounded-[2rem] lg:rounded-[3.5rem] overflow-hidden shadow-2xl border border-white/5 transition-all duration-1000 z-10 ${sector2Seen ? 'grayscale-0 opacity-100' : 'grayscale opacity-40'}`}>
+            <div className={`w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative rounded-[1rem] md:rounded-[2rem] lg:rounded-[3.5rem] overflow-hidden shadow-2xl border border-white/5 transition-all duration-1000 z-10 bg-stone-900 ${sector2Seen ? 'grayscale-0 opacity-100' : 'grayscale opacity-40 md:opacity-40 opacity-100'}`}>
               <iframe
-                src="https://player.vimeo.com/video/1165443658?background=1&playsinline=1&autopause=0"
+                src="https://player.vimeo.com/video/1165443658?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
                 className="absolute inset-0 w-full h-full scale-[1.35] pointer-events-none"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
@@ -633,14 +634,14 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
         </div>
 
         {/* Sector III: Integrated Growth Strategy */}
-        <div className="relative min-h-fit md:min-h-[100vh] flex items-center py-16 md:py-40 px-0 md:px-24 overflow-hidden">
+        <div ref={growthRef} id="growth-section" className="relative min-h-fit md:min-h-[100vh] flex items-center py-16 md:py-40 px-0 md:px-24 overflow-hidden">
           {/* Mobile Video Background (Full Section) */}
-          <div className="absolute inset-0 w-full h-full md:hidden overflow-hidden z-0">
+          <div className="absolute inset-0 w-full h-full md:hidden overflow-hidden z-0 bg-stone-900">
             <iframe
-              src="https://player.vimeo.com/video/1164815646?background=1&playsinline=1&autopause=0"
+              src="https://player.vimeo.com/video/1164815646?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
               className="absolute top-1/2 left-1/2 w-[200vw] h-[200vh] -translate-x-1/2 -translate-y-1/2 pointer-events-none object-cover"
               frameBorder="0"
-              allow="autoplay; fullscreen"
+              allow="autoplay; fullscreen; picture-in-picture"
               title="Mobile Background Video"
               loading="eager"
             />
@@ -648,15 +649,15 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           </div>
 
           <div className="max-w-[1600px] mx-auto w-full space-y-16 md:space-y-40 relative z-10">
-            <div ref={growthRef} className={`relative md:bg-[#030303] md:rounded-[2rem] lg:rounded-[4rem] px-6 py-0 md:p-10 lg:p-14 text-white transition-all duration-500 overflow-hidden md:shadow-2xl min-h-[450px] lg:min-h-[75vh] flex items-center ${growthSeen ? 'opacity-100' : 'opacity-40'}`}>
+            <div className={`relative md:bg-[#030303] md:rounded-[2rem] lg:rounded-[4rem] px-6 py-0 md:p-10 lg:p-14 text-white transition-all duration-500 overflow-hidden md:shadow-2xl min-h-[450px] lg:min-h-[75vh] flex items-center ${growthSeen ? 'opacity-100' : 'opacity-40'}`}>
 
               {/* Desktop Video Background (Confined to Card) */}
-              <div className="absolute inset-0 overflow-hidden z-0 hidden md:block">
+              <div className="absolute inset-0 overflow-hidden z-0 hidden md:block bg-stone-900">
                 <iframe
-                  src="https://player.vimeo.com/video/1164815646?background=1&playsinline=1&autopause=0"
+                  src="https://player.vimeo.com/video/1164815646?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
                   className="absolute inset-0 w-full h-full object-cover pointer-events-none md:min-w-[100vw] md:min-h-[56.25vw] md:top-1/2 md:-translate-y-1/2"
                   frameBorder="0"
-                  allow="autoplay; fullscreen"
+                  allow="autoplay; fullscreen; picture-in-picture"
                   title="Desktop Background Video"
                   loading="eager"
                 />
