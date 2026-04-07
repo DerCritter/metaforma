@@ -588,15 +588,15 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-6 md:px-6 lg:px-12 py-3 md:py-3 rounded-full text-sm lg:text-sm font-bold tracking-[0.2em] hover:scale-105 transition-all shadow-xl bg-[#FF660F] text-white shadow-[#FF660F]/20`}>{t.cta_inquiry}</button>
               </div>
             </div>
-            <div className={`w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative rounded-[1rem] md:rounded-[2rem] lg:rounded-[3.5rem] overflow-hidden shadow-2xl border border-white/5 transition-all duration-1000 z-10 bg-stone-900 ${sector2Seen ? 'grayscale-0 opacity-100' : 'grayscale opacity-40 md:opacity-40 opacity-100'}`}>
+            <div className={`w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative rounded-[1rem] md:rounded-[2rem] lg:rounded-[3.5rem] overflow-hidden shadow-2xl border border-white/5 transition-all duration-1000 z-10 bg-stone-900 ${sector2Seen ? 'grayscale-0 opacity-100' : 'md:grayscale md:opacity-40 grayscale-0 opacity-100'}`}>
               <iframe
-                src="https://player.vimeo.com/video/1165443658?background=1&playsinline=1&dnt=1"
+                src="https://player.vimeo.com/video/1165443658?background=1&autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&dnt=1"
                 className="absolute inset-0 w-full h-full scale-[1.35] md:pointer-events-none"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 title="Modern New Build Reel"
               ></iframe>
-              <div className={`absolute inset-0 bg-[#030303]/10`}></div>
+              <div className={`absolute inset-0 bg-[#030303]/10 pointer-events-none`}></div>
             </div>
           </div>
         </div>
@@ -637,13 +637,13 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           {/* Mobile Video Background (Full Section) */}
           <div className="absolute inset-0 w-full h-full md:hidden overflow-hidden z-0 bg-stone-900">
             <iframe
-              src="https://player.vimeo.com/video/1164815646?background=1&playsinline=1&dnt=1"
+              src="https://player.vimeo.com/video/1164815646?background=1&autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&dnt=1"
               className="absolute top-1/2 left-1/2 w-[200vw] h-[200vh] -translate-x-1/2 -translate-y-1/2 md:pointer-events-none object-cover"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
               title="Mobile Background Video"
             />
-            <div className="absolute inset-0 bg-[#030303]/80"></div>
+            <div className="absolute inset-0 bg-[#030303]/80 pointer-events-none"></div>
           </div>
 
           <div className="max-w-[1600px] mx-auto w-full space-y-16 md:space-y-40 relative z-10">
@@ -652,13 +652,13 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
               {/* Desktop Video Background (Confined to Card) */}
               <div className="absolute inset-0 overflow-hidden z-0 hidden md:block bg-stone-900">
                 <iframe
-                  src="https://player.vimeo.com/video/1164815646?background=1&playsinline=1&dnt=1"
+                  src="https://player.vimeo.com/video/1164815646?background=1&autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&dnt=1"
                   className="absolute inset-0 w-full h-full object-cover md:pointer-events-none md:min-w-[100vw] md:min-h-[56.25vw] md:top-1/2 md:-translate-y-1/2"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture"
                   title="Desktop Background Video"
                 />
-                <div className="absolute inset-0 bg-[#030303]/80 backdrop-blur-none"></div>
+                <div className="absolute inset-0 bg-[#030303]/80 backdrop-blur-none pointer-events-none"></div>
               </div>
 
               <div className="relative z-10 w-full py-12 md:py-0">

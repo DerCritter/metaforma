@@ -55,7 +55,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
             <div className={`absolute inset-0 transition-none pointer-events-none ${activeVideo === 0 ? 'opacity-100' : 'opacity-0'}`}>
               <iframe
                 ref={iframe0Ref}
-                src="https://player.vimeo.com/video/1179651662?background=1&playsinline=1&dnt=1"
+                src="https://player.vimeo.com/video/1179651662?background=1&autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&dnt=1"
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] md:w-[150%] md:h-[150%] object-cover md:pointer-events-none"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
@@ -64,14 +64,14 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
             <div className={`absolute inset-0 transition-none pointer-events-none ${activeVideo === 1 ? 'opacity-100' : 'opacity-0'}`}>
               <iframe
                 ref={iframe1Ref}
-                src="https://player.vimeo.com/video/1179891679?background=1&playsinline=1&dnt=1"
+                src="https://player.vimeo.com/video/1179891679?background=1&autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&dnt=1"
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] md:w-[150%] md:h-[150%] object-cover md:pointer-events-none"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
               ></iframe>
             </div>
         </div>
-        <div className={`absolute inset-0 ${isDark ? 'bg-[#030303]/60' : 'bg-white/10'} backdrop-blur-[1px]`}></div>
+        <div className={`absolute inset-0 ${isDark ? 'bg-[#030303]/60' : 'bg-white/10'} backdrop-blur-[1px] pointer-events-none`}></div>
       </div>
 
       <div className="relative z-10 max-w-6xl px-4 flex flex-col items-center">
