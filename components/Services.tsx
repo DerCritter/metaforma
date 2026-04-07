@@ -592,7 +592,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
               {sector2Seen && (
                 <iframe
                   src="https://player.vimeo.com/video/1165443658?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-                  className="absolute top-1/2 left-1/2 w-[350%] h-[350%] sm:w-[200%] sm:h-[200%] xl:w-[150%] xl:h-[150%] -translate-x-1/2 -translate-y-1/2"
+                  className="absolute top-1/2 left-1/2 w-[220%] h-[220%] sm:w-[180%] sm:h-[180%] xl:w-[150%] xl:h-[150%] -translate-x-1/2 -translate-y-1/2"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture"
                   title="Modern New Build Reel"
@@ -641,7 +641,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
             {growthSeen && (
               <iframe
                 src="https://player.vimeo.com/video/1164815646?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-                className="absolute top-1/2 left-1/2 w-[400%] h-[400%] sm:w-[250%] sm:h-[250%] -translate-x-1/2 -translate-y-1/2"
+                className="absolute top-1/2 left-1/2 w-[280%] h-[280%] sm:w-[200%] sm:h-[200%] -translate-x-1/2 -translate-y-1/2"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 title="Mobile Background Video"
@@ -658,7 +658,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 {growthSeen && (
                   <iframe
                     src="https://player.vimeo.com/video/1164815646?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-                    className="absolute top-1/2 left-1/2 w-[200%] h-[200%] xl:w-[120%] xl:h-[120%] -translate-x-1/2 -translate-y-1/2 md:pointer-events-none"
+                    className="absolute top-1/2 left-1/2 w-[150%] h-[150%] xl:w-[120%] xl:h-[120%] -translate-x-1/2 -translate-y-1/2 md:pointer-events-none"
                     frameBorder="0"
                     allow="autoplay; fullscreen; picture-in-picture"
                     title="Desktop Background Video"
