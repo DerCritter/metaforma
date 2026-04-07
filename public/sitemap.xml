@@ -5,7 +5,7 @@
   <!-- Root English -->
   <url>
     <loc>https://metaforma-ai.com/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/"/>
@@ -15,7 +15,7 @@
 
   <url>
     <loc>https://metaforma-ai.com/contact</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/contact"/>
@@ -24,7 +24,7 @@
 
   <url>
     <loc>https://metaforma-ai.com/impressum</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/impressum"/>
@@ -33,7 +33,7 @@
 
   <url>
     <loc>https://metaforma-ai.com/privacy</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/privacy"/>
@@ -43,7 +43,7 @@
   <!-- Root German -->
   <url>
     <loc>https://metaforma-ai.com/de/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/"/>
@@ -53,7 +53,7 @@
 
   <url>
     <loc>https://metaforma-ai.com/de/contact</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/contact"/>
@@ -62,7 +62,7 @@
 
   <url>
     <loc>https://metaforma-ai.com/de/impressum</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/impressum"/>
@@ -71,7 +71,7 @@
 
   <url>
     <loc>https://metaforma-ai.com/de/datenschutz</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/privacy"/>
