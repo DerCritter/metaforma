@@ -67,6 +67,7 @@ export const ImprintDSGVO: React.FC<ImprintDSGVOProps> = ({ isDark = true, langu
                                     <div className="border-b border-stone-500/20 pb-12">
                                         <h2 className="mt-0">Registereintrag</h2>
                                         <p>
+                                            <strong>Steuernummer:</strong> 14/237/02651<br />
                                             <strong>Umsatzsteuer-Identifikationsnummer:</strong><br /> 
                                             Gemäß § 19 UStG wird keine Umsatzsteuer berechnet und nicht ausgewiesen (Kleinunternehmerstatus).
                                         </p>
@@ -111,6 +112,7 @@ export const ImprintDSGVO: React.FC<ImprintDSGVOProps> = ({ isDark = true, langu
                                     <div className="border-b border-stone-500/20 pb-12">
                                         <h2 className="mt-0">Commercial Register</h2>
                                         <p>
+                                            <strong>Tax ID (Steuernummer):</strong> 14/237/02651<br />
                                             <strong>VAT ID:</strong><br /> 
                                             According to § 19 UStG no sales tax is charged and not shown (small business status / Kleinunternehmerstatus).
                                         </p>

@@ -48,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveSection, isDark = false
           </div>
 
           <div className={`text-base md:text-base font-light leading-relaxed space-y-2 ${isDark ? 'text-white/40' : 'text-stone-500'}`}>
-            <p><span className="font-bold opacity-100 text-white">{t.imp_brand}</span> Metaforma</p>
+            <p className="font-bold opacity-100 text-white">Metaforma 2025</p>
             <p><span className="font-bold opacity-100 text-white">{t.imp_contact}</span><br />
               Frank-Zappa-Straße 161<br />
               12681 Berlin, Germany<br />
