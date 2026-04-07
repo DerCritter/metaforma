@@ -52,7 +52,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
             <div className={`absolute inset-0 transition-none pointer-events-none ${activeVideo === 0 ? 'opacity-100' : 'opacity-0'}`}>
               <iframe
                 ref={iframe0Ref}
-                src="https://player.vimeo.com/video/1179651662?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&playsinline=1"
+                src="https://player.vimeo.com/video/1179651662?background=1&playsinline=1&autopause=0"
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] md:w-[150%] md:h-[150%] object-cover pointer-events-none"
                 frameBorder="0"
                 allow="autoplay; fullscreen"
@@ -61,7 +61,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
             <div className={`absolute inset-0 transition-none pointer-events-none ${activeVideo === 1 ? 'opacity-100' : 'opacity-0'}`}>
               <iframe
                 ref={iframe1Ref}
-                src="https://player.vimeo.com/video/1179891679?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&playsinline=1"
+                src="https://player.vimeo.com/video/1179891679?background=1&playsinline=1&autopause=0"
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] md:w-[150%] md:h-[150%] object-cover pointer-events-none"
                 frameBorder="0"
                 allow="autoplay; fullscreen"

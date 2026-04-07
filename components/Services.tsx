@@ -439,7 +439,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
             <div ref={sector1Ref} className="w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative group/carousel z-10">
               {sector1Sets.map((set, idx) => (
                 <div key={idx} className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === sector1SetIdx ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
-                  <ComparisonSlider before={set.before} after={set.after} isInView={sector1InView} position={sliderPos} isDark={isDark} onPositionChange={(pos) => targetSliderPos.current = pos} onInteractionStart={() => isHovering.current = true} onInteractionEnd={() => isHovering.current = false} />
+                  <ComparisonSlider before={set.before} after={set.after} isInView={sector1Seen} position={sliderPos} isDark={isDark} onPositionChange={(pos) => targetSliderPos.current = pos} onInteractionStart={() => isHovering.current = true} onInteractionEnd={() => isHovering.current = false} />
                 </div>
               ))}
               <div className="invisible aspect-video"></div>
@@ -464,7 +464,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 onClick={() => onNavigate(AppSection.ARCHITECTURE, 'arch-03')}
                 isDark={isDark}
                 images={getArchitectureProjects(language).find(p => p.id === 'arch-03')?.images || []}
-                isInView={showcaseInView}
+                isInView={showcaseSeen}
               />
               <ArchitectureShowcaseItem
                 title={t.project_lofts}
@@ -472,7 +472,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 onClick={() => onNavigate(AppSection.ARCHITECTURE, 'arch-01')}
                 isDark={isDark}
                 images={getArchitectureProjects(language).find(p => p.id === 'arch-01')?.images || []}
-                isInView={showcaseInView}
+                isInView={showcaseSeen}
               />
               <ArchitectureShowcaseItem
                 title={t.project_multifamily}
@@ -480,7 +480,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 onClick={() => onNavigate(AppSection.ARCHITECTURE, 'arch-02')}
                 isDark={isDark}
                 images={getArchitectureProjects(language).find(p => p.id === 'arch-02')?.images || []}
-                isInView={showcaseInView}
+                isInView={showcaseSeen}
               />
             </div>
           </div>
@@ -587,13 +587,14 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-6 md:px-6 lg:px-12 py-3 md:py-3 rounded-full text-sm lg:text-sm font-bold tracking-[0.2em] hover:scale-105 transition-all shadow-xl bg-[#FF660F] text-white shadow-[#FF660F]/20`}>{t.cta_inquiry}</button>
               </div>
             </div>
-            <div ref={sector2Ref} className={`w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative rounded-[1rem] md:rounded-[2rem] lg:rounded-[3.5rem] overflow-hidden shadow-2xl border border-white/5 transition-all duration-1000 z-10 ${sector2InView ? 'grayscale-0 opacity-100' : 'grayscale opacity-40'}`}>
+            <div ref={sector2Ref} className={`w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative rounded-[1rem] md:rounded-[2rem] lg:rounded-[3.5rem] overflow-hidden shadow-2xl border border-white/5 transition-all duration-1000 z-10 ${sector2Seen ? 'grayscale-0 opacity-100' : 'grayscale opacity-40'}`}>
               <iframe
-                src="https://player.vimeo.com/video/1165443658?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&background=1&playsinline=1"
+                src="https://player.vimeo.com/video/1165443658?background=1&playsinline=1&autopause=0"
                 className="absolute inset-0 w-full h-full scale-[1.35] pointer-events-none"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 title="Modern New Build Reel"
+                loading="eager"
               ></iframe>
               <div className={`absolute inset-0 bg-[#030303]/10`}></div>
             </div>
@@ -617,7 +618,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 onClick={() => onNavigate(AppSection.ARCHITECTURE, 'arch-04')}
                 isDark={isDark}
                 images={getArchitectureProjects(language).find(p => p.id === 'arch-04')?.images || []}
-                isInView={neubauShowcaseInView}
+                isInView={neubauShowcaseSeen}
               />
               <ArchitectureShowcaseItem
                 title={t.project_penthouse}
@@ -625,7 +626,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 onClick={() => onNavigate(AppSection.ARCHITECTURE, 'arch-07')}
                 isDark={isDark}
                 images={getArchitectureProjects(language).find(p => p.id === 'arch-07')?.images || []}
-                isInView={neubauShowcaseInView}
+                isInView={neubauShowcaseSeen}
               />
             </div>
           </div>
@@ -636,26 +637,28 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           {/* Mobile Video Background (Full Section) */}
           <div className="absolute inset-0 w-full h-full md:hidden overflow-hidden z-0">
             <iframe
-              src="https://player.vimeo.com/video/1164815646?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&playsinline=1"
+              src="https://player.vimeo.com/video/1164815646?background=1&playsinline=1&autopause=0"
               className="absolute top-1/2 left-1/2 w-[200vw] h-[200vh] -translate-x-1/2 -translate-y-1/2 pointer-events-none object-cover"
               frameBorder="0"
               allow="autoplay; fullscreen"
               title="Mobile Background Video"
+              loading="eager"
             />
             <div className="absolute inset-0 bg-[#030303]/80"></div>
           </div>
 
           <div className="max-w-[1600px] mx-auto w-full space-y-16 md:space-y-40 relative z-10">
-            <div ref={growthRef} className={`relative md:bg-[#030303] md:rounded-[2rem] lg:rounded-[4rem] px-6 py-0 md:p-10 lg:p-14 text-white transition-all duration-500 overflow-hidden md:shadow-2xl min-h-[450px] lg:min-h-[75vh] flex items-center ${growthInView ? 'opacity-100' : 'opacity-40'}`}>
+            <div ref={growthRef} className={`relative md:bg-[#030303] md:rounded-[2rem] lg:rounded-[4rem] px-6 py-0 md:p-10 lg:p-14 text-white transition-all duration-500 overflow-hidden md:shadow-2xl min-h-[450px] lg:min-h-[75vh] flex items-center ${growthSeen ? 'opacity-100' : 'opacity-40'}`}>
 
               {/* Desktop Video Background (Confined to Card) */}
               <div className="absolute inset-0 overflow-hidden z-0 hidden md:block">
                 <iframe
-                  src="https://player.vimeo.com/video/1164815646?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&playsinline=1"
+                  src="https://player.vimeo.com/video/1164815646?background=1&playsinline=1&autopause=0"
                   className="absolute inset-0 w-full h-full object-cover pointer-events-none md:min-w-[100vw] md:min-h-[56.25vw] md:top-1/2 md:-translate-y-1/2"
                   frameBorder="0"
                   allow="autoplay; fullscreen"
                   title="Desktop Background Video"
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-[#030303]/80 backdrop-blur-none"></div>
               </div>
