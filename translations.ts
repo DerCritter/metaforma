@@ -379,9 +379,9 @@ export const translations: Record<Language, LanguageDictionary> = {
       view_grid_cloud: 'Grid Cloud'
     },
     seo: {
-      title: 'Metaforma | High-End AI Renders for Heritage Renovation & New Construction',
-      description: 'Luxury architectural visualizations and heritage renovation renders powered by advanced AI synthesis. Based in Berlin, serving global AEC leaders.',
-      keywords: 'AI architecture visualization, heritage renovation renders, new construction renders, adaptive reuse, premium architectural rendering'
+      title: 'Metaforma | High-End AI Renders for Adaptive Reuse & New Construction',
+      description: 'Luxury architectural visualizations and heritage adaptive reuse renders powered by advanced AI synthesis. Transforming heritage assets into modern luxury environments.',
+      keywords: 'AI architecture visualization, adaptive reuse renders, new construction renders, heritage transformation, premium architectural rendering'
     }
   },
   de: {
@@ -570,9 +570,9 @@ export const translations: Record<Language, LanguageDictionary> = {
       view_grid_cloud: 'Raster-Cloud'
     },
     seo: {
-      title: 'Metaforma | High-End KI-Renderings für Denkmalschutz & Neubau',
-      description: 'Hochwertige Architekturvisualisierungen und Denkmal-Umnutzung durch modernste KI-Synthese. Ihr Partner für Denkmalschutz und High-End-Architektur in Berlin.',
-      keywords: 'Architekturvisualisierung KI, Denkmalpflege Renderings, High-End Renderings, Immobilien-Visualisierung Berlin, Denkmalschutz KI'
+      title: 'Metaforma | High-End KI-Renderings für Denkmal-Umnutzung & Neubau',
+      description: 'Hochwertige KI-Architekturvisualisierung und Denkmal-Umnutzung. Wir verwandeln historisches Erbe und Industriebau in moderne Luxusimmobilien.',
+      keywords: 'Architekturvisualisierung KI, Denkmal-Umnutzung Renderings, High-End Renderings, Immobilien-Visualisierung Berlin, adaptive Wiedernutzung'
     }
   }
 };
