@@ -509,7 +509,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
               return images.map((img, idx) => (
                 <div
                   key={img}
-                  className={`absolute inset-[-10%] transition-all duration-[3500ms] ease-in-out ${idx === activeIdx ? 'opacity-100 scale-110' : 'opacity-0 scale-125'}`}
+                  className={`absolute inset-[-5%] transition-all duration-[3500ms] ease-in-out ${idx === activeIdx ? 'opacity-100 scale-103' : 'opacity-0 scale-108'}`}
                   style={{
                     backgroundImage: `url(${img})`,
                     backgroundSize: 'cover',
@@ -636,35 +636,21 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
 
         {/* Sector III: Integrated Growth Strategy */}
         <div ref={growthRef} id="growth-section" className="relative min-h-fit md:min-h-[100vh] flex items-center py-16 md:py-40 px-0 md:px-24 overflow-hidden">
-          {/* Mobile Video Background (Full Section) */}
-          <div className="absolute inset-0 w-full h-full md:hidden overflow-hidden z-0 bg-stone-900">
-            {growthSeen && (
-              <iframe
-                src="https://player.vimeo.com/video/1164815646?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-                className="absolute top-1/2 left-1/2 w-[280%] h-[280%] sm:w-[200%] sm:h-[200%] -translate-x-1/2 -translate-y-1/2"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                title="Mobile Background Video"
-              />
-            )}
-            <div className="absolute inset-0 bg-[#030303]/80 pointer-events-none"></div>
-          </div>
-
           <div className="max-w-[1600px] mx-auto w-full space-y-16 md:space-y-40 relative z-10">
-            <div className={`relative md:bg-[#030303] md:rounded-[2rem] lg:rounded-[4rem] px-6 py-0 md:p-10 lg:p-14 text-white transition-all duration-500 overflow-hidden md:shadow-2xl min-h-[450px] lg:min-h-[75vh] flex items-center ${growthSeen ? 'opacity-100' : 'opacity-40'}`}>
+            <div className={`relative bg-[#030303] md:rounded-[2rem] lg:rounded-[4rem] px-6 py-12 md:p-10 lg:p-14 text-white transition-all duration-500 overflow-hidden md:shadow-2xl min-h-[450px] lg:min-h-[75vh] flex items-center ${growthSeen ? 'opacity-100' : 'opacity-40'}`}>
 
-              {/* Desktop Video Background (Confined to Card) */}
-              <div className="absolute inset-0 overflow-hidden z-0 hidden md:block bg-stone-900">
+              {/* Unified Video Background */}
+              <div className="absolute inset-0 overflow-hidden z-0 bg-stone-900">
                 {growthSeen && (
                   <iframe
                     src="https://player.vimeo.com/video/1164815646?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-                    className="absolute top-1/2 left-1/2 w-[150%] h-[150%] xl:w-[120%] xl:h-[120%] -translate-x-1/2 -translate-y-1/2 md:pointer-events-none"
+                    className="absolute top-1/2 left-1/2 w-[220%] h-[220%] md:w-[150%] md:h-[150%] xl:w-[120%] xl:h-[120%] -translate-x-1/2 -translate-y-1/2 md:pointer-events-none"
                     frameBorder="0"
                     allow="autoplay; fullscreen; picture-in-picture"
-                    title="Desktop Background Video"
+                    title="Background Video"
                   />
                 )}
-                <div className="absolute inset-0 bg-[#030303]/80 backdrop-blur-none pointer-events-none"></div>
+                <div className="absolute inset-0 bg-[#030303]/85 md:bg-[#030303]/80 backdrop-blur-none pointer-events-none"></div>
               </div>
 
               <div className="relative z-10 w-full py-12 md:py-0">
@@ -695,7 +681,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
         <div id="digital-strategy" ref={tacticalRef} className={`relative min-h-fit md:min-h-screen flex items-center justify-center overflow-hidden mt-8 md:mt-32 border-t border-white/5 ${tacticalSeen ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'} transition-all duration-[1500ms]`}>
           {/* Background Image */}
           <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0 bg-[#030303]">
-            <img src="https://i.postimg.cc/pL6x3G35/cambia-el-color-202603311520.jpg" alt="Growth Ecosystem" className="absolute inset-0 w-full h-full object-cover md:object-contain translate-x-0 md:translate-x-0 scale-[1.5] md:scale-100 origin-center md:origin-center" />
+            <img src="https://i.postimg.cc/pL6x3G35/cambia-el-color-202603311520.jpg" alt="Growth Ecosystem" className="absolute inset-0 w-full h-full object-cover md:object-contain translate-x-0 md:translate-x-0 scale-[1.12] md:scale-100 origin-center md:origin-center" />
           </div>
           <div className="absolute inset-0 bg-[#030303]/40"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303] opacity-80"></div>
