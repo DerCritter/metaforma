@@ -48,14 +48,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, isDa
             <img
               key={img}
               src={img}
-              alt={`${project.title} view ${idx}`}
+              alt={`${project.title} - ${project.location} | Visualisierung für Immobilien-Vermarktung & Denkmalschutz`}
               className={`absolute inset-0 h-full w-full object-cover transition-all duration-[2000ms] ease-in-out ${idx === imgIdx ? 'opacity-100 scale-110' : 'opacity-0 scale-100'} ${isInView ? 'grayscale-0' : 'grayscale'}`}
             />
           ))
         ) : (
           <img
             src={project.imageUrl}
-            alt={project.title}
+            alt={`${project.title} - ${project.location} | High-End KI-Rendering für Projektentwickler`}
             className={`h-full w-full object-cover transition-transform duration-[2000ms] group-hover:scale-110 ${isInView ? 'grayscale-0' : 'grayscale'}`}
           />
         )}

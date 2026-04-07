@@ -200,7 +200,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ category, onSelectProject,
             >
               <img
                 src={item.url}
-                alt={item.project.title}
+                alt={`${item.project.title} - ${item.project.location} | Immobilienmarketing & Denkmalschutz-Visualisierung`}
                 className="w-full h-auto object-cover transition-all duration-700 group-hover:blur-[2px]"
               />
               <div className="absolute inset-0 bg-[#0a0a0b]/60 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 md:p-8 backdrop-blur-[4px]">

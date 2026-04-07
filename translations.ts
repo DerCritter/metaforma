@@ -379,9 +379,9 @@ export const translations: Record<Language, LanguageDictionary> = {
       view_grid_cloud: 'Grid Cloud'
     },
     seo: {
-      title: 'Metaforma | High-End Architectural AI Renders: Adaptive Reuse & New Construction',
-      description: 'Luxury architectural visualizations and heritage adaptive reuse renders powered by advanced AI synthesis. Transforming heritage assets into modern luxury environments.',
-      keywords: 'Architectural AI Renders, adaptive reuse visualization, high-end architecture rendering, heritage transformation, premium building visuals'
+      title: 'Metaforma | High-End AI Renders for Real Estate Marketing: Heritage & New Builds',
+      description: 'Premium AI-driven architectural visualizations for property marketing across Germany. Accelerating pre-sales for heritage adaptive reuse and new construction assets.',
+      keywords: 'Real Estate Marketing Renders, property commercialization visuals, high-end architecture rendering Germany, heritage transformation, premium exposé visuals'
     }
   },
   de: {
@@ -570,9 +570,9 @@ export const translations: Record<Language, LanguageDictionary> = {
       view_grid_cloud: 'Raster-Cloud'
     },
     seo: {
-      title: 'Metaforma | High-End KI-Architektur-Renderings: Denkmal-Umnutzung & Neubau',
-      description: 'Hochwertige KI-Architekturvisualisierung und Denkmal-Umnutzung. Wir verwandeln historisches Erbe und Industriebau in moderne Luxusimmobilien.',
-      keywords: 'Architektur-Renderings KI, Denkmal-Umnutzung, High-End Architekturvisualisierung, Immobilien-Visualisierung Berlin, adaptive Wiedernutzung'
+      title: 'Metaforma | High-End KI-Architektur-Renderings für Immobilien-Vermarktung: Denkmal & Neubau',
+      description: 'Verkaufsstarke KI-Architekturvisualisierung für die Vermarktung von Denkmalschutz-Immobilien und Neubau-Projekten deutschlandweit.',
+      keywords: 'Immobilienmarketing Renderings, Exposé-Visualización, Denkmalschutz Vermarktung, High-End Architekturvisualisierung Deutschland, Bauträger-Service KI'
     }
   }
 };

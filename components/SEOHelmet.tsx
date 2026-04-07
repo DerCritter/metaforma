@@ -47,6 +47,38 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ language, path }) => {
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content={t.title} />
             <meta name="twitter:description" content={t.description} />
+
+            {/* Structured Data (JSON-LD) */}
+            <script type="application/ld+json">
+                {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "ProfessionalService",
+                    "name": "Metaforma",
+                    "url": baseUrl,
+                    "logo": `${baseUrl}/favicon.svg`,
+                    "image": `${baseUrl}/assets/og-image.jpg`,
+                    "description": t.description,
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Berlin",
+                        "addressCountry": "DE"
+                    },
+                    "areaServed": {
+                        "@type": "Country",
+                        "name": "Germany"
+                    },
+                    "serviceType": [
+                        "Architectural AI Renders",
+                        "Immobilien-Vermarktung",
+                        "Denkmal-Umnutzung Visualisierung",
+                        "Real Estate Marketing Visuals"
+                    ],
+                    "offers": {
+                        "@type": "Offer",
+                        "areaServed": "DE"
+                    }
+                })}
+            </script>
         </Helmet>
     );
 };
