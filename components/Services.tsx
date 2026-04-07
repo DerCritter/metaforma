@@ -309,6 +309,15 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
   const [philosophyInView, setPhilosophyInView] = useState(false);
   const [neubauShowcaseInView, setNeubauShowcaseInView] = useState(false);
 
+  // Persistent visibility states to prevent "black screen" when scrolling back up
+  const [sector1Seen, setSector1Seen] = useState(false);
+  const [sector2Seen, setSector2Seen] = useState(false);
+  const [showcaseSeen, setShowcaseSeen] = useState(false);
+  const [growthSeen, setGrowthSeen] = useState(false);
+  const [tacticalSeen, setTacticalSeen] = useState(false);
+  const [philosophySeen, setPhilosophySeen] = useState(false);
+  const [neubauShowcaseSeen, setNeubauShowcaseSeen] = useState(false);
+
   const [sector1SetIdx, setSector1SetIdx] = useState(0);
   const [sliderPos, setSliderPos] = useState(50);
   const targetSliderPos = useRef(50);
@@ -322,6 +331,47 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
   const tacticalRef = useRef<HTMLDivElement>(null);
   const philosophyRef = useRef<HTMLDivElement>(null);
   const neubauShowcaseRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const options = { 
+      threshold: 0.05,
+      rootMargin: '0px 0px -10% 0px'
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.target === sector1Ref.current) {
+          setSector1InView(entry.isIntersecting);
+          if (entry.isIntersecting) setSector1Seen(true);
+        }
+        if (entry.target === sector2Ref.current) {
+          setSector2InView(entry.isIntersecting);
+          if (entry.isIntersecting) setSector2Seen(true);
+        }
+        if (entry.target === showcaseRef.current) {
+          setShowcaseInView(entry.isIntersecting);
+          if (entry.isIntersecting) setShowcaseSeen(true);
+        }
+        if (entry.target === growthRef.current) {
+          setGrowthInView(entry.isIntersecting);
+          if (entry.isIntersecting) setGrowthSeen(true);
+        }
+        if (entry.target === tacticalRef.current) {
+          setTacticalInView(entry.isIntersecting);
+          if (entry.isIntersecting) setTacticalSeen(true);
+        }
+        if (entry.target === philosophyRef.current) {
+          setPhilosophyInView(entry.isIntersecting);
+          if (entry.isIntersecting) setPhilosophySeen(true);
+        }
+        if (entry.target === neubauShowcaseRef.current) {
+          setNeubauShowcaseInView(entry.isIntersecting);
+          if (entry.isIntersecting) setNeubauShowcaseSeen(true);
+        }
+      });
+    }, options);
+    [sector1Ref, sector2Ref, showcaseRef, growthRef, tacticalRef, philosophyRef, neubauShowcaseRef].forEach(r => r.current && observer.observe(r.current));
+    return () => observer.disconnect();
+  }, []);
 
   const sector1Sets = [
     { before: "https://i.postimg.cc/sXCwQJ2k/outside_10_old.jpg", after: "https://i.postimg.cc/qB8WLNVN/outside_10.jpg" },
@@ -359,31 +409,14 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const options = { threshold: 0.1 };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.target === sector1Ref.current) setSector1InView(entry.isIntersecting);
-        if (entry.target === sector2Ref.current) setSector2InView(entry.isIntersecting);
-        if (entry.target === showcaseRef.current) setShowcaseInView(entry.isIntersecting);
-        if (entry.target === growthRef.current) setGrowthInView(entry.isIntersecting);
-        if (entry.target === tacticalRef.current) setTacticalInView(entry.isIntersecting);
-        if (entry.target === philosophyRef.current) setPhilosophyInView(entry.isIntersecting);
-        if (entry.target === neubauShowcaseRef.current) setNeubauShowcaseInView(entry.isIntersecting);
-      });
-    }, options);
-    [sector1Ref, sector2Ref, showcaseRef, growthRef, tacticalRef, philosophyRef, neubauShowcaseRef].forEach(r => r.current && observer.observe(r.current));
-    return () => observer.disconnect();
-  }, []);
-
-  const textboxClass = (isInView: boolean) => `
+  const textboxClass = (isVisible: boolean) => `
     relative mb-6 md:mb-0 md:absolute z-40
     w-full md:max-w-[280px] lg:max-w-md xl:max-w-lg p-5 md:p-6 lg:p-10 xl:p-14 backdrop-blur-[12px] rounded-[1.2rem] md:rounded-[1.5rem] lg:rounded-[3rem]
     transition-all duration-[1200ms] ease-[cubic-bezier(0.16, 1, 0.3, 1)]
     shadow-[0_15px_40px_-10px_rgba(0, 0, 0, 0.15)] ring-1
     flex flex-col border border-white/30
     ${isDark ? 'bg-[#030303]/60 ring-white/10' : 'bg-white/60 ring-black/5'}
-    ${isInView ? 'opacity-100 translate-x-0 translate-y-0 scale-100' : 'opacity-0 md:-translate-x-6 translate-y-4 md:-translate-y-4 scale-95'}
+    ${isVisible ? 'opacity-100 translate-x-0 translate-y-0 scale-100' : 'opacity-0 md:-translate-x-6 translate-y-4 md:-translate-y-4 scale-95'}
 `;
 
   return (
@@ -391,10 +424,10 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
       <div className="relative z-10">
 
         {/* Sector I: Heritage Adaptive Reuse */}
-        <div className="relative min-h-screen flex items-center py-24 md:py-40 px-6 md:px-24">
+        <div className="relative min-h-[70vh] md:min-h-screen flex items-center py-16 md:py-40 px-6 md:px-24">
           <div className="max-w-[1600px] mx-auto w-full relative">
             {/* Information box goes above on mobile via DOM order shift */}
-            <div className={`${textboxClass(sector1InView)} md:left-0 md:top-[-1rem] lg:left-[-3rem] lg:top-[-3rem]`}>
+            <div className={`${textboxClass(sector1Seen)} md:left-0 md:top-[-1rem] lg:left-[-3rem] lg:top-[-3rem]`}>
               <span className="text-sm md:text-base uppercase tracking-[0.4em] text-[#FF660F] font-black mb-1.5 md:mb-3 opacity-70">{t.sector1_label}</span>
               <h2 className={`text-2xl md:text-xl lg:text-3xl xl:text-5xl font-heading mb-3 md:mb-4 leading-[1.1] lg:leading-[0.95] tracking-tight transition-colors ${isDark ? 'text-white' : 'text-black'}`}><span className="font-medium">{t.sector1_title1}</span> <br /> <span className="italic font-light text-[#FF660F]">{t.sector1_title2}</span></h2>
               <p className={`text-base md:text-base lg:text-base leading-relaxed mb-6 md:mb-8 font-medium transition-colors ${isDark ? 'text-white/50' : 'text-black/50'}`}>{t.sector1_desc}</p>
@@ -415,12 +448,12 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
         </div>
 
         {/* Visionary Transformations Showcase */}
-        <div ref={showcaseRef} className="min-h-screen flex flex-col justify-center py-12 md:py-32 px-6 md:px-24 bg-[#030303]/5 relative overflow-hidden">
+        <div ref={showcaseRef} className="min-h-fit md:min-h-screen flex flex-col justify-center py-16 md:py-32 px-6 md:px-24 bg-[#030303]/5 relative overflow-hidden">
           <div className="absolute inset-0 opacity-20 pointer-events-none">
             <div className="absolute inset-0 bg-[radial-gradient(#FF660F_1px,transparent_1px)] [background-size:40px_40px]"></div>
           </div>
           <div className="max-w-[1600px] mx-auto w-full">
-            <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-8 md:mb-16 gap-3 md:gap-5 text-center md:text-left">
+            <div className={`flex flex-col md:flex-row justify-between items-center md:items-end mb-8 md:mb-16 gap-3 md:gap-5 text-center md:text-left transition-all duration-1000 ${showcaseSeen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="space-y-1"><span className={`text-base md:text-base uppercase tracking-[0.5em] font-bold block transition-colors ${isDark ? 'text-white/20' : 'text-black/30'}`}>{t.showcase_label}</span><h3 className={`text-xl md:text-2xl lg:text-7xl font-heading font-light tracking-tighter transition-colors ${isDark ? 'text-white' : 'text-black'}`}>{t.showcase_title1} <span className="italic text-[#FF660F]">{t.showcase_title2}</span></h3></div>
               <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-sm md:text-sm uppercase tracking-[0.5em] font-bold transition-colors border-b-2 pb-1 ${isDark ? 'text-white/20 border-white/5 hover:text-white hover:border-white' : 'text-black/30 border-black/5 hover:border-black'}`}>{t.cta_open_library}</button>
             </div>
@@ -454,7 +487,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
         </div>
 
         {/* SECTION 3: the living element (refined epic slideshow) */}
-        <div id="philosophy-section" ref={philosophyRef} className={`relative min-h-[500px] lg:min-h-screen flex items-center justify-center overflow-hidden ${philosophyInView ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'} transition-all duration-[1500ms]`}>
+        <div id="philosophy-section" ref={philosophyRef} className={`relative min-h-[500px] lg:min-h-screen flex items-center justify-center overflow-hidden ${philosophySeen ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'} transition-all duration-[1500ms]`}>
           <div className="absolute inset-0 z-0 overflow-hidden">
             {(() => {
               const images = [
@@ -542,10 +575,10 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
         </div>
 
         {/* Sector II: Neubau Digital Synthesis */}
-        <div className="relative min-h-screen flex items-center py-24 md:py-40 px-6 md:px-24">
+        <div className="relative min-h-[70vh] md:min-h-screen flex items-center py-16 md:py-40 px-6 md:px-24">
           <div className="max-w-[1600px] mx-auto w-full relative">
             {/* Information box goes left now */}
-            <div className={`${textboxClass(sector2InView)} md:left-0 md:top-[-1rem] lg:left-[-3rem] lg:top-[-3rem]`}>
+            <div className={`${textboxClass(sector2Seen)} md:left-0 md:top-[-1rem] lg:left-[-3rem] lg:top-[-3rem]`}>
               <span className="text-sm md:text-base uppercase tracking-[0.4em] text-[#FF660F] font-black mb-1.5 md:mb-3 opacity-70">{t.sector2_label}</span>
               <h2 className={`text-2xl md:text-xl lg:text-3xl xl:text-5xl font-heading mb-2 md:mb-3 leading-[1.1] lg:leading-[0.95] tracking-tight transition-colors ${isDark ? 'text-white' : 'text-black'}`}><span className="font-medium">{t.sector2_title1}</span> <br /> <span className="italic font-light text-[#FF660F]">{t.sector2_title2}</span></h2>
               <p className={`text-base md:text-base lg:text-base leading-relaxed mb-4 md:mb-6 font-medium transition-colors ${isDark ? 'text-white/50' : 'text-black/50'}`}>{t.sector2_desc}</p>
@@ -556,7 +589,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
             </div>
             <div ref={sector2Ref} className={`w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative rounded-[1rem] md:rounded-[2rem] lg:rounded-[3.5rem] overflow-hidden shadow-2xl border border-white/5 transition-all duration-1000 z-10 ${sector2InView ? 'grayscale-0 opacity-100' : 'grayscale opacity-40'}`}>
               <iframe
-                src="https://player.vimeo.com/video/1165443658?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&background=1"
+                src="https://player.vimeo.com/video/1165443658?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&background=1&playsinline=1"
                 className="absolute inset-0 w-full h-full scale-[1.35] pointer-events-none"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
@@ -568,7 +601,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
         </div>
 
         {/* SECTION 5: NEUBAU SYNTHESIS GALLERY */}
-        <div ref={neubauShowcaseRef} className="min-h-screen flex flex-col justify-center py-24 md:py-32 px-6 md:px-24 bg-[#030303]/5 relative overflow-hidden">
+        <div ref={neubauShowcaseRef} className="min-h-fit md:min-h-screen flex flex-col justify-center py-16 md:py-32 px-6 md:px-24 bg-[#030303]/5 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
             <div className="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] [background-size:60px_60px]"></div>
           </div>
@@ -599,12 +632,12 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
         </div>
 
         {/* Sector III: Integrated Growth Strategy */}
-        <div className="relative min-h-[100vh] flex items-center py-24 md:py-40 px-0 md:px-24 overflow-hidden">
+        <div className="relative min-h-fit md:min-h-[100vh] flex items-center py-16 md:py-40 px-0 md:px-24 overflow-hidden">
           {/* Mobile Video Background (Full Section) */}
           <div className="absolute inset-0 w-full h-full md:hidden overflow-hidden z-0">
             <iframe
-              src="https://player.vimeo.com/video/1164815646?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479"
-              className="absolute top-1/2 left-1/2 w-[350vw] h-[350vh] -translate-x-1/2 -translate-y-1/2 pointer-events-none object-cover"
+              src="https://player.vimeo.com/video/1164815646?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&playsinline=1"
+              className="absolute top-1/2 left-1/2 w-[200vw] h-[200vh] -translate-x-1/2 -translate-y-1/2 pointer-events-none object-cover"
               frameBorder="0"
               allow="autoplay; fullscreen"
               title="Mobile Background Video"
@@ -618,7 +651,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
               {/* Desktop Video Background (Confined to Card) */}
               <div className="absolute inset-0 overflow-hidden z-0 hidden md:block">
                 <iframe
-                  src="https://player.vimeo.com/video/1164815646?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479"
+                  src="https://player.vimeo.com/video/1164815646?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&playsinline=1"
                   className="absolute inset-0 w-full h-full object-cover pointer-events-none md:min-w-[100vw] md:min-h-[56.25vw] md:top-1/2 md:-translate-y-1/2"
                   frameBorder="0"
                   allow="autoplay; fullscreen"
@@ -652,7 +685,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           </div>
         </div>
 
-        <div id="digital-strategy" ref={tacticalRef} className={`relative min-h-[140vh] lg:min-h-screen flex items-center justify-center overflow-hidden mt-12 md:mt-32 border-t border-white/5 ${tacticalInView ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'} transition-all duration-[1500ms]`}>
+        <div id="digital-strategy" ref={tacticalRef} className={`relative min-h-fit md:min-h-screen flex items-center justify-center overflow-hidden mt-8 md:mt-32 border-t border-white/5 ${tacticalSeen ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'} transition-all duration-[1500ms]`}>
           {/* Background Image */}
           <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0 bg-[#030303]">
             <img src="https://i.postimg.cc/pL6x3G35/cambia-el-color-202603311520.jpg" alt="Growth Ecosystem" className="absolute inset-0 w-full h-full object-cover md:object-contain translate-x-0 md:translate-x-0 scale-[1.5] md:scale-100 origin-center md:origin-center" />
