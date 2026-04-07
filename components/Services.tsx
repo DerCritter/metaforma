@@ -488,7 +488,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
         </div>
 
         {/* SECTION 3: the living element (refined epic slideshow) */}
-        <div id="philosophy-section" ref={philosophyRef} className={`relative min-h-[500px] lg:min-h-screen flex items-center justify-center overflow-hidden ${philosophySeen ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'} transition-all duration-[1500ms]`}>
+        <div id="philosophy-section" ref={philosophyRef} className={`relative min-h-[350px] md:min-h-[500px] lg:min-h-screen flex items-center justify-center overflow-hidden ${philosophySeen ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'} transition-all duration-[1500ms]`}>
           <div className="absolute inset-0 z-0 overflow-hidden">
             {(() => {
               const images = [
@@ -509,12 +509,13 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
               return images.map((img, idx) => (
                 <div
                   key={img}
-                  className={`absolute inset-0 transition-all duration-[3500ms] ease-in-out ${idx === activeIdx ? 'opacity-100 scale-100' : 'opacity-0 scale-103'}`}
+                  className={`absolute inset-0 transition-all duration-[3500ms] ease-in-out ${idx === activeIdx ? 'opacity-100' : 'opacity-0'}`}
                   style={{
                     backgroundImage: `url(${img})`,
-                    backgroundSize: 'cover',
+                    backgroundSize: 'contain',
+                    backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
-                    willChange: 'opacity, transform'
+                    willChange: 'opacity'
                   }}
                 />
               ));
@@ -695,7 +696,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
         <div id="digital-strategy" ref={tacticalRef} className={`relative min-h-fit md:min-h-screen flex items-center justify-center overflow-hidden mt-8 md:mt-32 border-t border-white/5 ${tacticalSeen ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'} transition-all duration-[1500ms]`}>
           {/* Background Image */}
           <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0 bg-[#030303]">
-            <img src="https://i.postimg.cc/pL6x3G35/cambia-el-color-202603311520.jpg" alt="Growth Ecosystem" className="absolute inset-0 w-full h-full object-cover md:object-contain translate-x-0 md:translate-x-0 scale-100 md:scale-100 origin-center md:origin-center" />
+            <img src="https://i.postimg.cc/pL6x3G35/cambia-el-color-202603311520.jpg" alt="Growth Ecosystem" className="absolute inset-0 w-full h-full object-contain md:object-contain translate-x-0 md:translate-x-0 scale-100 md:scale-100 origin-center md:origin-center" />
           </div>
           <div className="absolute inset-0 bg-[#030303]/40"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303] opacity-80"></div>
