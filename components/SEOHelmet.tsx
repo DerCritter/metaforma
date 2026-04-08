@@ -12,6 +12,8 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ language, path }) => {
     const baseUrl = 'https://metaforma-ai.com';
     
     const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+    // Ensure trailing slash for root and language paths to match sitemap perfectly
+    const canonicalPath = (normalizedPath === '/' || normalizedPath === '/de') ? `${normalizedPath}/` : normalizedPath;
     const isDe = normalizedPath === '/de' || normalizedPath.startsWith('/de/');
     
     let enPath = normalizedPath;
@@ -30,6 +32,9 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ language, path }) => {
             <title>{t.title}</title>
             <meta name="description" content={t.description} />
             <meta name="keywords" content={t.keywords} />
+            
+            {/* Canonical URL to prevent indexing duplicates (www vs non-www) */}
+            <link rel="canonical" href={`${baseUrl}${canonicalPath}`} />
             
             {/* Hreflang Tags for International Targeting */}
             <link rel="alternate" hrefLang="en" href={`${baseUrl}${enPath}`} />
