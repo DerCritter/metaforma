@@ -234,7 +234,7 @@ export const translations: Record<Language, LanguageDictionary> = {
       showcase_title1: 'Visionary',
       showcase_title2: 'Transformations',
       neubau_showcase_label: 'PORTFOLIO',
-      neubau_showcase_title1: 'Neubau',
+      neubau_showcase_title1: 'New Build',
       neubau_showcase_title2: 'Synthesis',
       philosophy_label: 'the philosophy',
       philosophy_title1: 'the living',
