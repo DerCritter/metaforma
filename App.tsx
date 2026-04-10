@@ -14,6 +14,7 @@ import { Language } from './translations';
 import { SEOHelmet } from './components/SEOHelmet';
 import { ImprintDSGVO } from './components/ImprintDSGVO';
 import { CookieConsent } from './components/CookieConsent';
+import { GA4Tracker } from './components/GA4Tracker';
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -155,6 +156,7 @@ const App: React.FC = () => {
   return (
     <div className={`min-h-screen flex flex-col transition-colors duration-1000 relative ${isDark ? 'text-white' : 'text-black'}`}>
       <SEOHelmet language={language} path={location.pathname} />
+      <GA4Tracker measurementId="G-WB3LQRQM78" />
       
       <Navbar
         activeSection={activeSection}

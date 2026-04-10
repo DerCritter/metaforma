@@ -270,6 +270,18 @@
 }
 </script>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WB3LQRQM78"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-WB3LQRQM78', {
+        send_page_view: false // We will handle this manually for SPA navigation
+      });
+    </script>
+
 </head>
 
 <body>
