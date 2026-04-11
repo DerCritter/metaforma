@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Project } from '../types';
 import { Language, translations } from '../translations';
+import { OptimizedImage } from './OptimizedImage';
 
 interface ProjectDetailProps {
   project: Project;
@@ -53,13 +54,14 @@ const ProjectSlideshow: React.FC<{ images: string[]; onImageClick: (url: string)
       onClick={() => onImageClick(images[currentIndex])}
     >
       {images.map((img, idx) => (
-        <img
-          key={img}
-          src={img}
-          alt={`Slide ${idx}`}
-          className={`absolute inset-0 w-full h-full object-cover transition-all duration-[3000ms] ease-in-out ${idx === currentIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
-            }`}
-        />
+        <div key={img} className={`absolute inset-0 transition-all duration-[3000ms] ease-in-out ${idx === currentIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-110'}`}>
+           <OptimizedImage
+             src={img}
+             alt={`Slide ${idx}`}
+             className="w-full h-full"
+             priority={idx === 0}
+           />
+        </div>
       ))}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent no-print"></div>
 
@@ -111,6 +113,16 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, 
     const interval = setInterval(moveSlider, 16);
     return () => clearInterval(interval);
   }, []);
+
+  // Preload all project images for immediate gallery experience
+  useEffect(() => {
+    if (project.images) {
+      project.images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+    }
+  }, [project.images]);
 
   const handleMove = (e: React.MouseEvent | React.TouchEvent) => {
     if (!containerRef.current) return;
@@ -255,9 +267,9 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, 
                     className={`relative rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-white/5 group shadow-lg cursor-zoom-in print:rounded-none print:shadow-none print:border-none ${getMosaicClasses(i)}`}
                     onClick={() => setLightboxImage(img)}
                   >
-                    <img
+                    <OptimizedImage
                       src={img}
-                      className="w-full h-full object-cover transition-all duration-[3000ms] ease-out group-hover:scale-110 print:group-hover:scale-100"
+                      className="w-full h-full"
                       alt={`View ${i + 1}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity no-print"></div>
