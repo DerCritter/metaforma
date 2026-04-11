@@ -72,8 +72,13 @@ const App: React.FC = () => {
     const isHomePage = location.pathname === '/' || location.pathname === '/de' || location.pathname === '/de/';
 
     if (!isHomePage && (section === AppSection.HOME || section === AppSection.SERVICES || section === AppSection.PHILOSOPHY || section === AppSection.ARCHITECTURE || isCustomScrollId)) {
-        // We aren't on Home, so we must route there first, passing the section as a hash fragment roughly
+        // We aren't on Home, so we must route there first
         navigate(isDe ? `/de` : `/`);
+        
+        if (section === AppSection.ARCHITECTURE) {
+          setActiveSection(AppSection.ARCHITECTURE);
+        }
+
         // Note: Actual scrolling to fragment needs an effect tracking location changes, or we use a small timeout
         setTimeout(() => {
           if (isCustomScrollId) {
@@ -170,13 +175,27 @@ const App: React.FC = () => {
       <main className="flex-grow">
         <Routes>
             {/* Root English */}
-            <Route path="/" element={homeComponent} />
+            <Route path="/" element={activeSection === AppSection.ARCHITECTURE ? (
+              <Portfolio
+                category="architecture"
+                onSelectProject={setSelectedProject}
+                isDark={isDark}
+                language={language}
+              />
+            ) : homeComponent} />
             <Route path="/contact" element={<ContactForm isDark={isDark} language={language} />} />
             <Route path="/impressum" element={<ImprintDSGVO isDark={isDark} language={language} type="impressum" />} />
             <Route path="/privacy" element={<ImprintDSGVO isDark={isDark} language={language} type="privacy" />} />
 
             {/* Root German */}
-            <Route path="/de" element={homeComponent} />
+            <Route path="/de" element={activeSection === AppSection.ARCHITECTURE ? (
+              <Portfolio
+                category="architecture"
+                onSelectProject={setSelectedProject}
+                isDark={isDark}
+                language={language}
+              />
+            ) : homeComponent} />
             <Route path="/de/contact" element={<ContactForm isDark={isDark} language={language} />} />
             <Route path="/de/impressum" element={<ImprintDSGVO isDark={isDark} language={language} type="impressum" />} />
             <Route path="/de/datenschutz" element={<ImprintDSGVO isDark={isDark} language={language} type="privacy" />} />
@@ -186,14 +205,6 @@ const App: React.FC = () => {
         </Routes>
 
         {/* Keeping Portfolio modal alive if requested outside of direct routing for SPA fluidness */}
-        {activeSection === AppSection.ARCHITECTURE && (
-          <Portfolio
-            category="architecture"
-            onSelectProject={setSelectedProject}
-            isDark={isDark}
-            language={language}
-          />
-        )}
       </main>
 
       {selectedProject && (
