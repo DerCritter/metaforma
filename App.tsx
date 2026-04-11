@@ -102,18 +102,26 @@ const App: React.FC = () => {
       if (activeSection === AppSection.HOME) return;
     }
 
-    if (section === AppSection.SERVICES) {
-      const el = document.getElementById('services-section');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-      return;
-    }
-    if (section === AppSection.PHILOSOPHY) {
-      const el = document.getElementById('philosophy-section');
+    if (section === AppSection.SERVICES || section === AppSection.PHILOSOPHY) {
+      if (activeSection === AppSection.ARCHITECTURE) {
+        // We are in Portfolio, but want a Home section. 
+        // We must switch to HOME first so the items are rendered in the DOM.
+        setActiveSection(AppSection.HOME);
+        setTimeout(() => {
+          const id = section === AppSection.SERVICES ? 'services-section' : 'philosophy-section';
+          const el = document.getElementById(id);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+        return;
+      }
+      const id = section === AppSection.SERVICES ? 'services-section' : 'philosophy-section';
+      const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
       return;
     }
 
     if (section === AppSection.HOME) {
+        setActiveSection(AppSection.HOME);
         navigate(isDe ? '/de' : '/');
     } else if (section === AppSection.CONTACT_FORM || section === AppSection.AI_CONSULTANT) {
         navigate(isDe ? '/de/contact' : '/contact');
