@@ -352,7 +352,7 @@ export const translations: Record<Language, LanguageDictionary> = {
       btn_submit: 'Request Inquiry'
     },
     ui: {
-      export_pdf: 'EXPORT PDF',
+
       insights: 'INSIGHTS',
       type: 'Type',
       location: 'Location',
@@ -543,7 +543,7 @@ export const translations: Record<Language, LanguageDictionary> = {
       btn_submit: 'Anfrage Senden'
     },
     ui: {
-      export_pdf: 'PDF EXPORTIEREN',
+
       insights: 'EINBLICKE',
       type: 'Typ',
       location: 'Standort',
