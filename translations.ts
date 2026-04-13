@@ -240,7 +240,7 @@ export const translations: Record<Language, LanguageDictionary> = {
       philosophy_title1: 'the living',
       philosophy_title2: 'element',
       philosophy_p1: 'Our philosophy is rooted in the emotional resonance of a space. We master the dialogue between light, texture, and cinematic depth to capture the ‘Living Element.’',
-      philosophy_p2: 'From restoring historic landmarks to developing contemporary visions from the ground up, we invite investors to inhabit the future today. We bridge the gap between technical blueprints and the aspiration of an elevated lifestyle. Whether Heritage or Neubau, we ensure ',
+      philosophy_p2: 'From restoring historic landmarks to developing contemporary visions from the ground up, we invite investors to inhabit the future today. We bridge the gap between technical blueprints and the aspiration of an elevated lifestyle. Whether Heritage or New Build, we ensure ',
       philosophy_p2_highlight: 'every project is lived before it is built.',
       cta_portfolio: 'VIEW PORTFOLIO',
       cta_inquiry: 'INQUIRY NOW',
@@ -305,7 +305,7 @@ export const translations: Record<Language, LanguageDictionary> = {
       s1_desc: 'High-impact, AI-powered imagery for architectural publications and luxury catalogs.',
       s2_title: 'Renovations & Heritage',
       s2_desc: 'High-end visual transformation for refurbishments and historic landmarks via AI.',
-      s3_title: 'New Developments (Neubau)',
+      s3_title: 'New Developments (New Build)',
       s3_desc: 'Hyper-realistic AI visualizations for ground-up architectural projects.',
       s4_title: 'Strategic Sales Assets',
       s4_desc: 'AI-generated visual content designed to accelerate real estate investment.'
@@ -324,7 +324,7 @@ export const translations: Record<Language, LanguageDictionary> = {
       multi_family: 'Multi-Family',
       residential: 'Residential',
       commercial: 'Commercial',
-      modern_neubau: 'Modern Neubau',
+      modern_neubau: 'Modern New Build',
       glass_architecture: 'Glass Architecture',
       office: 'Office',
       digital_synthesis: 'Digital Synthesis',
@@ -381,7 +381,7 @@ export const translations: Record<Language, LanguageDictionary> = {
     seo: {
       title: 'Metaforma | High-End AI Renders for Real Estate Marketing: Heritage & New Builds',
       description: 'Premium AI-driven architectural visualizations for property marketing across Germany. Accelerating pre-sales for heritage adaptive reuse and new construction assets.',
-      keywords: 'Real Estate Marketing Renders, property commercialization visuals, high-end architecture rendering Germany, heritage transformation, premium exposé visuals'
+      keywords: 'Real Estate Marketing Renders, property commercialization visuals, high-end architecture rendering Germany, heritage transformation, premium expose visuals'
     }
   },
   de: {
@@ -414,7 +414,7 @@ export const translations: Record<Language, LanguageDictionary> = {
       growth_label: 'Wachstums-Ökosystem',
       growth_title1: 'Vision Skalieren',
       growth_title2: 'mit digitalen Assets',
-      growth_desc: 'Wir bieten den technischen Rahmen, um Ihre Projekte auf jeder Plattform mit präsentieren zu können.',
+      growth_desc: 'Wir bieten den technischen Rahmen, um Ihre Projekte auf jeder Plattform mit maximalem Engagement präsentieren zu können.',
       growth_pillar1_title: 'Konvertierungs-Web-Ökosysteme',
       growth_pillar1_desc: 'Digitale Bühnen, die das Vertrauen der Investoren stärken und die fotorealistische Konvertierung maximieren.',
       growth_pillar2_title: 'Kinoreifes Storytelling',
@@ -572,7 +572,7 @@ export const translations: Record<Language, LanguageDictionary> = {
     seo: {
       title: 'Metaforma | High-End KI-Architektur-Renderings für Immobilien-Vermarktung: Denkmal & Neubau',
       description: 'Verkaufsstarke KI-Architekturvisualisierung für die Vermarktung von Denkmalschutz-Immobilien und Neubau-Projekten deutschlandweit.',
-      keywords: 'Immobilienmarketing Renderings, Exposé-Visualización, Denkmalschutz Vermarktung, High-End Architekturvisualisierung Deutschland, Bauträger-Service KI'
+      keywords: 'Immobilienmarketing Renderings, Exposé-Visualisierung, Denkmalschutz Vermarktung, High-End Architekturvisualisierung Deutschland, Bauträger-Service KI'
     }
   }
 };
