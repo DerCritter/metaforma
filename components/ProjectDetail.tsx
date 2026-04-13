@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Project } from '../types';
 import { Language, translations } from '../translations';
 import { OptimizedImage } from './OptimizedImage';
+import { trackEvent } from './GA4Tracker';
 
 interface ProjectDetailProps {
   project: Project;
@@ -154,7 +155,10 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, 
 
 
           <button
-            onClick={onClose}
+            onClick={() => {
+              trackEvent('project_close', { project_id: project.id });
+              onClose();
+            }}
             className="p-3 md:p-4 text-white/50 hover:text-[#FF660F] transition-all bg-[#0a0a0b]/40 rounded-full border border-white/10"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -282,7 +286,10 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, 
               <div className="w-px h-16 md:h-32 bg-gradient-to-b from-[#FF660F] to-transparent"></div>
               <h4 className="text-3xl md:text-5xl font-heading text-white italic font-light tracking-tight">{t.return_to_portfolio}</h4>
               <button
-                onClick={onClose}
+                onClick={() => {
+                  trackEvent('project_close', { project_id: project.id, method: 'bottom_button' });
+                  onClose();
+                }}
                 className="px-10 md:px-20 py-5 md:py-8 bg-[#FF660F] text-white rounded-full text-[11px] md:text-[11px] font-bold tracking-[0.4em] md:tracking-[0.8em] uppercase hover:scale-105 transition-all shadow-2xl shadow-[#FF660F]/20"
               >
                 {t.close_detail}

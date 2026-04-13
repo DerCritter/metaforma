@@ -8,6 +8,20 @@ declare global {
   }
 }
 
+/**
+ * Utility to track custom events in GA4
+ * Usage: trackEvent('cta_click', { label: 'hero_inquiry' })
+ */
+export const trackEvent = (eventName: string, params: Record<string, any> = {}) => {
+  const consent = localStorage.getItem('metaforma_cookie_consent');
+  if (consent === 'accepted' && window.gtag) {
+    window.gtag('event', eventName, {
+      ...params,
+      timestamp: new Date().toISOString()
+    });
+  }
+};
+
 interface GA4TrackerProps {
   measurementId: string;
 }
@@ -18,7 +32,7 @@ export const GA4Tracker: React.FC<GA4TrackerProps> = ({ measurementId }) => {
   useEffect(() => {
     // Check for cookie consent before tracking
     const consent = localStorage.getItem('metaforma_cookie_consent');
-    if (consent === 'rejected') return;
+    if (consent !== 'accepted') return;
 
     if (window.gtag) {
       window.gtag('event', 'page_view', {

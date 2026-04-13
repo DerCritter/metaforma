@@ -3,6 +3,7 @@ import { Project } from '../types';
 import { ProjectCard } from './ProjectCard';
 
 import { Language, translations } from '../translations';
+import { trackEvent } from './GA4Tracker';
 
 export const getArchitectureProjects = (language: Language): Project[] => {
   const ts = translations[language].services;
@@ -185,7 +186,10 @@ export const Portfolio: React.FC<PortfolioProps> = ({ category, onSelectProject,
             <ProjectCard
               key={project.id}
               project={project}
-              onClick={onSelectProject}
+              onClick={(p) => {
+                trackEvent('project_select', { project_id: p.id, view_mode: 'cards' });
+                onSelectProject(p);
+              }}
               isDark={isDark}
             />
           ))}
@@ -196,7 +200,10 @@ export const Portfolio: React.FC<PortfolioProps> = ({ category, onSelectProject,
             <div
               key={`${item.project.id}-${idx}`}
               className="relative group overflow-hidden rounded-[1rem] md:rounded-[2rem] border border-white/5 cursor-pointer shadow-lg transition-transform hover:scale-[1.02] hover:z-10"
-              onClick={() => onSelectProject(item.project)}
+              onClick={() => {
+                trackEvent('project_select', { project_id: item.project.id, view_mode: 'cloud' });
+                onSelectProject(item.project);
+              }}
             >
               <img
                 src={item.url}

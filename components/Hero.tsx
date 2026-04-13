@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { Language, translations } from '../translations';
+import { trackEvent } from './GA4Tracker';
 
 interface HeroProps {
   onExplore: () => void;
@@ -84,7 +85,10 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
         </p>
 
         <button
-          onClick={onExplore}
+          onClick={() => {
+            trackEvent('cta_click', { label: 'hero_inquiry', section: 'hero' });
+            onExplore();
+          }}
           className={`px-8 md:px-14 py-4 md:py-6 rounded-full text-sm md:text-sm font-bold tracking-[0.4em] uppercase hover:scale-105 transition-all shadow-2xl ${isDark ? 'bg-[#FF660F] text-white shadow-[#FF660F]/20' : 'bg-[#FF660F] text-white shadow-[#FF660F]/20'}`}
         >
           {t.cta}
