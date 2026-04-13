@@ -12,8 +12,10 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ language, path }) => {
     const baseUrl = 'https://metaforma-ai.com';
     
     const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-    // Ensure trailing slash for root and language paths to match sitemap perfectly
-    const canonicalPath = (normalizedPath === '/' || normalizedPath === '/de') ? `${normalizedPath}/` : normalizedPath;
+    // Precise canonical mapping: ensure language roots have trailing slashes to match sitemap.xml
+    const canonicalPath = (normalizedPath === '/' || normalizedPath === '/de' || normalizedPath === '/de/') 
+        ? (normalizedPath.endsWith('/') ? normalizedPath : `${normalizedPath}/`) 
+        : normalizedPath;
     const isDe = normalizedPath === '/de' || normalizedPath.startsWith('/de/');
     
     let enPath = normalizedPath;
@@ -36,9 +38,9 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ language, path }) => {
             {/* Canonical URL to prevent indexing duplicates (www vs non-www) */}
             <link rel="canonical" href={`${baseUrl}${canonicalPath}`} />
             
-            {/* Hreflang Tags for International Targeting */}
+            {/* Hreflang Tags for International Targeting - Stronger cross-linking */}
             <link rel="alternate" hrefLang="en" href={`${baseUrl}${enPath}`} />
-            <link rel="alternate" hrefLang="de-DE" href={`${baseUrl}${dePath}`} />
+            <link rel="alternate" hrefLang="de" href={`${baseUrl}${dePath}`} />
             <link rel="alternate" hrefLang="x-default" href={`${baseUrl}${enPath}`} />
 
             {/* Social Sharing - Open Graph */}
