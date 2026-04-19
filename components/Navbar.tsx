@@ -34,7 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
 
   return (
     <nav className={`fixed top-0 w-full z-40 backdrop-blur-[12px] border-b transition-all duration-700 h-20 md:h-24 flex items-center ${isDark ? 'bg-[#030303]/60 border-white/5' : 'bg-white/60 border-black/5'}`}>
-      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full flex items-center justify-between gap-8">
         <div
           className="cursor-pointer group flex-shrink-0"
           onClick={() => handleNavClick(AppSection.HOME)}
@@ -54,7 +54,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
               <button
                 key={nav.id}
                 onClick={() => handleNavClick(nav.id)}
-                className={`text-[10px] xl:text-xs 2xl:text-sm tracking-widest xl:tracking-[0.2em] uppercase transition-all
+                className={`whitespace-nowrap text-[10px] xl:text-xs 2xl:text-sm tracking-widest xl:tracking-[0.2em] uppercase transition-all
                   ${activeSection === nav.id
                     ? (isDark ? 'text-white font-bold underline underline-offset-[12px] decoration-2' : 'text-black font-bold underline underline-offset-[12px] decoration-2')
                     : isDark ? 'text-white/60 hover:text-white' : 'text-black/60 hover:text-black'}`}
@@ -64,7 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
             ))}
             <button
               onClick={() => handleNavClick(AppSection.CONTACT_FORM)}
-              className={`ml-1 xl:ml-4 px-4 xl:px-7 py-2.5 rounded-full font-bold text-[10px] xl:text-xs 2xl:text-sm tracking-widest xl:tracking-[0.2em] uppercase transition-all shadow-lg bg-[#FF660F] text-white shadow-[#FF660F]/20 hover:scale-105`}
+              className={`whitespace-nowrap ml-1 xl:ml-4 px-4 xl:px-7 py-2.5 rounded-full font-bold text-[10px] xl:text-xs 2xl:text-sm tracking-widest xl:tracking-[0.2em] uppercase transition-all shadow-lg bg-[#FF660F] text-white shadow-[#FF660F]/20 hover:scale-105`}
             >
               {t.contact}
             </button>
