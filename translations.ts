@@ -6,6 +6,7 @@ export interface LanguageDictionary {
     services: string;
     philosophy: string;
     portfolio: string;
+    blog: string;
     contact: string;
   };
   hero: {
@@ -141,7 +142,7 @@ export interface LanguageDictionary {
     multi_family: string;
     residential: string;
     commercial: string;
-    modern_neubau: string;
+    modern_new_build: string;
     glass_architecture: string;
     office: string;
     digital_synthesis: string;
@@ -209,6 +210,7 @@ export const translations: Record<Language, LanguageDictionary> = {
       services: 'Services',
       philosophy: 'Philosophy',
       portfolio: 'Portfolio',
+      blog: 'Blog',
       contact: 'Contact Now'
     },
     hero: {
@@ -269,7 +271,7 @@ export const translations: Record<Language, LanguageDictionary> = {
       highlight_philosophy: 'light, texture, and cinematic depth',
       highlight_growth: 'maximum engagement',
       project_coworking: 'Coworking space Wuppertal',
-      project_lofts: 'Luxus lofts Nürnberg',
+      project_lofts: 'Luxury lofts Nuremberg',
       project_multifamily: 'Heritage Multi-Family Wuppertal',
       project_apartment: 'Apartment complex',
       project_penthouse: 'NRW Penthouse',
@@ -326,25 +328,25 @@ export const translations: Record<Language, LanguageDictionary> = {
     expertise: {
       label: 'Insights & Expertise',
       title: 'Mastering Digital Property Architecture',
-      faq1_q: 'How does AI Architectural Visualization accelerate New Build (Neubau) pre-sales?',
-      faq1_a: 'By generating cinematic, 8K-resolution 3D renders of unbuilt environments, we eliminate buyer friction. High-end real estate investors require an emotional connection to a space. Our digital synthesis creates photorealistic atmospheres with precise lighting and materiality, allowing developers to commercialize off-plan luxury projects up to 40% faster.',
-      faq2_q: 'Why is generative AI superior for Denkmalschutz (Heritage Preservation)?',
-      faq2_a: 'Historic adaptive reuse projects face strict preservation regulations. Traditional rendering is slow and rigid. Our AI-driven pipelines allow us to respect existing historical structures while fluidly generating high-performance modern adaptations. We instantly visualize heritage conversions, showcasing the fusion of industrial legacy and luxury living.',
-      faq3_q: 'What makes Metaforma\'s Real Estate Marketing Renders different?',
-      faq3_a: 'We do not just render geometry; we engineer desire. Based in Berlin, we specialize in the DACH market aesthetic. Our assets are optimized across the entire digital ecosystem—from immersive website integrations to high-converting social media visual campaigns. We engineer every shadow and texture to maximize investor engagement and conversion.'
+      faq1_q: 'How does 3D Architectural Visualization accelerate pre-sales for development projects?',
+      faq1_a: 'By generating cinematic 3D renders of unbuilt environments, we eliminate buyer friction. Real estate investors require an emotional connection to a space. Our digital synthesis creates photorealistic atmospheres with precise lighting and materiality, allowing developers to commercialize off-plan properties up to 40% faster.',
+      faq2_q: 'Why is AI-assisted rendering superior for Heritage Preservation (Denkmalschutz)?',
+      faq2_a: 'Historic adaptive reuse projects face strict preservation regulations. Traditional rendering is slow and rigid. Our pipeline respects existing historical structures while fluidly generating high-performance modern adaptations. We instantly visualize heritage conversions, showcasing the fusion of historic substance and modern living.',
+      faq3_q: 'What distinguishes Metaforma\'s Real Estate Marketing Renders?',
+      faq3_a: 'Our assets are optimized across the entire digital ecosystem from immersive website integrations to high-converting social media visual campaigns. We engineer every shadow and texture to maximize investor engagement and conversion.'
     },
     tags: {
       workplace: 'Workplace',
       heritage_reuse: 'Heritage Reuse',
       modernist: 'Modernist',
       industrial_heritage: 'Industrial Heritage',
-      luxus_lofts: 'Luxus Lofts',
+      luxus_lofts: 'Luxury Lofts',
       adaptive_reuse: 'Adaptive Reuse',
       heritage: 'Heritage',
       multi_family: 'Multi-Family',
       residential: 'Residential',
       commercial: 'Commercial',
-      modern_neubau: 'Modern New Build',
+      modern_new_build: 'Modern New Build',
       glass_architecture: 'Glass Architecture',
       office: 'Office',
       digital_synthesis: 'Digital Synthesis',
@@ -373,7 +375,7 @@ export const translations: Record<Language, LanguageDictionary> = {
     },
     ui: {
 
-      insights: 'INSIGHTS',
+      blog: 'BLOG',
       type: 'Type',
       location: 'Location',
       synthesis_comparison: 'SYNTHESIS COMPARISON',
@@ -410,6 +412,7 @@ export const translations: Record<Language, LanguageDictionary> = {
       services: 'Leistungen',
       philosophy: 'Philosophie',
       portfolio: 'Portfolio',
+      blog: 'Blog',
       contact: 'Jetzt Kontaktieren'
     },
     hero: {
@@ -527,12 +530,12 @@ export const translations: Record<Language, LanguageDictionary> = {
     expertise: {
       label: 'Expertenwissen',
       title: 'Digitale Immobilien-Architektur auf höchstem Niveau',
-      faq1_q: 'Wie beschleunigt KI-Architekturvisualisierung den Vorverkauf von Neubauten?',
-      faq1_a: 'Durch die Erstellung von kinoreifen 8K-3D-Renderings noch nicht gebauter Umgebungen beseitigen wir Kaufbarrieren. High-End-Immobilieninvestoren benötigen eine emotionale Bindung an einen Raum. Unsere digitale Synthese schafft fotorealistische Atmosphären mit präziser Beleuchtung und Materialität, die es Entwicklern ermöglichen, Luxusprojekte off-plan bis zu 40 % schneller zu vermarkten.',
-      faq2_q: 'Warum ist generative KI überlegen für Denkmalschutz-Projekte?',
-      faq2_a: 'Historische Umnutzungsprojekte unterliegen strengen Auflagen. Traditionelles Rendering ist langsam und starr. Unsere KI-gestützten Pipelines erlauben es uns, historische Strukturen zu respektieren und gleichzeitig hochmoderne Anpassungen fließend zu generieren. Wir visualisieren Denkmal-Umnutzungen sofort und zeigen die Verschmelzung von industriellem Erbe und luxuriösem Wohnen.',
+      faq1_q: 'Wie beschleunigt 3D-Architekturvisualisierung den Vorverkauf von Immobilienprojekten?',
+      faq1_a: 'Durch die Erstellung von kinoreifen 3D-Renderings noch nicht gebauter Umgebungen beseitigen wir Kaufbarrieren. Immobilieninvestoren benötigen eine emotionale Bindung an einen Raum. Unsere digitale Synthese schafft fotorealistische Atmosphären mit präziser Beleuchtung und Materialität, die es Entwicklern ermöglichen, Immobilien off-plan bis zu 40 % schneller zu vermarkten.',
+      faq2_q: 'Warum ist KI-gestütztes Rendering überlegen für Denkmalschutz-Projekte?',
+      faq2_a: 'Historische Umnutzungsprojekte unterliegen strengen Auflagen. Traditionelles Rendering ist langsam und starr. Unsere Pipelines erlauben es uns, historische Strukturen zu respektieren und gleichzeitig hochmoderne Anpassungen fließend zu generieren. Wir visualisieren Denkmal-Umnutzungen sofort und zeigen die Verschmelzung von historischer Substanz und modernem Wohnen.',
       faq3_q: 'Was unterscheidet die Immobilienmarketing-Renderings von Metaforma?',
-      faq3_a: 'Wir rendern nicht nur Geometrie; wir konstruieren Begehrlichkeit. Mit Sitz in Berlin sind wir auf die Ästhetik des DACH-Marktes spezialisiert. Unsere Assets sind für das gesamte digitale Ökosystem optimiert – von immersiven Website-Integrationen bis hin zu hochkonvertierenden visuellen Social-Media-Kampagnen. Wir berechnen jeden Schatten und jede Textur, um das Engagement der Investoren und die Konversionsrate zu maximieren.'
+      faq3_a: 'Unsere Assets sind für das gesamte digitale Ökosystem optimiert von immersiven Website-Integrationen bis hin zu hochkonvertierenden visuellen Social-Media-Kampagnen. Wir berechnen jeden Schatten und jede Textur, um das Engagement der Investoren und die Konversionsrate zu maximieren.'
     },
     tags: {
       workplace: 'Arbeitsplatz',
@@ -545,7 +548,7 @@ export const translations: Record<Language, LanguageDictionary> = {
       multi_family: 'Mehrfamilienhaus',
       residential: 'Wohnbau',
       commercial: 'Gewerbebau',
-      modern_neubau: 'Moderner Neubau',
+      modern_new_build: 'Moderner Neubau',
       glass_architecture: 'Glasarchitektur',
       office: 'Büro',
       digital_synthesis: 'Digitale Synthese',
@@ -574,7 +577,7 @@ export const translations: Record<Language, LanguageDictionary> = {
     },
     ui: {
 
-      insights: 'EINBLICKE',
+      blog: 'BLOG',
       type: 'Typ',
       location: 'Standort',
       synthesis_comparison: 'SYNTHESE-VERGLEICH',

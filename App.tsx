@@ -11,6 +11,8 @@ import { Footer } from './components/Footer';
 import { ProjectDetail } from './components/ProjectDetail';
 import { TrustedPartners } from './components/TrustedPartners';
 import { Expertise } from './components/Expertise';
+import { InsightsHub } from './components/InsightsHub';
+import { ArticleLayout } from './components/ArticleLayout';
 import { Language } from './translations';
 import { SEOHelmet } from './components/SEOHelmet';
 import { ImprintDSGVO } from './components/ImprintDSGVO';
@@ -129,6 +131,13 @@ const App: React.FC = () => {
         setActiveSection(section as AppSection);
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
+    } else if (section === AppSection.BLOG) {
+        // Direct link to our main methodology article
+        const articleSlug = 'how-to-elevate-real-estate-assets';
+        navigate(isDe ? `/de/blog/${articleSlug}` : `/blog/${articleSlug}`);
+        setActiveSection(AppSection.BLOG);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
     }
 
     setActiveSection(section as AppSection);
@@ -196,6 +205,8 @@ const App: React.FC = () => {
             <Route path="/contact" element={<ContactForm isDark={isDark} language={language} />} />
             <Route path="/impressum" element={<ImprintDSGVO isDark={isDark} language={language} type="impressum" />} />
             <Route path="/privacy" element={<ImprintDSGVO isDark={isDark} language={language} type="privacy" />} />
+            <Route path="/blog" element={<InsightsHub isDark={isDark} language={language} />} />
+            <Route path="/blog/:slug" element={<ArticleLayout isDark={isDark} language={language} />} />
 
             {/* Root German */}
             <Route path="/de" element={activeSection === AppSection.ARCHITECTURE ? (
@@ -209,6 +220,8 @@ const App: React.FC = () => {
             <Route path="/de/contact" element={<ContactForm isDark={isDark} language={language} />} />
             <Route path="/de/impressum" element={<ImprintDSGVO isDark={isDark} language={language} type="impressum" />} />
             <Route path="/de/datenschutz" element={<ImprintDSGVO isDark={isDark} language={language} type="privacy" />} />
+            <Route path="/de/blog" element={<InsightsHub isDark={isDark} language={language} />} />
+            <Route path="/de/blog/:slug" element={<ArticleLayout isDark={isDark} language={language} />} />
 
             {/* Fallback */}
             <Route path="*" element={<Navigate to="/" replace />} />

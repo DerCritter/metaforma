@@ -49,6 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
               { id: AppSection.SERVICES, label: t.services },
               { id: AppSection.PHILOSOPHY, label: t.philosophy },
               { id: AppSection.ARCHITECTURE, label: t.portfolio },
+              { id: AppSection.BLOG, label: t.blog },
             ].map((nav) => (
               <button
                 key={nav.id}
@@ -110,6 +111,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
             { id: AppSection.SERVICES, label: t.services },
             { id: AppSection.PHILOSOPHY, label: t.philosophy },
             { id: AppSection.ARCHITECTURE, label: t.portfolio },
+            { id: AppSection.BLOG, label: t.blog },
           ].map((nav, idx) => (
             <button
               key={nav.id}

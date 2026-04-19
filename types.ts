@@ -22,6 +22,7 @@ export enum AppSection {
   HOME = 'home',
   ARCHITECTURE = 'architecture',
   AI_CONSULTANT = 'consultant',
+  BLOG = 'blog',
   CONTACT_FORM = 'contact',
   SERVICES = 'services',
   PHILOSOPHY = 'philosophy'
