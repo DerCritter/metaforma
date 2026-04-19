@@ -45,6 +45,16 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
           </div>
         );
       case 'image':
+        if ((block as any).size === 'reference') {
+           return (
+             <figure key={index} className="my-8 w-full max-w-sm md:max-w-md lg:max-w-xl mx-auto px-6">
+               <div className="w-full flex items-center justify-center">
+                   <img src={block.src} alt={block.alt} className="w-full h-auto object-contain rounded-lg border border-white/5 opacity-80" />
+               </div>
+               {block.caption && <figcaption className="mt-4 text-[10px] md:text-xs text-center opacity-50 px-6 uppercase tracking-widest">{block.caption}</figcaption>}
+             </figure>
+           );
+        }
         if ((block as any).size === 'inline') {
            return (
              <figure key={index} className="my-10 w-full max-w-3xl mx-auto px-6">
@@ -102,13 +112,13 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
         );
       case 'synthesis':
         return (
-          <div key={index} className="my-24 space-y-12 w-full max-w-7xl mx-auto">
-            <h4 className="text-center text-sm md:text-base uppercase tracking-[0.4em] font-bold text-[#FF660F]">{block.label}</h4>
+          <div key={index} className="my-32 w-full flex flex-col items-center relative">
+            <h4 className="text-center text-sm md:text-base uppercase tracking-[0.4em] font-bold text-[#FF660F] mb-12">{block.label}</h4>
             
             {/* Main Result (FULL BLEED) */}
-            <div className="w-full mb-12 relative">
-               <div className="w-full h-[60vh] md:h-[90vh] overflow-hidden bg-black/20">
-                  <img src={block.result} alt="Final Synthesis" className="w-full h-full object-cover" />
+            <div className="w-full mb-20 relative group">
+               <div className="w-full h-[60vh] md:h-[90vh] overflow-hidden bg-black object-cover">
+                  <img src={block.result} alt="Final Synthesis" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[3000ms]" />
                </div>
                <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-transparent flex items-end justify-center pb-12">
                  <p className="text-center text-sm md:text-lg uppercase tracking-[0.4em] text-[#FF660F] font-black italic">Final Render</p>
@@ -116,7 +126,7 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
             </div>
 
             {/* Inputs (LARGER & RESPONSIVE) */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 w-full px-6">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 w-full max-w-5xl px-6 mx-auto">
               {/* Raw Input */}
               <div className="flex flex-col items-center gap-4 w-full md:w-1/2 max-w-[400px]">
                  <div className="w-full aspect-square rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 bg-black/10">
