@@ -45,6 +45,16 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
           </div>
         );
       case 'image':
+        if ((block as any).size === 'inline') {
+           return (
+             <figure key={index} className="my-10 w-full max-w-3xl mx-auto px-6">
+               <div className="w-full flex items-center justify-center">
+                   <img src={block.src} alt={block.alt} className="w-full max-w-lg lg:max-w-2xl h-auto object-contain rounded-xl shadow-lg border border-white/10" />
+               </div>
+               {block.caption && <figcaption className="mt-4 text-xs md:text-sm text-center opacity-60 px-6">{block.caption}</figcaption>}
+             </figure>
+           );
+        }
         return (
           <figure key={index} className="my-20 w-full object-cover">
             <div className="w-full h-80 md:h-[600px] lg:h-[90vh] bg-black/10 overflow-hidden relative flex items-center justify-center">

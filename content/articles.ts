@@ -5,7 +5,7 @@ export type ArticleBlock =
   | { type: 'h2'; content: string }
   | { type: 'h3'; content: string }
   | { type: 'p'; content: string | React.ReactNode }
-  | { type: 'image'; src: string; alt: string; caption?: string }
+  | { type: 'image'; src: string; alt: string; caption?: string; size?: 'full' | 'inline' }
   | { type: 'comparison'; before: string; after: string; label: string }
   | { type: 'synthesis'; raw: string; ref: string; result: string; label: string }
   | { type: 'aerial-integration'; map: string; result: string; label: string }
@@ -41,7 +41,7 @@ export const articles: Article[] = [
           { type: 'h2', content: 'Phase I: Establishing the Master Anchor' },
           { type: 'p', content: 'Before generating a full gallery, you need an "Anchor Image". This first render establishes the setting, the mood, and the lighting parameters for the entire series. When working from a low-quality photo, the precision of your prompt is everything.' },
           { type: 'p', content: 'You must actively dictate the atmospheric conditions from a specific vocabulary list. Do not let the AI guess. Specify the time of day and lighting mood by choosing parameters like: Golden Hour, Early Morning, Overcast, Blue Hour, or Night.' },
-          { type: 'image', src: '/assets/blog/light-settings.jpg', alt: 'Atmospheric Lighting Settings Variations' },
+          { type: 'image', src: '/assets/blog/light-settings.jpg', alt: 'Atmospheric Lighting Settings Variations', size: 'inline' },
           { type: 'p', content: 'We also lock in the specific architectural style (e.g., High-end, Industrial, Residential) and the camera gear to emulate. Here is an example of a foundational prompt we might use:' },
           { type: 'callout', content: '"Create a photorealistic version of the picture, appear well-maintained and renovated, for editorial real estate resolution. Shot with a Canon EOS R5. Golden Hour lighting, editorial real estate quality."' },
           { type: 'h2', content: 'Phase II: Aesthetic Propagation' },
@@ -79,7 +79,7 @@ export const articles: Article[] = [
           { type: 'h2', content: 'Phase I: Etablierung des Master-Ankers' },
           { type: 'p', content: 'Bevor wir eine vollständige Galerie erstellen, benötigen wir ein "Anker-Bild". Dieser erste Render legt das Setting, die Stimmung und die Beleuchtungsparameter für die gesamte Fotostrecke fest. Wenn Sie von einem minderwertigen Foto ausgehen, ist die Präzision Ihres Prompts entscheidend.' },
           { type: 'p', content: 'Sie müssen die atmosphärischen Bedingungen aus einem spezifischen Vokabular aktiv vorgeben. Überlassen Sie der KI nicht das Raten. Bestimmen Sie die Tageszeit und Lichtstimmung, indem Sie Parameter wie Golden Hour, Early Morning, Overcast, Blue Hour oder Night wählen.' },
-          { type: 'image', src: '/assets/blog/light-settings.jpg', alt: 'Atmospheric Lighting Settings Variations' },
+          { type: 'image', src: '/assets/blog/light-settings.jpg', alt: 'Atmospheric Lighting Settings Variations', size: 'inline' },
           { type: 'p', content: 'Wir legen auch den spezifischen architektonischen Stil (z.B. High-End, Industrial, Residential) und die simulierte Kameraausrüstung fest. Hier ist ein Beispiel für einen grundlegenden Prompt, den wir verwenden könnten:' },
           { type: 'callout', content: '"Create a photorealistic version of the picture, appear well-maintained and renovated, for editorial real estate resolution. Shot with a Canon EOS R5. Golden Hour lighting, editorial real estate quality."' },
           { type: 'h2', content: 'Phase II: Ästhetische Propagierung' },
