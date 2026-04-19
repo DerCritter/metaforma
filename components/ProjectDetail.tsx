@@ -36,7 +36,7 @@ const Lightbox: React.FC<{ imageUrl: string; onClose: () => void; language: Lang
   );
 };
 
-const ProjectSlideshow: React.FC<{ images: string[]; onImageClick: (url: string) => void }> = ({ images, onImageClick }) => {
+const ProjectSlideshow: React.FC<{ images: string[]; projectTitle: string; projectLocation?: string; onImageClick: (url: string) => void }> = ({ images, projectTitle, projectLocation, onImageClick }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const ProjectSlideshow: React.FC<{ images: string[]; onImageClick: (url: string)
         <div key={img} className={`absolute inset-0 transition-all duration-[3000ms] ease-in-out ${idx === currentIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-110'}`}>
            <OptimizedImage
              src={img}
-             alt={`Slide ${idx}`}
+             alt={`${projectTitle} ${projectLocation ? '- ' + projectLocation : ''} | Architectural AI Render - Slide ${idx + 1}`}
              className="w-full h-full"
              priority={idx === 0}
            />
@@ -252,7 +252,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, 
             {project.images && project.images.length > 0 && (
               <div className="space-y-8 md:space-y-16 print:break-before-page print:mt-12">
                 <h3 className="text-base md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black print:text-black">{t.immersive_vision}</h3>
-                <ProjectSlideshow images={project.images} onImageClick={setLightboxImage} />
+                <ProjectSlideshow images={project.images} projectTitle={project.title} projectLocation={project.location} onImageClick={setLightboxImage} />
               </div>
             )}
 
@@ -274,7 +274,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, 
                     <OptimizedImage
                       src={img}
                       className="w-full h-full"
-                      alt={`View ${i + 1}`}
+                      alt={`${project.title} ${project.location ? '- ' + project.location : ''} | High-End Visualization - View ${i + 1}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity no-print"></div>
                   </div>

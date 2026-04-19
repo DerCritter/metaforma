@@ -10,6 +10,7 @@ import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
 import { ProjectDetail } from './components/ProjectDetail';
 import { TrustedPartners } from './components/TrustedPartners';
+import { Expertise } from './components/Expertise';
 import { Language } from './translations';
 import { SEOHelmet } from './components/SEOHelmet';
 import { ImprintDSGVO } from './components/ImprintDSGVO';
@@ -163,6 +164,7 @@ const App: React.FC = () => {
             isDark={isDark}
             language={language}
         />
+        <Expertise isDark={isDark} language={language} />
     </div>
   );
 

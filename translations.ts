@@ -120,6 +120,16 @@ export interface LanguageDictionary {
   trusted_partners: {
     title: string;
   };
+  expertise: {
+    label: string;
+    title: string;
+    faq1_q: string;
+    faq1_a: string;
+    faq2_q: string;
+    faq2_a: string;
+    faq3_q: string;
+    faq3_a: string;
+  };
   tags: {
     workplace: string;
     heritage_reuse: string;
@@ -313,6 +323,16 @@ export const translations: Record<Language, LanguageDictionary> = {
     trusted_partners: {
       title: 'Trusted Partners'
     },
+    expertise: {
+      label: 'Insights & Expertise',
+      title: 'Mastering Digital Property Architecture',
+      faq1_q: 'How does AI Architectural Visualization accelerate New Build (Neubau) pre-sales?',
+      faq1_a: 'By generating cinematic, 8K-resolution 3D renders of unbuilt environments, we eliminate buyer friction. High-end real estate investors require an emotional connection to a space. Our digital synthesis creates photorealistic atmospheres with precise lighting and materiality, allowing developers to commercialize off-plan luxury projects up to 40% faster.',
+      faq2_q: 'Why is generative AI superior for Denkmalschutz (Heritage Preservation)?',
+      faq2_a: 'Historic adaptive reuse projects face strict preservation regulations. Traditional rendering is slow and rigid. Our AI-driven pipelines allow us to respect existing historical structures while fluidly generating high-performance modern adaptations. We instantly visualize heritage conversions, showcasing the fusion of industrial legacy and luxury living.',
+      faq3_q: 'What makes Metaforma\'s Real Estate Marketing Renders different?',
+      faq3_a: 'We do not just render geometry; we engineer desire. Based in Berlin, we specialize in the DACH market aesthetic. Our assets are optimized across the entire digital ecosystem—from immersive website integrations to high-converting social media visual campaigns. We engineer every shadow and texture to maximize investor engagement and conversion.'
+    },
     tags: {
       workplace: 'Workplace',
       heritage_reuse: 'Heritage Reuse',
@@ -379,8 +399,8 @@ export const translations: Record<Language, LanguageDictionary> = {
       view_grid_cloud: 'Grid Cloud'
     },
     seo: {
-      title: 'Metaforma | High-End AI Renders for Real Estate Marketing: Heritage & New Builds',
-      description: 'Premium AI-driven architectural visualizations for property marketing across Germany. Accelerating pre-sales for heritage adaptive reuse and new construction assets.',
+      title: 'AI Architectural Renders | High-End Real Estate Marketing | Metaforma',
+      description: 'Premium AI-driven architectural visualizations for luxury property marketing across Germany. Accelerate pre-sales with cinematic renders for heritage adaptive reuse and new construction.',
       keywords: 'Real Estate Marketing Renders, property commercialization visuals, high-end architecture rendering Germany, heritage transformation, premium expose visuals'
     }
   },
@@ -504,6 +524,16 @@ export const translations: Record<Language, LanguageDictionary> = {
     trusted_partners: {
       title: 'Vertrauenswürdige Partner'
     },
+    expertise: {
+      label: 'Expertenwissen',
+      title: 'Digitale Immobilien-Architektur auf höchstem Niveau',
+      faq1_q: 'Wie beschleunigt KI-Architekturvisualisierung den Vorverkauf von Neubauten?',
+      faq1_a: 'Durch die Erstellung von kinoreifen 8K-3D-Renderings noch nicht gebauter Umgebungen beseitigen wir Kaufbarrieren. High-End-Immobilieninvestoren benötigen eine emotionale Bindung an einen Raum. Unsere digitale Synthese schafft fotorealistische Atmosphären mit präziser Beleuchtung und Materialität, die es Entwicklern ermöglichen, Luxusprojekte off-plan bis zu 40 % schneller zu vermarkten.',
+      faq2_q: 'Warum ist generative KI überlegen für Denkmalschutz-Projekte?',
+      faq2_a: 'Historische Umnutzungsprojekte unterliegen strengen Auflagen. Traditionelles Rendering ist langsam und starr. Unsere KI-gestützten Pipelines erlauben es uns, historische Strukturen zu respektieren und gleichzeitig hochmoderne Anpassungen fließend zu generieren. Wir visualisieren Denkmal-Umnutzungen sofort und zeigen die Verschmelzung von industriellem Erbe und luxuriösem Wohnen.',
+      faq3_q: 'Was unterscheidet die Immobilienmarketing-Renderings von Metaforma?',
+      faq3_a: 'Wir rendern nicht nur Geometrie; wir konstruieren Begehrlichkeit. Mit Sitz in Berlin sind wir auf die Ästhetik des DACH-Marktes spezialisiert. Unsere Assets sind für das gesamte digitale Ökosystem optimiert – von immersiven Website-Integrationen bis hin zu hochkonvertierenden visuellen Social-Media-Kampagnen. Wir berechnen jeden Schatten und jede Textur, um das Engagement der Investoren und die Konversionsrate zu maximieren.'
+    },
     tags: {
       workplace: 'Arbeitsplatz',
       heritage_reuse: 'Denkmal-Umnutzung',
@@ -570,8 +600,8 @@ export const translations: Record<Language, LanguageDictionary> = {
       view_grid_cloud: 'Raster-Cloud'
     },
     seo: {
-      title: 'Metaforma | High-End KI-Architektur-Renderings für Immobilien-Vermarktung: Denkmal & Neubau',
-      description: 'Verkaufsstarke KI-Architekturvisualisierung für die Vermarktung von Denkmalschutz-Immobilien und Neubau-Projekten deutschlandweit.',
+      title: 'Architekturvisualisierung KI | High-End Immobilienmarketing | Metaforma',
+      description: 'Premium KI-Architekturvisualisierung für die Vermarktung von Luxusimmobilien in Deutschland. Beschleunigen Sie Verkäufe mit kinoreifen Exposé-Renderings für Denkmalschutz und Neubau.',
       keywords: 'Immobilienmarketing Renderings, Exposé-Visualisierung, Denkmalschutz Vermarktung, High-End Architekturvisualisierung Deutschland, Bauträger-Service KI'
     }
   }
