@@ -74,13 +74,14 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
                 ></iframe>
               </div>
             </div>
-            {/* Mobile: static poster image — instant load, no iframe overhead */}
-            <div className="md:hidden absolute inset-0">
-              <img
-                src="https://i.postimg.cc/qB8WLNVN/outside_10.jpg"
-                alt="Heritage Architecture"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+            {/* Mobile: single video, forced 16:9 aspect to prevent portrait letterboxing */}
+            <div className="md:hidden absolute inset-0 overflow-hidden">
+              <iframe
+                src="https://player.vimeo.com/video/1179651662?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0&quality=540p"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400%] aspect-video"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+              ></iframe>
             </div>
         </div>
         <div className={`absolute inset-0 ${isDark ? 'bg-[#030303]/60' : 'bg-white/10'} backdrop-blur-[1px] pointer-events-none`}></div>
