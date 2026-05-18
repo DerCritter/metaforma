@@ -23,7 +23,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
             ...data,
             access_key: "1e86e7b5-86c4-4a5f-a558-35879d3aecc3",
             subject: "New Inquiry from Metaforma Website",
-            from_name: data.name // Uses the form's name field as the sender name in the email
+            from_name: data.name,
+            "Submitted At (Berlin Time)": new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin', dateStyle: 'long', timeStyle: 'short' })
         };
 
         const controller = new AbortController();
