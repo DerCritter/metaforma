@@ -57,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
               <iframe
                 ref={iframe0Ref}
                 src="https://player.vimeo.com/video/1179651662?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0&quality=1080p"
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400%] aspect-video md:w-[115%] md:h-[115%] md:aspect-auto object-cover pointer-events-none"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[115%] h-[115%] object-cover"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
               ></iframe>
@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
               <iframe
                 ref={iframe1Ref}
                 src="https://player.vimeo.com/video/1179891679?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0&quality=1080p"
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400%] aspect-video md:w-[115%] md:h-[115%] md:aspect-auto object-cover pointer-events-none"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[115%] h-[115%] object-cover"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
               ></iframe>
