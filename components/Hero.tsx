@@ -74,14 +74,13 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
                 ></iframe>
               </div>
             </div>
-            {/* Mobile: single video, 300% overscale to cover portrait containers */}
+            {/* Mobile: static poster image — instant load, no iframe overhead */}
             <div className="md:hidden absolute inset-0">
-              <iframe
-                src="https://player.vimeo.com/video/1179651662?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0&quality=540p"
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300%] h-[300%]"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-              ></iframe>
+              <img
+                src="https://i.postimg.cc/qB8WLNVN/outside_10.jpg"
+                alt="Heritage Architecture"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
             </div>
         </div>
         <div className={`absolute inset-0 ${isDark ? 'bg-[#030303]/60' : 'bg-white/10'} backdrop-blur-[1px] pointer-events-none`}></div>
