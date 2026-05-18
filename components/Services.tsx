@@ -592,7 +592,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
               {sector2Seen && (
                 <iframe
                   src="https://player.vimeo.com/video/1179891679?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%]"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300%] h-[300%] md:w-[110%] md:h-[110%]"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture"
                   title="Modern New Build Reel"
