@@ -53,34 +53,22 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
     >
       <div className={`absolute inset-0 z-0 ${isDark ? 'opacity-[0.65]' : 'opacity-40'} bg-black`}>
         <div className="absolute inset-0 contrast-125">
-            {/* Desktop: two alternating videos */}
-            <div className="hidden md:block">
-              <div className={`absolute inset-0 transition-none ${activeVideo === 0 ? 'opacity-100' : 'opacity-0 z-0 pointer-events-none'}`}>
-                <iframe
-                  ref={iframe0Ref}
-                  src="https://player.vimeo.com/video/1179651662?background=1"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%]"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen"
-                ></iframe>
-              </div>
-              <div className={`absolute inset-0 transition-none ${activeVideo === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
-                <iframe
-                  ref={iframe1Ref}
-                  src="https://player.vimeo.com/video/1179891679?background=1"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%]"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen"
-                ></iframe>
-              </div>
-            </div>
-            {/* Mobile: single video, forced 16:9 aspect to prevent portrait letterboxing */}
-            <div className="md:hidden absolute inset-0 overflow-hidden">
+            <div className={`absolute inset-0 transition-none ${activeVideo === 0 ? 'opacity-100' : 'opacity-0 z-0 pointer-events-none'}`}>
               <iframe
-                src="https://player.vimeo.com/video/1179651662?background=1"
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400%] aspect-video"
+                ref={iframe0Ref}
+                src="https://player.vimeo.com/video/1179651662?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0&quality=1080p"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400%] aspect-video md:w-[115%] md:h-[115%] md:aspect-auto object-cover pointer-events-none"
                 frameBorder="0"
-                allow="autoplay; fullscreen"
+                allow="autoplay; fullscreen; picture-in-picture"
+              ></iframe>
+            </div>
+            <div className={`absolute inset-0 transition-none ${activeVideo === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
+              <iframe
+                ref={iframe1Ref}
+                src="https://player.vimeo.com/video/1179891679?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0&quality=1080p"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400%] aspect-video md:w-[115%] md:h-[115%] md:aspect-auto object-cover pointer-events-none"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
               ></iframe>
             </div>
         </div>
