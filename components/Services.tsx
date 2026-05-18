@@ -591,8 +591,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
             <div className={`w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative rounded-[1rem] md:rounded-[2rem] lg:rounded-[3.5rem] overflow-hidden shadow-2xl border border-white/5 transition-all duration-1000 z-10 bg-stone-900 ${sector2Seen ? 'grayscale-0 opacity-100' : 'md:grayscale md:opacity-40 grayscale-0 opacity-100'}`}>
               {sector2Seen && (
                 <iframe
-                  src={`https://player.vimeo.com/video/1179891679?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0&quality=${typeof window !== 'undefined' && window.innerWidth < 768 ? '540p' : '1080p'}`}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto aspect-video"
+                  src="https://player.vimeo.com/video/1179891679?background=1"
+                  className="absolute inset-0 w-full h-full"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture"
                   title="Modern New Build Reel"
@@ -643,8 +643,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
               <div className="absolute inset-0 overflow-hidden z-0 hidden md:block bg-stone-900">
                 {growthSeen && (
                   <iframe
-                    src="https://player.vimeo.com/video/1164815646?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0&quality=1080p"
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto aspect-video md:pointer-events-none"
+                    src="https://player.vimeo.com/video/1164815646?background=1"
+                    className="absolute inset-0 w-full h-full md:pointer-events-none"
                     frameBorder="0"
                     allow="autoplay; fullscreen; picture-in-picture"
                     title="Desktop Background Video"
@@ -668,8 +668,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                     <div className="absolute inset-[-1.5rem] overflow-hidden md:hidden z-0 bg-stone-950 rounded-[2rem]">
                       {growthSeen && (
                         <iframe
-                          src="https://player.vimeo.com/video/1164815646?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0&quality=540p"
-                          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto aspect-video"
+                          src="https://player.vimeo.com/video/1164815646?background=1"
+                          className="absolute inset-0 w-full h-full"
                           frameBorder="0"
                           allow="autoplay; fullscreen; picture-in-picture"
                           title="Mobile Cards Background"
