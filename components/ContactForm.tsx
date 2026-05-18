@@ -19,17 +19,24 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
 
+        const payload = {
+            ...data,
+            access_key: "1e86e7b5-86c4-4a5f-a558-35879d3aecc3",
+            subject: "New Inquiry from Metaforma Website",
+            from_name: data.name // Uses the form's name field as the sender name in the email
+        };
+
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 8000); // 8 seconds timeout fallback
 
         try {
-            const response = await fetch("https://formsubmit.co/ajax/daniel.boubet@metaforma-ai.com", {
+            const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: { 
                     "Content-Type": "application/json",
                     "Accept": "application/json"
                 },
-                body: JSON.stringify(data),
+                body: JSON.stringify(payload),
                 signal: controller.signal
             });
 
@@ -37,15 +44,15 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
 
             if (response.ok) {
                 const result = await response.json();
-                if (result && (result.success === 'true' || result.success === true)) {
+                if (result && result.success) {
                     setSubmitted(true);
                 } else {
                     setStatus('error');
-                    console.error("FormSubmit returned unsuccessful response:", result);
+                    console.error("Web3Forms returned unsuccessful response:", result);
                 }
             } else {
                 setStatus('error');
-                console.error("FormSubmit HTTP error:", response.status, response.statusText);
+                console.error("Web3Forms HTTP error:", response.status, response.statusText);
             }
         } catch (error) {
             clearTimeout(timeoutId);
