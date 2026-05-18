@@ -58,7 +58,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
               <div className={`absolute inset-0 transition-none ${activeVideo === 0 ? 'opacity-100' : 'opacity-0 z-0 pointer-events-none'}`}>
                 <iframe
                   ref={iframe0Ref}
-                  src="https://player.vimeo.com/video/1179651662?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0&quality=1080p"
+                  src="https://player.vimeo.com/video/1179651662?background=1&autoplay=1&muted=1&playsinline=1&loop=1&autopause=0"
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%]"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture"
@@ -67,7 +67,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
               <div className={`absolute inset-0 transition-none ${activeVideo === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
                 <iframe
                   ref={iframe1Ref}
-                  src="https://player.vimeo.com/video/1179891679?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0&quality=1080p"
+                  src="https://player.vimeo.com/video/1179891679?background=1&autoplay=1&muted=1&playsinline=1&loop=1&autopause=0"
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%]"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture"
@@ -77,7 +77,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
             {/* Mobile: single video, forced 16:9 aspect to prevent portrait letterboxing */}
             <div className="md:hidden absolute inset-0 overflow-hidden">
               <iframe
-                src="https://player.vimeo.com/video/1179651662?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0&quality=540p"
+                src="https://player.vimeo.com/video/1179651662?background=1&autoplay=1&muted=1&playsinline=1&loop=1&autopause=0"
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400%] aspect-video"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
