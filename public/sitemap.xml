@@ -1,81 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Root English -->
   <url>
-    <loc>https://metaforma-ai.com/</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/"/>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://metaforma-ai.com/de/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://metaforma-ai.com/"/>
+    <loc>https://metaforma-ai.com</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://metaforma-ai.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://metaforma-ai.com"/>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
   </url>
-
+  <url>
+    <loc>https://metaforma-ai.com/de</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://metaforma-ai.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://metaforma-ai.com"/>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+  </url>
   <url>
     <loc>https://metaforma-ai.com/contact</loc>
-    <lastmod>2026-04-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://metaforma-ai.com/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://metaforma-ai.com/contact"/>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/contact"/>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://metaforma-ai.com/de/contact"/>
   </url>
-
-  <url>
-    <loc>https://metaforma-ai.com/impressum</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/impressum"/>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://metaforma-ai.com/de/impressum"/>
-  </url>
-
-  <url>
-    <loc>https://metaforma-ai.com/privacy</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/privacy"/>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://metaforma-ai.com/de/datenschutz"/>
-  </url>
-
-  <!-- Root German -->
-  <url>
-    <loc>https://metaforma-ai.com/de/</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/"/>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://metaforma-ai.com/de/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://metaforma-ai.com/"/>
-  </url>
-
   <url>
     <loc>https://metaforma-ai.com/de/contact</loc>
-    <lastmod>2026-04-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://metaforma-ai.com/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://metaforma-ai.com/contact"/>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/contact"/>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://metaforma-ai.com/de/contact"/>
   </url>
-
+  <url>
+    <loc>https://metaforma-ai.com/impressum</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/impressum"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://metaforma-ai.com/de/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://metaforma-ai.com/impressum"/>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
   <url>
     <loc>https://metaforma-ai.com/de/impressum</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/impressum"/>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://metaforma-ai.com/de/impressum"/>
-  </url>
-
-  <url>
-    <loc>https://metaforma-ai.com/de/datenschutz</loc>
-    <lastmod>2026-04-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://metaforma-ai.com/de/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://metaforma-ai.com/impressum"/>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/privacy"/>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://metaforma-ai.com/de/datenschutz"/>
   </url>
-
+  <url>
+    <loc>https://metaforma-ai.com/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://metaforma-ai.com/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://metaforma-ai.com/privacy"/>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://metaforma-ai.com/de/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://metaforma-ai.com/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://metaforma-ai.com/privacy"/>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://metaforma-ai.com/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://metaforma-ai.com/de/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://metaforma-ai.com/blog"/>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://metaforma-ai.com/de/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://metaforma-ai.com/de/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://metaforma-ai.com/blog"/>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://metaforma-ai.com/blog/how-to-elevate-real-estate-assets</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/blog/how-to-elevate-real-estate-assets"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://metaforma-ai.com/de/blog/how-to-elevate-real-estate-assets/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://metaforma-ai.com/blog/how-to-elevate-real-estate-assets"/>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://metaforma-ai.com/de/blog/how-to-elevate-real-estate-assets</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metaforma-ai.com/blog/how-to-elevate-real-estate-assets"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://metaforma-ai.com/de/blog/how-to-elevate-real-estate-assets/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://metaforma-ai.com/blog/how-to-elevate-real-estate-assets"/>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

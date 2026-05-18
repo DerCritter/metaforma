@@ -19,6 +19,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
 
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 8000); // 8 seconds timeout fallback
+
         try {
             const response = await fetch("https://formsubmit.co/ajax/daniel.boubet@metaforma-ai.com", {
                 method: "POST",
@@ -26,16 +29,28 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                     "Content-Type": "application/json",
                     "Accept": "application/json"
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify(data),
+                signal: controller.signal
             });
 
+            clearTimeout(timeoutId);
+
             if (response.ok) {
-                setSubmitted(true);
+                const result = await response.json();
+                if (result && (result.success === 'true' || result.success === true)) {
+                    setSubmitted(true);
+                } else {
+                    setStatus('error');
+                    console.error("FormSubmit returned unsuccessful response:", result);
+                }
             } else {
                 setStatus('error');
+                console.error("FormSubmit HTTP error:", response.status, response.statusText);
             }
         } catch (error) {
+            clearTimeout(timeoutId);
             setStatus('error');
+            console.error("Form submission caught exception:", error);
         }
     };
 
@@ -120,6 +135,14 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                                 ></textarea>
                             </div>
                         </div>
+
+                        {status === 'error' && (
+                            <div className="text-red-500 text-xs md:text-sm font-medium tracking-[0.1em] text-center mb-6 bg-red-500/10 border border-red-500/20 py-3.5 px-5 rounded-2xl animate-in fade-in duration-300">
+                                {language === 'de' 
+                                    ? 'Ein Fehler ist aufgetreten. Bitte senden Sie Ihre Nachricht direkt an info@metaforma-ai.com.' 
+                                    : 'An error occurred. Please send your message directly to info@metaforma-ai.com.'}
+                            </div>
+                        )}
 
                         <button
                             type="submit"

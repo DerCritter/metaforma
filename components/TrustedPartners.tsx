@@ -18,11 +18,6 @@ export const TrustedPartners: React.FC<TrustedPartnersProps> = ({ isDark = false
             name: 'Deutsche Monumentum',
             logo: 'https://i.postimg.cc/v8xWpqnp/deutsche-monumentum.png',
             link: 'https://www.deutsche-monumentum.de/'
-        },
-        {
-            name: 'Tokuti Property',
-            logo: 'https://i.postimg.cc/zDHn9th4/tokuti.png',
-            link: 'https://vg.linkedin.com/company/tokuti-property'
         }
     ];
 
