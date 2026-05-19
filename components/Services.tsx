@@ -519,8 +519,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 />
               ));
             })()}
-            <div className="absolute inset-0 bg-[#030303]/60 backdrop-blur-[1px]"></div>
-            <div className="absolute inset-0 bg-gradient-to-tr from-black/90 via-black/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-[#030303]/25 backdrop-blur-[0.5px]"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-black/10 to-transparent"></div>
           </div>
 
           <div className="relative z-10 w-full max-w-[1600px] px-6 md:px-24 py-12 md:py-24">
@@ -598,7 +598,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                   title="Modern New Build Reel"
                 ></iframe>
               )}
-              <div className={`absolute inset-0 bg-[#030303]/10 pointer-events-none`}></div>
+              <div className={`absolute inset-0 bg-[#030303]/5 pointer-events-none`}></div>
             </div>
           </div>
         </div>
@@ -650,7 +650,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                     title="Desktop Background Video"
                   />
                 )}
-                <div className="absolute inset-0 bg-[#030303]/80 backdrop-blur-none pointer-events-none"></div>
+                <div className="absolute inset-0 bg-[#030303]/30 backdrop-blur-none pointer-events-none"></div>
               </div>
 
               <div className="relative z-10 w-full py-12 md:py-0">
@@ -671,7 +671,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                         alt="Growth Strategy"
                         className="absolute inset-0 w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-[#030303]/70 pointer-events-none"></div>
+                      <div className="absolute inset-0 bg-[#030303]/30 pointer-events-none"></div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 lg:gap-8 relative z-10">
@@ -693,8 +693,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0 bg-[#030303]">
             <img src="https://i.postimg.cc/pL6x3G35/cambia-el-color-202603311520.jpg" alt="Growth Ecosystem" className="absolute inset-0 w-full h-full object-cover md:object-contain translate-x-0 md:translate-x-0 scale-[1.2] md:scale-100 origin-center md:origin-center" />
           </div>
-          <div className="absolute inset-0 bg-[#030303]/40"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303] opacity-80"></div>
+          <div className="absolute inset-0 bg-[#030303]/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303] opacity-40"></div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-20 pb-48">
             <div className="space-y-12 md:space-y-32">
