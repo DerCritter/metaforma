@@ -51,7 +51,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
       ref={heroRef}
       className={`relative min-h-[600px] lg:min-h-screen py-24 md:py-32 flex flex-col items-center justify-center text-center px-6 overflow-hidden transition-all duration-1000 ${isDark ? 'bg-[#030303]' : 'bg-white'} ${isInView ? 'opacity-100' : 'opacity-40'}`}
     >
-      <div className={`absolute inset-0 z-0 ${isDark ? 'opacity-[0.65]' : 'opacity-40'} bg-black`}>
+      <div className={`absolute inset-0 z-0 ${isDark ? 'opacity-[0.85]' : 'opacity-70'} bg-black`}>
         <div className="absolute inset-0 contrast-125">
             <div className={`absolute inset-0 transition-none ${activeVideo === 0 ? 'opacity-100' : 'opacity-0 z-0 pointer-events-none'}`}>
               <iframe
@@ -72,7 +72,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
               ></iframe>
             </div>
         </div>
-        <div className={`absolute inset-0 ${isDark ? 'bg-[#030303]/60' : 'bg-white/10'} backdrop-blur-[1px] pointer-events-none`}></div>
+        <div className={`absolute inset-0 ${isDark ? 'bg-[#030303]/40' : 'bg-white/5'} backdrop-blur-[1px] pointer-events-none`}></div>
       </div>
 
       <div className="relative z-10 max-w-6xl px-4 flex flex-col items-center">
