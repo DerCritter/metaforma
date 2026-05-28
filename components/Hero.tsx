@@ -119,7 +119,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
             <div style={cropContainerStyle}>
               <iframe
                 ref={iframe0Ref}
-                src="https://player.vimeo.com/video/1179651662?background=1&playsinline=1&quality=1080p"
+                src="https://player.vimeo.com/video/1179651662?autoplay=1&muted=1&loop=1&controls=0&playsinline=1&title=0&byline=0&portrait=0&quality=1080p"
                 style={iframeStyle}
                 allow="autoplay; fullscreen; picture-in-picture"
               />
@@ -132,7 +132,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
               <div style={cropContainerStyle}>
                 <iframe
                   ref={iframe1Ref}
-                  src="https://player.vimeo.com/video/1179891679?background=1&playsinline=1&quality=1080p"
+                  src="https://player.vimeo.com/video/1179891679?autoplay=1&muted=1&loop=1&controls=0&playsinline=1&title=0&byline=0&portrait=0&quality=1080p"
                   style={iframeStyle}
                   allow="autoplay; fullscreen; picture-in-picture"
                 />
