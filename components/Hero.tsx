@@ -18,6 +18,36 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
   const iframe1Ref = useRef<HTMLIFrameElement>(null);
   const [activeVideo, setActiveVideo] = useState(0);
 
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [mountSecondVideo, setMountSecondVideo] = useState(false);
+  const [showPoster, setShowPoster] = useState(true);
+
+  useEffect(() => {
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+    checkIsDesktop();
+    window.addEventListener('resize', checkIsDesktop);
+    return () => window.removeEventListener('resize', checkIsDesktop);
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop) return;
+    // Defer loading the second high-bandwidth desktop video by 4 seconds
+    const timer = setTimeout(() => {
+      setMountSecondVideo(true);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, [isDesktop]);
+
+  useEffect(() => {
+    // Fade out high-resolution poster after 1.8 seconds to give Vimeo time to buffer and start playing
+    const timer = setTimeout(() => {
+      setShowPoster(false);
+    }, 1800);
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     // Disable periodic reset on mobile to avoid triggering Safari/Chrome (iOS) protection
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) return;
@@ -62,17 +92,28 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
                 allow="autoplay; fullscreen; picture-in-picture"
               ></iframe>
             </div>
-            <div className={`absolute inset-0 transition-none ${activeVideo === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
-              <iframe
-                ref={iframe1Ref}
-                src="https://player.vimeo.com/video/1179891679?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300%] h-[300%] md:w-[115%] md:h-[115%] object-cover"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-              ></iframe>
-            </div>
+            {isDesktop && mountSecondVideo && (
+              <div className={`absolute inset-0 transition-none ${activeVideo === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
+                <iframe
+                  ref={iframe1Ref}
+                  src="https://player.vimeo.com/video/1179891679?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300%] h-[300%] md:w-[115%] md:h-[115%] object-cover"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                ></iframe>
+              </div>
+            )}
         </div>
-        <div className={`absolute inset-0 ${isDark ? 'bg-[#030303]/35' : 'bg-white/5'} backdrop-blur-[1px] pointer-events-none`}></div>
+        {/* Seamless High-Resolution Poster Overlay */}
+        <div 
+          className={`absolute inset-0 z-10 transition-opacity duration-1000 ease-in-out pointer-events-none ${showPoster ? 'opacity-100' : 'opacity-0'}`}
+          style={{
+            backgroundImage: "url('https://i.postimg.cc/qB8WLNVN/outside_10.jpg')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <div className={`absolute inset-0 ${isDark ? 'bg-[#030303]/35' : 'bg-white/5'} backdrop-blur-[1px] pointer-events-none z-10`}></div>
       </div>
 
       <div className="relative z-10 max-w-6xl px-4 flex flex-col items-center">
