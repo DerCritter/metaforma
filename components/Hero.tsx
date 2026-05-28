@@ -23,15 +23,15 @@ const cropContainerStyle: React.CSSProperties = {
   overflow: 'hidden',
 };
 
-// The iframe is 5% larger than the 16:9 container on every side,
+// The iframe is 10% larger than the 16:9 container on every side,
 // so the baked-in black letterbox bars are pushed outside the crop boundary.
 const iframeStyle: React.CSSProperties = {
   position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '105%',
-  height: '105%',
+  width: '110%',
+  height: '110%',
   border: 'none',
 };
 

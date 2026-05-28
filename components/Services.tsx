@@ -595,7 +595,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           <div className="absolute inset-0 z-0 bg-black overflow-hidden">
             <div className="absolute inset-0 contrast-125">
               {sector2Seen && (
-                /* 16:9 crop box + 105% iframe = letterbox bars cropped out */
+                /* 16:9 crop box + 110% iframe = letterbox bars cropped out */
                 <div style={{
                   position: 'absolute',
                   top: '50%',
@@ -613,8 +613,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                       top: '50%',
                       left: '50%',
                       transform: 'translate(-50%, -50%)',
-                      width: '105%',
-                      height: '105%',
+                      width: '110%',
+                      height: '110%',
                       border: 'none',
                     }}
                     allow="autoplay; fullscreen; picture-in-picture"
@@ -687,7 +687,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
             {/* Desktop Video Background (Full Screen) */}
             <div className="absolute inset-0 overflow-hidden z-0 hidden md:block bg-stone-900">
               {isDesktop && growthSeen && (
-                /* 16:9 crop box + 105% iframe = letterbox bars cropped out */
+                /* 16:9 crop box + 110% iframe = letterbox bars cropped out */
                 <div style={{
                   position: 'absolute',
                   top: '50%',
@@ -705,8 +705,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                       top: '50%',
                       left: '50%',
                       transform: 'translate(-50%, -50%)',
-                      width: '105%',
-                      height: '105%',
+                      width: '110%',
+                      height: '110%',
                       border: 'none',
                     }}
                     allow="autoplay; fullscreen; picture-in-picture"
