@@ -594,6 +594,41 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           </div>
         </div>
 
+        {/* SECTION 5: NEUBAU SYNTHESIS GALLERY */}
+        <div ref={neubauShowcaseRef} className="min-h-fit md:min-h-screen flex flex-col justify-center py-16 md:py-32 px-0 bg-[#030303]/5 relative overflow-hidden rounded-none">
+          <div className="absolute inset-0 opacity-10 pointer-events-none">
+            <div className="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] [background-size:60px_60px]"></div>
+          </div>
+          
+          <div className="max-w-[1920px] mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 mb-8 md:mb-16">
+            <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-3 md:gap-5 text-center md:text-left">
+              <div className="space-y-1"><span className={`text-base md:text-base uppercase tracking-[0.5em] font-bold block transition-colors ${isDark ? 'text-white/20' : 'text-black/30'}`}>{t.neubau_showcase_label}</span><h3 className={`text-xl md:text-2xl lg:text-7xl font-heading font-light tracking-tighter transition-colors ${isDark ? 'text-white' : 'text-black'}`}>{t.neubau_showcase_title1} <span className="italic text-[#FF660F]">{t.neubau_showcase_title2}</span></h3></div>
+              <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-sm md:text-sm uppercase tracking-[0.5em] font-bold transition-colors border-b-2 pb-1 ${isDark ? 'text-white/20 border-white/5 hover:text-white hover:border-white' : 'text-black/30 border-black/5 hover:border-black'}`}>{t.cta_open_library}</button>
+            </div>
+          </div>
+
+          <div className="w-full max-w-full px-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-[2px]">
+              <ArchitectureShowcaseItem
+                title={t.project_apartment}
+                subtitle={t.project_apartment_sub}
+                onClick={() => onNavigate(AppSection.ARCHITECTURE, 'arch-04')}
+                isDark={isDark}
+                images={getArchitectureProjects(language).find(p => p.id === 'arch-04')?.images || []}
+                isInView={neubauShowcaseSeen}
+              />
+              <ArchitectureShowcaseItem
+                title={t.project_penthouse}
+                subtitle={t.project_penthouse_sub}
+                onClick={() => onNavigate(AppSection.ARCHITECTURE, 'arch-07')}
+                isDark={isDark}
+                images={getArchitectureProjects(language).find(p => p.id === 'arch-07')?.images || []}
+                isInView={neubauShowcaseSeen}
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Sector II: Neubau Digital Synthesis */}
         <div 
           ref={sector2Ref} 
@@ -655,41 +690,6 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
               }}
             />
             <div className={`absolute inset-0 ${isDark ? 'bg-[#030303]/35' : 'bg-white/5'} backdrop-blur-[1px] pointer-events-none z-10`}></div>
-          </div>
-        </div>
-
-        {/* SECTION 5: NEUBAU SYNTHESIS GALLERY */}
-        <div ref={neubauShowcaseRef} className="min-h-fit md:min-h-screen flex flex-col justify-center py-16 md:py-32 px-0 bg-[#030303]/5 relative overflow-hidden rounded-none">
-          <div className="absolute inset-0 opacity-10 pointer-events-none">
-            <div className="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] [background-size:60px_60px]"></div>
-          </div>
-          
-          <div className="max-w-[1920px] mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 mb-8 md:mb-16">
-            <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-3 md:gap-5 text-center md:text-left">
-              <div className="space-y-1"><span className={`text-base md:text-base uppercase tracking-[0.5em] font-bold block transition-colors ${isDark ? 'text-white/20' : 'text-black/30'}`}>{t.neubau_showcase_label}</span><h3 className={`text-xl md:text-2xl lg:text-7xl font-heading font-light tracking-tighter transition-colors ${isDark ? 'text-white' : 'text-black'}`}>{t.neubau_showcase_title1} <span className="italic text-[#FF660F]">{t.neubau_showcase_title2}</span></h3></div>
-              <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-sm md:text-sm uppercase tracking-[0.5em] font-bold transition-colors border-b-2 pb-1 ${isDark ? 'text-white/20 border-white/5 hover:text-white hover:border-white' : 'text-black/30 border-black/5 hover:border-black'}`}>{t.cta_open_library}</button>
-            </div>
-          </div>
-
-          <div className="w-full max-w-full px-0">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-[2px]">
-              <ArchitectureShowcaseItem
-                title={t.project_apartment}
-                subtitle={t.project_apartment_sub}
-                onClick={() => onNavigate(AppSection.ARCHITECTURE, 'arch-04')}
-                isDark={isDark}
-                images={getArchitectureProjects(language).find(p => p.id === 'arch-04')?.images || []}
-                isInView={neubauShowcaseSeen}
-              />
-              <ArchitectureShowcaseItem
-                title={t.project_penthouse}
-                subtitle={t.project_penthouse_sub}
-                onClick={() => onNavigate(AppSection.ARCHITECTURE, 'arch-07')}
-                isDark={isDark}
-                images={getArchitectureProjects(language).find(p => p.id === 'arch-07')?.images || []}
-                isInView={neubauShowcaseSeen}
-              />
-            </div>
           </div>
         </div>
 
