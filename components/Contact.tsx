@@ -51,7 +51,7 @@ export const Contact: React.FC<ContactProps> = ({ chatHistory, setChatHistory, i
         <p className={`text-base md:text-sm tracking-widest uppercase transition-colors ${isDark ? 'text-white/40' : 'text-black/40'}`}>{t.subtitle}</p>
       </div>
 
-      <div className={`flex-grow rounded-[2rem] md:rounded-[2.5rem] flex flex-col overflow-hidden border transition-all duration-700 shadow-xl ${isDark ? 'bg-white/5 border-white/5' : 'bg-white/40 border-black/5'}`}>
+      <div className={`flex-grow rounded-none flex flex-col overflow-hidden border transition-all duration-700 shadow-xl ${isDark ? 'bg-white/5 border-white/5' : 'bg-white/40 border-black/5'}`}>
         <div className="flex-grow p-6 md:p-10 overflow-y-auto space-y-6 md:space-y-8 custom-scrollbar">
           {chatHistory.length === 0 && (
             <div className="h-full flex flex-col items-center justify-center text-stone-400 space-y-6">

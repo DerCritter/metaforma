@@ -51,7 +51,7 @@ const ProjectSlideshow: React.FC<{ images: string[]; projectTitle: string; proje
 
   return (
     <div
-      className="relative w-full aspect-[4/5] sm:aspect-[21/9] rounded-[2rem] md:rounded-[3.5rem] overflow-hidden border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.5)] group cursor-zoom-in"
+      className="relative w-full aspect-[4/5] sm:aspect-[21/9] rounded-none overflow-hidden border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.5)] group cursor-zoom-in"
       onClick={() => onImageClick(images[currentIndex])}
     >
       {images.map((img, idx) => (
@@ -165,7 +165,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, 
           </button>
         </div>
 
-        <div className="relative w-full h-full md:h-[90vh] md:max-w-[1700px] md:mx-6 overflow-y-auto bg-[#0a0a0b]/40 md:rounded-[4rem] shadow-[0_32px_80px_-20px_rgba(0,0,0,0.6)] border-t md:border border-white/20 backdrop-blur-[20px] custom-scrollbar animate-in slide-in-from-bottom-12 duration-700 print:w-full print:h-auto print:max-w-none print:m-0 print:border-none print:shadow-none print:bg-white print:text-black">
+        <div className="relative w-full h-full md:h-[90vh] md:max-w-[1700px] md:mx-6 overflow-y-auto bg-[#0a0a0b]/40 rounded-none shadow-[0_32px_80px_-20px_rgba(0,0,0,0.6)] border-t md:border border-white/20 backdrop-blur-[20px] custom-scrollbar animate-in slide-in-from-bottom-12 duration-700 print:w-full print:h-auto print:max-w-none print:m-0 print:border-none print:shadow-none print:bg-white print:text-black">
           <div className="px-6 md:px-24 py-16 md:py-24 space-y-24 md:space-y-48 print:py-0 print:px-0 print:space-y-12">
 
             <div className="grid lg:grid-cols-12 gap-12 md:gap-20 items-start">
@@ -217,7 +217,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, 
                       </div>
                     </div>
 
-                    <div ref={containerRef} className="no-print relative w-full aspect-[3/4] sm:aspect-video rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-2xl border border-white/5 cursor-ew-resize group" onMouseMove={handleMove} onTouchMove={handleMove} onMouseEnter={() => isHovering.current = true} onMouseLeave={() => isHovering.current = false}>
+                    <div ref={containerRef} className="no-print relative w-full aspect-[3/4] sm:aspect-video rounded-none overflow-hidden shadow-2xl border border-white/5 cursor-ew-resize group" onMouseMove={handleMove} onTouchMove={handleMove} onMouseEnter={() => isHovering.current = true} onMouseLeave={() => isHovering.current = false}>
                       <img src={project.beforeAfter.before} className="absolute inset-0 w-full h-full object-cover" alt="Before" />
                       <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 0 0 ${sliderPos}%)` }}>
                         <img src={project.beforeAfter.after} className="absolute inset-0 w-full h-full object-cover" alt="After" />
@@ -232,7 +232,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, 
                 ) : (
                   <div className="space-y-6 md:space-y-10 animate-in fade-in slide-in-from-right-12 duration-1000">
                     <h3 className="text-[9px] md:text-[11px] uppercase tracking-[0.6em] text-[#FF660F] font-black">{t.immersive_perspective}</h3>
-                    <div className="relative group overflow-hidden rounded-[2.5rem] md:rounded-[4rem] border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.5)]">
+                    <div className="relative group overflow-hidden rounded-none border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.5)]">
                       <img
                         src={project.images[1] || project.imageUrl}
                         className="w-full h-full object-cover aspect-[4/3] md:aspect-video transition-transform duration-[4000ms] group-hover:scale-110"
@@ -268,7 +268,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, 
                 {project.images?.map((img, i) => (
                   <div
                     key={i}
-                    className={`relative rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-white/5 group shadow-lg cursor-zoom-in print:rounded-none print:shadow-none print:border-none ${getMosaicClasses(i)}`}
+                    className={`relative rounded-none overflow-hidden border border-white/5 group shadow-lg cursor-zoom-in print:rounded-none print:shadow-none print:border-none ${getMosaicClasses(i)}`}
                     onClick={() => setLightboxImage(img)}
                   >
                     <OptimizedImage

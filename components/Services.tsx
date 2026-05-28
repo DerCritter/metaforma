@@ -78,7 +78,7 @@ const TacticalModule: React.FC<{
   isDark: boolean;
   isInView: boolean;
 }> = ({ icon, title, desc, isDark, isInView }) => (
-  <div className={`relative p-6 md:p-8 lg:p-14 rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[4rem] border flex flex-col items-center text-center gap-4 md:gap-6 group overflow-hidden ${isDark ? 'bg-[#030303]/60 border-white/10 hover:border-[#FF660F]/50' : 'bg-white border-black/5 hover:border-[#FF660F]/20 shadow-2xl'}`}>
+  <div className={`relative p-6 md:p-8 lg:p-14 rounded-none border flex flex-col items-center text-center gap-4 md:gap-6 group overflow-hidden ${isDark ? 'bg-[#030303]/60 border-white/10 hover:border-[#FF660F]/50' : 'bg-white border-black/5 hover:border-[#FF660F]/20 shadow-2xl'}`}>
     <div className="absolute inset-0 bg-gradient-to-br from-[#FF660F]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
     <div className="relative z-10 scale-90 md:scale-100 lg:scale-125 transition-transform duration-700 group-hover:scale-110">{icon}</div>
@@ -99,7 +99,7 @@ const WebConversionViz: React.FC<{ isInView: boolean, label: string, title: stri
   }, []);
 
   return (
-    <div className="relative group bg-[#111112] backdrop-blur-[10px] border border-white/5 rounded-[1.2rem] md:rounded-[1.5rem] lg:rounded-[2rem] p-4 md:p-6 lg:p-10 flex flex-col justify-between overflow-hidden transition-all hover:bg-[#18181a] min-h-[140px] md:min-h-[160px] lg:min-h-[220px]">
+    <div className="relative group bg-[#111112] backdrop-blur-[10px] border border-white/5 rounded-none p-4 md:p-6 lg:p-10 flex flex-col justify-between overflow-hidden transition-all hover:bg-[#18181a] min-h-[140px] md:min-h-[160px] lg:min-h-[220px]">
       <div className="relative z-10 space-y-1">
         <span className="text-base md:text-base uppercase tracking-[0.4em] text-white/40 font-black">{label}</span>
         <h4 className="text-base md:text-base lg:text-base font-heading text-white/90">{title}</h4>
@@ -131,13 +131,13 @@ const SEOVisibilityViz: React.FC<{ isInView: boolean, label: string, title: stri
   const count = useCountUp(157, 2000, isInView);
 
   return (
-    <div className="relative group bg-[#111112] backdrop-blur-[10px] border border-white/5 rounded-[1.2rem] md:rounded-[1.5rem] lg:rounded-[2rem] p-4 md:p-6 lg:p-10 flex flex-col justify-between overflow-hidden transition-all hover:bg-[#18181a] min-h-[140px] md:min-h-[160px] lg:min-h-[220px]">
+    <div className="relative group bg-[#111112] backdrop-blur-[10px] border border-white/5 rounded-none p-4 md:p-6 lg:p-10 flex flex-col justify-between overflow-hidden transition-all hover:bg-[#18181a] min-h-[140px] md:min-h-[160px] lg:min-h-[220px]">
       <div className="relative z-10 space-y-1">
         <span className="text-base md:text-base uppercase tracking-[0.4em] text-white/40 font-black">{label}</span>
         <h4 className="text-base md:text-base lg:text-base font-heading text-white/90">{title}</h4>
         <span className="text-3xl md:text-3xl lg:text-5xl font-heading font-medium text-[#FF660F] tabular-nums block mt-1">+{count}%</span>
       </div>
-      <div className="relative h-10 md:h-16 lg:h-24 mt-4 bg-[#030303]/40 rounded-xl overflow-hidden border border-white/[0.03]">
+      <div className="relative h-10 md:h-16 lg:h-24 mt-4 bg-[#030303]/40 rounded-none overflow-hidden border border-white/[0.03]">
         <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)', backgroundSize: '12px 12px' }}></div>
         <div className={`absolute inset-y-0 w-1/2 h-full bg-gradient-to-r from-transparent via-[#FF660F]/15 to-transparent transition-opacity duration-1000 ${isInView ? 'opacity-100' : 'opacity-0'}`} style={{ animation: isInView ? 'scan 4s linear infinite' : 'none' }}></div>
 
@@ -166,7 +166,7 @@ const VideoMarketingViz: React.FC<{ isInView: boolean, label: string, title: str
   }, []);
 
   return (
-    <div className="relative group bg-[#111112] backdrop-blur-[12px] border border-white/5 rounded-[1.2rem] md:rounded-[1.5rem] lg:rounded-[2rem] p-6 md:p-8 lg:p-12 flex flex-col justify-between overflow-hidden transition-all hover:bg-[#18181a] col-span-full min-h-[120px] md:min-h-[150px] lg:min-h-[180px]">
+    <div className="relative group bg-[#111112] backdrop-blur-[12px] border border-white/5 rounded-none p-6 md:p-8 lg:p-12 flex flex-col justify-between overflow-hidden transition-all hover:bg-[#18181a] col-span-full min-h-[120px] md:min-h-[150px] lg:min-h-[180px]">
       <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-2">
         <div className="space-y-1">
           <span className="text-base md:text-base uppercase tracking-[0.4em] text-[#FF660F] font-black">{label}</span>
@@ -224,7 +224,7 @@ const ComparisonSlider: React.FC<{
   return (
     <div
       ref={containerRef}
-      className={`relative w-full h-full overflow-hidden cursor-ew-resize select-none rounded-[1rem] md:rounded-[2rem] lg:rounded-[3.5rem] shadow-2xl border ${isDark ? 'border-white/5 bg-stone-900' : 'border-black/5 bg-stone-100'} transition-all duration-1000 ${isInView ? 'grayscale-0' : 'grayscale'}`}
+      className={`relative w-full h-full overflow-hidden cursor-ew-resize select-none rounded-none shadow-2xl border ${isDark ? 'border-white/5 bg-stone-900' : 'border-black/5 bg-stone-100'} transition-all duration-1000 ${isInView ? 'grayscale-0' : 'grayscale'}`}
       onMouseMove={handleMove}
       onTouchMove={handleMove}
       onMouseEnter={onInteractionStart}
@@ -267,7 +267,7 @@ const ArchitectureShowcaseItem: React.FC<{
   return (
     <div
       onClick={onClick}
-      className={`group relative aspect-[4/5] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden cursor-pointer transition-all duration-1000 bg-stone-900 ${isInView ? 'opacity-100 shadow-2xl scale-100' : 'opacity-40 scale-95'}`}
+      className={`group relative aspect-[4/5] rounded-none overflow-hidden cursor-pointer transition-all duration-1000 bg-stone-900 ${isInView ? 'opacity-100 shadow-2xl scale-100' : 'opacity-40 scale-95'}`}
     >
       {images.map((img, idx) => (
         <img
@@ -422,7 +422,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
 
   const textboxClass = (isVisible: boolean) => `
     relative mb-6 md:mb-0 md:absolute z-40
-    w-full md:max-w-[280px] lg:max-w-md xl:max-w-lg p-5 md:p-6 lg:p-10 xl:p-14 backdrop-blur-[12px] rounded-[1.2rem] md:rounded-[1.5rem] lg:rounded-[3rem]
+    w-full md:max-w-[280px] lg:max-w-md xl:max-w-lg p-5 md:p-6 lg:p-10 xl:p-14 backdrop-blur-[12px] rounded-none
     transition-all duration-[1200ms] ease-[cubic-bezier(0.16, 1, 0.3, 1)]
     shadow-[0_15px_40px_-10px_rgba(0, 0, 0, 0.15)] ring-1
     flex flex-col border border-white/30
@@ -447,7 +447,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-6 md:px-6 lg:px-12 py-3 md:py-3 rounded-full text-sm lg:text-sm font-bold tracking-[0.2em] hover:scale-105 transition-all shadow-xl bg-[#FF660F] text-white shadow-[#FF660F]/20`}>{t.cta_inquiry}</button>
               </div>
             </div>
-            <div className="w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative group/carousel z-10">
+            <div className="w-[calc(100%+3rem)] mx-[-1.5rem] aspect-video md:mx-0 md:w-full md:aspect-video relative group/carousel z-10 rounded-none overflow-hidden">
               {sector1Sets.map((set, idx) => (
                 <div key={idx} className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === sector1SetIdx ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
                   <ComparisonSlider before={set.before} after={set.after} isInView={sector1Seen} position={sliderPos} isDark={isDark} onPositionChange={(pos) => targetSliderPos.current = pos} onInteractionStart={() => isHovering.current = true} onInteractionEnd={() => isHovering.current = false} />
@@ -459,16 +459,20 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
         </div>
 
         {/* Visionary Transformations Showcase */}
-        <div ref={showcaseRef} className="min-h-fit md:min-h-screen flex flex-col justify-center py-16 md:py-32 px-6 md:px-24 bg-[#030303]/5 relative overflow-hidden">
+        <div ref={showcaseRef} className="min-h-fit md:min-h-screen flex flex-col justify-center py-16 md:py-32 px-0 bg-[#030303]/5 relative overflow-hidden rounded-none">
           <div className="absolute inset-0 opacity-20 pointer-events-none">
             <div className="absolute inset-0 bg-[radial-gradient(#FF660F_1px,transparent_1px)] [background-size:40px_40px]"></div>
           </div>
-          <div className="max-w-[1600px] mx-auto w-full">
-            <div className={`flex flex-col md:flex-row justify-between items-center md:items-end mb-8 md:mb-16 gap-3 md:gap-5 text-center md:text-left transition-all duration-1000 ${showcaseSeen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          
+          <div className="max-w-[1600px] mx-auto w-full px-6 md:px-24 mb-8 md:mb-16">
+            <div className={`flex flex-col md:flex-row justify-between items-center md:items-end gap-3 md:gap-5 text-center md:text-left transition-all duration-1000 ${showcaseSeen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="space-y-1"><span className={`text-base md:text-base uppercase tracking-[0.5em] font-bold block transition-colors ${isDark ? 'text-white/20' : 'text-black/30'}`}>{t.showcase_label}</span><h3 className={`text-xl md:text-2xl lg:text-7xl font-heading font-light tracking-tighter transition-colors ${isDark ? 'text-white' : 'text-black'}`}>{t.showcase_title1} <span className="italic text-[#FF660F]">{t.showcase_title2}</span></h3></div>
               <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-sm md:text-sm uppercase tracking-[0.5em] font-bold transition-colors border-b-2 pb-1 ${isDark ? 'text-white/20 border-white/5 hover:text-white hover:border-white' : 'text-black/30 border-black/5 hover:border-black'}`}>{t.cta_open_library}</button>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 lg:gap-16">
+          </div>
+
+          <div className="w-full max-w-full px-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[2px]">
               <ArchitectureShowcaseItem
                 title={t.project_coworking}
                 subtitle={t.project_coworking_sub}
@@ -650,16 +654,20 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
         </div>
 
         {/* SECTION 5: NEUBAU SYNTHESIS GALLERY */}
-        <div ref={neubauShowcaseRef} className="min-h-fit md:min-h-screen flex flex-col justify-center py-16 md:py-32 px-6 md:px-24 bg-[#030303]/5 relative overflow-hidden">
+        <div ref={neubauShowcaseRef} className="min-h-fit md:min-h-screen flex flex-col justify-center py-16 md:py-32 px-0 bg-[#030303]/5 relative overflow-hidden rounded-none">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
             <div className="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] [background-size:60px_60px]"></div>
           </div>
-          <div className="max-w-[1600px] mx-auto w-full">
-            <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-8 md:mb-16 gap-3 md:gap-5 text-center md:text-left">
+          
+          <div className="max-w-[1600px] mx-auto w-full px-6 md:px-24 mb-8 md:mb-16">
+            <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-3 md:gap-5 text-center md:text-left">
               <div className="space-y-1"><span className={`text-base md:text-base uppercase tracking-[0.5em] font-bold block transition-colors ${isDark ? 'text-white/20' : 'text-black/30'}`}>{t.neubau_showcase_label}</span><h3 className={`text-xl md:text-2xl lg:text-7xl font-heading font-light tracking-tighter transition-colors ${isDark ? 'text-white' : 'text-black'}`}>{t.neubau_showcase_title1} <span className="italic text-[#FF660F]">{t.neubau_showcase_title2}</span></h3></div>
               <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-sm md:text-sm uppercase tracking-[0.5em] font-bold transition-colors border-b-2 pb-1 ${isDark ? 'text-white/20 border-white/5 hover:text-white hover:border-white' : 'text-black/30 border-black/5 hover:border-black'}`}>{t.cta_open_library}</button>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 md:gap-10 lg:gap-16">
+          </div>
+
+          <div className="w-full max-w-full px-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-[2px]">
               <ArchitectureShowcaseItem
                 title={t.project_apartment}
                 subtitle={t.project_apartment_sub}
