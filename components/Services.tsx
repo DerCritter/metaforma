@@ -437,7 +437,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
         {/* Sector I: Heritage Adaptive Reuse */}
         <div 
           ref={sector1Ref} 
-          className={`relative min-h-fit md:min-h-screen py-12 md:py-32 flex flex-col md:flex-row md:items-center overflow-hidden transition-all duration-1000 ${sector1Seen ? 'opacity-100' : 'opacity-40'}`}
+          className={`relative w-full flex flex-col md:relative md:aspect-video md:w-full md:flex md:items-center overflow-hidden transition-all duration-1000 py-12 md:py-0 ${sector1Seen ? 'opacity-100' : 'opacity-40'}`}
         >
           {/* Information box (First on mobile, absolutely layered on desktop) */}
           <div className="max-w-[1600px] mx-auto w-full px-6 md:px-24 relative z-10 mb-8 md:mb-0 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 md:right-0">
@@ -452,8 +452,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
             </div>
           </div>
 
-          {/* Full-Bleed Slider Background (Desktop: absolute background; Mobile: relative 9:16 vertical slider below text) */}
-          <div className="relative w-full aspect-[9/16] md:mx-0 md:w-full md:aspect-none md:absolute md:inset-0 md:z-0 bg-black overflow-hidden rounded-none">
+          {/* Full-Bleed Slider Background (Desktop: absolute background; Mobile: relative 16:9 slider below text) */}
+          <div className="relative w-full aspect-video md:mx-0 md:w-full md:h-full md:absolute md:inset-0 md:z-0 bg-black overflow-hidden rounded-none">
             <div className="absolute inset-0">
               {sector1Sets.map((set, idx) => (
                 <div key={idx} className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === sector1SetIdx ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
@@ -599,7 +599,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
         <div 
           ref={sector2Ref} 
           id="sector-ii-section" 
-          className={`relative min-h-fit md:min-h-screen py-12 md:py-32 flex flex-col md:flex-row md:items-center overflow-hidden transition-all duration-1000 ${sector2Seen ? 'opacity-100' : 'opacity-40'}`}
+          className={`relative w-full flex flex-col md:relative md:aspect-video md:w-full md:flex md:items-center overflow-hidden transition-all duration-1000 py-12 md:py-0 ${sector2Seen ? 'opacity-100' : 'opacity-40'}`}
         >
           {/* Information box (First on mobile, absolutely layered on desktop) */}
           <div className="max-w-[1600px] mx-auto w-full px-6 md:px-24 relative z-10 mb-8 md:mb-0 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 md:right-0">
@@ -614,8 +614,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
             </div>
           </div>
 
-          {/* Full-Bleed Video Background (Desktop: absolute; Mobile: relative 9:16 vertical player below text) */}
-          <div className="relative w-full aspect-[9/16] md:mx-0 md:w-full md:aspect-none md:absolute md:inset-0 md:z-0 bg-black overflow-hidden rounded-none">
+          {/* Full-Bleed Video Background (Desktop: absolute; Mobile: relative 16:9 player below text) */}
+          <div className="relative w-full aspect-video md:mx-0 md:w-full md:h-full md:absolute md:inset-0 md:z-0 bg-black overflow-hidden rounded-none">
             <div className="absolute inset-0 contrast-125">
               {sector2Seen && (
                 /* 16:9 crop box + 104% iframe = tiny letterbox glitch cropped out with minimal zoom */
