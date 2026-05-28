@@ -586,10 +586,39 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
         </div>
 
         {/* Sector II: Neubau Digital Synthesis */}
-        <div ref={sector2Ref} id="sector-ii-section" className="relative min-h-[70vh] md:min-h-screen flex items-center py-16 md:py-40 px-6 md:px-24">
-          <div className="max-w-[1600px] mx-auto w-full relative">
-            {/* Information box goes left now */}
-            <div className={`${textboxClass(sector2Seen)} md:left-0 md:top-[-1rem] lg:left-[-3rem] lg:top-[-3rem]`}>
+        <div 
+          ref={sector2Ref} 
+          id="sector-ii-section" 
+          className={`relative min-h-[600px] lg:min-h-screen py-24 md:py-32 flex items-center overflow-hidden transition-all duration-1000 ${sector2Seen ? 'opacity-100' : 'opacity-40'}`}
+        >
+          {/* Full-Bleed Video Background */}
+          <div className="absolute inset-0 z-0 bg-black">
+            <div className="absolute inset-0 contrast-125">
+              {sector2Seen && (
+                <iframe
+                  src="https://player.vimeo.com/video/1179891679?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300%] h-[300%] md:w-[115%] md:h-[115%] object-cover"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  title="Modern New Build Reel"
+                ></iframe>
+              )}
+            </div>
+            {/* Seamless Poster Overlay for Sector 2 */}
+            <div 
+              className={`absolute inset-0 z-10 transition-opacity duration-1000 ease-in-out pointer-events-none ${sector2Seen ? 'opacity-0' : 'opacity-100'}`}
+              style={{
+                backgroundImage: "url('https://i.postimg.cc/kX4Ht3r8/outdoor_1.jpg')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            />
+            <div className={`absolute inset-0 ${isDark ? 'bg-[#030303]/35' : 'bg-white/5'} backdrop-blur-[1px] pointer-events-none z-10`}></div>
+          </div>
+
+          <div className="max-w-[1600px] mx-auto w-full px-6 md:px-24 relative z-10">
+            {/* Information box */}
+            <div className={`relative z-10 w-full md:max-w-md lg:max-w-xl p-5 md:p-6 lg:p-10 xl:p-14 backdrop-blur-[12px] rounded-[1.2rem] md:rounded-[1.5rem] lg:rounded-[3rem] transition-all duration-[1200ms] ease-[cubic-bezier(0.16, 1, 0.3, 1)] shadow-[0_15px_40px_-10px_rgba(0, 0, 0, 0.15)] ring-1 flex flex-col border border-white/30 ${isDark ? 'bg-[#030303]/60 ring-white/10' : 'bg-white/60 ring-black/5'} ${sector2Seen ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
               <span className="text-sm md:text-base uppercase tracking-[0.4em] text-[#FF660F] font-black mb-1.5 md:mb-3 opacity-70">{t.sector2_label}</span>
               <h2 className={`text-2xl md:text-xl lg:text-3xl xl:text-5xl font-heading mb-2 md:mb-3 leading-[1.1] lg:leading-[0.95] tracking-tight transition-colors ${isDark ? 'text-white' : 'text-black'}`}><span className="font-medium">{t.sector2_title1}</span> <br /> <span className="italic font-light text-[#FF660F]">{t.sector2_title2}</span></h2>
               <p className={`text-base md:text-base lg:text-base leading-relaxed mb-4 md:mb-6 font-medium transition-colors ${isDark ? 'text-white/50' : 'text-black/50'}`}>{t.sector2_desc}</p>
@@ -597,27 +626,6 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-sm md:text-sm uppercase tracking-[0.3em] font-black border-b-2 pb-0.5 ${isDark ? 'text-white/70 border-white/10 hover:border-[#FF660F]' : 'text-black/70 border-black/10 hover:border-[#FF660F]'}`}>{t.cta_portfolio}</button>
                 <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-6 md:px-6 lg:px-12 py-3 md:py-3 rounded-full text-sm lg:text-sm font-bold tracking-[0.2em] hover:scale-105 transition-all shadow-xl bg-[#FF660F] text-white shadow-[#FF660F]/20`}>{t.cta_inquiry}</button>
               </div>
-            </div>
-            <div className={`w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative rounded-[1rem] md:rounded-[2rem] lg:rounded-[3.5rem] overflow-hidden shadow-2xl border border-white/5 transition-all duration-1000 z-10 bg-black ${sector2Seen ? 'grayscale-0 opacity-100' : 'md:grayscale md:opacity-40 grayscale-0 opacity-100'}`}>
-              {sector2Seen && (
-                <iframe
-                  src="https://player.vimeo.com/video/1179891679?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300%] h-[300%] md:w-[125%] md:h-[125%]"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  title="Modern New Build Reel"
-                ></iframe>
-              )}
-              {/* Seamless Poster Overlay for Sector 2 */}
-              <div 
-                className={`absolute inset-0 z-10 transition-opacity duration-1000 ease-in-out pointer-events-none ${sector2Seen ? 'opacity-0' : 'opacity-100'}`}
-                style={{
-                  backgroundImage: "url('https://i.postimg.cc/kX4Ht3r8/outdoor_1.jpg')",
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              />
-              <div className={`absolute inset-0 bg-[#030303]/5 pointer-events-none z-20`}></div>
             </div>
           </div>
         </div>
@@ -654,52 +662,50 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
         </div>
 
         {/* Sector III: Integrated Growth Strategy */}
-        <div ref={growthRef} id="growth-section" className="relative min-h-fit md:min-h-[100vh] flex items-center py-16 md:py-40 px-0 md:px-24 overflow-hidden">
-          <div className="max-w-[1600px] mx-auto w-full space-y-16 md:space-y-40 relative z-10">
-            <div className={`relative bg-[#030303] md:rounded-[2rem] lg:rounded-[4rem] px-6 py-0 md:p-10 lg:p-14 text-white transition-all duration-500 overflow-hidden md:shadow-2xl min-h-[450px] lg:min-h-[75vh] flex items-center ${growthSeen ? 'opacity-100' : 'opacity-40'}`}>
+        <div ref={growthRef} id="growth-section" className="relative min-h-fit md:min-h-screen flex items-center py-0 px-0 overflow-hidden">
+          <div className={`relative bg-[#030303] w-full min-h-[450px] lg:min-h-[75vh] flex items-center overflow-hidden transition-all duration-500 py-16 md:py-32 ${growthSeen ? 'opacity-100' : 'opacity-40'}`}>
 
-              {/* Desktop Video Background (Full Card) */}
-              <div className="absolute inset-0 overflow-hidden z-0 hidden md:block bg-stone-900">
-                {isDesktop && growthSeen && (
-                  <iframe
-                    src="https://player.vimeo.com/video/1164815646?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] md:pointer-events-none"
-                    frameBorder="0"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    title="Desktop Background Video"
-                  />
-                )}
-                <div className="absolute inset-0 bg-[#030303]/55 backdrop-blur-none pointer-events-none"></div>
-              </div>
+            {/* Desktop Video Background (Full Screen) */}
+            <div className="absolute inset-0 overflow-hidden z-0 hidden md:block bg-stone-900">
+              {isDesktop && growthSeen && (
+                <iframe
+                  src="https://player.vimeo.com/video/1164815646?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] md:pointer-events-none"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  title="Desktop Background Video"
+                />
+              )}
+              <div className="absolute inset-0 bg-[#030303]/55 backdrop-blur-none pointer-events-none"></div>
+            </div>
 
-              <div className="relative z-10 w-full py-12 md:py-0">
-                <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
-                  <div className="space-y-4 md:space-y-8 lg:space-y-12 text-center md:text-left">
-                    <div>
-                      <span className="text-base md:text-base lg:text-base uppercase tracking-[0.5em] md:tracking-[0.8em] text-[#FF660F] font-black block opacity-80 mb-3 md:mb-6">{t.pillar3_label}</span>
-                      <h2 className="text-fluid-h3 font-heading leading-[1] tracking-tighter font-light mb-4 pb-4">{t.pillar3_title1} <br /> <span className="italic font-light text-[#FF660F]">{t.pillar3_title2}</span></h2>
-                    </div>
-                    <p className="text-white/60 text-fluid-p font-light leading-relaxed max-w-md mx-auto md:mx-0">{t.pillar3_desc}</p>
-                    <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-9 md:px-8 lg:px-12 py-3 md:py-4 lg:py-6 border-2 rounded-full text-sm md:text-sm font-bold tracking-[0.2em] md:tracking-[0.5em] uppercase transition-all shadow-xl border-[#FF660F] text-[#FF660F] hover:bg-[#FF660F] hover:text-white`}>{t.cta_inquire_strategy}</button>
+            <div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 md:px-24">
+              <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
+                <div className="space-y-4 md:space-y-8 lg:space-y-12 text-center md:text-left">
+                  <div>
+                    <span className="text-base md:text-base lg:text-base uppercase tracking-[0.5em] md:tracking-[0.8em] text-[#FF660F] font-black block opacity-80 mb-3 md:mb-6">{t.pillar3_label}</span>
+                    <h2 className="text-fluid-h3 font-heading leading-[1] tracking-tighter font-light mb-4 pb-4">{t.pillar3_title1} <br /> <span className="italic font-light text-[#FF660F]">{t.pillar3_title2}</span></h2>
                   </div>
-                  <div className="grid gap-3 md:gap-6 lg:gap-8 relative">
-                    {/* Mobile: static poster image instead of heavy iframe */}
-                    <div className="absolute inset-[-1.5rem] overflow-hidden md:hidden z-0 bg-stone-950 rounded-[2rem]">
-                      <img
-                        src="https://i.postimg.cc/kX4Ht3r8/outdoor_1.jpg"
-                        alt="Growth Strategy"
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-[#030303]/50 pointer-events-none"></div>
-                    </div>
+                  <p className="text-white/60 text-fluid-p font-light leading-relaxed max-w-md mx-auto md:mx-0">{t.pillar3_desc}</p>
+                  <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-9 md:px-8 lg:px-12 py-3 md:py-4 lg:py-6 border-2 rounded-full text-sm md:text-sm font-bold tracking-[0.2em] md:tracking-[0.5em] uppercase transition-all shadow-xl border-[#FF660F] text-[#FF660F] hover:bg-[#FF660F] hover:text-white`}>{t.cta_inquire_strategy}</button>
+                </div>
+                <div className="grid gap-3 md:gap-6 lg:gap-8 relative">
+                  {/* Mobile: static poster image instead of heavy iframe */}
+                  <div className="absolute inset-[-1.5rem] overflow-hidden md:hidden z-0 bg-stone-950 rounded-none">
+                    <img
+                      src="https://i.postimg.cc/kX4Ht3r8/outdoor_1.jpg"
+                      alt="Growth Strategy"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-[#030303]/50 pointer-events-none"></div>
+                  </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 lg:gap-8 relative z-10">
-                      <WebConversionViz isInView={growthInView} label={t.label_performance} title={t.title_web_conversion} />
-                      <SEOVisibilityViz isInView={growthInView} label={t.label_visibility} title={t.title_seo_authority} />
-                    </div>
-                    <div className="col-span-full relative z-10">
-                      <VideoMarketingViz isInView={growthInView} label={t.label_engagement} title={t.title_video_strategy} label_conversion={t.label_conversion_boost} />
-                    </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 lg:gap-8 relative z-10">
+                    <WebConversionViz isInView={growthInView} label={t.label_performance} title={t.title_web_conversion} />
+                    <SEOVisibilityViz isInView={growthInView} label={t.label_visibility} title={t.title_seo_authority} />
+                  </div>
+                  <div className="col-span-full relative z-10">
+                    <VideoMarketingViz isInView={growthInView} label={t.label_engagement} title={t.title_video_strategy} label_conversion={t.label_conversion_boost} />
                   </div>
                 </div>
               </div>
