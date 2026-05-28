@@ -421,14 +421,13 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
   }, []);
 
   const textboxClass = (isVisible: boolean) => `
-    relative mb-6 md:mb-0 md:absolute z-40
-    w-full md:max-w-[280px] lg:max-w-md xl:max-w-lg p-5 md:p-6 lg:p-10 xl:p-14 backdrop-blur-[12px] rounded-none
+    relative z-40 w-full md:max-w-xl xl:max-w-2xl p-5 md:p-6 lg:p-10 xl:p-14 backdrop-blur-[12px] rounded-none
     transition-all duration-[1200ms] ease-[cubic-bezier(0.16, 1, 0.3, 1)]
     shadow-[0_15px_40px_-10px_rgba(0, 0, 0, 0.15)] ring-1
     flex flex-col border border-white/30
     ${isDark ? 'bg-[#030303]/60 ring-white/10' : 'bg-white/60 ring-black/5'}
     ${isVisible ? 'opacity-100 translate-x-0 translate-y-0 scale-100' : 'opacity-0 md:-translate-x-6 translate-y-4 md:-translate-y-4 scale-95'}
-`;
+  `;
 
   return (
     <section id="pillars" className="relative p-0">
@@ -440,7 +439,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           className={`relative w-full flex flex-col md:relative md:aspect-video md:w-full md:flex md:items-center overflow-hidden transition-all duration-1000 py-12 md:py-0 ${sector1Seen ? 'opacity-100' : 'opacity-40'}`}
         >
           {/* Information box (First on mobile, absolutely layered on desktop) */}
-          <div className="max-w-[1600px] mx-auto w-full px-6 md:px-24 relative z-10 mb-8 md:mb-0 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 md:right-0">
+          <div className="max-w-[1800px] mx-auto w-full px-6 md:px-16 lg:px-24 xl:px-32 relative z-10 mb-8 md:mb-0 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 md:right-0">
             <div className={`${textboxClass(sector1Seen)}`}>
               <span className="text-sm md:text-base uppercase tracking-[0.4em] text-[#FF660F] font-black mb-1.5 md:mb-3 opacity-70">{t.sector1_label}</span>
               <h2 className={`text-2xl md:text-xl lg:text-3xl xl:text-5xl font-heading mb-3 md:mb-4 leading-[1.1] lg:leading-[0.95] tracking-tight transition-colors ${isDark ? 'text-white' : 'text-black'}`}><span className="font-medium">{t.sector1_title1}</span> <br /> <span className="italic font-light text-[#FF660F]">{t.sector1_title2}</span></h2>
@@ -470,7 +469,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
             <div className="absolute inset-0 bg-[radial-gradient(#FF660F_1px,transparent_1px)] [background-size:40px_40px]"></div>
           </div>
           
-          <div className="max-w-[1600px] mx-auto w-full px-6 md:px-24 mb-8 md:mb-16">
+          <div className="max-w-[1800px] mx-auto w-full px-6 md:px-16 lg:px-24 xl:px-32 mb-8 md:mb-16">
             <div className={`flex flex-col md:flex-row justify-between items-center md:items-end gap-3 md:gap-5 text-center md:text-left transition-all duration-1000 ${showcaseSeen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="space-y-1"><span className={`text-base md:text-base uppercase tracking-[0.5em] font-bold block transition-colors ${isDark ? 'text-white/20' : 'text-black/30'}`}>{t.showcase_label}</span><h3 className={`text-xl md:text-2xl lg:text-7xl font-heading font-light tracking-tighter transition-colors ${isDark ? 'text-white' : 'text-black'}`}>{t.showcase_title1} <span className="italic text-[#FF660F]">{t.showcase_title2}</span></h3></div>
               <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-sm md:text-sm uppercase tracking-[0.5em] font-bold transition-colors border-b-2 pb-1 ${isDark ? 'text-white/20 border-white/5 hover:text-white hover:border-white' : 'text-black/30 border-black/5 hover:border-black'}`}>{t.cta_open_library}</button>
@@ -543,7 +542,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
             <div className="absolute inset-0 bg-gradient-to-tr from-black/80 via-black/20 to-transparent"></div>
           </div>
 
-          <div className="relative z-10 w-full max-w-[1600px] px-6 md:px-24 py-12 md:py-24">
+          <div className="relative z-10 w-full max-w-[1800px] mx-auto px-6 md:px-16 lg:px-24 xl:px-32 py-12 md:py-24">
             <div className="space-y-12 md:space-y-32">
               <div className="max-w-4xl">
                 <div className="inline-flex items-center gap-4 mb-6 md:mb-10">
@@ -602,8 +601,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           className={`relative w-full flex flex-col md:relative md:aspect-video md:w-full md:flex md:items-center overflow-hidden transition-all duration-1000 py-12 md:py-0 ${sector2Seen ? 'opacity-100' : 'opacity-40'}`}
         >
           {/* Information box (First on mobile, absolutely layered on desktop) */}
-          <div className="max-w-[1600px] mx-auto w-full px-6 md:px-24 relative z-10 mb-8 md:mb-0 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 md:right-0">
-            <div className={`${textboxClass(sector2Seen)}`}>
+          <div className="max-w-[1800px] mx-auto w-full px-6 md:px-16 lg:px-24 xl:px-32 relative z-10 mb-8 md:mb-0 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 md:right-0">
+            <div className={`${textboxClass(sector2Seen)} md:ml-auto`}>
               <span className="text-sm md:text-base uppercase tracking-[0.4em] text-[#FF660F] font-black mb-1.5 md:mb-3 opacity-70">{t.sector2_label}</span>
               <h2 className={`text-2xl md:text-xl lg:text-3xl xl:text-5xl font-heading mb-2 md:mb-3 leading-[1.1] lg:leading-[0.95] tracking-tight transition-colors ${isDark ? 'text-white' : 'text-black'}`}><span className="font-medium">{t.sector2_title1}</span> <br /> <span className="italic font-light text-[#FF660F]">{t.sector2_title2}</span></h2>
               <p className={`text-base md:text-base lg:text-base leading-relaxed mb-4 md:mb-6 font-medium transition-colors ${isDark ? 'text-white/50' : 'text-black/50'}`}>{t.sector2_desc}</p>
@@ -665,7 +664,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
             <div className="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] [background-size:60px_60px]"></div>
           </div>
           
-          <div className="max-w-[1600px] mx-auto w-full px-6 md:px-24 mb-8 md:mb-16">
+          <div className="max-w-[1800px] mx-auto w-full px-6 md:px-16 lg:px-24 xl:px-32 mb-8 md:mb-16">
             <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-3 md:gap-5 text-center md:text-left">
               <div className="space-y-1"><span className={`text-base md:text-base uppercase tracking-[0.5em] font-bold block transition-colors ${isDark ? 'text-white/20' : 'text-black/30'}`}>{t.neubau_showcase_label}</span><h3 className={`text-xl md:text-2xl lg:text-7xl font-heading font-light tracking-tighter transition-colors ${isDark ? 'text-white' : 'text-black'}`}>{t.neubau_showcase_title1} <span className="italic text-[#FF660F]">{t.neubau_showcase_title2}</span></h3></div>
               <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-sm md:text-sm uppercase tracking-[0.5em] font-bold transition-colors border-b-2 pb-1 ${isDark ? 'text-white/20 border-white/5 hover:text-white hover:border-white' : 'text-black/30 border-black/5 hover:border-black'}`}>{t.cta_open_library}</button>
@@ -731,22 +730,25 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
               <div className="absolute inset-0 bg-[#030303]/55 backdrop-blur-none pointer-events-none"></div>
             </div>
 
-            <div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 md:px-24">
+            <div className="relative z-10 w-full max-w-[1800px] mx-auto px-6 md:px-16 lg:px-24 xl:px-32">
               <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
-                <div className="space-y-4 md:space-y-8 lg:space-y-12 text-center md:text-left">
-                  <div>
-                    <span className="text-base md:text-base lg:text-base uppercase tracking-[0.5em] md:tracking-[0.8em] text-[#FF660F] font-black block opacity-80 mb-3 md:mb-6">{t.pillar3_label}</span>
-                    <h2 className="text-fluid-h3 font-heading leading-[1] tracking-tighter font-light mb-4 pb-4">{t.pillar3_title1} <br /> <span className="italic font-light text-[#FF660F]">{t.pillar3_title2}</span></h2>
+                <div className="w-full">
+                  <div className={`${textboxClass(growthSeen)}`}>
+                    <span className="text-sm md:text-base uppercase tracking-[0.4em] text-[#FF660F] font-black mb-1.5 md:mb-3 opacity-70">{t.pillar3_label}</span>
+                    <h2 className={`text-2xl md:text-xl lg:text-3xl xl:text-5xl font-heading mb-3 md:mb-4 leading-[1.1] lg:leading-[0.95] tracking-tight transition-colors \${isDark ? 'text-white' : 'text-black'}`}><span className="font-medium">{t.pillar3_title1}</span> <br /> <span className="italic font-light text-[#FF660F]">{t.pillar3_title2}</span></h2>
+                    <p className={`text-base md:text-base lg:text-base leading-relaxed mb-6 md:mb-8 font-medium transition-colors \${isDark ? 'text-white/50' : 'text-black/50'}`}>{t.pillar3_desc}</p>
+                    <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-8 mt-auto">
+                      <button onClick={() => onNavigate(AppSection.ARCHITECTURE)} className={`text-sm md:text-sm uppercase tracking-[0.3em] font-black border-b-2 transition-all pb-0.5 \${isDark ? 'text-white/70 border-white/10 hover:border-[#FF660F]' : 'text-black/70 border-black/10 hover:border-[#FF660F]'}`}>{t.cta_portfolio}</button>
+                      <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-6 md:px-6 lg:px-12 py-3 md:py-3 rounded-full text-sm lg:text-sm font-bold tracking-[0.2em] hover:scale-105 transition-all shadow-xl bg-[#FF660F] text-white shadow-[#FF660F]/20`}>{t.cta_inquire_strategy}</button>
+                    </div>
                   </div>
-                  <p className="text-white/60 text-fluid-p font-light leading-relaxed max-w-md mx-auto md:mx-0">{t.pillar3_desc}</p>
-                  <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-9 md:px-8 lg:px-12 py-3 md:py-4 lg:py-6 border-2 rounded-full text-sm md:text-sm font-bold tracking-[0.2em] md:tracking-[0.5em] uppercase transition-all shadow-xl border-[#FF660F] text-[#FF660F] hover:bg-[#FF660F] hover:text-white mb-8 md:mb-0`}>{t.cta_inquire_strategy}</button>
                 </div>
 
                 {/* Mobile Video Player (renders right after info text & CTA on mobile, hidden on desktop) */}
-                <div className="relative w-[calc(100%+3rem)] mx-[-1.5rem] aspect-[9/16] md:hidden bg-black overflow-hidden rounded-none mb-8 z-10">
+                <div className="relative w-[calc(100%+3rem)] mx-[-1.5rem] aspect-video md:hidden bg-black overflow-hidden rounded-none mb-8 z-10">
                   <div className="absolute inset-0 contrast-125">
                     {growthSeen && (
-                      /* 16:9 crop box + 120% iframe = letterbox bars cropped out */
+                      /* 16:9 crop box + 104% iframe = letterbox bars cropped out with minimal zoom */
                       <div style={{
                         position: 'absolute',
                         top: '50%',
@@ -764,8 +766,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                             top: '50%',
                             left: '50%',
                             transform: 'translate(-50%, -50%)',
-                            width: '120%',
-                            height: '120%',
+                            width: '104%',
+                            height: '104%',
                             border: 'none',
                           }}
                           allow="autoplay; fullscreen; picture-in-picture"
@@ -799,7 +801,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           <div className="absolute inset-0 bg-[#030303]/30"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303] opacity-60"></div>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-20 pb-48">
+          <div className="relative z-10 max-w-[1800px] mx-auto px-6 md:px-16 lg:px-24 xl:px-32 w-full pt-20 pb-48">
             <div className="space-y-12 md:space-y-32">
               <div className="max-w-4xl">
                 <div className="inline-flex items-center gap-4 mb-6 md:mb-10">
