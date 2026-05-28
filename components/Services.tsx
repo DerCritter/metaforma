@@ -663,7 +663,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 overflow: 'hidden',
               }}>
                 <iframe
-                  src="https://player.vimeo.com/video/1179891679?autoplay=1&muted=1&loop=1&controls=0&playsinline=1&title=0&byline=0&portrait=0&quality=1080p"
+                  src="https://player.vimeo.com/video/1179891679?background=1&autoplay=1&loop=1&muted=1&autopause=0&playsinline=1"
                   style={{
                     position: 'absolute',
                     top: '50%',
@@ -709,7 +709,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                   overflow: 'hidden',
                 }}>
                   <iframe
-                    src="https://player.vimeo.com/video/1164815646?autoplay=1&muted=1&loop=1&controls=0&playsinline=1&title=0&byline=0&portrait=0&quality=1080p"
+                    src="https://player.vimeo.com/video/1164815646?background=1&autoplay=1&loop=1&muted=1&autopause=0&playsinline=1"
                     style={{
                       position: 'absolute',
                       top: '50%',
@@ -756,7 +756,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                       overflow: 'hidden',
                     }}>
                       <iframe
-                        src="https://player.vimeo.com/video/1164815646?autoplay=1&muted=1&loop=1&controls=0&playsinline=1&title=0&byline=0&portrait=0&quality=1080p"
+                        src="https://player.vimeo.com/video/1164815646?background=1&autoplay=1&loop=1&muted=1&autopause=0&playsinline=1"
                         style={{
                           position: 'absolute',
                           top: '50%',
