@@ -435,10 +435,13 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
       <div className="relative z-10">
 
         {/* Sector I: Heritage Adaptive Reuse */}
-        <div ref={sector1Ref} className="relative min-h-[70vh] md:min-h-screen flex items-center py-16 md:py-40 px-6 md:px-24">
-          <div className="max-w-[1600px] mx-auto w-full relative">
-            {/* Information box goes above on mobile via DOM order shift */}
-            <div className={`${textboxClass(sector1Seen)} md:left-0 md:top-[-1rem] lg:left-[-3rem] lg:top-[-3rem]`}>
+        <div 
+          ref={sector1Ref} 
+          className={`relative min-h-fit md:min-h-screen py-12 md:py-32 flex flex-col md:flex-row md:items-center overflow-hidden transition-all duration-1000 ${sector1Seen ? 'opacity-100' : 'opacity-40'}`}
+        >
+          {/* Information box (First on mobile, absolutely layered on desktop) */}
+          <div className="max-w-[1600px] mx-auto w-full px-6 md:px-24 relative z-10 mb-8 md:mb-0 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 md:right-0">
+            <div className={`${textboxClass(sector1Seen)}`}>
               <span className="text-sm md:text-base uppercase tracking-[0.4em] text-[#FF660F] font-black mb-1.5 md:mb-3 opacity-70">{t.sector1_label}</span>
               <h2 className={`text-2xl md:text-xl lg:text-3xl xl:text-5xl font-heading mb-3 md:mb-4 leading-[1.1] lg:leading-[0.95] tracking-tight transition-colors ${isDark ? 'text-white' : 'text-black'}`}><span className="font-medium">{t.sector1_title1}</span> <br /> <span className="italic font-light text-[#FF660F]">{t.sector1_title2}</span></h2>
               <p className={`text-base md:text-base lg:text-base leading-relaxed mb-6 md:mb-8 font-medium transition-colors ${isDark ? 'text-white/50' : 'text-black/50'}`}>{t.sector1_desc}</p>
@@ -447,13 +450,16 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-6 md:px-6 lg:px-12 py-3 md:py-3 rounded-full text-sm lg:text-sm font-bold tracking-[0.2em] hover:scale-105 transition-all shadow-xl bg-[#FF660F] text-white shadow-[#FF660F]/20`}>{t.cta_inquiry}</button>
               </div>
             </div>
-            <div className="w-[calc(100%+3rem)] mx-[-1.5rem] aspect-video md:mx-0 md:w-full md:aspect-video relative group/carousel z-10 rounded-none overflow-hidden">
+          </div>
+
+          {/* Full-Bleed Slider Background (Desktop: absolute background; Mobile: relative 9:16 vertical slider below text) */}
+          <div className="relative w-full aspect-[9/16] md:mx-0 md:w-full md:aspect-none md:absolute md:inset-0 md:z-0 bg-black overflow-hidden rounded-none">
+            <div className="absolute inset-0">
               {sector1Sets.map((set, idx) => (
                 <div key={idx} className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === sector1SetIdx ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
                   <ComparisonSlider before={set.before} after={set.after} isInView={sector1Seen} position={sliderPos} isDark={isDark} onPositionChange={(pos) => targetSliderPos.current = pos} onInteractionStart={() => isHovering.current = true} onInteractionEnd={() => isHovering.current = false} />
                 </div>
               ))}
-              <div className="invisible aspect-video"></div>
             </div>
           </div>
         </div>
@@ -596,8 +602,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           className={`relative min-h-fit md:min-h-screen py-12 md:py-32 flex flex-col md:flex-row md:items-center overflow-hidden transition-all duration-1000 ${sector2Seen ? 'opacity-100' : 'opacity-40'}`}
         >
           {/* Information box (First on mobile, absolutely layered on desktop) */}
-          <div className="max-w-[1600px] mx-auto w-full px-6 md:px-24 relative z-10 mb-8 md:mb-0">
-            <div className={`relative z-10 w-full md:max-w-md lg:max-w-xl p-5 md:p-6 lg:p-10 xl:p-14 backdrop-blur-[12px] rounded-[1.2rem] md:rounded-[1.5rem] lg:rounded-[3rem] transition-all duration-[1200ms] ease-[cubic-bezier(0.16, 1, 0.3, 1)] shadow-[0_15px_40px_-10px_rgba(0, 0, 0, 0.15)] ring-1 flex flex-col border border-white/30 ${isDark ? 'bg-[#030303]/60 ring-white/10' : 'bg-white/60 ring-black/5'} ${sector2Seen ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+          <div className="max-w-[1600px] mx-auto w-full px-6 md:px-24 relative z-10 mb-8 md:mb-0 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 md:right-0">
+            <div className={`${textboxClass(sector2Seen)}`}>
               <span className="text-sm md:text-base uppercase tracking-[0.4em] text-[#FF660F] font-black mb-1.5 md:mb-3 opacity-70">{t.sector2_label}</span>
               <h2 className={`text-2xl md:text-xl lg:text-3xl xl:text-5xl font-heading mb-2 md:mb-3 leading-[1.1] lg:leading-[0.95] tracking-tight transition-colors ${isDark ? 'text-white' : 'text-black'}`}><span className="font-medium">{t.sector2_title1}</span> <br /> <span className="italic font-light text-[#FF660F]">{t.sector2_title2}</span></h2>
               <p className={`text-base md:text-base lg:text-base leading-relaxed mb-4 md:mb-6 font-medium transition-colors ${isDark ? 'text-white/50' : 'text-black/50'}`}>{t.sector2_desc}</p>
@@ -612,7 +618,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           <div className="relative w-full aspect-[9/16] md:mx-0 md:w-full md:aspect-none md:absolute md:inset-0 md:z-0 bg-black overflow-hidden rounded-none">
             <div className="absolute inset-0 contrast-125">
               {sector2Seen && (
-                /* 16:9 crop box + 120% iframe = letterbox bars cropped out */
+                /* 16:9 crop box + 104% iframe = tiny letterbox glitch cropped out with minimal zoom */
                 <div style={{
                   position: 'absolute',
                   top: '50%',
@@ -630,8 +636,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                       top: '50%',
                       left: '50%',
                       transform: 'translate(-50%, -50%)',
-                      width: '120%',
-                      height: '120%',
+                      width: '104%',
+                      height: '104%',
                       border: 'none',
                     }}
                     allow="autoplay; fullscreen; picture-in-picture"
