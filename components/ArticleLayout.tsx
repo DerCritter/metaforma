@@ -49,7 +49,7 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
            return (
              <figure key={index} className="my-8 w-full max-w-sm md:max-w-md lg:max-w-xl mx-auto px-6">
                <div className="w-full flex items-center justify-center">
-                   <img src={block.src} alt={block.alt} className="w-full h-auto object-contain rounded-lg border border-white/5 opacity-80" />
+                    <img src={block.src} alt={block.alt} className="w-full h-auto object-contain rounded-none border-none opacity-80" />
                </div>
                {block.caption && <figcaption className="mt-4 text-[10px] md:text-xs text-center opacity-50 px-6 uppercase tracking-widest">{block.caption}</figcaption>}
              </figure>
@@ -59,7 +59,7 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
            return (
              <figure key={index} className="my-10 w-full max-w-3xl mx-auto px-6">
                <div className="w-full flex items-center justify-center">
-                   <img src={block.src} alt={block.alt} className="w-full max-w-lg lg:max-w-2xl h-auto object-contain rounded-xl shadow-lg border border-white/10" />
+                    <img src={block.src} alt={block.alt} className="w-full max-w-lg lg:max-w-2xl h-auto object-contain rounded-none shadow-lg border-none" />
                </div>
                {block.caption && <figcaption className="mt-4 text-xs md:text-sm text-center opacity-60 px-6">{block.caption}</figcaption>}
              </figure>
@@ -81,13 +81,13 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
         return (
           <div key={index} className="my-24 space-y-8 w-full">
             <h4 className="text-center text-sm md:text-base uppercase tracking-[0.4em] font-bold text-[#FF660F]">{block.label}</h4>
-            <div className="relative grid lg:grid-cols-2 group border border-white/10 rounded-[2rem] md:rounded-[4rem] overflow-hidden bg-black/40 shadow-2xl">
+            <div className="relative grid lg:grid-cols-2 group border-none rounded-none overflow-hidden bg-black/40 shadow-2xl">
               
               {/* Elegant Before/After Divider (Desktop) */}
               <div className="hidden lg:block absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-white/20 z-10"></div>
 
               <div className="relative group p-4 md:p-8">
-                 <div className="w-full aspect-square md:aspect-[4/3] rounded-[1.5rem] md:rounded-[3rem] overflow-hidden bg-black/10">
+                  <div className="w-full aspect-square md:aspect-[4/3] rounded-none overflow-hidden bg-black/10">
                     {block.before.includes('placeholder') ? (
                       <span className="text-white/30 tracking-widest uppercase text-xs md:text-sm text-center px-4">[Placeholder Before:<br/>Raw Photo/CAD]</span>
                     ) : (
@@ -98,7 +98,7 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
               </div>
               
               <div className="relative group p-4 md:p-8 bg-[#FF660F]/5">
-                 <div className="w-full aspect-square md:aspect-[4/3] rounded-[1.5rem] md:rounded-[3rem] overflow-hidden">
+                  <div className="w-full aspect-square md:aspect-[4/3] rounded-none overflow-hidden">
                     {block.after.includes('placeholder') ? (
                       <span className="text-[#FF660F]/50 tracking-widest uppercase text-xs md:text-sm text-center px-4">[Placeholder After:<br/>Render]</span>
                     ) : (
@@ -119,7 +119,7 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 w-full max-w-5xl px-6 mx-auto mb-20">
               {/* Raw Input */}
               <div className="flex flex-col items-center gap-4 w-full md:w-1/2 max-w-[400px]">
-                 <div className="w-full aspect-square rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 bg-black/10">
+                  <div className="w-full aspect-square rounded-none overflow-hidden shadow-2xl border-none bg-black/10">
                     <img src={block.raw} alt="Raw Input" className="w-full h-full object-cover" />
                  </div>
                  <p className="text-[10px] md:text-sm uppercase tracking-widest opacity-60 font-bold">Raw Photo</p>
@@ -130,7 +130,7 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
 
               {/* Style Reference */}
               <div className="flex flex-col items-center gap-4 w-full md:w-1/2 max-w-[400px]">
-                 <div className="w-full aspect-square rounded-[2rem] md:rounded-[3rem] border-2 border-[#FF660F]/40 overflow-hidden shadow-2xl bg-black/10">
+                  <div className="w-full aspect-square rounded-none border-2 border-[#FF660F]/40 overflow-hidden shadow-2xl bg-black/10">
                     <img src={block.ref} alt="Style Reference" className="w-full h-full object-cover" />
                  </div>
                  <p className="text-[10px] md:text-sm uppercase tracking-widest text-[#FF660F] font-bold">Style Reference</p>
@@ -155,7 +155,7 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
              
              {/* Google Maps Raw Data window */}
              <div className="relative z-10 flex flex-col items-center mb-8 w-full max-w-2xl px-6">
-                <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden border border-white/20 shadow-2xl relative bg-[#111]">
+                 <div className="w-full aspect-[16/9] rounded-none overflow-hidden border-none shadow-2xl relative bg-[#111]">
                    {/* MacOS window dots for software feel */}
                    <div className="absolute top-0 left-0 w-full h-8 bg-black/40 flex items-center px-4 gap-2 z-20 border-b border-white/10 backdrop-blur-md">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>

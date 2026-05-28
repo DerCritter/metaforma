@@ -45,13 +45,13 @@ export const Contact: React.FC<ContactProps> = ({ chatHistory, setChatHistory, i
   };
 
   return (
-    <section className={`py-12 md:py-20 px-4 md:px-6 max-w-4xl mx-auto h-[calc(100vh-120px)] md:h-[80vh] flex flex-col animate-in slide-in-from-bottom-8 duration-700 transition-colors ${isDark ? 'text-white' : 'text-black'}`}>
+    <section className={`py-12 md:py-20 px-6 md:px-12 lg:px-16 xl:px-20 max-w-4xl mx-auto h-[calc(100vh-120px)] md:h-[80vh] flex flex-col animate-in slide-in-from-bottom-8 duration-700 transition-colors ${isDark ? 'text-white' : 'text-black'}`}>
       <div className="text-center mb-6 md:mb-12">
         <h2 className="text-2xl md:text-4xl font-heading font-medium mb-2 md:mb-4 italic">{t.title}</h2>
         <p className={`text-base md:text-sm tracking-widest uppercase transition-colors ${isDark ? 'text-white/40' : 'text-black/40'}`}>{t.subtitle}</p>
       </div>
 
-      <div className={`flex-grow rounded-none flex flex-col overflow-hidden border transition-all duration-700 shadow-xl ${isDark ? 'bg-white/5 border-white/5' : 'bg-white/40 border-black/5'}`}>
+      <div className={`flex-grow rounded-none flex flex-col overflow-hidden border-none transition-all duration-700 shadow-xl ${isDark ? 'bg-white/5' : 'bg-white/40'}`}>
         <div className="flex-grow p-6 md:p-10 overflow-y-auto space-y-6 md:space-y-8 custom-scrollbar">
           {chatHistory.length === 0 && (
             <div className="h-full flex flex-col items-center justify-center text-stone-400 space-y-6">
@@ -63,10 +63,10 @@ export const Contact: React.FC<ContactProps> = ({ chatHistory, setChatHistory, i
           {chatHistory.map((msg, idx) => (
             <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
               <div className={`max-w-[85%] md:max-w-[80%] px-5 md:px-8 py-3.5 md:py-5 text-base md:text-sm leading-relaxed transition-all ${msg.role === 'user'
-                ? 'bg-[#FF660F] text-white font-semibold rounded-xl md:rounded-2xl rounded-tr-none'
+                ? 'bg-[#FF660F] text-white font-semibold rounded-none border-none'
                 : isDark
-                  ? 'bg-white/10 text-white/90 border border-white/5 font-light rounded-xl md:rounded-2xl rounded-tl-none shadow-sm'
-                  : 'bg-[#0a0a0b]/10 text-black/90 border border-black/5 font-light rounded-xl md:rounded-2xl rounded-tl-none shadow-sm'
+                  ? 'bg-white/10 text-white/90 border-none font-light rounded-none shadow-sm'
+                  : 'bg-[#0a0a0b]/10 text-black/90 border-none font-light rounded-none shadow-sm'
                 }`}>
                 {msg.text}
               </div>
@@ -80,7 +80,7 @@ export const Contact: React.FC<ContactProps> = ({ chatHistory, setChatHistory, i
           <div ref={chatEndRef} />
         </div>
 
-        <form onSubmit={handleSendMessage} className={`p-5 md:p-8 border-t flex flex-col md:flex-row gap-4 md:gap-6 ${isDark ? 'bg-[#0a0a0b]/20 border-white/5' : 'bg-white/40 border-black/5'}`}>
+        <form onSubmit={handleSendMessage} className={`p-5 md:p-8 border-none flex flex-col md:flex-row gap-4 md:gap-6 ${isDark ? 'bg-[#0a0a0b]/20' : 'bg-white/40'}`}>
           <input
             type="text"
             value={chatInput}

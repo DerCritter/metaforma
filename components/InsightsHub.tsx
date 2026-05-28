@@ -18,10 +18,10 @@ export const InsightsHub: React.FC<InsightsHubProps> = ({ isDark, language }) =>
   }, []);
 
   return (
-    <div className={`min-h-screen pt-32 pb-24 px-6 lg:px-24 transition-colors duration-1000 ${isDark ? 'bg-[#030303] text-white' : 'bg-white text-black'}`}>
+    <div className={`min-h-screen pt-32 pb-24 px-6 md:px-12 lg:px-16 xl:px-20 transition-colors duration-1000 ${isDark ? 'bg-[#030303] text-white' : 'bg-white text-black'}`}>
       <SEOHelmet language={language} path="/insights" />
       
-      <div className="max-w-7xl mx-auto space-y-20">
+      <div className="max-w-[1920px] mx-auto w-full space-y-20">
         <header className="space-y-6">
           <span className="text-sm md:text-base uppercase tracking-[0.6em] text-[#FF660F] font-black block">
             {t.insights || 'INSIGHTS'} & JOURNAL
@@ -41,7 +41,7 @@ export const InsightsHub: React.FC<InsightsHubProps> = ({ isDark, language }) =>
               <article 
                 key={article.id} 
                 onClick={() => navigate(language === 'de' ? `/de/insights/${article.slug}` : `/insights/${article.slug}`)}
-                className={`group cursor-pointer rounded-[2rem] p-8 md:p-10 border transition-all duration-500 ${isDark ? 'border-white/10 hover:border-white/30 hover:bg-white/5' : 'border-black/10 hover:border-black/30 hover:bg-black/5'} flex flex-col justify-between h-[450px] shadow-lg`}
+                className={`group cursor-pointer rounded-none p-8 md:p-10 border-none transition-all duration-500 ${isDark ? 'bg-white/5 hover:bg-white/10' : 'bg-black/5 hover:bg-black/10'} flex flex-col justify-between h-[450px] shadow-lg backdrop-blur-[12px]`}
               >
                 <div className="space-y-6">
                   <div className="flex justify-between items-center text-xs uppercase tracking-widest font-bold">

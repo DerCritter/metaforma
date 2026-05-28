@@ -140,7 +140,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ category, onSelectProject,
   ).sort(() => Math.random() - 0.5); // Cinematic shuffle
 
   return (
-    <section className={`py-16 md:py-24 lg:py-48 px-6 md:px-10 lg:px-24 max-w-[1700px] mx-auto animate-in fade-in slide-in-from-bottom-12 duration-1000 transition-colors ${isDark ? 'text-white' : 'text-black'}`}>
+    <section className={`py-16 md:py-24 lg:py-48 max-w-[1920px] mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 animate-in fade-in slide-in-from-bottom-12 duration-1000 transition-colors ${isDark ? 'text-white' : 'text-black'}`}>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-24 lg:mb-32 gap-6 md:gap-10">
         <div className="space-y-3 md:space-y-4 lg:space-y-6">
           <span className={`text-base md:text-base lg:text-base uppercase tracking-[0.5em] md:tracking-[0.8em] font-bold block transition-colors ${isDark ? 'text-white/20' : 'text-black/30'}`}>{t.portfolio_label}</span>
@@ -199,7 +199,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ category, onSelectProject,
           {allProjectImages.map((item, idx) => (
             <div
               key={`${item.project.id}-${idx}`}
-              className="relative group overflow-hidden rounded-[1rem] md:rounded-[2rem] border border-white/5 cursor-pointer shadow-lg transition-transform hover:scale-[1.02] hover:z-10"
+              className="relative group overflow-hidden rounded-none border-none cursor-pointer shadow-lg transition-transform hover:scale-[1.02] hover:z-10"
               onClick={() => {
                 trackEvent('project_select', { project_id: item.project.id, view_mode: 'cloud' });
                 onSelectProject(item.project);

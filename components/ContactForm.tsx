@@ -75,7 +75,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
     }
 
     return (
-        <section className={`pt-32 pb-12 md:pb-24 px-6 max-w-5xl mx-auto animate-in slide-in-from-bottom-12 duration-1000 ${isDark ? 'text-white' : 'text-black'}`}>
+        <section className={`pt-32 pb-12 md:pb-24 px-6 md:px-12 lg:px-16 xl:px-20 max-w-[1920px] mx-auto w-full animate-in slide-in-from-bottom-12 duration-1000 ${isDark ? 'text-white' : 'text-black'}`}>
             <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-start">
                 <div className="space-y-8 md:space-y-12">
                     <div className="space-y-4">
@@ -93,7 +93,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                             <div className="flex flex-col gap-4">
                                 <a 
                                     href={`mai${'lto:'}info${'@'}metaforma-ai.com`}
-                                    className={`w-full p-6 md:p-8 rounded-[1.5rem] border backdrop-blur-[12px] transition-all hover:border-[#FF660F] group ${isDark ? 'bg-white/5 border-white/10' : 'bg-[#0a0a0b]/5 border-black/5'}`}
+                                className={`w-full p-6 md:p-8 rounded-none border-none backdrop-blur-[12px] transition-all hover:bg-[#FF660F]/10 group ${isDark ? 'bg-white/5' : 'bg-[#0a0a0b]/5'}`}
                                 >
                                     <div className="flex items-center gap-5">
                                         <div className="w-12 h-12 rounded-full bg-[#FF660F]/20 flex items-center justify-center text-[#FF660F] group-hover:bg-[#FF660F] group-hover:text-white transition-all shrink-0">
@@ -109,7 +109,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                         </div>
                 </div>
 
-                <div className={`p-8 md:p-12 rounded-[2.5rem] md:rounded-[3.5rem] border backdrop-blur-[12px] shadow-2xl ${isDark ? 'bg-white/5 border-white/10 shadow-black/50' : 'bg-white/60 border-black/5 shadow-black/5'}`}>
+                <div className={`p-8 md:p-12 rounded-none border-none backdrop-blur-[12px] shadow-2xl ${isDark ? 'bg-white/5 shadow-black/50' : 'bg-white/60 shadow-black/5'}`}>
                     <form onSubmit={handleSubmit} className="space-y-8">
                         <div className="space-y-6">
                             <div className="group">
@@ -145,7 +145,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isDark = false, langua
                         </div>
 
                         {status === 'error' && (
-                            <div className="text-red-500 text-xs md:text-sm font-medium tracking-[0.1em] text-center mb-6 bg-red-500/10 border border-red-500/20 py-3.5 px-5 rounded-2xl animate-in fade-in duration-300">
+                            <div className="text-red-500 text-xs md:text-sm font-medium tracking-[0.1em] text-center mb-6 bg-red-500/10 border-none py-3.5 px-5 rounded-none animate-in fade-in duration-300">
                                 {language === 'de' 
                                     ? 'Ein Fehler ist aufgetreten. Bitte senden Sie Ihre Nachricht direkt an info@metaforma-ai.com.' 
                                     : 'An error occurred. Please send your message directly to info@metaforma-ai.com.'}

@@ -36,9 +36,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, isDa
   return (
     <div
       ref={cardRef}
-      className={`group relative overflow-hidden rounded-[2.5rem] transition-all duration-1000 cursor-pointer border backdrop-blur-[12px] ${isDark
-        ? 'bg-white/5 border-white/5 hover:shadow-[0_40px_80px_-20px_rgba(255,101,44,0.1)]'
-        : 'glass-morphism bg-white/40 border-black/5 hover:shadow-[0_40px_80px_-20px_rgba(255,101,44,0.15)]'
+      className={`group relative overflow-hidden rounded-none transition-all duration-1000 cursor-pointer border-none backdrop-blur-[12px] ${isDark
+        ? 'bg-white/5 hover:shadow-[0_40px_80px_-20px_rgba(255,101,44,0.1)]'
+        : 'glass-morphism bg-white/40 hover:shadow-[0_40px_80px_-20px_rgba(255,101,44,0.15)]'
         } ${isInView ? 'grayscale-0 opacity-100' : 'grayscale opacity-40'}`}
       onClick={() => onClick(project)}
     >
