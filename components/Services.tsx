@@ -598,24 +598,26 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 <button onClick={() => onNavigate(AppSection.CONTACT_FORM)} className={`px-6 md:px-6 lg:px-12 py-3 md:py-3 rounded-full text-sm lg:text-sm font-bold tracking-[0.2em] hover:scale-105 transition-all shadow-xl bg-[#FF660F] text-white shadow-[#FF660F]/20`}>{t.cta_inquiry}</button>
               </div>
             </div>
-            <div 
-              className={`w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative rounded-[1rem] md:rounded-[2rem] lg:rounded-[3.5rem] overflow-hidden shadow-2xl border border-white/5 transition-all duration-1000 z-10 bg-stone-900 ${sector2Seen ? 'grayscale-0 opacity-100' : 'md:grayscale md:opacity-40 grayscale-0 opacity-100'}`}
-              style={{
-                backgroundImage: "url('https://i.postimg.cc/kX4Ht3r8/outdoor_1.jpg')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-              }}
-            >
+            <div className={`w-full md:w-[96%] lg:w-[94%] md:ml-auto min-h-[400px] md:min-h-[500px] lg:aspect-video relative rounded-[1rem] md:rounded-[2rem] lg:rounded-[3.5rem] overflow-hidden shadow-2xl border border-white/5 transition-all duration-1000 z-10 bg-black ${sector2Seen ? 'grayscale-0 opacity-100' : 'md:grayscale md:opacity-40 grayscale-0 opacity-100'}`}>
               {sector2Seen && (
                 <iframe
                   src="https://player.vimeo.com/video/1179891679?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300%] h-[300%] md:w-[116%] md:h-[116%]"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300%] h-[300%] md:w-[125%] md:h-[125%]"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture"
                   title="Modern New Build Reel"
                 ></iframe>
               )}
-              <div className={`absolute inset-0 bg-[#030303]/5 pointer-events-none`}></div>
+              {/* Seamless Poster Overlay for Sector 2 */}
+              <div 
+                className={`absolute inset-0 z-10 transition-opacity duration-1000 ease-in-out pointer-events-none ${sector2Seen ? 'opacity-0' : 'opacity-100'}`}
+                style={{
+                  backgroundImage: "url('https://i.postimg.cc/kX4Ht3r8/outdoor_1.jpg')",
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              />
+              <div className={`absolute inset-0 bg-[#030303]/5 pointer-events-none z-20`}></div>
             </div>
           </div>
         </div>
