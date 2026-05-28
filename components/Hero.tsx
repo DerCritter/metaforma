@@ -9,6 +9,32 @@ interface HeroProps {
   language: Language;
 }
 
+// Shared style for the 16:9 crop container:
+// Centers itself, expands to cover the section in both dimensions,
+// and clips anything beyond its bounds (where the black bars are).
+const cropContainerStyle: React.CSSProperties = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  aspectRatio: '16 / 9',
+  minWidth: '100%',
+  minHeight: '100%',
+  overflow: 'hidden',
+};
+
+// The iframe is 5% larger than the 16:9 container on every side,
+// so the baked-in black letterbox bars are pushed outside the crop boundary.
+const iframeStyle: React.CSSProperties = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '105%',
+  height: '105%',
+  border: 'none',
+};
+
 export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language }) => {
   const [isInView, setIsInView] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
@@ -81,31 +107,43 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
       ref={heroRef}
       className={`relative min-h-[600px] lg:min-h-screen py-24 md:py-32 flex flex-col items-center justify-center text-center px-6 overflow-hidden transition-all duration-1000 ${isDark ? 'bg-[#030303]' : 'bg-white'} ${isInView ? 'opacity-100' : 'opacity-40'}`}
     >
-      <div className={`absolute inset-0 z-0 ${isDark ? 'opacity-[0.90]' : 'opacity-80'} bg-black`}>
+      {/* ── Video background layer ── */}
+      <div className={`absolute inset-0 z-0 overflow-hidden ${isDark ? 'opacity-[0.90]' : 'opacity-80'} bg-black`}>
         <div className="absolute inset-0 contrast-125">
-            <div className={`absolute inset-0 transition-none ${activeVideo === 0 ? 'opacity-100' : 'opacity-0 z-0 pointer-events-none'}`}>
+
+          {/* Video 0
+              Structure: section (overflow:hidden) → 16:9 crop box (overflow:hidden) → iframe 105%
+              The 16:9 box expands to cover the full section. The iframe at 105% pushes its edges
+              (where the baked-in letterbox bars live) outside the crop box, which clips them. */}
+          <div className={`absolute inset-0 transition-none ${activeVideo === 0 ? 'opacity-100' : 'opacity-0 z-0 pointer-events-none'}`}>
+            <div style={cropContainerStyle}>
               <iframe
                 ref={iframe0Ref}
                 src="https://player.vimeo.com/video/1179651662?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300%] h-[300%] md:w-[115%] md:h-[115%] object-cover"
-                frameBorder="0"
+                style={iframeStyle}
                 allow="autoplay; fullscreen; picture-in-picture"
-              ></iframe>
+              />
             </div>
-            {isDesktop && mountSecondVideo && (
-              <div className={`absolute inset-0 transition-none ${activeVideo === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
+          </div>
+
+          {/* Video 1 — desktop only, deferred */}
+          {isDesktop && mountSecondVideo && (
+            <div className={`absolute inset-0 transition-none ${activeVideo === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
+              <div style={cropContainerStyle}>
                 <iframe
                   ref={iframe1Ref}
                   src="https://player.vimeo.com/video/1179891679?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300%] h-[300%] md:w-[115%] md:h-[115%] object-cover"
-                  frameBorder="0"
+                  style={iframeStyle}
                   allow="autoplay; fullscreen; picture-in-picture"
-                ></iframe>
+                />
               </div>
-            )}
+            </div>
+          )}
+
         </div>
+
         {/* Seamless High-Resolution Poster Overlay */}
-        <div 
+        <div
           className={`absolute inset-0 z-10 transition-opacity duration-1000 ease-in-out pointer-events-none ${showPoster ? 'opacity-100' : 'opacity-0'}`}
           style={{
             backgroundImage: "url('https://i.postimg.cc/qB8WLNVN/outside_10.jpg')",
@@ -116,6 +154,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
         <div className={`absolute inset-0 ${isDark ? 'bg-[#030303]/35' : 'bg-white/5'} backdrop-blur-[1px] pointer-events-none z-10`}></div>
       </div>
 
+      {/* ── Content ── */}
       <div className="relative z-10 max-w-6xl px-4 flex flex-col items-center">
         <h1 className={`text-fluid-h3 font-heading font-light leading-[0.9] tracking-[-0.04em] lowercase mb-6 md:mb-8 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
           {t.title_part1} <br />

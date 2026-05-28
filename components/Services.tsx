@@ -592,16 +592,35 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           className={`relative min-h-[600px] lg:min-h-screen py-24 md:py-32 flex items-center overflow-hidden transition-all duration-1000 ${sector2Seen ? 'opacity-100' : 'opacity-40'}`}
         >
           {/* Full-Bleed Video Background */}
-          <div className="absolute inset-0 z-0 bg-black">
+          <div className="absolute inset-0 z-0 bg-black overflow-hidden">
             <div className="absolute inset-0 contrast-125">
               {sector2Seen && (
-                <iframe
-                  src="https://player.vimeo.com/video/1179891679?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300%] h-[300%] md:w-[115%] md:h-[115%] object-cover"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  title="Modern New Build Reel"
-                ></iframe>
+                /* 16:9 crop box + 105% iframe = letterbox bars cropped out */
+                <div style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  aspectRatio: '16 / 9',
+                  minWidth: '100%',
+                  minHeight: '100%',
+                  overflow: 'hidden',
+                }}>
+                  <iframe
+                    src="https://player.vimeo.com/video/1179891679?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
+                    style={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      width: '105%',
+                      height: '105%',
+                      border: 'none',
+                    }}
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    title="Modern New Build Reel"
+                  />
+                </div>
               )}
             </div>
             {/* Seamless Poster Overlay for Sector 2 */}
@@ -668,13 +687,32 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
             {/* Desktop Video Background (Full Screen) */}
             <div className="absolute inset-0 overflow-hidden z-0 hidden md:block bg-stone-900">
               {isDesktop && growthSeen && (
-                <iframe
-                  src="https://player.vimeo.com/video/1164815646?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] md:pointer-events-none"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  title="Desktop Background Video"
-                />
+                /* 16:9 crop box + 105% iframe = letterbox bars cropped out */
+                <div style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  aspectRatio: '16 / 9',
+                  minWidth: '100%',
+                  minHeight: '100%',
+                  overflow: 'hidden',
+                }}>
+                  <iframe
+                    src="https://player.vimeo.com/video/1164815646?autoplay=1&muted=1&playsinline=1&loop=1&autopause=0&controls=0&badge=0&portrait=0&byline=0&title=0"
+                    style={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      width: '105%',
+                      height: '105%',
+                      border: 'none',
+                    }}
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    title="Desktop Background Video"
+                  />
+                </div>
               )}
               <div className="absolute inset-0 bg-[#030303]/55 backdrop-blur-none pointer-events-none"></div>
             </div>
