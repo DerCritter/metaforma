@@ -604,8 +604,8 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
             </div>
           </div>
 
-          {/* Full-Bleed Video Background (Desktop: absolute; Mobile: relative 16:9 player below text) */}
-          <div className="relative w-[calc(100%-2.5rem)] mx-5 aspect-video md:mx-0 md:w-full md:aspect-none md:absolute md:inset-0 md:z-0 bg-black overflow-hidden rounded-[1.2rem] md:rounded-none">
+          {/* Full-Bleed Video Background (Desktop: absolute; Mobile: relative 9:16 vertical player below text) */}
+          <div className="relative w-full aspect-[9/16] md:mx-0 md:w-full md:aspect-none md:absolute md:inset-0 md:z-0 bg-black overflow-hidden rounded-none">
             <div className="absolute inset-0 contrast-125">
               {sector2Seen && (
                 /* 16:9 crop box + 120% iframe = letterbox bars cropped out */
@@ -729,7 +729,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 </div>
 
                 {/* Mobile Video Player (renders right after info text & CTA on mobile, hidden on desktop) */}
-                <div className="relative w-full aspect-video md:hidden bg-black overflow-hidden rounded-[1.2rem] mb-8 z-10">
+                <div className="relative w-[calc(100%+3rem)] mx-[-1.5rem] aspect-[9/16] md:hidden bg-black overflow-hidden rounded-none mb-8 z-10">
                   <div className="absolute inset-0 contrast-125">
                     {growthSeen && (
                       /* 16:9 crop box + 120% iframe = letterbox bars cropped out */
