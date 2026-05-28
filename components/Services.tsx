@@ -651,7 +651,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           {/* Full-Bleed Video Background (Desktop: absolute; Mobile: relative 16:9 player below text) */}
           <div className="relative w-full aspect-video md:mx-0 md:w-full md:h-full md:absolute md:inset-0 md:z-0 bg-black overflow-hidden rounded-none">
             <div className="absolute inset-0 contrast-125">
-              /* 16:9 crop box + 104% iframe = tiny letterbox glitch cropped out with minimal zoom */
+              {/* 16:9 crop box + 104% iframe = tiny letterbox glitch cropped out with minimal zoom */}
               <div style={{
                 position: 'absolute',
                 top: '50%',
@@ -663,7 +663,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 overflow: 'hidden',
               }}>
                 <iframe
-                  src="https://player.vimeo.com/video/1179891679?background=1&playsinline=1"
+                  src="https://player.vimeo.com/video/1179891679?background=1&playsinline=1&quality=1080p"
                   style={{
                     position: 'absolute',
                     top: '50%',
@@ -698,7 +698,6 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
             {/* Desktop Video Background (Full Screen) */}
             <div className="absolute inset-0 overflow-hidden z-0 hidden md:block bg-stone-900">
               {isDesktop && growthSeen && (
-                /* 16:9 crop box + 120% iframe = letterbox bars cropped out */
                 <div style={{
                   position: 'absolute',
                   top: '50%',
@@ -710,7 +709,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                   overflow: 'hidden',
                 }}>
                   <iframe
-                    src="https://player.vimeo.com/video/1164815646?background=1&playsinline=1"
+                    src="https://player.vimeo.com/video/1164815646?background=1&playsinline=1&quality=1080p"
                     style={{
                       position: 'absolute',
                       top: '50%',
@@ -745,7 +744,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 {/* Mobile Video Player (renders right after info text & CTA on mobile, hidden on desktop) */}
                 <div className="relative w-full aspect-video md:hidden bg-black overflow-hidden rounded-none mb-8 z-10">
                   <div className="absolute inset-0 contrast-125">
-                    /* 16:9 crop box + 104% iframe = letterbox bars cropped out with minimal zoom */
+                    {/* 16:9 crop box + 104% iframe = letterbox bars cropped out with minimal zoom */}
                     <div style={{
                       position: 'absolute',
                       top: '50%',
@@ -757,7 +756,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                       overflow: 'hidden',
                     }}>
                       <iframe
-                        src="https://player.vimeo.com/video/1164815646?background=1&playsinline=1"
+                        src="https://player.vimeo.com/video/1164815646?background=1&playsinline=1&quality=1080p"
                         style={{
                           position: 'absolute',
                           top: '50%',
