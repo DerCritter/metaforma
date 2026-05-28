@@ -651,34 +651,32 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           {/* Full-Bleed Video Background (Desktop: absolute; Mobile: relative 16:9 player below text) */}
           <div className="relative w-full aspect-video md:mx-0 md:w-full md:h-full md:absolute md:inset-0 md:z-0 bg-black overflow-hidden rounded-none">
             <div className="absolute inset-0 contrast-125">
-              {sector2Seen && (
-                /* 16:9 crop box + 104% iframe = tiny letterbox glitch cropped out with minimal zoom */
-                <div style={{
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  aspectRatio: '16 / 9',
-                  minWidth: '100%',
-                  minHeight: '100%',
-                  overflow: 'hidden',
-                }}>
-                  <iframe
-                    src="https://player.vimeo.com/video/1179891679?background=1&autoplay=1&muted=1&playsinline=1&loop=1"
-                    style={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      width: '104%',
-                      height: '104%',
-                      border: 'none',
-                    }}
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    title="Modern New Build Reel"
-                  />
-                </div>
-              )}
+              /* 16:9 crop box + 104% iframe = tiny letterbox glitch cropped out with minimal zoom */
+              <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                aspectRatio: '16 / 9',
+                minWidth: '100%',
+                minHeight: '100%',
+                overflow: 'hidden',
+              }}>
+                <iframe
+                  src="https://player.vimeo.com/video/1179891679?background=1&autoplay=1&muted=1&playsinline=1&loop=1"
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: '104%',
+                    height: '104%',
+                    border: 'none',
+                  }}
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  title="Modern New Build Reel"
+                />
+              </div>
             </div>
             {/* Seamless Poster Overlay for Sector 2 */}
             <div 
@@ -747,34 +745,32 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 {/* Mobile Video Player (renders right after info text & CTA on mobile, hidden on desktop) */}
                 <div className="relative w-full aspect-video md:hidden bg-black overflow-hidden rounded-none mb-8 z-10">
                   <div className="absolute inset-0 contrast-125">
-                    {growthSeen && (
-                      /* 16:9 crop box + 104% iframe = letterbox bars cropped out with minimal zoom */
-                      <div style={{
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)',
-                        aspectRatio: '16 / 9',
-                        minWidth: '100%',
-                        minHeight: '100%',
-                        overflow: 'hidden',
-                      }}>
-                        <iframe
-                          src="https://player.vimeo.com/video/1164815646?background=1&autoplay=1&muted=1&playsinline=1&loop=1"
-                          style={{
-                            position: 'absolute',
-                            top: '50%',
-                            left: '50%',
-                            transform: 'translate(-50%, -50%)',
-                            width: '104%',
-                            height: '104%',
-                            border: 'none',
-                          }}
-                          allow="autoplay; fullscreen; picture-in-picture"
-                          title="Mobile Background Video"
-                        />
-                      </div>
-                    )}
+                    /* 16:9 crop box + 104% iframe = letterbox bars cropped out with minimal zoom */
+                    <div style={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      aspectRatio: '16 / 9',
+                      minWidth: '100%',
+                      minHeight: '100%',
+                      overflow: 'hidden',
+                    }}>
+                      <iframe
+                        src="https://player.vimeo.com/video/1164815646?background=1&autoplay=1&muted=1&playsinline=1&loop=1"
+                        style={{
+                          position: 'absolute',
+                          top: '50%',
+                          left: '50%',
+                          transform: 'translate(-50%, -50%)',
+                          width: '104%',
+                          height: '104%',
+                          border: 'none',
+                        }}
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        title="Mobile Background Video"
+                      />
+                    </div>
                   </div>
                   <div className="absolute inset-0 bg-[#030303]/35 backdrop-blur-[1px] pointer-events-none z-10"></div>
                 </div>
