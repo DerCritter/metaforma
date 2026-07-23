@@ -651,32 +651,14 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           {/* Full-Bleed Video Background (Desktop: absolute; Mobile: relative 16:9 player below text) */}
           <div className="relative w-full aspect-video md:mx-0 md:w-full md:h-full md:absolute md:inset-0 md:z-0 bg-black overflow-hidden rounded-none">
             <div className="absolute inset-0 contrast-125">
-              {/* 16:9 crop box + 104% iframe = tiny letterbox glitch cropped out with minimal zoom */}
-              <div style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                aspectRatio: '16 / 9',
-                minWidth: '100%',
-                minHeight: '100%',
-                overflow: 'hidden',
-              }}>
-                <iframe
-                  src="https://player.vimeo.com/video/1179891679?background=1&autoplay=1&loop=1&muted=1&autopause=0&playsinline=1"
-                  style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    width: '104%',
-                    height: '104%',
-                    border: 'none',
-                  }}
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  title="Modern New Build Reel"
-                />
-              </div>
+              <video
+                src="/assets/videos/sector_2.mp4"
+                className="absolute inset-0 w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
             </div>
             {/* Seamless Poster Overlay for Sector 2 */}
             <div 
@@ -698,31 +680,14 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
             {/* Desktop Video Background (Full Screen) */}
             <div className="absolute inset-0 overflow-hidden z-0 hidden md:block bg-stone-900">
               {isDesktop && growthSeen && (
-                <div style={{
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  aspectRatio: '16 / 9',
-                  minWidth: '100%',
-                  minHeight: '100%',
-                  overflow: 'hidden',
-                }}>
-                  <iframe
-                    src="https://player.vimeo.com/video/1164815646?background=1&autoplay=1&loop=1&muted=1&autopause=0&playsinline=1"
-                    style={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      width: '120%',
-                      height: '120%',
-                      border: 'none',
-                    }}
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    title="Desktop Background Video"
-                  />
-                </div>
+                <video
+                  src="/assets/videos/growth.mp4"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
               )}
               <div className="absolute inset-0 bg-[#030303]/55 backdrop-blur-none pointer-events-none"></div>
             </div>
@@ -744,32 +709,14 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 {/* Mobile Video Player (renders right after info text & CTA on mobile, hidden on desktop) */}
                 <div className="relative w-full aspect-video md:hidden bg-black overflow-hidden rounded-none mb-8 z-10">
                   <div className="absolute inset-0 contrast-125">
-                    {/* 16:9 crop box + 104% iframe = letterbox bars cropped out with minimal zoom */}
-                    <div style={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      aspectRatio: '16 / 9',
-                      minWidth: '100%',
-                      minHeight: '100%',
-                      overflow: 'hidden',
-                    }}>
-                      <iframe
-                        src="https://player.vimeo.com/video/1164815646?background=1&autoplay=1&loop=1&muted=1&autopause=0&playsinline=1"
-                        style={{
-                          position: 'absolute',
-                          top: '50%',
-                          left: '50%',
-                          transform: 'translate(-50%, -50%)',
-                          width: '104%',
-                          height: '104%',
-                          border: 'none',
-                        }}
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        title="Mobile Background Video"
-                      />
-                    </div>
+                    <video
+                      src="/assets/videos/growth.mp4"
+                      className="absolute inset-0 w-full h-full object-cover"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    />
                   </div>
                   <div className="absolute inset-0 bg-[#030303]/35 backdrop-blur-[1px] pointer-events-none z-10"></div>
                 </div>
