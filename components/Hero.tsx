@@ -10,11 +10,11 @@ interface HeroProps {
 }
 
 const HERO_VIDEOS = [
+  '/assets/videos/hero_5.mp4',
   '/assets/videos/hero_1.mp4',
   '/assets/videos/hero_2.mp4',
   '/assets/videos/hero_3.mp4',
   '/assets/videos/hero_4.mp4',
-  '/assets/videos/hero_5.mp4',
 ];
 
 export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language }) => {
@@ -23,29 +23,31 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
   const t = translations[language].hero;
 
   const [activeVideo, setActiveVideo] = useState(0);
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-  const [showPoster, setShowPoster] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Smooth sequential playback logic
-  const handleVideoEnd = (index: number) => {
-    const nextIndex = (index + 1) % HERO_VIDEOS.length;
-    setActiveVideo(nextIndex);
-    
-    const nextVideo = videoRefs.current[nextIndex];
-    if (nextVideo) {
-      // Ensure the next video plays from the beginning
-      nextVideo.currentTime = 0;
-      nextVideo.play().catch(err => console.log('Autoplay blocked:', err));
-    }
-  };
-
+  // When activeVideo changes, load and play the new source
   useEffect(() => {
-    // Fade out high-resolution poster after 1.8 seconds to give video time to buffer
-    const timer = setTimeout(() => {
-      setShowPoster(false);
-    }, 1800);
-    return () => clearTimeout(timer);
+    const video = videoRef.current;
+    if (video) {
+      video.src = HERO_VIDEOS[activeVideo];
+      video.load();
+      video.play().catch(() => {});
+    }
+  }, [activeVideo]);
+
+  // Start the first video on mount
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.src = HERO_VIDEOS[0];
+      video.load();
+      video.play().catch(() => {});
+    }
   }, []);
+
+  const handleVideoEnd = () => {
+    setActiveVideo(prev => (prev + 1) % HERO_VIDEOS.length);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -64,33 +66,18 @@ export const Hero: React.FC<HeroProps> = ({ onExplore, isDark = false, language 
       {/* ── Video background layer ── */}
       <div className={`absolute inset-0 z-0 overflow-hidden ${isDark ? 'opacity-[0.90]' : 'opacity-80'} bg-black`}>
         <div className="absolute inset-0 contrast-125">
-          {HERO_VIDEOS.map((src, index) => (
-            <video
-              key={src}
-              ref={el => { videoRefs.current[index] = el; }}
-              src={src}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${activeVideo === index ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
-              autoPlay={index === 0}
-              muted
-              playsInline
-              onEnded={() => handleVideoEnd(index)}
-              // Preload the first two aggressively, others as metadata to save initial bandwidth
-              preload={index <= 1 ? 'auto' : 'metadata'}
-            />
-          ))}
+          <video
+            ref={videoRef}
+            className="absolute inset-0 w-full h-full object-cover"
+            muted
+            playsInline
+            onEnded={handleVideoEnd}
+            preload="auto"
+          />
           {/* Black band to mask watermark on videos */}
           <div className="absolute bottom-0 left-0 w-full h-16 md:h-24 bg-black z-10 pointer-events-none"></div>
         </div>
 
-        {/* Seamless High-Resolution Poster Overlay */}
-        <div
-          className={`absolute inset-0 z-20 transition-opacity duration-1000 ease-in-out pointer-events-none ${showPoster ? 'opacity-100' : 'opacity-0'}`}
-          style={{
-            backgroundImage: "url('https://i.postimg.cc/qB8WLNVN/outside_10.jpg')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
         <div className={`absolute inset-0 ${isDark ? 'bg-[#030303]/35' : 'bg-white/5'} backdrop-blur-[1px] pointer-events-none z-20`}></div>
       </div>
 
