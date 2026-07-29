@@ -709,7 +709,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 </div>
 
                 {/* Mobile Video Player (renders right after info text & CTA on mobile, hidden on desktop) */}
-                <div className="relative w-full aspect-[3/4] md:hidden bg-black overflow-hidden rounded-none mb-8 z-10">
+                <div className="relative w-[calc(100%+3rem)] -mx-6 aspect-[3/4] md:hidden bg-black overflow-hidden rounded-none mb-8 z-10">
                   <div className="absolute inset-0 contrast-125">
                     {growthSeen && (
                       <video
