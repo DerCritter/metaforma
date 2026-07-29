@@ -452,7 +452,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           </div>
 
           {/* Full-Bleed Slider Background (Desktop: absolute background; Mobile: relative 16:9 slider below text) */}
-          <div className="relative w-full aspect-video md:mx-0 md:w-full md:h-full md:absolute md:inset-0 md:z-0 bg-black overflow-hidden rounded-none">
+          <div className="relative w-full aspect-[3/4] md:mx-0 md:w-full md:h-full md:absolute md:inset-0 md:z-0 bg-black overflow-hidden rounded-none">
             <div className="absolute inset-0">
               {sector1Sets.map((set, idx) => (
                 <div key={idx} className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === sector1SetIdx ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
@@ -649,7 +649,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           </div>
 
           {/* Full-Bleed Video Background (Desktop: absolute; Mobile: relative 16:9 player below text) */}
-          <div className="relative w-full aspect-video md:mx-0 md:w-full md:h-full md:absolute md:inset-0 md:z-0 bg-black overflow-hidden rounded-none">
+          <div className="relative w-full aspect-[3/4] md:mx-0 md:w-full md:h-full md:absolute md:inset-0 md:z-0 bg-black overflow-hidden rounded-none">
             <div className="absolute inset-0 contrast-125">
               {sector2Seen && (
                 <video
@@ -709,7 +709,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 </div>
 
                 {/* Mobile Video Player (renders right after info text & CTA on mobile, hidden on desktop) */}
-                <div className="relative w-full aspect-video md:hidden bg-black overflow-hidden rounded-none mb-8 z-10">
+                <div className="relative w-full aspect-[3/4] md:hidden bg-black overflow-hidden rounded-none mb-8 z-10">
                   <div className="absolute inset-0 contrast-125">
                     {growthSeen && (
                       <video
