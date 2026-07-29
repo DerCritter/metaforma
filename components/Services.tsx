@@ -538,7 +538,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 />
               ));
             })()}
-            <div className="absolute inset-0 bg-[#030303]/45 backdrop-blur-[1px]"></div>
+            <div className="absolute inset-0 bg-[#030303]/45 backdrop-blur-none"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-black/80 via-black/20 to-transparent"></div>
           </div>
 
@@ -671,7 +671,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 backgroundPosition: 'center'
               }}
             />
-            <div className={`absolute inset-0 ${isDark ? 'bg-[#030303]/35' : 'bg-white/5'} backdrop-blur-[1px] pointer-events-none z-10`}></div>
+            <div className={`absolute inset-0 ${isDark ? 'bg-[#030303]/35' : 'bg-white/5'} backdrop-blur-none pointer-events-none z-10`}></div>
           </div>
         </div>
 
@@ -722,7 +722,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                       />
                     )}
                   </div>
-                  <div className="absolute inset-0 bg-[#030303]/35 backdrop-blur-[1px] pointer-events-none z-10"></div>
+                  <div className="absolute inset-0 bg-[#030303]/35 backdrop-blur-none pointer-events-none z-10"></div>
                 </div>
 
                 <div className="grid gap-3 md:gap-6 lg:gap-8 relative">
