@@ -651,14 +651,16 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
           {/* Full-Bleed Video Background (Desktop: absolute; Mobile: relative 16:9 player below text) */}
           <div className="relative w-full aspect-video md:mx-0 md:w-full md:h-full md:absolute md:inset-0 md:z-0 bg-black overflow-hidden rounded-none">
             <div className="absolute inset-0 contrast-125">
-              <video
-                src="/assets/videos/sector_2.mp4"
-                className="absolute inset-0 w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
+              {sector2Seen && (
+                <video
+                  src="/assets/videos/sector_2.mp4"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              )}
             </div>
             {/* Seamless Poster Overlay for Sector 2 */}
             <div 
@@ -709,14 +711,16 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, isDark = false, 
                 {/* Mobile Video Player (renders right after info text & CTA on mobile, hidden on desktop) */}
                 <div className="relative w-full aspect-video md:hidden bg-black overflow-hidden rounded-none mb-8 z-10">
                   <div className="absolute inset-0 contrast-125">
-                    <video
-                      src="/assets/videos/growth.mp4"
-                      className="absolute inset-0 w-full h-full object-cover"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                    />
+                    {growthSeen && (
+                      <video
+                        src="/assets/videos/growth.mp4"
+                        className="absolute inset-0 w-full h-full object-cover"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                      />
+                    )}
                   </div>
                   <div className="absolute inset-0 bg-[#030303]/35 backdrop-blur-[1px] pointer-events-none z-10"></div>
                 </div>
