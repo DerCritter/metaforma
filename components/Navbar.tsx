@@ -34,12 +34,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection,
 
   return (
     <nav className={`fixed top-0 w-full z-40 backdrop-blur-[12px] border-b transition-all duration-700 h-20 md:h-24 flex items-center ${isDark ? 'bg-[#030303]/60 border-white/5' : 'bg-white/60 border-black/5'}`}>
-      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full flex items-center justify-between gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full flex items-center justify-between gap-2 sm:gap-4 md:gap-8">
         <div
-          className="cursor-pointer group flex-shrink-0"
+          className="cursor-pointer group flex-shrink overflow-hidden"
           onClick={() => handleNavClick(AppSection.HOME)}
         >
-          <Logo isDark={isDark} className="h-10 md:h-12 lg:h-14 transition-all duration-500" />
+          <Logo isDark={isDark} className="h-8 sm:h-10 md:h-12 lg:h-14 transition-all duration-500" />
         </div>
 
         <div className="flex items-center gap-3 lg:gap-5 xl:gap-8">
