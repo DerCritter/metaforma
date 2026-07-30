@@ -11,7 +11,6 @@ import { Footer } from './components/Footer';
 import { ProjectDetail } from './components/ProjectDetail';
 import { TrustedPartners } from './components/TrustedPartners';
 import { Expertise } from './components/Expertise';
-import { InsightsHub } from './components/InsightsHub';
 import { ArticleLayout } from './components/ArticleLayout';
 import { Language } from './translations';
 import { SEOHelmet } from './components/SEOHelmet';
@@ -204,7 +203,7 @@ const App: React.FC = () => {
             <Route path="/contact" element={<ContactForm isDark={isDark} language={language} />} />
             <Route path="/impressum" element={<ImprintDSGVO isDark={isDark} language={language} type="impressum" />} />
             <Route path="/privacy" element={<ImprintDSGVO isDark={isDark} language={language} type="privacy" />} />
-            <Route path="/blog" element={<InsightsHub isDark={isDark} language={language} />} />
+            <Route path="/blog" element={<ArticleLayout isDark={isDark} language={language} />} />
             <Route path="/blog/:slug" element={<ArticleLayout isDark={isDark} language={language} />} />
 
             {/* Root German */}
@@ -219,7 +218,7 @@ const App: React.FC = () => {
             <Route path="/de/contact" element={<ContactForm isDark={isDark} language={language} />} />
             <Route path="/de/impressum" element={<ImprintDSGVO isDark={isDark} language={language} type="impressum" />} />
             <Route path="/de/datenschutz" element={<ImprintDSGVO isDark={isDark} language={language} type="privacy" />} />
-            <Route path="/de/blog" element={<InsightsHub isDark={isDark} language={language} />} />
+            <Route path="/de/blog" element={<ArticleLayout isDark={isDark} language={language} />} />
             <Route path="/de/blog/:slug" element={<ArticleLayout isDark={isDark} language={language} />} />
 
             {/* Fallback */}

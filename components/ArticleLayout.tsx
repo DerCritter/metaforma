@@ -14,7 +14,8 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   
-  const article = articles.find(a => a.slug === slug);
+  // Default to the first article if no slug is provided
+  const article = slug ? articles.find(a => a.slug === slug) : articles[0];
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -200,10 +201,11 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
   };
 
   return (
-    <article className={`min-h-screen pt-32 pb-32 transition-colors duration-1000 ${isDark ? 'bg-[#030303] text-white' : 'bg-white text-black'}`}>
-      <SEOHelmet language={language} path={`/blog/${article.slug}`} />
-      <Helmet>
-          <title>{`${content.title} | Metaforma`}</title>
+    <div className={`min-h-screen pt-32 pb-32 transition-colors duration-1000 ${isDark ? 'bg-[#030303] text-white' : 'bg-white text-black'} flex flex-col lg:flex-row max-w-[1920px] mx-auto`}>
+      <article className="w-full lg:w-3/4 lg:pr-12 lg:border-r border-current border-opacity-10">
+        <SEOHelmet language={language} path={`/blog/${article.slug}`} />
+        <Helmet>
+            <title>{`${content.title} | Metaforma`}</title>
           <meta name="description" content={content.description} />
           <meta property="og:title" content={content.title} />
           <meta property="og:description" content={content.description} />
@@ -288,6 +290,33 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
           </div>
         </div>
       </div>
-    </article>
+      </article>
+
+      {/* Sidebar Archive */}
+      <aside className="w-full lg:w-1/4 mt-20 lg:mt-0 px-6 lg:px-8">
+        <div className="sticky top-32">
+           <h3 className="text-xs md:text-sm uppercase tracking-[0.4em] font-bold text-[#FF660F] mb-12">
+              Archive
+           </h3>
+           <div className="space-y-8 flex flex-col">
+             {articles.map((a) => (
+                <button 
+                   key={a.id}
+                   onClick={() => navigate(language === 'de' ? `/de/blog/${a.slug}` : `/blog/${a.slug}`)}
+                   className={`group text-left transition-all duration-300 ${a.slug === article.slug ? 'opacity-100 border-l-2 border-[#FF660F] pl-4' : 'opacity-50 hover:opacity-100 pl-4 border-l-2 border-transparent'}`}
+                >
+                   <div className="text-[10px] uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
+                     <span>{a.date}</span>
+                     {a.slug === article.slug && <span className="text-[#FF660F]">Reading</span>}
+                   </div>
+                   <h4 className="text-lg md:text-xl font-heading leading-tight group-hover:text-[#FF660F] transition-colors">
+                     {a.content[language].title}
+                   </h4>
+                </button>
+             ))}
+           </div>
+        </div>
+      </aside>
+    </div>
   );
 };
