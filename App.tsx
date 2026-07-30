@@ -132,9 +132,8 @@ const App: React.FC = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
     } else if (section === AppSection.BLOG) {
-        // Direct link to our main methodology article
-        const articleSlug = 'how-to-elevate-real-estate-assets';
-        navigate(isDe ? `/de/blog/${articleSlug}` : `/blog/${articleSlug}`);
+        // Navigate to the blog index page instead of a hardcoded article
+        navigate(isDe ? '/de/blog' : '/blog');
         setActiveSection(AppSection.BLOG);
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;

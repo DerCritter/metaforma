@@ -40,7 +40,7 @@ export const InsightsHub: React.FC<InsightsHubProps> = ({ isDark, language }) =>
             return (
               <article 
                 key={article.id} 
-                onClick={() => navigate(language === 'de' ? `/de/insights/${article.slug}` : `/insights/${article.slug}`)}
+                onClick={() => navigate(language === 'de' ? `/de/blog/${article.slug}` : `/blog/${article.slug}`)}
                 className={`group cursor-pointer rounded-none p-8 md:p-10 border-none transition-all duration-500 ${isDark ? 'bg-white/5 hover:bg-white/10' : 'bg-black/5 hover:bg-black/10'} flex flex-col justify-between h-[450px] shadow-lg backdrop-blur-[12px]`}
               >
                 <div className="space-y-6">
