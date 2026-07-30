@@ -1,0 +1,54 @@
+{
+  "clusters": [
+    {
+      "id": "A1",
+      "pillar_en": "Fidelity and control",
+      "pillar_de": "Präzision und Kontrolle",
+      "keywords_en": ["ai architectural rendering", "high-end architecture rendering"],
+      "keywords_de": ["KI Architekturvisualisierung", "Architektur Rendering KI"],
+      "posts_published": 0,
+      "target_posts": 6,
+      "status": "active"
+    },
+    {
+      "id": "A2",
+      "pillar_en": "Workflows",
+      "pillar_de": "Workflows",
+      "keywords_en": ["real estate marketing renders", "ai rendering workflow"],
+      "keywords_de": ["Immobilienmarketing Renderings", "KI Workflow Architektur"],
+      "posts_published": 1,
+      "target_posts": 6,
+      "status": "active"
+    },
+    {
+      "id": "B1",
+      "pillar_en": "Denkmalimmobilien",
+      "pillar_de": "Denkmalimmobilien",
+      "keywords_en": ["heritage preservation visualization", "historic property renders"],
+      "keywords_de": ["Denkmalimmobilie Visualisierung", "Denkmalpflege Rendering"],
+      "posts_published": 0,
+      "target_posts": 6,
+      "status": "active"
+    },
+    {
+      "id": "B2",
+      "pillar_en": "New build and off-plan",
+      "pillar_de": "Neubau und Off-Plan",
+      "keywords_en": ["off-plan property visualization", "new development renders"],
+      "keywords_de": ["Off-Plan Verkauf Visualisierung", "Neubau 3D Visualisierung"],
+      "posts_published": 0,
+      "target_posts": 6,
+      "status": "closed"
+    },
+    {
+      "id": "C1",
+      "pillar_en": "AI Interior Design",
+      "pillar_de": "KI Innendesign",
+      "keywords_en": ["ai interior design", "interior visualization ai"],
+      "keywords_de": ["KI Inneneinrichtung", "Innenarchitektur Rendering KI"],
+      "posts_published": 0,
+      "target_posts": 6,
+      "status": "active"
+    }
+  ]
+}

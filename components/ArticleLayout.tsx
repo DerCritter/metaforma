@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { articles, ArticleBlock } from '../content/articles';
 import { Language } from '../translations';
 import { SEOHelmet } from './SEOHelmet';
+import { Helmet } from 'react-helmet-async';
 
 interface ArticleLayoutProps {
   isDark: boolean;
@@ -37,7 +38,10 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
       case 'h3':
         return <h3 key={index} className="text-2xl md:text-3xl font-heading text-[#FF660F] mt-16 mb-6 max-w-3xl mx-auto px-6">{block.content}</h3>;
       case 'p':
-        return <p key={index} className="text-lg md:text-xl font-light leading-relaxed mb-8 opacity-80 max-w-3xl mx-auto px-6">{block.content}</p>;
+        if (typeof block.content === 'string') {
+          return <p key={index} className="text-lg md:text-xl font-light leading-relaxed mb-8 opacity-80 max-w-3xl mx-auto px-6 [&>a]:text-[#FF660F] [&>a]:underline" dangerouslySetInnerHTML={{ __html: block.content }} />;
+        }
+        return <p key={index} className="text-lg md:text-xl font-light leading-relaxed mb-8 opacity-80 max-w-3xl mx-auto px-6 [&>a]:text-[#FF660F] [&>a]:underline">{block.content}</p>;
       case 'callout':
         return (
           <div key={index} className={`p-6 md:p-8 border-l-4 border-[#FF660F] my-12 max-w-3xl mx-auto px-6 ${isDark ? 'bg-white/5' : 'bg-black/5'} `}>
@@ -198,6 +202,30 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
   return (
     <article className={`min-h-screen pt-32 pb-32 transition-colors duration-1000 ${isDark ? 'bg-[#030303] text-white' : 'bg-white text-black'}`}>
       <SEOHelmet language={language} path={`/blog/${article.slug}`} />
+      <Helmet>
+          <title>{`${content.title} | Metaforma`}</title>
+          <meta name="description" content={content.description} />
+          <meta property="og:title" content={content.title} />
+          <meta property="og:description" content={content.description} />
+          {/* JSON-LD Article schema */}
+          <script type="application/ld+json">
+              {JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "Article",
+                  "headline": content.title,
+                  "description": content.description,
+                  "author": {
+                      "@type": "Organization",
+                      "name": "Metaforma"
+                  },
+                  "publisher": {
+                      "@type": "Organization",
+                      "name": "Metaforma"
+                  },
+                  "datePublished": article.date
+              })}
+          </script>
+      </Helmet>
       
       {/* Header */}
       <header className="px-6 lg:px-24 max-w-5xl mx-auto text-center space-y-8 mb-20">
@@ -217,9 +245,9 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
       {/* Hero Image (Extracted from article content for maximum impact) */}
       <div className="w-full mb-24">
         {(() => {
-          // Find the first 'synthesis' or 'comparison' block to use its after/result image as the hero
-          const heroSource = content.blocks.find(b => b.type === 'synthesis' || b.type === 'comparison') as any;
-          const heroImage = heroSource ? (heroSource.result || heroSource.after) : null;
+          // Find the first 'synthesis', 'comparison', or 'image' block to use as the hero
+          const heroSource = content.blocks.find(b => b.type === 'synthesis' || b.type === 'comparison' || b.type === 'image') as any;
+          const heroImage = heroSource ? (heroSource.result || heroSource.after || heroSource.src) : null;
           
           if (!heroImage || heroImage.includes('placeholder')) {
              return (
@@ -241,7 +269,12 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({ isDark, language }
       {/* Content Body (Images break out of padding automatically) */}
       <div className="w-full">
         <div className="w-full">
-          {content.blocks.map((block, i) => renderBlock(block, i))}
+          {content.blocks.map((block, i) => {
+            // Skip rendering the block if it was already used as the hero image
+            const heroIndex = content.blocks.findIndex(b => b.type === 'synthesis' || b.type === 'comparison' || b.type === 'image');
+            if (i === heroIndex) return null;
+            return renderBlock(block, i);
+          })}
           
           {/* Footer CTA */}
           <div className="max-w-3xl mx-auto mt-32 pt-16 border-t border-current border-opacity-10 text-center space-y-8">

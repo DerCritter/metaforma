@@ -25,6 +25,50 @@ export interface Article {
 }
 
 export const articles: Article[] = [
+{
+  id: 'draft-sketch-to-render-1',
+  slug: 'architectural-sketch-to-photorealistic-ai-render',
+  date: '2026-07-29',
+  readTime: '6 min read',
+  category: 'Methodology',
+  content: {
+    en: {
+      title: 'AI in Architecture: From Sketch to Render in 2026',
+      description: 'Navigating the current landscape of AI rendering tools: when to use BIM integrations like Veras versus rapid ideation tools like ArchiVinci.',
+      blocks: [
+        { type: 'p', content: 'In 2026, the use of AI in architectural sketch-to-render workflows has evolved from an experimental novelty to a standard industry practice. The question is no longer whether to use AI, but which tool fits the specific stage of your design process. Currently, the landscape is divided by how these tools integrate with existing software and how well they preserve geometric intent.' },
+        { type: 'image', src: '/assets/blog/project-outdoor.jpg', alt: 'Architectural Workflow Project' },
+        { type: 'h2', content: 'Model-Based Plugins (Veras)' },
+        { type: 'p', content: 'When geometric accuracy is non-negotiable, standalone web generators often fail by hallucinating structural changes. This is where model-based plugins excel. Tools like <a href="https://www.evolvelab.io/veras" target="_blank">Veras</a> operate directly within BIM and CAD environments—such as Revit, SketchUp, and Rhino. They read the active 3D geometry and apply AI-driven materials and lighting without altering the underlying model.' },
+        { type: 'p', content: 'This approach ensures that the BIM file remains the single source of truth for dimensions and buildable geometry, while the AI accelerates client communication and material exploration.' },
+        { type: 'h2', content: 'Sketch Interpreters (ArchiVinci & MyArchitectAI)' },
+        { type: 'p', content: 'For the earliest stages of design, when you only have a napkin sketch or a flat CAD screenshot, tools like <a href="https://archivinci.com" target="_blank">ArchiVinci</a> and <a href="https://myarchitectai.com" target="_blank">MyArchitectAI</a> provide rapid ideation. They infer a complete render from simple line drawings in seconds. While they are incredibly fast, they lack the geometric constraints of a BIM plugin, meaning the output is better suited for internal moodboarding than final client presentation.' },
+        { type: 'callout', content: 'If you need high-end artistic mood boards without strict geometric constraints, Midjourney remains a leader for pure aesthetic exploration based on text prompts.' },
+        { type: 'h2', content: 'The Need for a Unified Workflow' },
+        { type: 'p', content: 'As the industry matures, we are seeing a shift toward collaborative design workspaces like Gendo, which move beyond one-click generation. These platforms provide a dedicated canvas where teams can store, edit, annotate, and compare multiple design iterations in one place.' },
+        { type: 'p', content: 'Ultimately, generative models are built to speed up ideation. By choosing the right tool for the right input—Veras for 3D models, ArchiVinci for sketches—you ensure the AI supports your design process without compromising architectural integrity.' }
+      ]
+    },
+    de: {
+      title: 'KI in der Architektur: Von der Skizze zum Render im Jahr 2026',
+      description: 'Die aktuelle Landschaft der KI-Rendering-Tools: Wann BIM-Integrationen wie Veras und wann schnelle Ideen-Tools wie ArchiVinci sinnvoll sind.',
+      blocks: [
+        { type: 'p', content: 'Im Jahr 2026 hat sich der Einsatz von KI in architektonischen Skizze-zu-Render-Workflows von einer experimentellen Neuheit zu einem Standard in der Branche entwickelt. Die Frage ist nicht mehr, ob man KI einsetzt, sondern welches Tool zur jeweiligen Phase des Entwurfsprozesses passt. Aktuell unterteilt sich der Markt danach, wie diese Tools in bestehende Software integriert werden und wie gut sie die geometrische Absicht bewahren.' },
+        { type: 'image', src: '/assets/blog/project-outdoor.jpg', alt: 'Architektur-Workflow Projekt' },
+        { type: 'h2', content: 'Modellbasierte Plugins (Veras)' },
+        { type: 'p', content: 'Wenn geometrische Genauigkeit unverzichtbar ist, versagen eigenständige Web-Generatoren oft, indem sie strukturelle Änderungen halluzinieren. Hier brillieren modellbasierte Plugins. Tools wie <a href="https://www.evolvelab.io/veras" target="_blank">Veras</a> arbeiten direkt in BIM- und CAD-Umgebungen – wie Revit, SketchUp und Rhino. Sie lesen die aktive 3D-Geometrie aus und wenden KI-gesteuerte Materialien und Beleuchtung an, ohne das zugrunde liegende Modell zu verändern.' },
+        { type: 'p', content: 'Dieser Ansatz stellt sicher, dass die BIM-Datei die einzige Quelle der Wahrheit (Source of Truth) für Abmessungen und baubare Geometrie bleibt, während die KI die Kundenkommunikation und Materialerkundung beschleunigt.' },
+        { type: 'h2', content: 'Skizzen-Interpreter (ArchiVinci & MyArchitectAI)' },
+        { type: 'p', content: 'Für die frühesten Entwurfsphasen, in denen nur eine Serviettenskizze oder ein flacher CAD-Screenshot vorliegt, bieten Tools wie <a href="https://archivinci.com" target="_blank">ArchiVinci</a> und <a href="https://myarchitectai.com" target="_blank">MyArchitectAI</a> eine schnelle Ideenfindung. Sie leiten aus einfachen Strichzeichnungen in Sekundenschnelle ein vollständiges Render ab. Obwohl sie unglaublich schnell sind, fehlen ihnen die geometrischen Einschränkungen eines BIM-Plugins, was bedeutet, dass sich die Ausgabe besser für internes Moodboarding als für finale Kundenpräsentationen eignet.' },
+        { type: 'callout', content: 'Wenn Sie hochwertige künstlerische Moodboards ohne strenge geometrische Einschränkungen benötigen, bleibt Midjourney führend für die rein ästhetische Erkundung basierend auf Text-Prompts.' },
+        { type: 'h2', content: 'Der Bedarf an einem einheitlichen Workflow' },
+        { type: 'p', content: 'Mit zunehmender Reife der Branche beobachten wir einen Wandel hin zu kollaborativen Entwurfsarbeitsplätzen wie Gendo, die über die einfache Generierung per Mausklick hinausgehen. Diese Plattformen bieten eine dedizierte Arbeitsfläche, auf der Teams mehrere Entwurfsiterationen an einem Ort speichern, bearbeiten, kommentieren und vergleichen können.' },
+        { type: 'p', content: 'Letztendlich sind generative Modelle dafür gebaut, die Ideenfindung zu beschleunigen. Indem Sie das richtige Tool für den richtigen Input wählen – Veras für 3D-Modelle, ArchiVinci für Skizzen –, stellen Sie sicher, dass die KI Ihren Entwurfsprozess unterstützt, ohne die architektonische Integrität zu gefährden.' }
+      ]
+    }
+  }
+}
+,
   {
     id: '1',
     slug: 'how-to-elevate-real-estate-assets',

@@ -1,0 +1,47 @@
+[
+  {
+    "topic": "Enforcing material truth in historic facades",
+    "angle": "Generative AI invents plausible brickwork that ruins restoration proposals; here is how to constrain it to reality using ControlNet.",
+    "primary_keyword_en": "high-end architecture rendering",
+    "primary_keyword_de": "Architektur Rendering KI",
+    "search_intent": "informational",
+    "internal_links": ["how-to-elevate-real-estate-assets"],
+    "promise_to_reader": "A reproducible ControlNet workflow to prevent material hallucination in heritage facades."
+  },
+  {
+    "topic": "Visualizing Denkmal-AfA property before restoration",
+    "angle": "How to show investors the future state of a protected ruin without violating Denkmalschutz constraints in the marketing material.",
+    "primary_keyword_en": "heritage preservation visualization",
+    "primary_keyword_de": "Denkmalimmobilie Visualisierung",
+    "search_intent": "transactional",
+    "internal_links": ["how-to-elevate-real-estate-assets"],
+    "promise_to_reader": "A clear framework for what can and cannot be shown in heritage real estate marketing to maintain legal and investor credibility."
+  },
+  {
+    "topic": "Lighting consistency across a multi-view presentation set",
+    "angle": "Creating one great AI image is easy; keeping the exact same overcast morning lighting across 15 views of a masterplan requires a systematic anchor approach.",
+    "primary_keyword_en": "ai architectural rendering",
+    "primary_keyword_de": "KI Architekturvisualisierung",
+    "search_intent": "informational",
+    "internal_links": ["how-to-elevate-real-estate-assets"],
+    "promise_to_reader": "The exact prompt logic and seed control method we use to lock in atmospheric lighting across an entire project gallery."
+  },
+  {
+    "topic": "Moving from architectural sketch to photorealistic output",
+    "angle": "AI should augment the architect's intent, not replace it. How to use early-stage massing sketches as rigid constraints for generative rendering.",
+    "primary_keyword_en": "ai rendering workflow",
+    "primary_keyword_de": "KI Workflow Architektur",
+    "search_intent": "informational",
+    "internal_links": ["how-to-elevate-real-estate-assets"],
+    "promise_to_reader": "A step-by-step guide to turning a rough massing sketch into a client-ready render without losing the original design proportions."
+  },
+  {
+    "topic": "Adaptive reuse and communicating change of use",
+    "angle": "The hardest part of selling an industrial conversion is making buyers see the new use; here's how we inject residential lifestyle into industrial shells.",
+    "primary_keyword_en": "historic property renders",
+    "primary_keyword_de": "Denkmalpflege Rendering",
+    "search_intent": "informational",
+    "internal_links": ["how-to-elevate-real-estate-assets"],
+    "promise_to_reader": "Techniques for consciously inhabiting heritage spaces with context-appropriate demographics and lighting to sell a new vision."
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "draft_evaluation": {
+    "verdict": "revise",
+    "scores": {
+      "factual_accuracy": 10,
+      "technical_depth": 9,
+      "voice_and_anti_slop": 9,
+      "seo": 4,
+      "originality": 10,
+      "localization": 10
+    },
+    "issues": [
+      "SEO: Primary keyword 'ai rendering workflow' is absent from the title and first 100 words.",
+      "SEO: The article contains 0 internal links, failing the minimum requirement of 2."
+    ]
+  },
+  "control_slop_evaluation": {
+    "verdict": "reject",
+    "scores": {
+      "factual_accuracy": 2,
+      "technical_depth": 2,
+      "voice_and_anti_slop": 1,
+      "seo": 5,
+      "originality": 4,
+      "localization": 10
+    },
+    "issues": [
+      "Factual Accuracy: Claim 'Stable Diffusion 3 guarantees perfect CAD accuracy' directly contradicts the dossier which states 'This workflow is not CAD-accurate' and focuses on SD 1.5.",
+      "Anti-Slop: Prohibited words used extensively ('game-changer', 'delve', 'leverage', 'seamless').",
+      "Anti-Slop: 7+ point list replacing the argument.",
+      "Missing element: No reproducible workflow or exact settings provided."
+    ]
+  }
+}

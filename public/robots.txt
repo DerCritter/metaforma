@@ -1,6 +1,4 @@
-Sitemap: https://metaforma-ai.com/sitemap.xml
-
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /temp/
+
+Sitemap: https://metaforma-ai.com/sitemap.xml

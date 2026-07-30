@@ -1,0 +1,65 @@
+[
+  {
+    "path": "/assets/blog/raw-before-2.jpg",
+    "project": "Generic Reference",
+    "demonstrates": "Baseline low-quality photography before AI enhancement",
+    "alt_en": "Low-quality baseline photo of a room before renovation",
+    "alt_de": "Minderwertiges Ausgangsfoto eines Raumes vor der Renovierung"
+  },
+  {
+    "path": "/assets/blog/anchor-after.jpg",
+    "project": "Generic Reference",
+    "demonstrates": "Final high-end editorial render based on an anchor image",
+    "alt_en": "Final high-end editorial render of a renovated space",
+    "alt_de": "Hochwertiger finaler Editorial-Render eines renovierten Raumes"
+  },
+  {
+    "path": "/assets/blog/light-settings.jpg",
+    "project": "Generic Reference",
+    "demonstrates": "Various atmospheric lighting settings applied to the same scene",
+    "alt_en": "Collage of different atmospheric lighting settings",
+    "alt_de": "Collage verschiedener atmosphärischer Lichtstimmungen"
+  },
+  {
+    "path": "/assets/blog/propagation-before.jpg",
+    "project": "Generic Reference",
+    "demonstrates": "Raw input image for aesthetic propagation",
+    "alt_en": "Raw input photo for style transfer",
+    "alt_de": "Rohes Eingabefoto für die Stilübertragung"
+  },
+  {
+    "path": "/assets/blog/anchor-ref.jpg",
+    "project": "Generic Reference",
+    "demonstrates": "Style reference anchor image for aesthetic propagation",
+    "alt_en": "Anchor style reference image",
+    "alt_de": "Anker-Stilreferenzbild"
+  },
+  {
+    "path": "/assets/blog/propagation-after.jpg",
+    "project": "Generic Reference",
+    "demonstrates": "Final synthesis resulting from aesthetic propagation",
+    "alt_en": "Final synthesized render from aesthetic propagation",
+    "alt_de": "Finaler synthetisierter Render aus der ästhetischen Propagierung"
+  },
+  {
+    "path": "/assets/blog/aerial-raw.jpg",
+    "project": "Generic Reference",
+    "demonstrates": "Raw topographical capture from Google Maps",
+    "alt_en": "Raw Google Maps topographical capture",
+    "alt_de": "Rohe topografische Google-Maps-Aufnahme"
+  },
+  {
+    "path": "/assets/blog/aerial-result-final.jpg",
+    "project": "Generic Reference",
+    "demonstrates": "Final drone aerial render based on topographical data",
+    "alt_en": "Final photorealistic aerial drone render",
+    "alt_de": "Fotorealistischer finaler Drohnen-Render"
+  },
+  {
+    "path": "/assets/blog/lifestyle.jpg",
+    "project": "Generic Reference",
+    "demonstrates": "Conscious integration of context-appropriate demographics",
+    "alt_en": "Render demonstrating diverse urban lifestyle integration",
+    "alt_de": "Render, der die Integration eines vielfältigen urbanen Lebensstils demonstriert"
+  }
+]

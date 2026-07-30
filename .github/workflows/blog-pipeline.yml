@@ -1,0 +1,28 @@
+name: blog-pipeline
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # generation: monday 06:00 UTC
+    - cron: '0 9 * * 4'   # publication: thursday 09:00 UTC
+  workflow_dispatch:       # manual button for testing
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: npm ci
+      - run: npx tsx scripts/run-pipeline.ts
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MODE: ${{ github.event.schedule == '0 9 * * 4' && 'publish' || 'generate' }}
+      - name: Commit
+        run: |
+          git config user.name "blog-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A && git diff --staged --quiet || git commit -m "content: automated run"
+          git push
